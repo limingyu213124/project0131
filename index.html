@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China University Selection Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>China University Selector</h1>
+            </div>
+            <p class="subtitle">Find your perfect Chinese university match</p>
+        </header>
+
+        <!-- Quiz Container -->
+        <div class="quiz-container" id="quizContainer">
+            <!-- Welcome Screen -->
+            <div class="quiz-step active" id="welcome">
+                <div class="step-content">
+                    <div class="welcome-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2>Welcome to China University Selector</h2>
+                    <p>Take our 7-step quiz to discover the perfect Chinese university for your academic journey.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Personalized recommendations</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Top 3 free matches</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Detailed analysis report</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="startQuiz()">
+                        Start Your Journey
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Steps -->
+            <div class="quiz-step" id="step1">
+                <div class="step-header">
+                    <h3>Step 1 of 7</h3>
+                    <h2>What's your field of study?</h2>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="engineering">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Engineering</h4>
+                        <p>Mechanical, Electrical, Civil, Computer Science</p>
+                    </div>
+                    <div class="option-card" data-value="business">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Business & Economics</h4>
+                        <p>Management, Finance, Marketing, International Business</p>
+                    </div>
+                    <div class="option-card" data-value="medicine">
+                        <i class="fas fa-heartbeat"></i>
+                        <h4>Medicine & Health</h4>
+                        <p>Medicine, Nursing, Public Health, Pharmacy</p>
+                    </div>
+                    <div class="option-card" data-value="arts">
+                        <i class="fas fa-palette"></i>
+                        <h4>Arts & Humanities</h4>
+                        <p>Literature, History, Philosophy, Languages</p>
+                    </div>
+                    <div class="option-card" data-value="science">
+                        <i class="fas fa-atom"></i>
+                        <h4>Natural Sciences</h4>
+                        <p>Physics, Chemistry, Biology, Mathematics</p>
+                    </div>
+                    <div class="option-card" data-value="social">
+                        <i class="fas fa-users"></i>
+                        <h4>Social Sciences</h4>
+                        <p>Psychology, Sociology, Political Science, Education</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step2">
+                <div class="step-header">
+                    <h3>Step 2 of 7</h3>
+                    <h2>What's your academic level?</h2>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="undergraduate">
+                        <i class="fas fa-user-graduate"></i>
+                        <h4>Undergraduate</h4>
+                        <p>Bachelor's degree (4 years)</p>
+                    </div>
+                    <div class="option-card" data-value="graduate">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>Graduate</h4>
+                        <p>Master's or PhD degree</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step3">
+                <div class="step-header">
+                    <h3>Step 3 of 7</h3>
+                    <h2>What's your budget range?</h2>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="low">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h4>Low Budget</h4>
+                        <p>$2,000 - $5,000 per year</p>
+                    </div>
+                    <div class="option-card" data-value="medium">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h4>Medium Budget</h4>
+                        <p>$5,000 - $10,000 per year</p>
+                    </div>
+                    <div class="option-card" data-value="high">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h4>High Budget</h4>
+                        <p>$10,000+ per year</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step4">
+                <div class="step-header">
+                    <h3>Step 4 of 7</h3>
+                    <h2>Preferred city size?</h2>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="mega">
+                        <i class="fas fa-city"></i>
+                        <h4>Mega City</h4>
+                        <p>Beijing, Shanghai, Guangzhou</p>
+                    </div>
+                    <div class="option-card" data-value="large">
+                        <i class="fas fa-building"></i>
+                        <h4>Large City</h4>
+                        <p>Nanjing, Hangzhou, Wuhan</p>
+                    </div>
+                    <div class="option-card" data-value="medium">
+                        <i class="fas fa-home"></i>
+                        <h4>Medium City</h4>
+                        <p>Xi'an, Chengdu, Qingdao</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step5">
+                <div class="step-header">
+                    <h3>Step 5 of 7</h3>
+                    <h2>How important is university ranking?</h2>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="very">
+                        <i class="fas fa-trophy"></i>
+                        <h4>Very Important</h4>
+                        <p>Top 100 globally ranked</p>
+                    </div>
+                    <div class="option-card" data-value="important">
+                        <i class="fas fa-medal"></i>
+                        <h4>Important</h4>
+                        <p>Top 500 globally ranked</p>
+                    </div>
+                    <div class="option-card" data-value="moderate">
+                        <i class="fas fa-star"></i>
+                        <h4>Moderate</h4>
+                        <p>Good reputation in China</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step6">
+                <div class="step-header">
+                    <h3>Step 6 of 7</h3>
+                    <h2>Do you need English-taught programs?</h2>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="yes">
+                        <i class="fas fa-language"></i>
+                        <h4>Yes, English Only</h4>
+                        <p>I prefer English-taught programs</p>
+                    </div>
+                    <div class="option-card" data-value="both">
+                        <i class="fas fa-globe"></i>
+                        <h4>Both Languages</h4>
+                        <p>English or Chinese programs</p>
+                    </div>
+                    <div class="option-card" data-value="chinese">
+                        <i class="fas fa-language"></i>
+                        <h4>Chinese Programs</h4>
+                        <p>I can study in Chinese</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step7">
+                <div class="step-header">
+                    <h3>Step 7 of 7</h3>
+                    <h2>What's your Chinese language level?</h2>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="none">
+                        <i class="fas fa-times-circle"></i>
+                        <h4>No Chinese</h4>
+                        <p>I don't speak Chinese</p>
+                    </div>
+                    <div class="option-card" data-value="basic">
+                        <i class="fas fa-comments"></i>
+                        <h4>Basic Level</h4>
+                        <p>HSK 1-3 level</p>
+                    </div>
+                    <div class="option-card" data-value="intermediate">
+                        <i class="fas fa-comments"></i>
+                        <h4>Intermediate</h4>
+                        <p>HSK 4-5 level</p>
+                    </div>
+                    <div class="option-card" data-value="advanced">
+                        <i class="fas fa-comments"></i>
+                        <h4>Advanced</h4>
+                        <p>HSK 6+ level</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="quiz-navigation">
+                <button class="btn btn-secondary" id="prevBtn" onclick="previousStep()" style="display: none;">
+                    <i class="fas fa-arrow-left"></i>
+                    Previous
+                </button>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextStep()" style="display: none;">
+                    Next
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Container -->
+        <div class="results-container" id="resultsContainer" style="display: none;">
+            <div class="results-header">
+                <h2>Your University Matches</h2>
+                <p>Based on your preferences, here are your top recommendations:</p>
+            </div>
+
+            <div class="results-grid" id="resultsGrid">
+                <!-- Results will be populated here -->
+            </div>
+
+            <div class="donation-section-main">
+                <div class="donation-card">
+                    <div class="donation-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>Support This Project</h3>
+                    </div>
+                    <p>If you found this tool helpful, consider making a donation to help us maintain and improve it for students worldwide.</p>
+                    <div class="donation-features">
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Keep the tool free for everyone</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Add more universities and features</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Improve matching algorithms</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check"></i>
+                            <span>Maintain and update data</span>
+                        </div>
+                    </div>
+                    <div class="donation-amount">
+                        <span class="amount">$5</span>
+                        <span class="period">suggested donation</span>
+                    </div>
+                    <div id="donation-button-container-main"></div>
+                </div>
+            </div>
+
+            <button class="btn btn-secondary" onclick="restartQuiz()">
+                <i class="fas fa-redo"></i>
+                Take Quiz Again
+            </button>
+        </div>
+
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen" style="display: none;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h3>Finding your perfect matches...</h3>
+                <p>Analyzing universities based on your preferences</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

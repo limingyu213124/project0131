@@ -1,0 +1,770 @@
+{
+  "universities": [
+    {
+      "id": 1,
+      "name_cn": "清华大学",
+      "name_en": "Tsinghua University",
+      "city": "Beijing",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.5,
+        "pg_min_gpa": 3.3,
+        "hsk_min_level": 5.0,
+        "application_deadline": "Mar_31",
+        "admission_difficulty_1to5": 5.0,
+        "key_features": "STEM_Strong,Top_Tier",
+        "official_website": "www.tsinghua.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 4500.0,
+        "ug_tuition_stem": 5000,
+        "ug_tuition_medicine": 6500,
+        "pg_tuition_liberal_arts": 5000.0,
+        "pg_tuition_stem": 5500,
+        "pg_tuition_mba": 15000,
+        "living_cost_avg": 8000.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 200.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Beijing_Municipal",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B_C",
+        "university_coverage_rate": 0.6,
+        "university_amount": "2000_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 3500.0,
+        "international_student_ratio": 0.1,
+        "campus_rating_1to5": 5.0,
+        "city_safety_index_1to5": 5.0,
+        "career_support": "Excellent",
+        "internship_opportunities": "Abundant"
+      },
+      "programs": [
+        "Chinese S",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 2,
+      "name_cn": "北京大学",
+      "name_en": "Peking University",
+      "city": "Beijing",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.5,
+        "pg_min_gpa": 3.3,
+        "hsk_min_level": 5.0,
+        "application_deadline": "Feb_28",
+        "admission_difficulty_1to5": 5.0,
+        "key_features": "Liberal_Arts,Top_Tier",
+        "official_website": "www.pku.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 4200.0,
+        "ug_tuition_stem": 4800,
+        "ug_tuition_medicine": 6200,
+        "pg_tuition_liberal_arts": 4800.0,
+        "pg_tuition_stem": 5200,
+        "pg_tuition_mba": 14000,
+        "living_cost_avg": 8000.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 200.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Beijing_Municipal",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "First_Second_Third",
+        "university_coverage_rate": 0.65,
+        "university_amount": "2000_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 4000.0,
+        "international_student_ratio": 0.12,
+        "campus_rating_1to5": 5.0,
+        "city_safety_index_1to5": 5.0,
+        "career_support": "Excellent",
+        "internship_opportunities": "Abundant"
+      },
+      "programs": [
+        "Mbbs",
+        "Chinese S",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 3,
+      "name_cn": "复旦大学",
+      "name_en": "Fudan University",
+      "city": "Shanghai",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.3,
+        "pg_min_gpa": 3.0,
+        "hsk_min_level": 4.0,
+        "application_deadline": "Apr_30",
+        "admission_difficulty_1to5": 4.0,
+        "key_features": "Business_Strong,Prestigious",
+        "official_website": "www.fudan.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 4000.0,
+        "ug_tuition_stem": 4500,
+        "ug_tuition_medicine": 6000,
+        "pg_tuition_liberal_arts": 4500.0,
+        "pg_tuition_stem": 5000,
+        "pg_tuition_mba": 12000,
+        "living_cost_avg": 7000.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 150.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Shanghai_Municipal",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B",
+        "university_coverage_rate": 0.55,
+        "university_amount": "3000_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 3000.0,
+        "international_student_ratio": 0.09,
+        "campus_rating_1to5": 4.5,
+        "city_safety_index_1to5": 4.5,
+        "career_support": "Good",
+        "internship_opportunities": "Abundant"
+      },
+      "programs": [
+        "Mbbs",
+        "Chinese S",
+        "Foundation",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 4,
+      "name_cn": "上海交通大学",
+      "name_en": "Shanghai Jiaotong University",
+      "city": "Shanghai",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.3,
+        "pg_min_gpa": 3.0,
+        "hsk_min_level": 5.0,
+        "application_deadline": "Mar_15",
+        "admission_difficulty_1to5": 4.0,
+        "key_features": "Engineering_Strong,Medicine_Strong",
+        "official_website": "www.sjtu.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 4300.0,
+        "ug_tuition_stem": 4800,
+        "ug_tuition_medicine": 6300,
+        "pg_tuition_liberal_arts": 4800.0,
+        "pg_tuition_stem": 5300,
+        "pg_tuition_mba": 13000,
+        "living_cost_avg": 7500.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 180.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Shanghai_Municipal",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B",
+        "university_coverage_rate": 0.6,
+        "university_amount": "2500_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 2800.0,
+        "international_student_ratio": 0.08,
+        "campus_rating_1to5": 4.5,
+        "city_safety_index_1to5": 4.5,
+        "career_support": "Good",
+        "internship_opportunities": "Abundant"
+      },
+      "programs": [
+        "Mbbs",
+        "Chinese S",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 5,
+      "name_cn": "南京大学",
+      "name_en": "Nanjing University",
+      "city": "Nanjing",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.3,
+        "pg_min_gpa": 3.0,
+        "hsk_min_level": 5.0,
+        "application_deadline": "Feb_28",
+        "admission_difficulty_1to5": 4.0,
+        "key_features": "Liberal_Arts_Strong,Science_Strong",
+        "official_website": "www.nju.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 3800.0,
+        "ug_tuition_stem": 4200,
+        "ug_tuition_medicine": 5800,
+        "pg_tuition_liberal_arts": 4200.0,
+        "pg_tuition_stem": 4600,
+        "pg_tuition_mba": 10000,
+        "living_cost_avg": 5500.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 120.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Jiangsu_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "First_Second_Third",
+        "university_coverage_rate": 0.5,
+        "university_amount": "2000_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 2000.0,
+        "international_student_ratio": 0.07,
+        "campus_rating_1to5": 4.5,
+        "city_safety_index_1to5": 4.5,
+        "career_support": "Good",
+        "internship_opportunities": "Good"
+      },
+      "programs": [
+        "Chinese S",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 6,
+      "name_cn": "浙江大学",
+      "name_en": "Zhejiang University",
+      "city": "Hangzhou",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.2,
+        "pg_min_gpa": 3.0,
+        "hsk_min_level": 4.0,
+        "application_deadline": "Apr_15",
+        "admission_difficulty_1to5": 4.0,
+        "key_features": "Engineering_Strong,Technology_Strong",
+        "official_website": "www.zju.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 3900.0,
+        "ug_tuition_stem": 4400,
+        "ug_tuition_medicine": 5900,
+        "pg_tuition_liberal_arts": 4400.0,
+        "pg_tuition_stem": 4800,
+        "pg_tuition_mba": 11000,
+        "living_cost_avg": 6000.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 160.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Zhejiang_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B_C",
+        "university_coverage_rate": 0.55,
+        "university_amount": "2500_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 2500.0,
+        "international_student_ratio": 0.07,
+        "campus_rating_1to5": 5.0,
+        "city_safety_index_1to5": 4.5,
+        "career_support": "Excellent",
+        "internship_opportunities": "Abundant"
+      },
+      "programs": [
+        "Mbbs",
+        "Chinese S",
+        "Foundation",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 7,
+      "name_cn": "中国科学技术大学",
+      "name_en": "University of Science and Technology of China",
+      "city": "Hefei",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.5,
+        "pg_min_gpa": 3.3,
+        "hsk_min_level": 5.0,
+        "application_deadline": "Mar_1",
+        "admission_difficulty_1to5": 5.0,
+        "key_features": "Physics_Strong,Mathematics_Strong",
+        "official_website": "www.ustc.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 3600.0,
+        "ug_tuition_stem": 4100,
+        "ug_tuition_medicine": "N/A",
+        "pg_tuition_liberal_arts": 4100.0,
+        "pg_tuition_stem": 4500,
+        "pg_tuition_mba": "N/A",
+        "living_cost_avg": 4500.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 100.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Anhui_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B",
+        "university_coverage_rate": 0.45,
+        "university_amount": "2000_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 500.0,
+        "international_student_ratio": 0.03,
+        "campus_rating_1to5": 4.0,
+        "city_safety_index_1to5": 4.0,
+        "career_support": "Good",
+        "internship_opportunities": "Good"
+      },
+      "programs": [
+        "Chinese S",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 8,
+      "name_cn": "哈尔滨工业大学",
+      "name_en": "Harbin Institute of Technology",
+      "city": "Harbin",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.0,
+        "pg_min_gpa": 2.8,
+        "hsk_min_level": 4.0,
+        "application_deadline": "May_30",
+        "admission_difficulty_1to5": 3.0,
+        "key_features": "Aerospace_Strong,Engineering_Strong",
+        "official_website": "www.hit.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 3200.0,
+        "ug_tuition_stem": 3800,
+        "ug_tuition_medicine": 5200,
+        "pg_tuition_liberal_arts": 3800.0,
+        "pg_tuition_stem": 4200,
+        "pg_tuition_mba": 9000,
+        "living_cost_avg": 4000.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 150.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Heilongjiang_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "First_Second_Third",
+        "university_coverage_rate": 0.5,
+        "university_amount": "1500_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 1500.0,
+        "international_student_ratio": 0.05,
+        "campus_rating_1to5": 4.0,
+        "city_safety_index_1to5": 3.5,
+        "career_support": "Good",
+        "internship_opportunities": "Good"
+      },
+      "programs": [
+        "Chinese S",
+        "Foundation",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 9,
+      "name_cn": "西安交通大学",
+      "name_en": "Xi'an Jiaotong University",
+      "city": "Xi'an",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.0,
+        "pg_min_gpa": 2.8,
+        "hsk_min_level": 4.0,
+        "application_deadline": "Apr_30",
+        "admission_difficulty_1to5": 3.0,
+        "key_features": "Engineering_Strong,Management_Strong",
+        "official_website": "www.xjtu.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 3000.0,
+        "ug_tuition_stem": 3500,
+        "ug_tuition_medicine": 5000,
+        "pg_tuition_liberal_arts": 3500.0,
+        "pg_tuition_stem": 3900,
+        "pg_tuition_mba": 8500,
+        "living_cost_avg": 3800.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 120.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Shaanxi_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B",
+        "university_coverage_rate": 0.45,
+        "university_amount": "1500_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 1200.0,
+        "international_student_ratio": 0.04,
+        "campus_rating_1to5": 4.0,
+        "city_safety_index_1to5": 4.0,
+        "career_support": "Good",
+        "internship_opportunities": "Good"
+      },
+      "programs": [
+        "Chinese S",
+        "Foundation",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 10,
+      "name_cn": "北京语言大学",
+      "name_en": "Beijing Language and Culture University",
+      "city": "Beijing",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 2.0,
+        "pg_min_gpa": 2.0,
+        "hsk_min_level": false,
+        "application_deadline": "Jun_30",
+        "admission_difficulty_1to5": true,
+        "key_features": "Chinese_Language,International_Focus",
+        "official_website": "www.blcu.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 3500.0,
+        "ug_tuition_stem": "N/A",
+        "ug_tuition_medicine": "N/A",
+        "pg_tuition_liberal_arts": 4000.0,
+        "pg_tuition_stem": "N/A",
+        "pg_tuition_mba": "N/A",
+        "living_cost_avg": 7000.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 50.0,
+        "csc_coverage": "Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
+        "provincial_scholarship": "Beijing_Municipal",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B",
+        "university_coverage_rate": 0.7,
+        "university_amount": "1000_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 5000.0,
+        "international_student_ratio": 0.65,
+        "campus_rating_1to5": 4.0,
+        "city_safety_index_1to5": 5.0,
+        "career_support": "Excellent",
+        "internship_opportunities": "Limited"
+      },
+      "programs": [
+        "Chinese S",
+        "Foundation",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 11,
+      "name_cn": "中山大学",
+      "name_en": "Sun Yat-sen University",
+      "city": "Guangzhou",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.2,
+        "pg_min_gpa": 3.0,
+        "hsk_min_level": 4.0,
+        "application_deadline": "Mar_31",
+        "admission_difficulty_1to5": 3.0,
+        "key_features": "Medicine_Strong,Business_Strong",
+        "official_website": "www.sysu.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 3700.0,
+        "ug_tuition_stem": 4200,
+        "ug_tuition_medicine": 5700,
+        "pg_tuition_liberal_arts": 4200.0,
+        "pg_tuition_stem": 4600,
+        "pg_tuition_mba": 10500,
+        "living_cost_avg": 5000.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 140.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Guangdong_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "First_Second_Third",
+        "university_coverage_rate": 0.5,
+        "university_amount": "2000_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 2200.0,
+        "international_student_ratio": 0.06,
+        "campus_rating_1to5": 4.5,
+        "city_safety_index_1to5": 4.0,
+        "career_support": "Good",
+        "internship_opportunities": "Abundant"
+      },
+      "programs": [
+        "Mbbs",
+        "Chinese S",
+        "Foundation",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 12,
+      "name_cn": "哈尔滨工业大学（深圳）",
+      "name_en": "Harbin Institute of Technology (Shenzhen)",
+      "city": "Shenzhen",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.2,
+        "pg_min_gpa": 3.0,
+        "hsk_min_level": 4.0,
+        "application_deadline": "Apr_1",
+        "admission_difficulty_1to5": 4.0,
+        "key_features": "Tech_Innovation,Engineering_Focus",
+        "official_website": "www.hitsz.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 4000.0,
+        "ug_tuition_stem": 4500,
+        "ug_tuition_medicine": "N/A",
+        "pg_tuition_liberal_arts": 4500.0,
+        "pg_tuition_stem": 5000,
+        "pg_tuition_mba": 12000,
+        "living_cost_avg": 6500.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 80.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": false,
+        "provincial_scholarship": "Guangdong_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B",
+        "university_coverage_rate": 0.4,
+        "university_amount": "2500_to_Full",
+        "confucius_institute_scholarship": false
+      },
+      "additional_info": {
+        "total_international_students": 800.0,
+        "international_student_ratio": 0.08,
+        "campus_rating_1to5": 4.5,
+        "city_safety_index_1to5": 5.0,
+        "career_support": "Good",
+        "internship_opportunities": "Abundant"
+      },
+      "programs": [
+        "Chinese S",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 13,
+      "name_cn": "江苏大学",
+      "name_en": "Jiangsu University",
+      "city": "Zhenjiang",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 2.5,
+        "pg_min_gpa": 2.5,
+        "hsk_min_level": 3.0,
+        "application_deadline": "Jun_15",
+        "admission_difficulty_1to5": 2.0,
+        "key_features": "Easy_Admission,International_Friendly",
+        "official_website": "www.ujs.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 2500.0,
+        "ug_tuition_stem": 3000,
+        "ug_tuition_medicine": 4500,
+        "pg_tuition_liberal_arts": 3000.0,
+        "pg_tuition_stem": 3400,
+        "pg_tuition_mba": "N/A",
+        "living_cost_avg": 3200.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 30.0,
+        "csc_coverage": "Partial",
+        "csc_type_a": false,
+        "csc_type_b": true,
+        "provincial_scholarship": "Jiangsu_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B",
+        "university_coverage_rate": 0.3,
+        "university_amount": "1000_to_3000",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 600.0,
+        "international_student_ratio": 0.08,
+        "campus_rating_1to5": 3.5,
+        "city_safety_index_1to5": 3.5,
+        "career_support": "Fair",
+        "internship_opportunities": "Fair"
+      },
+      "programs": [
+        "Mbbs",
+        "Chinese S",
+        "Foundation",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 14,
+      "name_cn": "西北工业大学",
+      "name_en": "Northwestern Polytechnical University",
+      "city": "Xi'an",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 3.0,
+        "pg_min_gpa": 2.8,
+        "hsk_min_level": 4.0,
+        "application_deadline": "May_15",
+        "admission_difficulty_1to5": 3.0,
+        "key_features": "Aerospace_Strong,Engineering_Focus",
+        "official_website": "www.nwpu.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 2800.0,
+        "ug_tuition_stem": 3300,
+        "ug_tuition_medicine": "N/A",
+        "pg_tuition_liberal_arts": 3300.0,
+        "pg_tuition_stem": 3700,
+        "pg_tuition_mba": 8000,
+        "living_cost_avg": 3500.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 100.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Shaanxi_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "Type_A_B",
+        "university_coverage_rate": 0.4,
+        "university_amount": "1500_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 1000.0,
+        "international_student_ratio": 0.03,
+        "campus_rating_1to5": 4.0,
+        "city_safety_index_1to5": 4.0,
+        "career_support": "Good",
+        "internship_opportunities": "Good"
+      },
+      "programs": [
+        "Chinese S",
+        "Foundation",
+        "Exchange S"
+      ]
+    },
+    {
+      "id": 15,
+      "name_cn": "中南大学",
+      "name_en": "Central South University",
+      "city": "Changsha",
+      "admission": {
+        "qs_rank_2025": null,
+        "the_rank_2025": null,
+        "ug_min_gpa": 2.8,
+        "pg_min_gpa": 2.8,
+        "hsk_min_level": 4.0,
+        "application_deadline": "May_31",
+        "admission_difficulty_1to5": 3.0,
+        "key_features": "Medicine_Strong,Mining_Engineering",
+        "official_website": "www.csu.edu.cn"
+      },
+      "costs": {
+        "ug_tuition_liberal_arts": 2700.0,
+        "ug_tuition_stem": 3200,
+        "ug_tuition_medicine": 4700,
+        "pg_tuition_liberal_arts": 3200.0,
+        "pg_tuition_stem": 3600,
+        "pg_tuition_mba": 8000,
+        "living_cost_avg": 3200.0
+      },
+      "scholarships": {
+        "csc_scholarship_quota": 110.0,
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "provincial_scholarship": "Hunan_Provincial",
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": "First_Second",
+        "university_coverage_rate": 0.45,
+        "university_amount": "1500_to_Full",
+        "confucius_institute_scholarship": true
+      },
+      "additional_info": {
+        "total_international_students": 1800.0,
+        "international_student_ratio": 0.05,
+        "campus_rating_1to5": 4.0,
+        "city_safety_index_1to5": 4.0,
+        "career_support": "Good",
+        "internship_opportunities": "Good"
+      },
+      "programs": [
+        "Mbbs",
+        "Chinese S",
+        "Foundation",
+        "Exchange S"
+      ]
+    }
+  ]
+}
