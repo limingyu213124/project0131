@@ -1,30 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5RR52RDYY4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5RR52RDYY4');
-</script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Find China School",
-  "url": "https://findchinaschool.com",
-  "description": "Free university matching tool for international students looking to study in China",
-  "applicationCategory": "Education",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>China University Selection Calculator</title>
@@ -44,6 +20,18 @@
             <p class="subtitle">Find your perfect Chinese university match</p>
         </header>
 
+        <!-- Credits and Disclaimer -->
+        <div class="credits-disclaimer">
+            <div class="credits">
+                <i class="fas fa-heart"></i>
+                <span>Credit to Reddit user: <strong>karelia322</strong></span>
+            </div>
+            <div class="disclaimer">
+                <i class="fas fa-info-circle"></i>
+                <span><strong>For reference only</strong> - Please contact trusted sources for decision making</span>
+            </div>
+        </div>
+
         <!-- Quiz Container -->
         <div class="quiz-container" id="quizContainer">
             <!-- Welcome Screen -->
@@ -53,7 +41,7 @@
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h2>Welcome to China University Selector</h2>
-                    <p>Take our 7-step quiz to discover the perfect Chinese university for your academic journey.</p>
+                    <p>Take our 9-step quiz to discover the perfect Chinese university for your academic journey.</p>
                     <div class="features">
                         <div class="feature">
                             <i class="fas fa-check-circle"></i>
@@ -78,7 +66,7 @@
             <!-- Quiz Steps -->
             <div class="quiz-step" id="step1">
                 <div class="step-header">
-                    <h3>Step 1 of 7</h3>
+                    <h3>Step 1 of 9</h3>
                     <h2>What's your field of study?</h2>
                 </div>
                 <div class="options-grid">
@@ -117,7 +105,7 @@
 
             <div class="quiz-step" id="step2">
                 <div class="step-header">
-                    <h3>Step 2 of 7</h3>
+                    <h3>Step 2 of 9</h3>
                     <h2>What's your academic level?</h2>
                 </div>
                 <div class="options-grid">
@@ -136,7 +124,7 @@
 
             <div class="quiz-step" id="step3">
                 <div class="step-header">
-                    <h3>Step 3 of 7</h3>
+                    <h3>Step 3 of 9</h3>
                     <h2>What's your budget range?</h2>
                 </div>
                 <div class="options-grid">
@@ -160,7 +148,7 @@
 
             <div class="quiz-step" id="step4">
                 <div class="step-header">
-                    <h3>Step 4 of 7</h3>
+                    <h3>Step 4 of 9</h3>
                     <h2>Preferred city size?</h2>
                 </div>
                 <div class="options-grid">
@@ -184,7 +172,7 @@
 
             <div class="quiz-step" id="step5">
                 <div class="step-header">
-                    <h3>Step 5 of 7</h3>
+                    <h3>Step 5 of 9</h3>
                     <h2>How important is university ranking?</h2>
                 </div>
                 <div class="options-grid">
@@ -208,7 +196,7 @@
 
             <div class="quiz-step" id="step6">
                 <div class="step-header">
-                    <h3>Step 6 of 7</h3>
+                    <h3>Step 6 of 9</h3>
                     <h2>Do you need English-taught programs?</h2>
                 </div>
                 <div class="options-grid">
@@ -232,7 +220,65 @@
 
             <div class="quiz-step" id="step7">
                 <div class="step-header">
-                    <h3>Step 7 of 7</h3>
+                    <h3>Step 7 of 9</h3>
+                    <h2>What's your English proficiency level?</h2>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="native">
+                        <i class="fas fa-flag"></i>
+                        <h4>Native/Fluent</h4>
+                        <p>IELTS 7.5+ / TOEFL 100+</p>
+                    </div>
+                    <div class="option-card" data-value="advanced">
+                        <i class="fas fa-star"></i>
+                        <h4>Advanced</h4>
+                        <p>IELTS 6.5-7.0 / TOEFL 90-99</p>
+                    </div>
+                    <div class="option-card" data-value="intermediate">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Intermediate</h4>
+                        <p>IELTS 6.0-6.5 / TOEFL 80-89</p>
+                    </div>
+                    <div class="option-card" data-value="basic">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Basic</h4>
+                        <p>IELTS 5.5-6.0 / TOEFL 70-79</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step8">
+                <div class="step-header">
+                    <h3>Step 8 of 9</h3>
+                    <h2>What's your GPA range?</h2>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="3.8-4.0">
+                        <i class="fas fa-star"></i>
+                        <h4>3.8 - 4.0</h4>
+                        <p>Excellent academic record</p>
+                    </div>
+                    <div class="option-card" data-value="3.5-3.7">
+                        <i class="fas fa-award"></i>
+                        <h4>3.5 - 3.7</h4>
+                        <p>Very good academic record</p>
+                    </div>
+                    <div class="option-card" data-value="3.0-3.4">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>3.0 - 3.4</h4>
+                        <p>Good academic record</p>
+                    </div>
+                    <div class="option-card" data-value="2.5-2.9">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>2.5 - 2.9</h4>
+                        <p>Average academic record</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step9">
+                <div class="step-header">
+                    <h3>Step 9 of 9</h3>
                     <h2>What's your Chinese language level?</h2>
                 </div>
                 <div class="options-grid">
@@ -335,6 +381,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-

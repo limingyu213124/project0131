@@ -54,6 +54,51 @@ body {
     font-weight: 300;
 }
 
+/* Credits and Disclaimer */
+.credits-disclaimer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.credits {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.credits i {
+    color: #ff6b6b;
+    font-size: 1.1rem;
+}
+
+.disclaimer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.disclaimer i {
+    color: #ffd700;
+    font-size: 1rem;
+}
+
+.disclaimer strong {
+    color: #ffd700;
+}
+
 /* Quiz Container */
 .quiz-container {
     background: white;
@@ -260,6 +305,28 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-outline {
+    background: transparent;
+    border: 2px solid #667eea;
+    color: #667eea;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-outline:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
 .btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -355,11 +422,47 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
+    padding: 4px 0;
+    line-height: 1.4;
 }
 
 .detail-item i {
     color: #667eea;
     width: 16px;
+}
+
+.university-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.website-link {
+    flex: 1;
+}
+
+.website-link .btn {
+    background: transparent;
+    border: 2px solid #667eea;
+    color: #667eea;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.website-link .btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
 }
 
 .match-score {
@@ -370,7 +473,6 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     text-align: center;
-    margin-top: 15px;
 }
 
 .university-description {
