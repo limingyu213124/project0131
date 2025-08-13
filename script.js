@@ -583,16 +583,25 @@ function generateMatches() {
         // Debug: Log university being processed
         console.log(`Processing university ${i + 1}/${universities.length}: ${university.name}`);
         
-        // Field of study match (25 points)
+        // Field of study match (20 points)
         console.log(`Checking field match for ${university.name}: looking for "${userAnswers.step1}" in fields:`, university.fields);
         if (university.fields.includes(userAnswers.step1)) {
-            score += 25;
-            console.log(`✓ Field match for ${university.name}: ${userAnswers.step1} found in ${university.fields}`);
+            let fieldScore = 20;
+            
+            // Penalty for overly comprehensive universities (having too many fields)
+            if (university.fields.length >= 5) {
+                fieldScore = Math.round(fieldScore * 0.8); // 20% penalty for having 5+ fields
+            } else if (university.fields.length >= 4) {
+                fieldScore = Math.round(fieldScore * 0.9); // 10% penalty for having 4 fields
+            }
+            
+            score += fieldScore;
+            console.log(`✓ Field match for ${university.name}: ${userAnswers.step1} found in ${university.fields}, score: ${fieldScore}`);
         } else {
             console.log(`✗ No field match for ${university.name}: ${userAnswers.step1} not found in ${university.fields}`);
         }
         
-        // Academic level compatibility (15 points)
+        // Academic level compatibility (12 points)
         const academicLevel = userAnswers.step2;
         const hasPrograms = university.programs[academicLevel] && 
                           university.programs[academicLevel][userAnswers.step1];
@@ -600,10 +609,10 @@ function generateMatches() {
         // Check if university has programs for the selected field
         const hasFieldPrograms = university.fields.includes(userAnswers.step1);
         if (hasPrograms || hasFieldPrograms) {
-            score += 15;
+            score += 12;
         }
         
-        // Budget compatibility (20 points)
+        // Budget compatibility (18 points)
         const budget = userAnswers.step3;
         let tuition = 0;
         
@@ -634,63 +643,71 @@ function generateMatches() {
         }
         
         // More realistic budget scoring with penalties for mismatches
+        // Add ranking-based adjustment for top universities
+        let budgetMultiplier = 1.0;
+        if (university.globalRanking <= 50) {
+            budgetMultiplier = 0.7; // Top 50 universities get reduced budget points
+        } else if (university.globalRanking <= 100) {
+            budgetMultiplier = 0.8; // Top 100 universities get reduced budget points
+        }
+        
         if (budget === 'low') {
-            if (tuition <= 5000) score += 20; // Perfect match
-            else if (tuition <= 7000) score += 10; // Acceptable
-            else if (tuition <= 10000) score += 2; // Poor match
+            if (tuition <= 5000) score += Math.round(18 * budgetMultiplier); // Perfect match
+            else if (tuition <= 7000) score += Math.round(9 * budgetMultiplier); // Acceptable
+            else if (tuition <= 10000) score += Math.round(2 * budgetMultiplier); // Poor match
             else score += 0; // No points for expensive universities
         } else if (budget === 'medium') {
-            if (tuition <= 10000) score += 20; // Perfect match
-            else if (tuition <= 15000) score += 12; // Good match
-            else if (tuition <= 20000) score += 5; // Acceptable
+            if (tuition <= 10000) score += Math.round(18 * budgetMultiplier); // Perfect match
+            else if (tuition <= 15000) score += Math.round(11 * budgetMultiplier); // Good match
+            else if (tuition <= 20000) score += Math.round(4 * budgetMultiplier); // Acceptable
             else score += 0; // Too expensive
         } else if (budget === 'high') {
-            if (tuition > 10000) score += 20; // Perfect for high budget
-            else if (tuition > 7000) score += 15; // Good value
-            else score += 10; // Lower cost but still good
+            if (tuition > 10000) score += Math.round(18 * budgetMultiplier); // Perfect for high budget
+            else if (tuition > 7000) score += Math.round(13 * budgetMultiplier); // Good value
+            else score += Math.round(8 * budgetMultiplier); // Lower cost but still good
         }
         
-        // City size preference (15 points)
+        // City size preference (12 points)
         if (university.citySize === userAnswers.step4) {
-            score += 15;
+            score += 12;
         } else if ((userAnswers.step4 === 'mega' && university.citySize === 'large') ||
                    (userAnswers.step4 === 'large' && university.citySize === 'medium')) {
-            score += 10;
+            score += 8;
         }
         
-        // Ranking importance (15 points) - More realistic scoring
+        // Ranking importance (12 points) - More realistic scoring
         const rankingPref = userAnswers.step5;
         
         // Only give high ranking points if applicant has realistic qualifications
         if (rankingPref === 'very') {
             if (university.globalRanking <= 100) {
                 // For top 100 universities, require high GPA
-                if (userGPAValue >= 3.5) score += 15;
-                else if (userGPAValue >= 3.3) score += 10;
-                else if (userGPAValue >= 3.0) score += 5;
+                if (userGPAValue >= 3.5) score += 12;
+                else if (userGPAValue >= 3.3) score += 8;
+                else if (userGPAValue >= 3.0) score += 4;
                 else score += 0; // No points for unrealistic matches
             } else if (university.globalRanking <= 200) {
-                if (userGPAValue >= 3.3) score += 12;
-                else if (userGPAValue >= 3.0) score += 8;
-                else score += 3;
+                if (userGPAValue >= 3.3) score += 10;
+                else if (userGPAValue >= 3.0) score += 6;
+                else score += 2;
             } else if (university.globalRanking <= 500) {
-                if (userGPAValue >= 3.0) score += 10;
-                else score += 5;
+                if (userGPAValue >= 3.0) score += 8;
+                else score += 4;
             }
         } else if (rankingPref === 'important') {
             if (university.globalRanking <= 500) {
-                if (userGPAValue >= 3.0) score += 12;
-                else score += 6;
+                if (userGPAValue >= 3.0) score += 10;
+                else score += 5;
             } else if (university.globalRanking <= 1000) {
-                score += 8;
+                score += 6;
             }
         } else if (rankingPref === 'moderate') {
             // For moderate ranking preference, give balanced scores
-            if (university.globalRanking <= 1000) score += 8;
-            else score += 10; // Higher score for lower-ranked universities
+            if (university.globalRanking <= 1000) score += 6;
+            else score += 8; // Higher score for lower-ranked universities
         }
         
-        // English programs and proficiency (15 points)
+        // English programs and proficiency (12 points)
         const englishPref = userAnswers.step6;
         const englishLevel = userAnswers.step7;
         
@@ -698,20 +715,20 @@ function generateMatches() {
         const hasEnglishPrograms = university.originalPrograms ? 
             university.originalPrograms.some(p => p.toLowerCase().includes('english')) : true; // Default to true if no data
         
-        // English program availability scoring (10 points)
+        // English program availability scoring (8 points)
         if (hasPrograms) {
             const program = university.programs[academicLevel][userAnswers.step1];
             
-            if (englishPref === 'yes' && program.englishPrograms) score += 10;
-            else if (englishPref === 'both') score += 10;
-            else if (englishPref === 'chinese' && !program.englishPrograms) score += 10;
-            else if (englishPref === 'yes' && !program.englishPrograms) score -= 5;
+            if (englishPref === 'yes' && program.englishPrograms) score += 8;
+            else if (englishPref === 'both') score += 8;
+            else if (englishPref === 'chinese' && !program.englishPrograms) score += 8;
+            else if (englishPref === 'yes' && !program.englishPrograms) score -= 4;
         } else if (hasFieldPrograms) {
             // If we have field match but no specific program, use general English program availability
-            if (englishPref === 'yes' && hasEnglishPrograms) score += 10;
-            else if (englishPref === 'both') score += 10;
-            else if (englishPref === 'chinese' && !hasEnglishPrograms) score += 10;
-            else if (englishPref === 'yes' && !hasEnglishPrograms) score -= 5;
+            if (englishPref === 'yes' && hasEnglishPrograms) score += 8;
+            else if (englishPref === 'both') score += 8;
+            else if (englishPref === 'chinese' && !hasEnglishPrograms) score += 8;
+            else if (englishPref === 'yes' && !hasEnglishPrograms) score -= 4;
         }
         
         // English proficiency scoring (5 points)
@@ -784,21 +801,30 @@ function generateMatches() {
         let unrealisticPenalty = 0;
         
         // Check if this is a realistic match based on GPA and university ranking
-        if (university.globalRanking <= 100) {
+        if (university.globalRanking <= 50) {
+            // Top 50 universities require very high qualifications
+            if (userGPAValue < 3.5) {
+                unrealisticPenalty = 25; // Major penalty for low GPA at top universities
+            } else if (userGPAValue < 3.7) {
+                unrealisticPenalty = 15; // Significant penalty for borderline GPA
+            } else if (userGPAValue >= 3.8) {
+                realisticBonus = 5; // Bonus for very well-qualified applicants
+            }
+        } else if (university.globalRanking <= 100) {
             // Top 100 universities require high qualifications
             if (userGPAValue < 3.3) {
-                unrealisticPenalty = 15; // Significant penalty for low GPA at top universities
+                unrealisticPenalty = 20; // Significant penalty for low GPA at top universities
             } else if (userGPAValue < 3.5) {
-                unrealisticPenalty = 5; // Small penalty for borderline GPA
-            } else {
-                realisticBonus = 5; // Bonus for well-qualified applicants
+                unrealisticPenalty = 10; // Small penalty for borderline GPA
+            } else if (userGPAValue >= 3.7) {
+                realisticBonus = 3; // Bonus for well-qualified applicants
             }
         } else if (university.globalRanking <= 500) {
             // Top 500 universities require good qualifications
             if (userGPAValue < 3.0) {
-                unrealisticPenalty = 10;
+                unrealisticPenalty = 15;
             } else if (userGPAValue >= 3.3) {
-                realisticBonus = 3;
+                realisticBonus = 2;
             }
         }
         
@@ -809,7 +835,35 @@ function generateMatches() {
         score = Math.max(0, Math.min(100, score));
         
         console.log(`${university.name} score: ${score}`);
-        if (score > 5) { // Very low threshold to ensure we get results
+        
+        // Special debugging for Shanghai Jiao Tong University
+        if (university.name === 'Shanghai Jiao Tong University') {
+            console.log('=== SHANGHAI JIAO TONG UNIVERSITY DEBUG ===');
+            console.log('User answers:', userAnswers);
+            console.log('University data:', {
+                name: university.name,
+                fields: university.fields,
+                globalRanking: university.globalRanking,
+                citySize: university.citySize,
+                programs: university.programs
+            });
+            console.log('Score breakdown:', {
+                fieldMatch: university.fields.includes(userAnswers.step1) ? 20 : 0,
+                academicLevel: 12, // Assuming it has programs
+                budget: 'calculated above',
+                citySize: university.citySize === userAnswers.step4 ? 12 : 8,
+                ranking: 'calculated above',
+                english: 'calculated above',
+                gpa: 'calculated above',
+                chinese: 'calculated above',
+                realisticBonus,
+                unrealisticPenalty
+            });
+            console.log('Final score:', score);
+            console.log('=== END DEBUG ===');
+        }
+        
+        if (score > 15) { // Higher threshold for better quality matches
             matches.push({
                 ...university,
                 matchScore: score
@@ -832,25 +886,54 @@ function displayResults() {
     console.log('Results grid element:', resultsGrid);
     resultsGrid.innerHTML = '';
     
-    // Show all results for free
-    console.log('Creating cards for', matchedUniversities.length, 'universities');
-    matchedUniversities.forEach((university, index) => {
-        const card = createUniversityCard(university, index + 1);
-        resultsGrid.appendChild(card);
-    });
-    
-    // Add donation section
-    const donationCard = document.createElement('div');
-    donationCard.className = 'university-card donation-section';
-    donationCard.innerHTML = `
-        <div class="donation-content">
-            <i class="fas fa-heart"></i>
-            <h3>Support This Project</h3>
-            <p>If you found this tool helpful, consider making a donation to help us maintain and improve it.</p>
-            <div id="donation-button-container"></div>
+    // Check if we have any matches
+    if (matchedUniversities.length === 0) {
+        // Show no results message
+        const noResultsCard = document.createElement('div');
+        noResultsCard.className = 'university-card no-results';
+        noResultsCard.innerHTML = `
+            <div class="no-results-content">
+                <i class="fas fa-search"></i>
+                <h3>No Suitable Universities Found</h3>
+                <p>Currently there is no suitable target school for you based on your current qualifications and preferences.</p>
+                <div class="suggestions">
+                    <h4>Suggestions to improve your chances:</h4>
+                    <ul>
+                        <li>Consider improving your GPA</li>
+                        <li>Expand your budget range</li>
+                        <li>Be more flexible with city preferences</li>
+                        <li>Consider different fields of study</li>
+                        <li>Improve your language proficiency</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary" onclick="restartQuiz()">
+                    <i class="fas fa-redo"></i>
+                    Try Different Preferences
+                </button>
+            </div>
+        `;
+        resultsGrid.appendChild(noResultsCard);
+    } else {
+        // Show all results for free
+        console.log('Creating cards for', matchedUniversities.length, 'universities');
+        matchedUniversities.forEach((university, index) => {
+            const card = createUniversityCard(university, index + 1);
+            resultsGrid.appendChild(card);
+        });
+        
+        // Add donation section
+        const donationCard = document.createElement('div');
+        donationCard.className = 'university-card donation-section';
+        donationCard.innerHTML = `
+            <div class="donation-content">
+                <i class="fas fa-heart"></i>
+                <h3>Support This Project</h3>
+                <p>If you found this tool helpful, consider making a donation to help us maintain and improve it.</p>
+                <div id="donation-button-container"></div>
         </div>
     `;
     resultsGrid.appendChild(donationCard);
+    }
     console.log('Results display completed');
 }
 
