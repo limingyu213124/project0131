@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadUniversities();
     setupEventListeners();
     optimizeFontLoading();
+    optimizeImageLoading();
 });
 
 // Font loading optimization
@@ -40,6 +41,30 @@ function optimizeFontLoading() {
             // Fallback to system fonts
             document.body.classList.add('fonts-fallback');
         });
+    }
+}
+
+// Image loading optimization
+function optimizeImageLoading() {
+    const logoImage = document.querySelector('.logo-image');
+    if (logoImage) {
+        // Add loading animation
+        logoImage.style.opacity = '0';
+        logoImage.style.transition = 'opacity 0.3s ease';
+        
+        logoImage.onload = function() {
+            this.style.opacity = '1';
+        };
+        
+        logoImage.onerror = function() {
+            console.warn('Logo failed to load, using fallback');
+            this.style.display = 'none';
+            // Add a fallback icon
+            const fallbackIcon = document.createElement('div');
+            fallbackIcon.className = 'logo-fallback';
+            fallbackIcon.innerHTML = '<i class="fas fa-graduation-cap"></i>';
+            this.parentNode.insertBefore(fallbackIcon, this);
+        };
     }
 }
 
@@ -401,10 +426,20 @@ function transformUniversityData(universitiesData) {
 
 // Setup event listeners
 function setupEventListeners() {
-    // Option card selection
+    // Option card selection with touch optimization
     document.querySelectorAll('.option-card').forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
             selectOption(this);
+        });
+        
+        // Add touch feedback for mobile
+        card.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+        });
+        
+        card.addEventListener('touchend', function() {
+            this.style.transform = '';
         });
     });
 
@@ -416,6 +451,23 @@ function setupEventListeners() {
             previousStep();
         }
     });
+    
+    // Prevent zoom on double tap for mobile
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+    
+    // Optimize scroll performance on mobile
+    document.addEventListener('touchmove', function(e) {
+        if (e.target.closest('.option-card')) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 }
 
 // Start the quiz
