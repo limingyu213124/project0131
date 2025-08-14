@@ -22,7 +22,26 @@ const quizSteps = [
 document.addEventListener('DOMContentLoaded', function() {
     loadUniversities();
     setupEventListeners();
+    optimizeFontLoading();
 });
+
+// Font loading optimization
+function optimizeFontLoading() {
+    // Check if fonts are loaded
+    if ('fonts' in document) {
+        Promise.all([
+            document.fonts.load('400 1em Inter'),
+            document.fonts.load('600 1em Inter'),
+            document.fonts.load('700 1em Inter')
+        ]).then(() => {
+            // Fonts loaded, add class to body
+            document.body.classList.add('fonts-loaded');
+        }).catch(() => {
+            // Fallback to system fonts
+            document.body.classList.add('fonts-fallback');
+        });
+    }
+}
 
 // Load universities data
 async function loadUniversities() {
@@ -921,14 +940,14 @@ function displayResults() {
             resultsGrid.appendChild(card);
         });
         
-        // Add donation section
+        // Add about section
         const donationCard = document.createElement('div');
         donationCard.className = 'university-card donation-section';
         donationCard.innerHTML = `
             <div class="donation-content">
                 <i class="fas fa-heart"></i>
-                <h3>Support This Project</h3>
-                <p>If you found this tool helpful, consider making a donation to help us maintain and improve it.</p>
+                <h3>About This Tool</h3>
+                <p>This free tool helps international students find their perfect Chinese university match through our comprehensive database and smart matching algorithm.</p>
                 <div id="donation-button-container"></div>
         </div>
     `;
@@ -1024,8 +1043,8 @@ function createUniversityCard(university, rank) {
         <div class="university-header">
             <div class="university-logo">${university.abbreviation}</div>
             <div class="university-info">
-                <h3>${rank}. ${university.name}</h3>
-                <p>${university.city} • Global Rank #${university.globalRanking}</p>
+                <h3 class="university-name" title="${university.name}">${rank}. ${university.name}</h3>
+                <p class="university-meta">${university.city} • Global Rank #${university.globalRanking}</p>
             </div>
         </div>
         <div class="university-details">
@@ -1116,7 +1135,7 @@ function createUniversityCard(university, rank) {
         <!-- Additional Information -->
         ${additionalData ? `
         <div class="additional-section">
-            <h4><i class="fas fa-info-circle"></i> Additional Information</h4>
+            <h4><i class="fas fa-info-circle"></i> Campus & Student Life</h4>
             <div class="additional-details">
                 ${additionalData.total_international_students ? `
                 <div class="additional-item">
@@ -1127,10 +1146,9 @@ function createUniversityCard(university, rank) {
                 ${additionalData.campus_rating_1to5 ? `
                 <div class="additional-item">
                     <span class="additional-label">Campus Rating:</span>
-                    <span class="additional-value">${'⭐'.repeat(additionalData.campus_rating_1to5)}</span>
+                    <span class="additional-value campus-rating">${'★'.repeat(additionalData.campus_rating_1to5)}${'☆'.repeat(5-additionalData.campus_rating_1to5)}</span>
                 </div>
                 ` : ''}
-
                 ${additionalData.career_support ? `
                 <div class="additional-item">
                     <span class="additional-label">Career Support:</span>
@@ -1167,6 +1185,7 @@ function createUniversityCard(university, rank) {
 
 // Setup PayPal donation integration
 function setupPayPal() {
+    // Check if PayPal SDK is loaded
     if (typeof paypal !== 'undefined') {
         paypal.Buttons({
             createOrder: function(data, actions) {
@@ -1191,15 +1210,42 @@ function setupPayPal() {
             }
         }).render('#donation-button-container');
     } else {
-        // Fallback if PayPal SDK fails to load
+        // Show loading state and load PayPal on demand
         const container = document.getElementById('donation-button-container');
         container.innerHTML = `
-            <button class="btn btn-primary" onclick="showThankYouMessage()">
-                <i class="fas fa-heart"></i>
-                Support This Project ($5)
+            <button class="btn btn-primary" onclick="loadPayPalOnDemand()">
+                <svg class="icon icon-sm"><use href="#icon-heart"></use></svg>
+                Support This Project
             </button>
         `;
     }
+}
+
+// Load PayPal SDK on demand
+function loadPayPalOnDemand() {
+    const container = document.getElementById('donation-button-container');
+    container.innerHTML = `
+        <div class="loading-paypal">
+            <div class="spinner"></div>
+            <span>Loading payment options...</span>
+        </div>
+    `;
+    
+    // Load PayPal SDK dynamically
+    const script = document.createElement('script');
+    script.src = 'https://www.paypal.com/sdk/js?client-id=ATXfI5E_I4zpr7KqfZhqyPwLguEnXAqpFBGohws4VdqKWTZRDW0bUdkUbG6EKGMHHNipkb1nQyGSP9D1&currency=USD';
+    script.onload = function() {
+        setupPayPal();
+    };
+    script.onerror = function() {
+        container.innerHTML = `
+            <button class="btn btn-primary" onclick="showThankYouMessage()">
+                <svg class="icon icon-sm"><use href="#icon-heart"></use></svg>
+                Learn More About This Tool
+            </button>
+        `;
+    };
+    document.head.appendChild(script);
 }
 
 // Show thank you message (after donation)
@@ -1209,8 +1255,8 @@ function showThankYouMessage() {
         donationContainer.innerHTML = `
             <div class="thank-you-message">
                 <i class="fas fa-check-circle"></i>
-                <h4>Thank You for Your Support!</h4>
-                <p>Your donation helps us maintain and improve this tool for students worldwide.</p>
+                <h4>Thank You for Using Our Tool!</h4>
+                <p>We hope this tool helps you find your perfect Chinese university match.</p>
             </div>
         `;
     }
@@ -1242,15 +1288,42 @@ function setupMainDonationButton() {
             }
         }).render('#donation-button-container-main');
     } else {
-        // Fallback if PayPal SDK fails to load
+        // Show loading state and load PayPal on demand
         const container = document.getElementById('donation-button-container-main');
         container.innerHTML = `
-            <button class="btn btn-primary" onclick="showMainThankYouMessage()">
-                <i class="fas fa-heart"></i>
-                Support This Project ($5)
+            <button class="btn btn-primary" onclick="loadMainPayPalOnDemand()">
+                <svg class="icon icon-sm"><use href="#icon-heart"></use></svg>
+                Support This Project
             </button>
         `;
     }
+}
+
+// Load PayPal SDK on demand for main donation button
+function loadMainPayPalOnDemand() {
+    const container = document.getElementById('donation-button-container-main');
+    container.innerHTML = `
+        <div class="loading-paypal">
+            <div class="spinner"></div>
+            <span>Loading payment options...</span>
+        </div>
+    `;
+    
+    // Load PayPal SDK dynamically
+    const script = document.createElement('script');
+    script.src = 'https://www.paypal.com/sdk/js?client-id=ATXfI5E_I4zpr7KqfZhqyPwLguEnXAqpFBGohws4VdqKWTZRDW0bUdkUbG6EKGMHHNipkb1nQyGSP9D1&currency=USD';
+    script.onload = function() {
+        setupMainDonationButton();
+    };
+    script.onerror = function() {
+        container.innerHTML = `
+            <button class="btn btn-primary" onclick="showMainThankYouMessage()">
+                <svg class="icon icon-sm"><use href="#icon-heart"></use></svg>
+                Learn More About This Tool
+            </button>
+        `;
+    };
+    document.head.appendChild(script);
 }
 
 // Show thank you message for main donation
@@ -1260,8 +1333,8 @@ function showMainThankYouMessage() {
         donationContainer.innerHTML = `
             <div class="thank-you-message">
                 <i class="fas fa-check-circle"></i>
-                <h4>Thank You for Your Support!</h4>
-                <p>Your donation helps us maintain and improve this tool for students worldwide.</p>
+                <h4>Thank You for Using Our Tool!</h4>
+                <p>We hope this tool helps you find your perfect Chinese university match.</p>
             </div>
         `;
     }
