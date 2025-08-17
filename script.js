@@ -78,8 +78,10 @@ async function loadUniversities() {
         
         // Transform the new data structure to match the expected format
         universities = transformUniversityData(data.universities);
+        console.log('=== UNIVERSITIES LOADED ===');
         console.log('Loaded universities:', universities.length);
         console.log('Sample university:', universities[0]);
+        console.log('First 3 universities:', universities.slice(0, 3).map(u => ({ name: u.name, fields: u.fields, city: u.city })));
         
         // Check if any universities have medicine programs
         const medicineUnis = universities.filter(uni => uni.fields.includes('medicine'));
@@ -407,6 +409,7 @@ function transformUniversityData(universitiesData) {
             website: uni.admission?.official_website || '',
             scholarships: ['Chinese Government Scholarship'],
             applicationDeadline: uni.admission?.application_deadline || 'March 31',
+            applicationStartDate: uni.admission?.application_start_date || 'January 1',
             acceptanceRate: acceptanceRate,
             // Add additional data for better matching
             admissionData: uni.admission,
@@ -598,7 +601,7 @@ function showResults() {
         document.getElementById('resultsContainer').style.display = 'block';
         
         // Generate matches
-        matchedUniversities = generateMatches(userAnswers);
+        matchedUniversities = generateMatches();
         console.log('Generated matches:', matchedUniversities.length);
         
         // Display results
@@ -613,8 +616,10 @@ function showResults() {
 // Generate university matches
 function generateMatches() {
     const matches = [];
+    console.log('=== GENERATE MATCHES START ===');
     console.log('Generating matches for answers:', userAnswers);
     console.log('Available universities:', universities.length);
+    console.log('User answers object:', JSON.stringify(userAnswers, null, 2));
     
     // Check if all required answers are present
     const requiredSteps = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6', 'step7', 'step8', 'step9'];
@@ -1057,18 +1062,28 @@ function createUniversityCard(university, rank) {
      
      // Format application deadline for better readability
      const formatDeadline = (deadline) => {
-         if (!deadline) return 'TBD';
-         // Convert "Mar_31" to "March 31"
-         const monthMap = {
-             'Jan': 'January', 'Feb': 'February', 'Mar': 'March', 'Apr': 'April',
-             'May': 'May', 'Jun': 'June', 'Jul': 'July', 'Aug': 'August',
-             'Sep': 'September', 'Oct': 'October', 'Nov': 'November', 'Dec': 'December'
-         };
-         const parts = deadline.split('_');
-         if (parts.length === 2) {
-             const month = monthMap[parts[0]] || parts[0];
-             return `${month} ${parts[1]}`;
+         if (!deadline || deadline === 'TBD') return 'March 31';
+         
+         // Handle different date formats
+         if (deadline.includes('_')) {
+             // Convert "Mar_31" to "March 31"
+             const monthMap = {
+                 'Jan': 'January', 'Feb': 'February', 'Mar': 'March', 'Apr': 'April',
+                 'May': 'May', 'Jun': 'June', 'Jul': 'July', 'Aug': 'August',
+                 'Sep': 'September', 'Oct': 'October', 'Nov': 'November', 'Dec': 'December'
+             };
+             const parts = deadline.split('_');
+             if (parts.length === 2) {
+                 const month = monthMap[parts[0]] || parts[0];
+                 return `${month} ${parts[1]}`;
+             }
          }
+         
+         // If it's already in a readable format, return as is
+         if (deadline.includes('March') || deadline.includes('April') || deadline.includes('May')) {
+             return deadline;
+         }
+         
          return deadline;
      };
      
@@ -1091,9 +1106,15 @@ function createUniversityCard(university, rank) {
     const scholarshipData = university.scholarshipData;
     const additionalData = university.additionalData;
     
-    card.innerHTML = `
+            card.innerHTML = `
         <div class="university-header">
-            <div class="university-logo">${university.abbreviation}</div>
+            <div class="university-logo" id="logo-${university.id}">
+                <img src="logos/${university.id}.png" alt="${university.name} logo" 
+                     onload="this.parentElement.classList.add('has-logo');" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
+                     style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+                <div class="university-logo-fallback" style="display: none; width: 100%; height: 100%; background: linear-gradient(135deg, #3b82f6, #8b5cf6); border-radius: 50%; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem;">${university.abbreviation}</div>
+            </div>
             <div class="university-info">
                 <h3 class="university-name" title="${university.name}">${rank}. ${university.name}</h3>
                 <p class="university-meta">${university.city} • Global Rank #${university.globalRanking}</p>
@@ -1146,7 +1167,7 @@ function createUniversityCard(university, rank) {
              <!-- Application Dates -->
              <div class="detail-item">
                  <i class="fas fa-calendar-alt"></i>
-                 <span>Application: ${applicationStartDate ? `${applicationStartDate} - ` : ''}${formatDeadline(applicationDeadline)}</span>
+                 <span>Application: ${applicationStartDate && applicationStartDate !== 'January 1' ? `${applicationStartDate} - ` : ''}${formatDeadline(applicationDeadline)}</span>
              </div>
         </div>
         <p class="university-description">${university.description}</p>
