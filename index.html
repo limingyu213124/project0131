@@ -293,6 +293,12 @@
 </head>
 <body>
     <div class="container">
+        <!-- User Counter -->
+        <div class="user-counter">
+            <i class="fas fa-users"></i>
+            <span id="userCount">1000</span> users
+        </div>
+        
         <!-- Header -->
         <header class="header">
             <div class="logo">
@@ -747,15 +753,6 @@
 
         <!-- Results Container -->
         <div class="results-container" id="resultsContainer" style="display: none;">
-            <div class="results-header">
-                <h2>Your University Matches</h2>
-                <p>Based on your preferences, here are your top recommendations:</p>
-            </div>
-
-            <div class="results-grid" id="resultsGrid">
-                <!-- Results will be populated here -->
-            </div>
-
             <div class="donation-section-main">
                 <div class="donation-card">
                     <div class="donation-header">
@@ -789,6 +786,15 @@
                 </div>
             </div>
 
+            <div class="results-header">
+                <h2>Your University Matches</h2>
+                <p>Based on your preferences, here are your top recommendations:</p>
+            </div>
+
+            <div class="results-grid" id="resultsGrid">
+                <!-- Results will be populated here -->
+            </div>
+
             <button class="btn btn-secondary" onclick="restartQuiz()">
                 <svg class="icon icon-sm"><use href="#icon-arrow-right"></use></svg>
                 Take Quiz Again
@@ -816,14 +822,6 @@
                         <h3>How accurate are the university recommendations?</h3>
                         <p>Our algorithm considers multiple factors including field compatibility, budget, ranking, city preferences, and language requirements to provide highly accurate matches tailored to your specific needs and preferences.</p>
                     </div>
-                    <div class="faq-item">
-                        <h3>Can I use this tool for both undergraduate and graduate programs?</h3>
-                        <p>Yes! Our tool covers both undergraduate and graduate programs. The quiz includes questions about your academic level to ensure we match you with appropriate programs and universities.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Do you include information about scholarships and application deadlines?</h3>
-                        <p>Yes, our university database includes information about available scholarships, application deadlines, acceptance rates, and other important details for university admission in China. This helps international students make informed decisions about their education when they study abroad in China.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -847,11 +845,6 @@
                         <i class="fas fa-mobile-alt"></i>
                         <h3>Mobile Friendly</h3>
                         <p>Access our tool from any device - desktop, tablet, or mobile phone for a seamless experience.</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Privacy Protected</h3>
-                        <p>We don't store any of your personal information. Your quiz responses are processed locally for your privacy.</p>
                     </div>
                 </div>
             </div>

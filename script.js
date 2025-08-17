@@ -4,6 +4,35 @@ let userAnswers = {};
 let universities = [];
 let matchedUniversities = [];
 
+// User counter functionality
+let userCount = 1000; // Starting count
+
+// Initialize user counter
+function initializeUserCounter() {
+    // Get stored count from localStorage
+    const storedCount = localStorage.getItem('userCount');
+    if (storedCount) {
+        userCount = parseInt(storedCount);
+    }
+    
+    // Increment count for this visit
+    userCount++;
+    
+    // Save to localStorage
+    localStorage.setItem('userCount', userCount.toString());
+    
+    // Update display
+    updateUserCounter();
+}
+
+// Update user counter display
+function updateUserCounter() {
+    const userCountElement = document.getElementById('userCount');
+    if (userCountElement) {
+        userCountElement.textContent = userCount.toLocaleString();
+    }
+}
+
 // Quiz steps configuration
 const quizSteps = [
     'welcome',
@@ -20,10 +49,14 @@ const quizSteps = [
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
+    initializeUserCounter(); // Initialize user counter
     loadUniversities();
     setupEventListeners();
     optimizeFontLoading();
     optimizeImageLoading();
+    
+    // Initialize donation button immediately
+    setupMainDonationButton();
 });
 
 // Font loading optimization
@@ -609,7 +642,10 @@ function showResults() {
         
         // Setup PayPal donation buttons
         setupPayPal();
-        setupMainDonationButton();
+        // Setup main donation button after a short delay to ensure DOM is ready
+        setTimeout(() => {
+            setupMainDonationButton();
+        }, 100);
     }, 2000);
 }
 
@@ -997,18 +1033,7 @@ function displayResults() {
             resultsGrid.appendChild(card);
         });
         
-        // Add about section
-        const donationCard = document.createElement('div');
-        donationCard.className = 'university-card donation-section';
-        donationCard.innerHTML = `
-            <div class="donation-content">
-                <i class="fas fa-heart"></i>
-                <h3>About This Tool</h3>
-                <p>This free tool helps international students find their perfect Chinese university match through our comprehensive database and smart matching algorithm.</p>
-                <div id="donation-button-container"></div>
-        </div>
-    `;
-    resultsGrid.appendChild(donationCard);
+
     }
     console.log('Results display completed');
 }
@@ -1110,10 +1135,7 @@ function createUniversityCard(university, rank) {
         <div class="university-header">
             <div class="university-logo" id="logo-${university.id}">
                 <img src="logos/${university.id}.png" alt="${university.name} logo" 
-                     onload="this.parentElement.classList.add('has-logo');" 
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" 
                      style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
-                <div class="university-logo-fallback" style="display: none; width: 100%; height: 100%; background: linear-gradient(135deg, #3b82f6, #8b5cf6); border-radius: 50%; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.5rem;">${university.abbreviation}</div>
             </div>
             <div class="university-info">
                 <h3 class="university-name" title="${university.name}">${rank}. ${university.name}</h3>
@@ -1337,6 +1359,12 @@ function showThankYouMessage() {
 
 // Setup main donation button
 function setupMainDonationButton() {
+    const container = document.getElementById('donation-button-container-main');
+    if (!container) {
+        console.log('Donation container not found');
+        return;
+    }
+    
     if (typeof paypal !== 'undefined') {
         paypal.Buttons({
             createOrder: function(data, actions) {
@@ -1361,8 +1389,7 @@ function setupMainDonationButton() {
             }
         }).render('#donation-button-container-main');
     } else {
-        // Show loading state and load PayPal on demand
-        const container = document.getElementById('donation-button-container-main');
+        // Show support button that loads PayPal on demand
         container.innerHTML = `
             <button class="btn btn-primary" onclick="loadMainPayPalOnDemand()">
                 <svg class="icon icon-sm"><use href="#icon-heart"></use></svg>
