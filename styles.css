@@ -5,11 +5,20 @@
     box-sizing: border-box;
 }
 
-/* Font loading optimization */
+/* Font loading optimization - Optimized for speed and SEO */
 @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
+    src: local('Inter'), url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
     font-display: swap;
     src: local('Inter'), url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
@@ -85,52 +94,7 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
-/* User Counter */
-.user-counter {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
 
-.user-counter i {
-    font-size: 1rem;
-}
-
-.user-counter #userCount {
-    font-weight: 700;
-    font-size: 1rem;
-}
-
-/* Mobile responsive for user counter */
-@media (max-width: 768px) {
-    .user-counter {
-        top: 0.5rem;
-        right: 0.5rem;
-        padding: 0.375rem 0.75rem;
-        font-size: 0.75rem;
-    }
-    
-    .user-counter i {
-        font-size: 0.875rem;
-    }
-    
-    .user-counter #userCount {
-        font-size: 0.875rem;
-    }
-}
 
 /* Header Styles */
 .header {
@@ -322,7 +286,7 @@ body {
 /* Progress Container */
 .progress-container {
     background: #f8fafc;
-    padding: 2rem 2.5rem;
+    padding: 1.5rem 2rem;
     border-bottom: 1px solid #e2e8f0;
 }
 
@@ -353,8 +317,8 @@ body {
 /* Quiz Steps */
 .quiz-step {
     display: none;
-    padding: 2rem;
-    min-height: 450px;
+    padding: 1.5rem;
+    min-height: 400px;
 }
 
 .quiz-step.active {
@@ -396,11 +360,12 @@ body {
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
+    padding: 1rem 0;
 }
 
 .step-content h2 {
     font-size: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     color: #1e293b;
     font-weight: 700;
     letter-spacing: -0.025em;
@@ -410,7 +375,7 @@ body {
 .step-content p {
     font-size: 1rem;
     color: #64748b;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     line-height: 1.6;
 }
 
@@ -418,7 +383,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     align-items: center;
 }
 
@@ -1781,18 +1746,28 @@ body {
     }
     
     .quiz-step {
-        padding: 1.5rem;
-        min-height: 400px;
+        padding: 1rem;
+        min-height: 350px;
     }
     
     .step-content h2 {
         font-size: 1.5rem;
         line-height: 1.3;
+        margin-bottom: 0.25rem;
     }
     
     .step-content p {
         font-size: 0.9rem;
         line-height: 1.5;
+        margin-bottom: 0.5rem;
+    }
+    
+    .step-content {
+        padding: 0.5rem 0;
+    }
+    
+    .features {
+        margin-bottom: 0.5rem;
     }
     
     .step-header h2 {
@@ -2046,6 +2021,7 @@ body {
     /* Improved progress bar for mobile */
     .progress-container {
         margin-bottom: 1.5rem;
+        padding: 1rem 1.5rem;
     }
     
     .progress-bar {

@@ -5,33 +5,9 @@ let universities = [];
 let matchedUniversities = [];
 
 // User counter functionality
-let userCount = 1000; // Starting count
 
-// Initialize user counter
-function initializeUserCounter() {
-    // Get stored count from localStorage
-    const storedCount = localStorage.getItem('userCount');
-    if (storedCount) {
-        userCount = parseInt(storedCount);
-    }
-    
-    // Increment count for this visit
-    userCount++;
-    
-    // Save to localStorage
-    localStorage.setItem('userCount', userCount.toString());
-    
-    // Update display
-    updateUserCounter();
-}
 
-// Update user counter display
-function updateUserCounter() {
-    const userCountElement = document.getElementById('userCount');
-    if (userCountElement) {
-        userCountElement.textContent = userCount.toLocaleString();
-    }
-}
+
 
 // Quiz steps configuration
 const quizSteps = [
@@ -49,7 +25,7 @@ const quizSteps = [
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    initializeUserCounter(); // Initialize user counter
+
     loadUniversities();
     setupEventListeners();
     optimizeFontLoading();
