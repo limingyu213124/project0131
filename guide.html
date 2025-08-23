@@ -357,6 +357,15 @@
         </nav>
 
         <div class="guide-container">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
+                <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #64748b;">
+                    <li><a href="index.html" style="color: #3b82f6; text-decoration: none;">Home</a></li>
+                    <li style="color: #94a3b8;">/</li>
+                    <li style="color: #1e293b; font-weight: 600;">Study Guide</li>
+                </ol>
+            </nav>
+            
             <!-- Introduction -->
             <section class="guide-section">
                 <h2>Complete Guide to Studying Abroad in China 2025</h2>
@@ -545,7 +554,7 @@
         </div>
     </div>
     
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Enhanced Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -554,21 +563,23 @@
       "description": "Comprehensive guide for international students planning to study in China. Everything you need to know about applications, visas, costs, and student life.",
       "author": {
         "@type": "Organization",
-        "name": "China University Selector"
+        "name": "China University Selector",
+        "url": "https://findchinaschool.com/"
       },
       "publisher": {
         "@type": "Organization",
         "name": "China University Selector",
-        "url": "https://findchinaschool.com/"
+        "url": "https://findchinaschool.com/",
+        "logo": "https://findchinaschool.com/logo.png"
       },
-             "datePublished": "2025-08-18",
-       "dateModified": "2025-08-18",
+      "datePublished": "2025-08-18",
+      "dateModified": "2025-08-18",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://findchinaschool.com/guide.html"
       },
       "articleSection": "Study Abroad Guide",
-      "keywords": "study abroad China, international students China, Chinese university guide, China education, study in China, China student visa, China scholarships",
+      "keywords": "study abroad China, international students China, Chinese university guide, China education, study in China, China student visa, China scholarships, Chinese university admission, study in China 2025",
       "inLanguage": "en",
       "educationalUse": "Study guide for international students",
       "learningResourceType": "Guide",
@@ -588,6 +599,130 @@
         {
           "@type": "Thing",
           "name": "International Student Visa"
+        },
+        {
+          "@type": "Thing",
+          "name": "Chinese Education System"
+        },
+        {
+          "@type": "Thing",
+          "name": "Student Life in China"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Place",
+          "name": "China",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CN"
+          }
+        },
+        {
+          "@type": "Thing",
+          "name": "Tsinghua University"
+        },
+        {
+          "@type": "Thing",
+          "name": "Peking University"
+        },
+        {
+          "@type": "Thing",
+          "name": "Fudan University"
+        }
+      ],
+      "wordCount": "5000",
+      "timeRequired": "PT30M",
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    }
+    </script>
+    
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://findchinaschool.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Study Guide",
+          "item": "https://findchinaschool.com/guide.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- HowTo Structured Data for Application Process -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Apply to Chinese Universities",
+      "description": "Step-by-step guide for international students applying to Chinese universities",
+      "image": "https://findchinaschool.com/guide-image.jpg",
+      "totalTime": "PT6M",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "0"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Research Universities",
+          "text": "Research and select Chinese universities that match your academic interests and budget",
+          "url": "https://findchinaschool.com/universities.html"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Prepare Documents",
+          "text": "Gather required documents including academic transcripts, language test scores, and personal statement"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Submit Application",
+          "text": "Complete and submit your application through the university's online portal"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Apply for Visa",
+          "text": "Once accepted, apply for a student visa at the Chinese embassy or consulate"
+        }
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Academic Transcripts"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "Language Test Scores"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "Personal Statement"
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "Letters of Recommendation"
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Computer with Internet Access"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Valid Passport"
         }
       ]
     }
