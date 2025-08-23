@@ -54,14 +54,42 @@
     
     <!-- Favicon -->
     <link rel="icon" href="logo.png" type="image/png">
+    
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    
     <style>
+        /* Notion-inspired design system */
+        :root {
+            --primary: #4F46E5;    /* 靛蓝 - 专业可信 */
+            --secondary: #06B6D4;  /* 青色 - 活力创新 */
+            --accent: #F59E0B;     /* 琥珀 - 点缀强调 */
+            --background: #F9FAFB; /* 浅灰背景 */
+            --text: #111827;       /* 深灰文字 */
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         /* Critical CSS for above-the-fold content */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
-            background: #f8fafc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
             margin: 0;
             padding: 0;
-            color: #1e293b;
+            color: var(--text);
             line-height: 1.6;
             font-display: swap;
             font-size-adjust: 0.5;
@@ -74,10 +102,14 @@
             display: flex;
             flex-direction: column;
         }
+        
         .header {
             text-align: center;
             margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
+        
         .logo {
             display: flex;
             align-items: center;
@@ -85,64 +117,96 @@
             gap: 1rem;
             margin-bottom: 1rem;
         }
+        
         .logo h1 {
             font-size: 2.5rem;
             font-weight: 800;
-            color: #1e293b;
+            color: #000000;
         }
+        
         .subtitle {
             font-size: 1.125rem;
-            color: #64748b;
+            color: #000000;
         }
         .quiz-container {
-            background: white;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             flex: 1;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        .quiz-container:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
         }
         
         /* Navigation styles */
         .navigation {
-            background: white;
-            border-radius: 1rem;
-            padding: 1rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .nav-links {
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 2rem;
+            align-items: center;
         }
         
         .nav-links a {
-            color: #3b82f6;
+            color: var(--gray-600);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
+            position: relative;
         }
         
         .nav-links a:hover {
-            background-color: #f1f5f9;
+            color: var(--primary);
+            background: var(--gray-100);
         }
         
         .nav-links a.active {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
+            color: var(--primary);
+            background: var(--gray-100);
+            font-weight: 600;
         }
         
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-container {
+                padding: 0 1rem;
                 flex-direction: column;
-                align-items: center;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
+
         .btn {
             padding: 0.875rem 1.75rem;
             border: none;
@@ -150,12 +214,37 @@
             font-size: 0.875rem;
             font-weight: 600;
             cursor: pointer;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Accent elements */
+        .accent-text {
+            color: var(--accent);
+            font-weight: 600;
         }
     </style>
     <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
@@ -188,8 +277,8 @@
         <defs>
             <!-- Gradient definitions -->
             <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
             </linearGradient>
             <!-- Graduation Cap -->
             <symbol id="icon-graduation-cap" viewBox="0 0 24 24">
@@ -342,11 +431,13 @@
         
         <!-- Navigation -->
         <nav class="navigation">
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="guide.html">Study Guide</a>
-                <a href="universities.html">Universities</a>
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="guide.html">Study Guide</a>
+                    <a href="universities.html">Universities</a>
+                </div>
             </div>
         </nav>
         
@@ -355,7 +446,7 @@
             <div class="logo">
                 <h1>China University Selector</h1>
             </div>
-            <p class="subtitle">Find your perfect Chinese university match</p>
+            <p class="subtitle">Find your <span class="accent-text">perfect Chinese university match</span></p>
         </header>
 
         <!-- Credits and Disclaimer -->
@@ -388,7 +479,7 @@
             <div class="quiz-step active" id="welcome">
                 <div class="step-content">
                     <h2>Welcome to China University Selector</h2>
-                    <p>Take our 9-step quiz to discover the perfect Chinese university for international students. Your guide to study abroad in China starts here.</p>
+                    <p>Take our <span class="accent-text">9-step quiz</span> to discover the perfect Chinese university for international students. Your guide to study abroad in China starts here.</p>
                     <div class="features">
                         <div class="feature">
                             <svg class="icon icon-sm"><use href="#icon-check-circle"></use></svg>

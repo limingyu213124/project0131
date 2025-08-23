@@ -32,27 +32,73 @@
     <!-- Favicon -->
     <link rel="icon" href="logo.png" type="image/png">
     
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    
     <link rel="stylesheet" href="styles.css">
     
     <style>
+        /* Notion-inspired design system */
+        :root {
+            --primary: #4F46E5;    /* 靛蓝 - 专业可信 */
+            --secondary: #06B6D4;  /* 青色 - 活力创新 */
+            --accent: #F59E0B;     /* 琥珀 - 点缀强调 */
+            --background: #F9FAFB; /* 浅灰背景 */
+            --text: #111827;       /* 深灰文字 */
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
         /* Guide page specific styles */
         .guide-container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 3rem 2rem;
         }
         
         .guide-section {
-            background: white;
-            border-radius: 1.5rem;
+            background: var(--white);
+            border-radius: 1rem;
             padding: 2.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
+
+        .guide-section:nth-child(2) { animation-delay: 0.1s; }
+        .guide-section:nth-child(3) { animation-delay: 0.2s; }
+        .guide-section:nth-child(4) { animation-delay: 0.3s; }
+        .guide-section:nth-child(5) { animation-delay: 0.4s; }
+        .guide-section:nth-child(6) { animation-delay: 0.5s; }
+        .guide-section:nth-child(7) { animation-delay: 0.6s; }
+        .guide-section:nth-child(8) { animation-delay: 0.7s; }
         
         .guide-section::before {
             content: '';
@@ -61,41 +107,40 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
         
         .guide-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--secondary);
         }
         
         .guide-section h2 {
-            color: #1e293b;
-            font-size: 2.25rem;
+            color: var(--text);
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 2rem;
-            position: relative;
-            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
-        
-        .guide-section h2::after {
+
+        .guide-section h2::before {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            width: 4px;
+            height: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
         
         .guide-section h3 {
-            color: #374151;
-            font-size: 1.5rem;
+            color: var(--gray-800);
+            font-size: 1.25rem;
             font-weight: 600;
-            margin: 2.5rem 0 1.5rem 0;
-            padding-left: 1.5rem;
-            border-left: 5px solid #3b82f6;
+            margin: 2rem 0 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid var(--primary);
             position: relative;
         }
         
@@ -106,21 +151,21 @@
             top: 0;
             bottom: 0;
             width: 1px;
-            background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+            background: var(--gray-300);
         }
         
         .guide-section p {
-            color: #4b5563;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
         }
         
         .guide-section ul {
-            color: #4b5563;
-            line-height: 1.8;
+            color: var(--gray-600);
+            line-height: 1.7;
             margin: 1.5rem 0;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
         }
         
         .guide-section li {
@@ -130,16 +175,16 @@
         }
         
         .guide-section li::before {
-            content: '→';
-            color: #3b82f6;
+            content: '•';
+            color: var(--primary);
             font-weight: bold;
             position: absolute;
-            left: -1.5rem;
+            left: -1rem;
         }
         
         .highlight-box {
-            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            border-left: 5px solid #3b82f6;
+            background: linear-gradient(135deg, var(--gray-50), var(--gray-100));
+            border-left: 4px solid var(--primary);
             padding: 2rem;
             border-radius: 1rem;
             margin: 2rem 0;
@@ -154,12 +199,12 @@
             right: 0;
             width: 100px;
             height: 100px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
             border-radius: 50%;
         }
         
         .highlight-box h4 {
-            color: #1e40af;
+            color: var(--primary);
             font-weight: 700;
             margin-bottom: 1rem;
             font-size: 1.25rem;
@@ -176,83 +221,78 @@
         }
         
         .back-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
             padding: 1rem 2rem;
             border-radius: 0.75rem;
             text-decoration: none;
             font-weight: 600;
             margin-top: 3rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
         }
         
         .back-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.4);
         }
         
         .navigation {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .nav-links {
             display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 2rem;
+            align-items: center;
         }
         
         .nav-links a {
-            color: #3b82f6;
+            color: var(--gray-600);
             text-decoration: none;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-        
-        .nav-links a:hover::before {
-            left: 0;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
         }
         
         .nav-links a:hover {
-            color: white;
-            transform: translateY(-2px);
+            color: var(--primary);
+            background: var(--gray-100);
         }
         
         .nav-links a.active {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            color: var(--primary);
+            background: var(--gray-100);
+            font-weight: 600;
         }
         
         .table-of-contents {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            border-radius: 1.5rem;
+            background: linear-gradient(135deg, var(--gray-50), var(--gray-100));
+            border-radius: 1rem;
             padding: 2rem;
-            margin-bottom: 3rem;
-            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+            border: 1px solid var(--gray-200);
             position: relative;
             overflow: hidden;
         }
@@ -264,11 +304,11 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
         
         .table-of-contents h3 {
-            color: #1e293b;
+            color: var(--text);
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
             font-weight: 700;
@@ -286,7 +326,7 @@
         }
         
         .table-of-contents a {
-            color: #3b82f6;
+            color: var(--primary);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -304,13 +344,13 @@
             transform: translateY(-50%);
             width: 0;
             height: 2px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             transition: width 0.3s ease;
         }
         
         .table-of-contents a:hover {
-            color: #1d4ed8;
-            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            background: rgba(79, 70, 229, 0.1);
             transform: translateX(5px);
         }
         
@@ -348,28 +388,21 @@
     <div class="container">
         <!-- Navigation -->
         <nav class="navigation">
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="guide.html" class="active">Study Guide</a>
-                <a href="universities.html">Universities</a>
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="guide.html" class="active">Study Guide</a>
+                    <a href="universities.html">Universities</a>
+                </div>
             </div>
         </nav>
 
         <div class="guide-container">
-            <!-- Breadcrumb Navigation -->
-            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
-                <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #64748b;">
-                    <li><a href="index.html" style="color: #3b82f6; text-decoration: none;">Home</a></li>
-                    <li style="color: #94a3b8;">/</li>
-                    <li style="color: #1e293b; font-weight: 600;">Study Guide</li>
-                </ol>
-            </nav>
-            
             <!-- Introduction -->
             <section class="guide-section">
                 <h2>Complete Guide to Studying Abroad in China 2025</h2>
-                <p>China has emerged as one of the most attractive destinations for international students seeking quality higher education at an affordable cost. With its rapid economic development, world-class universities, rich cultural heritage, and increasing global influence, China offers unique opportunities for students from around the world to gain valuable academic and cultural experiences.</p>
+                <p>China has emerged as one of the most <span class="accent-text">attractive destinations</span> for international students seeking quality higher education at an affordable cost. With its rapid economic development, world-class universities, rich cultural heritage, and increasing global influence, China offers unique opportunities for students from around the world to gain valuable academic and cultural experiences.</p>
                 
                 <p>This comprehensive guide will walk you through every aspect of studying in China, from understanding why China is an excellent choice for international education to navigating the application process, securing visas, managing costs, and adapting to student life in this fascinating country. Whether you're considering undergraduate, graduate, or language study programs, this guide provides the essential information you need to make informed decisions about your educational journey in China.</p>
             </section>
@@ -549,12 +582,17 @@
 
             <!-- Back to Home -->
             <div style="text-align: center;">
-                <a href="index.html" class="back-link">← Back to Home</a>
+                <a href="index.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Home
+                </a>
             </div>
         </div>
     </div>
     
-    <!-- Enhanced Structured Data (JSON-LD) -->
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -563,23 +601,21 @@
       "description": "Comprehensive guide for international students planning to study in China. Everything you need to know about applications, visas, costs, and student life.",
       "author": {
         "@type": "Organization",
-        "name": "China University Selector",
-        "url": "https://findchinaschool.com/"
+        "name": "China University Selector"
       },
       "publisher": {
         "@type": "Organization",
         "name": "China University Selector",
-        "url": "https://findchinaschool.com/",
-        "logo": "https://findchinaschool.com/logo.png"
+        "url": "https://findchinaschool.com/"
       },
-      "datePublished": "2025-08-18",
-      "dateModified": "2025-08-18",
+             "datePublished": "2025-08-18",
+       "dateModified": "2025-08-18",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://findchinaschool.com/guide.html"
       },
       "articleSection": "Study Abroad Guide",
-      "keywords": "study abroad China, international students China, Chinese university guide, China education, study in China, China student visa, China scholarships, Chinese university admission, study in China 2025",
+      "keywords": "study abroad China, international students China, Chinese university guide, China education, study in China, China student visa, China scholarships",
       "inLanguage": "en",
       "educationalUse": "Study guide for international students",
       "learningResourceType": "Guide",
@@ -599,130 +635,6 @@
         {
           "@type": "Thing",
           "name": "International Student Visa"
-        },
-        {
-          "@type": "Thing",
-          "name": "Chinese Education System"
-        },
-        {
-          "@type": "Thing",
-          "name": "Student Life in China"
-        }
-      ],
-      "mentions": [
-        {
-          "@type": "Place",
-          "name": "China",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "CN"
-          }
-        },
-        {
-          "@type": "Thing",
-          "name": "Tsinghua University"
-        },
-        {
-          "@type": "Thing",
-          "name": "Peking University"
-        },
-        {
-          "@type": "Thing",
-          "name": "Fudan University"
-        }
-      ],
-      "wordCount": "5000",
-      "timeRequired": "PT30M",
-      "isAccessibleForFree": true,
-      "license": "https://creativecommons.org/licenses/by/4.0/"
-    }
-    </script>
-    
-    <!-- BreadcrumbList Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://findchinaschool.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Study Guide",
-          "item": "https://findchinaschool.com/guide.html"
-        }
-      ]
-    }
-    </script>
-    
-    <!-- HowTo Structured Data for Application Process -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Apply to Chinese Universities",
-      "description": "Step-by-step guide for international students applying to Chinese universities",
-      "image": "https://findchinaschool.com/guide-image.jpg",
-      "totalTime": "PT6M",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "USD",
-        "value": "0"
-      },
-      "step": [
-        {
-          "@type": "HowToStep",
-          "name": "Research Universities",
-          "text": "Research and select Chinese universities that match your academic interests and budget",
-          "url": "https://findchinaschool.com/universities.html"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Prepare Documents",
-          "text": "Gather required documents including academic transcripts, language test scores, and personal statement"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Submit Application",
-          "text": "Complete and submit your application through the university's online portal"
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Apply for Visa",
-          "text": "Once accepted, apply for a student visa at the Chinese embassy or consulate"
-        }
-      ],
-      "supply": [
-        {
-          "@type": "HowToSupply",
-          "name": "Academic Transcripts"
-        },
-        {
-          "@type": "HowToSupply",
-          "name": "Language Test Scores"
-        },
-        {
-          "@type": "HowToSupply",
-          "name": "Personal Statement"
-        },
-        {
-          "@type": "HowToSupply",
-          "name": "Letters of Recommendation"
-        }
-      ],
-      "tool": [
-        {
-          "@type": "HowToTool",
-          "name": "Computer with Internet Access"
-        },
-        {
-          "@type": "HowToTool",
-          "name": "Valid Passport"
         }
       ]
     }

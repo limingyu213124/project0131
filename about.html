@@ -32,110 +32,229 @@
     <!-- Favicon -->
     <link rel="icon" href="logo.png" type="image/png">
     
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    
     <link rel="stylesheet" href="styles.css">
     
     <style>
-        /* About page specific styles */
-        .about-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
+        /* Notion-inspired design system */
+        :root {
+            --primary: #4F46E5;    /* 靛蓝 - 专业可信 */
+            --secondary: #06B6D4;  /* 青色 - 活力创新 */
+            --accent: #F59E0B;     /* 琥珀 - 点缀强调 */
+            --background: #F9FAFB; /* 浅灰背景 */
+            --text: #111827;       /* 深灰文字 */
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --white: #ffffff;
         }
-        
-        .about-section {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
+
+        * {
+            box-sizing: border-box;
         }
-        
-        .about-section::before {
-            content: '';
-            position: absolute;
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation */
+        .navigation {
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1rem 0;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
         }
-        
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background: var(--gray-100);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            background: var(--gray-100);
+            font-weight: 600;
+        }
+
+        /* Main container */
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Page header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Accent elements */
+        .accent-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .accent-border {
+            border-left: 3px solid var(--accent) !important;
+        }
+
+        /* Content sections */
+        .about-section {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .about-section:nth-child(2) { animation-delay: 0.1s; }
+        .about-section:nth-child(3) { animation-delay: 0.2s; }
+        .about-section:nth-child(4) { animation-delay: 0.3s; }
+        .about-section:nth-child(5) { animation-delay: 0.4s; }
+        .about-section:nth-child(6) { animation-delay: 0.5s; }
+        .about-section:nth-child(7) { animation-delay: 0.6s; }
+        .about-section:nth-child(8) { animation-delay: 0.7s; }
+
         .about-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+            border-color: var(--secondary);
         }
-        
+
         .about-section h2 {
-            color: #1e293b;
-            font-size: 2rem;
+            color: var(--text);
+            font-size: 1.875rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
-        
-        .about-section h2::after {
+
+        .about-section h2::before {
             content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            width: 4px;
+            height: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
-        
+
         .about-section h3 {
-            color: #374151;
-            font-size: 1.375rem;
+            color: var(--gray-800);
+            font-size: 1.25rem;
             font-weight: 600;
             margin: 2rem 0 1rem 0;
             padding-left: 1rem;
-            border-left: 4px solid #3b82f6;
+            border-left: 3px solid var(--primary);
         }
-        
+
         .about-section p {
-            color: #4b5563;
-            line-height: 1.8;
+            color: var(--gray-600);
+            line-height: 1.7;
             margin-bottom: 1.25rem;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
-        
+
         .about-section ul {
-            color: #4b5563;
-            line-height: 1.8;
+            color: var(--gray-600);
+            line-height: 1.7;
             margin: 1.5rem 0;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
         }
-        
+
         .about-section li {
             margin-bottom: 0.75rem;
             position: relative;
             padding-left: 0.5rem;
         }
-        
+
         .about-section li::before {
             content: '•';
-            color: #3b82f6;
+            color: var(--primary);
             font-weight: bold;
             position: absolute;
             left: -1rem;
         }
-        
+
+        /* Contact info card */
         .contact-info {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
             padding: 2rem;
             border-radius: 1rem;
             margin: 1.5rem 0;
             position: relative;
             overflow: hidden;
         }
-        
+
         .contact-info::before {
             content: '';
             position: absolute;
@@ -146,272 +265,269 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
-        
+
         .contact-info h3 {
-            color: white;
+            color: var(--white);
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
         }
-        
+
         .contact-info p {
             color: rgba(255, 255, 255, 0.9);
             position: relative;
             z-index: 1;
         }
-        
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: underline;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Back link */
         .back-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
             padding: 1rem 2rem;
             border-radius: 0.75rem;
             text-decoration: none;
             font-weight: 600;
             margin-top: 3rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
         }
-        
+
         .back-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-        }
-        
-        .navigation {
-            background: white;
-            border-radius: 1.5rem;
-            padding: 1.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .nav-links a {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-        
-        .nav-links a:hover::before {
-            left: 0;
-        }
-        
-        .nav-links a:hover {
-            color: white;
             transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.4);
         }
-        
-        .nav-links a.active {
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            color: white;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
+        /* Responsive design */
         @media (max-width: 768px) {
-            .about-container {
-                padding: 1rem;
-            }
-            
-            .about-section {
-                padding: 1.5rem;
-                margin-bottom: 2rem;
-            }
-            
-            .nav-links {
+            .nav-container {
+                padding: 0 1rem;
                 flex-direction: column;
-                align-items: center;
                 gap: 1rem;
             }
-            
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-container {
+                padding: 2rem 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.25rem;
+            }
+
+            .page-header p {
+                font-size: 1.125rem;
+            }
+
+            .about-section {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
             .about-section h2 {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-section {
+                padding: 1.25rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Navigation -->
-        <nav class="navigation">
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html" class="active">About</a>
                 <a href="guide.html">Study Guide</a>
                 <a href="universities.html">Universities</a>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <div class="about-container">
-            <!-- Breadcrumb Navigation -->
-            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
-                <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #64748b;">
-                    <li><a href="index.html" style="color: #3b82f6; text-decoration: none;">Home</a></li>
-                    <li style="color: #94a3b8;">/</li>
-                    <li style="color: #1e293b; font-weight: 600;">About</li>
-                </ol>
-            </nav>
+    <div class="about-container">
+        <!-- Page Header -->
+        <header class="page-header">
+            <h1>About Us</h1>
+            <p>Discover our mission to help international students find their perfect Chinese university through personalized guidance and comprehensive resources.</p>
+        </header>
+
+        <!-- Website Introduction -->
+        <section class="about-section">
+            <h2>China University Selector</h2>
+            <p>China University Selector is a comprehensive, free online platform designed specifically for international students seeking higher education opportunities in China. Our mission is to bridge the gap between global students and Chinese universities by providing accurate, up-to-date information and personalized recommendations through an innovative interactive quiz system.</p>
             
-            <!-- Website Introduction -->
-            <section class="about-section">
-                <h2>About China University Selector</h2>
-                <p>China University Selector is a comprehensive, free online platform designed specifically for international students seeking higher education opportunities in China. Our mission is to bridge the gap between global students and Chinese universities by providing accurate, up-to-date information and personalized recommendations through an innovative interactive quiz system.</p>
-                
-                <p>Founded with the understanding that choosing the right university is one of the most critical decisions in a student's academic journey, we've developed a sophisticated matching algorithm that considers multiple factors including academic interests, budget constraints, location preferences, language requirements, and career aspirations. Our platform features detailed profiles of top Chinese universities, comprehensive application guides, and real-time information about programs, fees, and admission requirements.</p>
-                
-                <p>What sets China University Selector apart is our commitment to providing completely free, unbiased information. We believe that quality education guidance should be accessible to all students, regardless of their financial background. Our platform is regularly updated with the latest information from official university sources, ensuring that students receive accurate and current data to make informed decisions about their academic future in China.</p>
-                
-                <p>The platform serves as a comprehensive resource hub, offering not just university matching services, but also detailed guides on visa applications, scholarship opportunities, cultural adaptation, and practical tips for living and studying in China. We understand that studying abroad involves more than just academic considerations, which is why we provide holistic support to help students navigate every aspect of their educational journey in China.</p>
-            </section>
+            <p>Founded with the understanding that choosing the right university is one of the most critical decisions in a student's academic journey, we've developed a sophisticated matching algorithm that considers multiple factors including academic interests, budget constraints, location preferences, language requirements, and career aspirations. Our platform features detailed profiles of top Chinese universities, comprehensive application guides, and real-time information about programs, fees, and admission requirements.</p>
+            
+            <p>What sets China University Selector apart is our commitment to providing completely free, unbiased information. We believe that quality education guidance should be accessible to all students, regardless of their financial background. Our platform is regularly updated with the latest information from official university sources, ensuring that students receive accurate and current data to make informed decisions about their academic future in China.</p>
+            
+            <p>The platform serves as a comprehensive resource hub, offering not just university matching services, but also detailed guides on visa applications, scholarship opportunities, cultural adaptation, and practical tips for living and studying in China. We understand that studying abroad involves more than just academic considerations, which is why we provide holistic support to help students navigate every aspect of their educational journey in China.</p>
+        </section>
 
-            <!-- Our Mission -->
-            <section class="about-section">
-                <h2>Our Mission</h2>
-                <p>Our mission is to democratize access to quality education information and empower international students to make informed decisions about studying in China. We strive to:</p>
-                <ul>
-                    <li><strong>Simplify the university selection process</strong> by providing personalized recommendations based on individual preferences and requirements</li>
-                    <li><strong>Provide accurate and comprehensive information</strong> about Chinese universities, programs, and admission processes</li>
-                    <li><strong>Support cultural exchange</strong> by facilitating international students' access to Chinese higher education</li>
-                    <li><strong>Promote transparency</strong> in university information and application procedures</li>
-                    <li><strong>Foster global education opportunities</strong> by connecting students with world-class institutions in China</li>
-                </ul>
-            </section>
+        <!-- Our Mission -->
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to <span class="accent-text">democratize access to quality education information</span> and empower international students to make informed decisions about studying in China. We strive to:</p>
+            <ul>
+                <li><strong>Simplify the university selection process</strong> by providing personalized recommendations based on individual preferences and requirements</li>
+                <li><strong>Provide accurate and comprehensive information</strong> about Chinese universities, programs, and admission processes</li>
+                <li><strong>Support cultural exchange</strong> by facilitating international students' access to Chinese higher education</li>
+                <li><strong>Promote transparency</strong> in university information and application procedures</li>
+                <li><strong>Foster global education opportunities</strong> by connecting students with world-class institutions in China</li>
+            </ul>
+        </section>
 
-            <!-- Data Sources -->
-            <section class="about-section">
-                <h2>Data Sources and Accuracy</h2>
-                <p>We are committed to providing the most accurate and up-to-date information possible. Our data is sourced from:</p>
-                <ul>
-                    <li><strong>Official University Websites:</strong> Direct information from university official portals and admission offices</li>
-                    <li><strong>Government Education Portals:</strong> Data from Chinese Ministry of Education and related government agencies</li>
-                    <li><strong>International Rankings:</strong> Information from reputable ranking organizations like QS World University Rankings and Times Higher Education</li>
-                    <li><strong>Student Feedback:</strong> Verified reviews and experiences from current and former international students</li>
-                    <li><strong>Regular Updates:</strong> Our database is updated quarterly to ensure information accuracy</li>
-                </ul>
-                <p>While we strive for accuracy, we recommend that students always verify information directly with universities before making final decisions, as admission requirements and program details may change.</p>
-            </section>
+        <!-- Data Sources -->
+        <section class="about-section">
+            <h2>Data Sources and Accuracy</h2>
+            <p>We are committed to providing the <span class="accent-text">most accurate and up-to-date information</span> possible. Our data is sourced from:</p>
+            <ul>
+                <li><strong>Official University Websites:</strong> Direct information from university official portals and admission offices</li>
+                <li><strong>Government Education Portals:</strong> Data from Chinese Ministry of Education and related government agencies</li>
+                <li><strong>International Rankings:</strong> Information from reputable ranking organizations like QS World University Rankings and Times Higher Education</li>
+                <li><strong>Student Feedback:</strong> Verified reviews and experiences from current and former international students</li>
+                <li><strong>Regular Updates:</strong> Our database is updated quarterly to ensure information accuracy</li>
+            </ul>
+            <p>While we strive for accuracy, we recommend that students always verify information directly with universities before making final decisions, as admission requirements and program details may change.</p>
+        </section>
 
-            <!-- Contact Information -->
-            <section class="about-section">
-                <h2>Contact Us</h2>
-                <div class="contact-info">
-                    <h3>Get in Touch</h3>
-                    <p><strong>Reddit:</strong> <a href="https://reddit.com/user/karelia322" style="color: white; text-decoration: underline;">u/karelia322</a></p>
-                    <p>We're here to help with any questions about studying in China or using our platform. Feel free to reach out through Reddit for support, feedback, or suggestions.</p>
-                </div>
-            </section>
-
-            <!-- Privacy Policy -->
-            <section class="about-section">
-                <h2>Privacy Policy</h2>
-                <p><strong>Last updated:</strong> August 2025</p>
-                
-                <h3>Information We Collect</h3>
-                <p>We collect information you provide directly to us, such as quiz responses and preferences. We also automatically collect certain information about your device and how you interact with our website.</p>
-                
-                <h3>How We Use Your Information</h3>
-                <p>We use the information we collect to provide our university matching services, improve our platform, and communicate with you about relevant educational opportunities.</p>
-                
-                <h3>Information Sharing</h3>
-                <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.</p>
-                
-                <h3>Data Security</h3>
-                <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
-                
-                <h3>Your Rights</h3>
-                <p>You have the right to access, correct, or delete your personal information. You may also opt out of certain communications from us.</p>
-            </section>
-
-            <!-- Terms of Service -->
-            <section class="about-section">
-                <h2>Terms of Service</h2>
-                <p><strong>Last updated:</strong> August 2025</p>
-                
-                <h3>Acceptance of Terms</h3>
-                <p>By accessing and using China University Selector, you accept and agree to be bound by the terms and provision of this agreement.</p>
-                
-                <h3>Use License</h3>
-                <p>Permission is granted to temporarily access the materials on China University Selector for personal, non-commercial transitory viewing only.</p>
-                
-                <h3>Disclaimer</h3>
-                <p>The materials on China University Selector are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
-                
-                <h3>Limitations</h3>
-                <p>In no event shall China University Selector or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website.</p>
-                
-                <h3>Revisions and Errata</h3>
-                <p>The materials appearing on China University Selector could include technical, typographical, or photographic errors. We do not warrant that any of the materials on our website are accurate, complete, or current.</p>
-            </section>
-
-            <!-- Copyright Notice -->
-            <section class="about-section">
-                <h2>Copyright Notice</h2>
-                <p><strong>© 2025 China University Selector. All rights reserved.</strong></p>
-                
-                <p>All content on this website, including but not limited to text, graphics, logos, images, and software, is the property of China University Selector or its content suppliers and is protected by international copyright laws.</p>
-                
-                <p><strong>Permitted Use:</strong> You may view, download, and print content for personal, non-commercial use only, provided that you retain all copyright and other proprietary notices contained in the original materials.</p>
-                
-                <p><strong>Restricted Use:</strong> You may not reproduce, distribute, modify, or create derivative works from any content on this website without our express written permission.</p>
-                
-                <p><strong>Third-Party Content:</strong> Some content may be sourced from third parties. We respect intellectual property rights and will remove any content that infringes on copyrights upon notification.</p>
-            </section>
-
-            <!-- Back to Home -->
-            <div style="text-align: center;">
-                <a href="index.html" class="back-link">← Back to Home</a>
+        <!-- Contact Information -->
+        <section class="about-section">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><strong>Reddit:</strong> <a href="https://reddit.com/user/karelia322">u/karelia322</a></p>
+                <p>We're here to help with any questions about studying in China or using our platform. Feel free to reach out through Reddit for support, feedback, or suggestions.</p>
             </div>
+        </section>
+
+        <!-- Privacy Policy -->
+        <section class="about-section">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated:</strong> August 2025</p>
+            
+            <h3>Information We Collect</h3>
+            <p>We collect information you provide directly to us, such as quiz responses and preferences. We also automatically collect certain information about your device and how you interact with our website.</p>
+            
+            <h3>How We Use Your Information</h3>
+            <p>We use the information we collect to provide our university matching services, improve our platform, and communicate with you about relevant educational opportunities.</p>
+            
+            <h3>Information Sharing</h3>
+            <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.</p>
+            
+            <h3>Data Security</h3>
+            <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+            
+            <h3>Your Rights</h3>
+            <p>You have the right to access, correct, or delete your personal information. You may also opt out of certain communications from us.</p>
+        </section>
+
+        <!-- Terms of Service -->
+        <section class="about-section">
+            <h2>Terms of Service</h2>
+            <p><strong>Last updated:</strong> August 2025</p>
+            
+            <h3>Acceptance of Terms</h3>
+            <p>By accessing and using China University Selector, you accept and agree to be bound by the terms and provision of this agreement.</p>
+            
+            <h3>Use License</h3>
+            <p>Permission is granted to temporarily access the materials on China University Selector for personal, non-commercial transitory viewing only.</p>
+            
+            <h3>Disclaimer</h3>
+            <p>The materials on China University Selector are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+            
+            <h3>Limitations</h3>
+            <p>In no event shall China University Selector or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website.</p>
+            
+            <h3>Revisions and Errata</h3>
+            <p>The materials appearing on China University Selector could include technical, typographical, or photographic errors. We do not warrant that any of the materials on our website are accurate, complete, or current.</p>
+        </section>
+
+        <!-- Copyright Notice -->
+        <section class="about-section">
+            <h2>Copyright Notice</h2>
+            <p><strong>© 2025 China University Selector. All rights reserved.</strong></p>
+            
+            <p>All content on this website, including but not limited to text, graphics, logos, images, and software, is the property of China University Selector or its content suppliers and is protected by international copyright laws.</p>
+            
+            <p><strong>Permitted Use:</strong> You may view, download, and print content for personal, non-commercial use only, provided that you retain all copyright and other proprietary notices contained in the original materials.</p>
+            
+            <p><strong>Restricted Use:</strong> You may not reproduce, distribute, modify, or create derivative works from any content on this website without our express written permission.</p>
+            
+            <p><strong>Third-Party Content:</strong> Some content may be sourced from third parties. We respect intellectual property rights and will remove any content that infringes on copyrights upon notification.</p>
+        </section>
+
+        <!-- Back to Home -->
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Home
+            </a>
         </div>
     </div>
     
-    <!-- Enhanced Structured Data (JSON-LD) -->
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "China University Selector",
-      "alternateName": "中国大学选择器",
       "description": "Free online platform helping international students find their perfect Chinese university through personalized recommendations and comprehensive guides.",
       "url": "https://findchinaschool.com/",
       "logo": "https://findchinaschool.com/logo.png",
-      "image": "https://findchinaschool.com/logo.png",
       "sameAs": [
         "https://reddit.com/user/karelia322"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "url": "https://reddit.com/user/karelia322",
-        "availableLanguage": ["English", "Chinese"]
+        "url": "https://reddit.com/user/karelia322"
       },
       "foundingDate": "2025",
       "areaServed": "Worldwide",
@@ -425,11 +541,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "University Matching Quiz",
-              "description": "Interactive quiz to match students with Chinese universities",
-              "provider": {
-                "@type": "Organization",
-                "name": "China University Selector"
-              }
+              "description": "Interactive quiz to match students with Chinese universities"
             }
           },
           {
@@ -437,94 +549,11 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Study Abroad Guide",
-              "description": "Comprehensive guide for studying in China",
-              "provider": {
-                "@type": "Organization",
-                "name": "China University Selector"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "University Database",
-              "description": "Comprehensive database of Chinese universities with detailed information",
-              "provider": {
-                "@type": "Organization",
-                "name": "China University Selector"
-              }
+              "description": "Comprehensive guide for studying in China"
             }
           }
         ]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "CN"
-      },
-      "knowsAbout": [
-        "Chinese Universities",
-        "Study Abroad in China",
-        "International Student Admissions",
-        "Chinese Education System",
-        "University Rankings"
-      ],
-      "makesOffer": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Free University Matching",
-            "description": "Free service to help international students find suitable Chinese universities"
-          }
-        }
-      ]
-    }
-    </script>
-    
-    <!-- BreadcrumbList Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://findchinaschool.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "About",
-          "item": "https://findchinaschool.com/about.html"
-        }
-      ]
-    }
-    </script>
-    
-    <!-- WebPage Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "About China University Selector",
-      "description": "Learn about China University Selector - the free tool helping international students find their perfect Chinese university. Our mission, data sources, and commitment to quality education guidance.",
-      "url": "https://findchinaschool.com/about.html",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "China University Selector"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "China University Selector",
-        "url": "https://findchinaschool.com/"
-      },
-      "inLanguage": "en",
-      "isAccessibleForFree": true,
-      "datePublished": "2025-08-18",
-      "dateModified": "2025-08-18"
+      }
     }
     </script>
 </body>
