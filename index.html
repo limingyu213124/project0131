@@ -62,8 +62,20 @@
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="shortcut icon" href="logo.png" type="image/png">
     
-    <!-- Framer Motion -->
-    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <!-- Framer Motion - Deferred Loading -->
+    <script>
+        // Defer Framer Motion loading to improve initial page performance
+        window.addEventListener('load', function() {
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js';
+            script.async = true;
+            script.onload = function() {
+                // Framer Motion loaded, can enhance animations if needed
+                console.log('Framer Motion loaded successfully');
+            };
+            document.head.appendChild(script);
+        });
+    </script>
     
     <style>
         /* Notion-inspired design system */
