@@ -40,20 +40,8 @@
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="shortcut icon" href="logo.png" type="image/png">
     
-    <!-- Framer Motion - Deferred Loading -->
-    <script>
-        // Defer Framer Motion loading to improve initial page performance
-        window.addEventListener('load', function() {
-            const script = document.createElement('script');
-            script.src = 'https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js';
-            script.async = true;
-            script.onload = function() {
-                // Framer Motion loaded, can enhance animations if needed
-                console.log('Framer Motion loaded successfully');
-            };
-            document.head.appendChild(script);
-        });
-    </script>
+    <!-- Framer Motion -->
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
     
     <link rel="stylesheet" href="styles.css">
     
@@ -462,8 +450,9 @@
             <div class="contact-info">
                 <h3>Get in Touch</h3>
                 <p><strong>Email:</strong> <a href="mailto:support@findchinaschool.com">support@findchinaschool.com</a></p>
+                <p><strong>Twitter:</strong> <a href="https://x.com/findchinaschool" target="_blank">@findchinaschool</a></p>
                 <p><strong>Reddit:</strong> <a href="https://reddit.com/user/karelia322">u/karelia322</a></p>
-                <p>We're here to help with any questions about studying in China or using our platform. Feel free to reach out through email or Reddit for support, feedback, or suggestions.</p>
+                <p>We're here to help with any questions about studying in China or using our platform. Feel free to reach out through email, Twitter, or Reddit for support, feedback, or suggestions.</p>
             </div>
         </section>
 
@@ -544,6 +533,7 @@
       "url": "https://findchinaschool.com/",
       "logo": "https://findchinaschool.com/logo.png",
       "sameAs": [
+        "https://x.com/findchinaschool",
         "https://reddit.com/user/karelia322"
       ],
       "contactPoint": {
