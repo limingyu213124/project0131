@@ -100,83 +100,74 @@
         /* Navigation styles */
         .navigation {
             background: var(--white);
-            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--gray-200);
+            padding: 0.75rem 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1.5rem;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
         }
-
+        
         .nav-links a {
-            color: var(--text);
+            color: var(--gray-600);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
         }
-
+        
         .nav-links a:hover {
             color: var(--primary);
+            background: var(--gray-100);
         }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        
+        .nav-links a.active {
+            color: var(--primary);
+            background: var(--gray-100);
+            font-weight: 600;
         }
 
         /* Blog container styles */
         .blog-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 2rem 1.5rem;
         }
 
         .page-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease-out forwards;
         }
 
         .page-header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--text);
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             margin-bottom: 1rem;
         }
 
         .page-header p {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             color: var(--gray-600);
             max-width: 600px;
             margin: 0 auto;
@@ -186,16 +177,15 @@
         .blog-categories {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .category-card {
             background: var(--white);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid var(--gray-200);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -208,43 +198,22 @@
         .category-card:nth-child(3) { animation-delay: 0.3s; }
         .category-card:nth-child(4) { animation-delay: 0.4s; }
 
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-        }
-
         .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            border-color: var(--secondary);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
         }
 
         .category-card h3 {
             color: var(--text);
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .category-card h3::before {
-            content: '';
-            width: 3px;
-            height: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 2px;
+            margin-bottom: 0.75rem;
         }
 
         .category-card p {
             color: var(--gray-600);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
 
         .category-card .status {
@@ -270,33 +239,80 @@
         /* Article styles */
         .article {
             background: var(--white);
-            border-radius: 1rem;
-            padding: 3rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid var(--gray-200);
-            margin-bottom: 2rem;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 1.5rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease-out 0.5s forwards;
         }
 
         .article h2 {
             color: var(--text);
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            position: relative;
         }
 
-        .article h2::before {
-            content: '';
-            position: absolute;
-            bottom: -0.5rem;
-            left: 0;
-            width: 3rem;
-            height: 3px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 2px;
+        .article h3 {
+            color: var(--gray-800);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
         }
+
+        .article h4 {
+            color: var(--gray-800);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .article p {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .article ul, .article ol {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            list-style: none;
+        }
+
+        .article ol {
+            list-style: decimal;
+            padding-left: 2rem;
+        }
+
+        .article ol li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .article ol li::before {
+            display: none;
+        }
+
+        .article li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .article li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+
+
 
         .article-meta {
             color: var(--gray-500);
@@ -459,6 +475,24 @@
             }
         }
 
+        .back-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.3);
+        }
+
         /* Responsive design */
         @media (max-width: 768px) {
             .blog-container {
@@ -496,20 +530,22 @@
                 <a href="about.html">About</a>
                 <a href="guide.html">Guide</a>
                 <a href="universities.html">Universities</a>
-                <a href="blog.html" style="color: var(--primary);">Blog</a>
+                <a href="blog.html" class="active">Blog</a>
             </div>
         </div>
     </nav>
 
     <div class="blog-container">
         <!-- Breadcrumb Navigation -->
-        <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
-            <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--gray-600);">
-                <li><a href="index.html" style="color: var(--primary); text-decoration: none;">Home</a></li>
-                <li style="color: var(--gray-400);">/</li>
-                <li style="color: var(--text); font-weight: 600;">Blog</li>
-            </ol>
-        </nav>
+        <section class="universities-section" style="padding: 1rem 1.5rem; margin-bottom: 1.5rem;">
+            <nav aria-label="Breadcrumb" style="margin-bottom: 0;">
+                <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--gray-600);">
+                    <li><a href="index.html" style="color: var(--primary); text-decoration: none;">Home</a></li>
+                    <li style="color: var(--gray-400);">/</li>
+                    <li style="color: var(--text); font-weight: 600;">Blog</li>
+                </ol>
+            </nav>
+        </section>
 
         <!-- Page Header -->
         <div class="page-header">
@@ -553,160 +589,163 @@
                 <span>📊 Category: Application Tips</span>
             </div>
 
-            <p>Applying to Chinese universities can seem overwhelming, but with the right guidance, it's entirely manageable. This comprehensive guide will walk you through every step of the application process, from initial research to enrollment confirmation.</p>
+            <p>Applying to Chinese universities doesn't have to be complicated. Here's what you need to know to get started.</p>
 
-            <h3>1. Understanding the Application Timeline</h3>
-            <p>Chinese universities typically have two main intake periods: Spring (February/March) and Fall (September). Most international students apply for the Fall semester, which offers more program options and better weather for initial adjustment.</p>
+            <h3>Application Timeline</h3>
+            <p>Most students apply for the Fall semester (September start). Here's a simple timeline:</p>
             
             <div class="highlight-box">
-                <h4>Key Timeline for Fall 2026 Intake</h4>
-                <p><strong>October 2025 - January 2026:</strong> Research universities and programs<br>
-                <strong>February - March 2026:</strong> Prepare application materials<br>
+                <h4>Fall 2026 Timeline</h4>
+                <p><strong>October 2025 - January 2026:</strong> Research universities<br>
+                <strong>February - March 2026:</strong> Prepare documents<br>
                 <strong>April - May 2026:</strong> Submit applications<br>
-                <strong>June - July 2026:</strong> Receive admission decisions<br>
-                <strong>August 2026:</strong> Apply for student visa<br>
-                <strong>September 2026:</strong> Arrive in China and register</p>
+                <strong>June - July 2026:</strong> Get admission decisions<br>
+                <strong>August 2026:</strong> Apply for visa<br>
+                <strong>September 2026:</strong> Arrive in China</p>
             </div>
 
-            <h3>2. Essential Application Requirements</h3>
-            <p>While specific requirements vary by university and program, most Chinese universities require the following documents:</p>
+            <h3>Required Documents</h3>
+            <p>You'll need these basic documents:</p>
             
             <ul>
-                <li><strong>Academic Records:</strong> Official transcripts and diplomas from previous education</li>
-                <li><strong>Language Proficiency:</strong> HSK certificate for Chinese-taught programs or IELTS/TOEFL for English-taught programs</li>
-                <li><strong>Personal Statement:</strong> 500-1000 words explaining your motivation and goals</li>
-                <li><strong>Letters of Recommendation:</strong> Usually 2-3 from professors or employers</li>
-                <li><strong>Passport Copy:</strong> Valid passport with at least 12 months validity</li>
-                <li><strong>Financial Proof:</strong> Bank statements showing sufficient funds for tuition and living expenses</li>
-                <li><strong>Health Certificate:</strong> Medical examination report</li>
+                <li><strong>Academic Records:</strong> Transcripts and diplomas</li>
+                <li><strong>Language Test:</strong> HSK for Chinese programs, IELTS/TOEFL for English programs</li>
+                <li><strong>Personal Statement:</strong> Why you want to study in China</li>
+                <li><strong>Recommendation Letters:</strong> 2-3 from teachers or employers</li>
+                <li><strong>Passport Copy:</strong> Valid for at least 12 months</li>
+                <li><strong>Financial Proof:</strong> Bank statements</li>
+                <li><strong>Health Certificate:</strong> Medical check-up</li>
             </ul>
 
-            <h3>3. Language Requirements and Preparation</h3>
-            <p>Language requirements are crucial for your application success. Chinese universities offer programs in both Chinese and English, each with different requirements:</p>
+            <h3>Language Requirements</h3>
+            <p>You need to prove your language skills:</p>
 
-            <h4>For Chinese-Taught Programs:</h4>
+            <h4>Chinese Programs:</h4>
             <ul>
-                <li><strong>Undergraduate:</strong> HSK Level 4 or higher (minimum 180 points)</li>
-                <li><strong>Graduate:</strong> HSK Level 5 or higher (minimum 180 points)</li>
-                <li><strong>Doctoral:</strong> HSK Level 6 (minimum 180 points)</li>
+                <li><strong>Undergraduate:</strong> HSK Level 4+</li>
+                <li><strong>Graduate:</strong> HSK Level 5+</li>
+                <li><strong>Doctoral:</strong> HSK Level 6</li>
             </ul>
 
-            <h4>For English-Taught Programs:</h4>
+            <h4>English Programs:</h4>
             <ul>
-                <li><strong>IELTS:</strong> 6.0 or higher (no band below 5.5)</li>
-                <li><strong>TOEFL iBT:</strong> 80 or higher</li>
-                <li><strong>TOEFL PBT:</strong> 550 or higher</li>
+                <li><strong>IELTS:</strong> 6.0+</li>
+                <li><strong>TOEFL:</strong> 80+</li>
             </ul>
 
             <div class="highlight-box">
-                <h4>Pro Tip: Language Preparation</h4>
-                <p>Start preparing for language tests at least 6 months before your application deadline. Consider taking intensive language courses or using online platforms like Duolingo, HelloChinese, or iTalki for practice.</p>
+                <h4>Language Tips</h4>
+                <p>Start studying 6 months before your test. Use apps like Duolingo or HelloChinese for practice.</p>
             </div>
 
-            <h3>4. Financial Planning and Scholarships</h3>
-            <p>Understanding the costs involved is essential for successful planning. Here's a breakdown of typical expenses:</p>
+            <h3>Costs and Scholarships</h3>
+            <p>Here's what you can expect to pay:</p>
 
-            <h4>Tuition Fees (Annual):</h4>
+            <h4>Tuition (per year):</h4>
             <ul>
-                <li><strong>Undergraduate:</strong> ¥20,000 - ¥50,000 (≈ $2,800 - $7,000)</li>
-                <li><strong>Graduate:</strong> ¥30,000 - ¥80,000 (≈ $4,200 - $11,200)</li>
-                <li><strong>Doctoral:</strong> ¥40,000 - ¥100,000 (≈ $5,600 - $14,000)</li>
+                <li><strong>Undergraduate:</strong> ¥20,000 - ¥50,000 ($2,800 - $7,000)</li>
+                <li><strong>Graduate:</strong> ¥30,000 - ¥80,000 ($4,200 - $11,200)</li>
+                <li><strong>Doctoral:</strong> ¥40,000 - ¥100,000 ($5,600 - $14,000)</li>
             </ul>
 
-            <h4>Living Expenses (Monthly):</h4>
+            <h4>Living Costs (per month):</h4>
             <ul>
-                <li><strong>Accommodation:</strong> ¥1,500 - ¥4,000 (≈ $210 - $560)</li>
-                <li><strong>Food:</strong> ¥1,000 - ¥2,000 (≈ $140 - $280)</li>
-                <li><strong>Transportation:</strong> ¥200 - ¥500 (≈ $28 - $70)</li>
-                <li><strong>Other expenses:</strong> ¥500 - ¥1,000 (≈ $70 - $140)</li>
+                <li><strong>Accommodation:</strong> ¥1,500 - ¥4,000 ($210 - $560)</li>
+                <li><strong>Food:</strong> ¥1,000 - ¥2,000 ($140 - $280)</li>
+                <li><strong>Transportation:</strong> ¥200 - ¥500 ($28 - $70)</li>
+                <li><strong>Other:</strong> ¥500 - ¥1,000 ($70 - $140)</li>
             </ul>
 
-            <h4>Available Scholarships:</h4>
+            <h4>Scholarships:</h4>
             <ul>
-                <li><strong>Chinese Government Scholarship (CSC):</strong> Full tuition waiver + monthly stipend</li>
-                <li><strong>Confucius Institute Scholarship:</strong> For Chinese language and culture studies</li>
-                <li><strong>University Scholarships:</strong> Merit-based awards from individual universities</li>
-                <li><strong>Provincial Scholarships:</strong> Regional government funding</li>
+                <li><strong>CSC Scholarship:</strong> Full tuition + monthly stipend</li>
+                <li><strong>Confucius Institute:</strong> For Chinese language studies</li>
+                <li><strong>University Scholarships:</strong> Merit-based awards</li>
+                <li><strong>Provincial Scholarships:</strong> Regional funding</li>
             </ul>
 
-            <h3>5. Application Strategy and Tips</h3>
-            <p>Success in your application requires careful strategy and attention to detail:</p>
+            <h3>Application Tips</h3>
+            <p>Here are some helpful tips:</p>
 
-            <h4>Research and Selection:</h4>
+            <h4>Research:</h4>
             <ul>
-                <li>Research at least 5-8 universities that match your academic interests and budget</li>
-                <li>Check university rankings, program reputation, and location preferences</li>
-                <li>Verify that your chosen programs are available for international students</li>
-                <li>Contact university international offices for specific requirements</li>
+                <li>Look at 5-8 universities that fit your interests and budget</li>
+                <li>Check rankings and program reputation</li>
+                <li>Make sure programs accept international students</li>
+                <li>Contact university offices for specific requirements</li>
             </ul>
 
-            <h4>Application Preparation:</h4>
+            <h4>Preparation:</h4>
             <ul>
-                <li>Start preparing documents 3-4 months before deadlines</li>
-                <li>Have all documents translated and notarized if required</li>
-                <li>Write a compelling personal statement that highlights your unique qualities</li>
-                <li>Request recommendation letters well in advance</li>
-                <li>Prepare for potential interviews or entrance exams</li>
+                <li>Start 3-4 months before deadlines</li>
+                <li>Get documents translated if needed</li>
+                <li>Write a good personal statement</li>
+                <li>Ask for recommendation letters early</li>
+                <li>Prepare for interviews if required</li>
             </ul>
 
             <div class="highlight-box">
-                <h4>Common Application Mistakes to Avoid</h4>
-                <p><strong>❌ Missing deadlines</strong> - Set multiple reminders and submit early<br>
-                <strong>❌ Incomplete documents</strong> - Double-check all requirements<br>
-                <strong>❌ Poor personal statement</strong> - Get feedback from mentors<br>
-                <strong>❌ Insufficient financial proof</strong> - Ensure adequate funds are shown<br>
-                <strong>❌ Ignoring university-specific requirements</strong> - Read guidelines carefully</p>
+                <h4>Common Mistakes</h4>
+                <p><strong>❌ Missing deadlines</strong> - Set reminders and submit early<br>
+                <strong>❌ Incomplete documents</strong> - Check all requirements<br>
+                <strong>❌ Poor personal statement</strong> - Get feedback from others<br>
+                <strong>❌ Insufficient financial proof</strong> - Show adequate funds<br>
+                <strong>❌ Ignoring requirements</strong> - Read guidelines carefully</p>
             </div>
 
-            <h3>6. Post-Application Process</h3>
-            <p>After submitting your application, the waiting period begins. Here's what to expect:</p>
+            <h3>After You Apply</h3>
+            <p>Here's what happens next:</p>
 
             <ul>
-                <li><strong>Application Review:</strong> 4-8 weeks for most universities</li>
-                <li><strong>Interview (if required):</strong> Usually conducted via video call</li>
-                <li><strong>Admission Decision:</strong> Official letter of acceptance or rejection</li>
-                <li><strong>Visa Application:</strong> Apply for X1 or X2 student visa</li>
-                <li><strong>Pre-departure Preparation:</strong> Book flights, arrange accommodation</li>
+                <li><strong>Review:</strong> 4-8 weeks for most universities</li>
+                <li><strong>Interview:</strong> Video call if required</li>
+                <li><strong>Decision:</strong> Acceptance or rejection letter</li>
+                <li><strong>Visa:</strong> Apply for student visa</li>
+                <li><strong>Travel:</strong> Book flights and arrange housing</li>
             </ul>
 
-            <h3>7. Next Steps After Acceptance</h3>
-            <p>Congratulations! Once you receive your acceptance letter, follow these steps:</p>
+            <h3>After Acceptance</h3>
+            <p>Once you get accepted:</p>
 
             <ol>
-                <li><strong>Confirm Enrollment:</strong> Accept the offer and pay any required deposits</li>
-                <li><strong>Apply for Student Visa:</strong> Gather required documents and schedule appointment</li>
-                <li><strong>Arrange Accommodation:</strong> Contact university housing or find off-campus options</li>
-                <li><strong>Book Travel:</strong> Purchase flights and arrange airport pickup if available</li>
-                <li><strong>Prepare for Departure:</strong> Pack essentials and complete pre-departure checklist</li>
+                <li><strong>Confirm:</strong> Accept the offer and pay deposits</li>
+                <li><strong>Visa:</strong> Apply for student visa</li>
+                <li><strong>Housing:</strong> Arrange accommodation</li>
+                <li><strong>Travel:</strong> Book flights</li>
+                <li><strong>Pack:</strong> Prepare for departure</li>
             </ol>
 
-            <p>Remember, the application process is just the beginning of your journey. Once you arrive in China, you'll have the opportunity to immerse yourself in a rich cultural experience while pursuing your academic goals. Stay organized, be patient, and don't hesitate to seek help when needed.</p>
-
-            <div class="highlight-box">
-                <h4>Need More Help?</h4>
-                <p>If you have specific questions about the application process or need personalized guidance, feel free to reach out to us at <a href="mailto:support@findchinaschool.com" style="color: var(--primary);">support@findchinaschool.com</a>, <a href="https://x.com/findchinaschool" target="_blank" style="color: var(--primary);">@findchinaschool</a> on Twitter, or <a href="https://reddit.com/user/karelia322" style="color: var(--primary);">u/karelia322</a> on Reddit. We're here to help make your dream of studying in China a reality!</p>
-            </div>
+            <p>That's it! The application process is just the start. Once you arrive in China, you'll have an amazing cultural experience while studying.</p>
 
             <!-- FAQ Section -->
-            <h3>Frequently Asked Questions</h3>
+            <h3>Common Questions</h3>
             <div class="faq-section">
                 <div class="faq-item">
-                    <h4>When should I start applying to Chinese universities?</h4>
-                    <p>Start your research 12-18 months before your intended start date. For Fall 2026 intake, begin researching universities in October 2025 and submit applications between April-May 2026.</p>
+                    <h4>When should I start applying?</h4>
+                    <p>Start researching 12-18 months before. For Fall 2026, begin in October 2025 and apply in April-May 2026.</p>
                 </div>
                 <div class="faq-item">
-                    <h4>What language tests do I need for Chinese universities?</h4>
-                    <p>For English-taught programs: IELTS 6.0+ or TOEFL iBT 80+. For Chinese-taught programs: HSK Level 4+ (undergraduate) or HSK Level 5+ (graduate).</p>
+                    <h4>What language tests do I need?</h4>
+                    <p>English programs: IELTS 6.0+ or TOEFL 80+. Chinese programs: HSK Level 4+ (undergraduate) or Level 5+ (graduate).</p>
                 </div>
                 <div class="faq-item">
-                    <h4>How much does it cost to study in China?</h4>
-                    <p>Tuition fees range from ¥20,000-100,000 annually (≈$2,800-$14,000), with living expenses of ¥3,000-7,000 monthly (≈$420-$980).</p>
+                    <h4>How much does it cost?</h4>
+                    <p>Tuition: ¥20,000-100,000 per year ($2,800-$14,000). Living costs: ¥3,000-7,000 per month ($420-$980).</p>
                 </div>
                 <div class="faq-item">
-                    <h4>Are there scholarships available for international students?</h4>
-                    <p>Yes! Chinese Government Scholarship (CSC) provides full tuition waiver and monthly stipend. Many universities also offer merit-based scholarships.</p>
+                    <h4>Are scholarships available?</h4>
+                    <p>Yes! CSC Scholarship provides full tuition and monthly stipend. Many universities also offer merit-based scholarships.</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-section" style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--gray-50); border-radius: 1rem; border: 1px solid var(--gray-200);">
+            <h3 style="color: var(--text); margin-bottom: 1rem; font-size: 1.25rem;">Need Help?</h3>
+            <p style="color: var(--gray-600); margin-bottom: 1rem;">Have questions about studying in China or using our platform?</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Email:</strong> <a href="mailto:support@findchinaschool.com" style="color: var(--primary); text-decoration: none; font-weight: 500;">support@findchinaschool.com</a></p>
+            <p style="margin-bottom: 0.5rem;"><strong>Twitter:</strong> <a href="https://x.com/findchinaschool" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 500;">@findchinaschool</a></p>
+            <p style="margin-bottom: 0;"><strong>Reddit:</strong> <a href="https://reddit.com/user/karelia322" style="color: var(--primary); text-decoration: none; font-weight: 500;">u/karelia322</a></p>
         </div>
 
         <!-- Back to Home -->
@@ -721,7 +760,7 @@
         "@context": "https://schema.org",
         "@type": "Blog",
         "name": "China University Selector Blog",
-        "description": "Expert tips and guides for studying in China. Learn about application processes, student life, and everything you need to know about Chinese universities.",
+        "description": "Tips and guides for studying in China. Learn about university applications, student life, and Chinese education.",
         "url": "https://findchinaschool.com/blog.html",
         "publisher": {
             "@type": "Organization",
@@ -737,8 +776,8 @@
         },
         "mainEntity": {
             "@type": "Article",
-            "headline": "Complete Guide to Applying to Chinese Universities: 2026 Edition",
-            "description": "Comprehensive guide for international students applying to Chinese universities, including requirements, timeline, and application strategies.",
+            "headline": "How to Apply to Chinese Universities: 2026 Guide",
+            "description": "Step-by-step guide for applying to Chinese universities. Covers requirements, timeline, costs, and tips for international students.",
             "author": {
                 "@type": "Organization",
                 "name": "China University Selector",
@@ -766,8 +805,8 @@
                 "url": "https://findchinaschool.com/logo.png"
             },
             "articleSection": "Application Tips",
-            "keywords": "Chinese universities, study in China, university application, international students, China education, university admission",
-            "wordCount": "2500"
+            "keywords": "Chinese university application, study in China, international students China, university admission China, CSC scholarship, HSK test, IELTS China, university requirements China, student visa China, Chinese education",
+            "wordCount": "1800"
         }
     }
     </script>
@@ -780,34 +819,34 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "When should I start applying to Chinese universities?",
+                "name": "When should I start applying?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Start your research 12-18 months before your intended start date. For Fall 2026 intake, begin researching universities in October 2025 and submit applications between April-May 2026."
+                    "text": "Start researching 12-18 months before. For Fall 2026, begin in October 2025 and apply in April-May 2026."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What language tests do I need for Chinese universities?",
+                "name": "What language tests do I need?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For English-taught programs: IELTS 6.0+ or TOEFL iBT 80+. For Chinese-taught programs: HSK Level 4+ (undergraduate) or HSK Level 5+ (graduate)."
+                    "text": "English programs: IELTS 6.0+ or TOEFL 80+. Chinese programs: HSK Level 4+ (undergraduate) or Level 5+ (graduate)."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How much does it cost to study in China?",
+                "name": "How much does it cost?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Tuition fees range from ¥20,000-100,000 annually (≈$2,800-$14,000), with living expenses of ¥3,000-7,000 monthly (≈$420-$980)."
+                    "text": "Tuition: ¥20,000-100,000 per year ($2,800-$14,000). Living costs: ¥3,000-7,000 per month ($420-$980)."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Are there scholarships available for international students?",
+                "name": "Are scholarships available?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes! Chinese Government Scholarship (CSC) provides full tuition waiver and monthly stipend. Many universities also offer merit-based scholarships."
+                    "text": "Yes! CSC Scholarship provides full tuition and monthly stipend. Many universities also offer merit-based scholarships."
                 }
             }
         ]
