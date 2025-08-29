@@ -12,15 +12,14 @@ let matchedUniversities = [];
 // Quiz steps configuration
 const quizSteps = [
     'welcome',
-    'step1', // Field of study
-    'step2', // Academic level
-    'step3', // Budget
-    'step4', // City size
-    'step5', // Ranking importance
-    'step6', // English programs
-    'step7', // English proficiency
-    'step8', // GPA range
-    'step9'  // Chinese language level
+    'step1', // Degree level (undergraduate/postgraduate)
+    'step2', // University type and classification
+    'step3', // Language preference
+    'step3a', // Chinese HSK level (conditional)
+    'step3b', // English level (conditional)
+    'step4', // Budget and costs
+    'step5', // Scholarship opportunities
+    'step6'  // Academic programs
 ];
 
 // Initialize the application
@@ -107,68 +106,17 @@ async function loadUniversities() {
 // Transform new university data structure to match expected format
 function transformUniversityData(universitiesData) {
     const transformed = universitiesData.map(uni => {
-        // Use the new standardized major structure
+        // Map programs to fields based on new data structure
         let fields = [];
         
-        // Map from the new majors object to fields array
-        if (uni.majors) {
-            if (uni.majors.engineering) fields.push('engineering');
-            if (uni.majors.business) fields.push('business');
-            if (uni.majors.medicine) fields.push('medicine');
-            if (uni.majors.arts) fields.push('arts');
-            if (uni.majors.science) fields.push('science');
-            if (uni.majors.social) fields.push('social');
+        if (uni.programs) {
+            if (uni.programs.engineering) fields.push('engineering');
+            if (uni.programs.business_economics) fields.push('business');
+            if (uni.programs.medicine_health) fields.push('medicine');
+            if (uni.programs.arts_humanities) fields.push('arts');
+            if (uni.programs.natural_sciences) fields.push('science');
+            if (uni.programs.social_sciences) fields.push('social');
         }
-        
-        // Override with university-specific mappings for accuracy
-        const universityFieldMappings = {
-            'University of Science and Technology of China': ['engineering', 'science'], // USTC is primarily STEM
-            'Harbin Institute of Technology': ['engineering', 'science'], // HIT is engineering-focused
-            'Beijing Institute of Technology': ['engineering', 'science'], // BIT is engineering-focused
-            'Huazhong University of Science and Technology': ['engineering', 'science'], // HUST is STEM-focused
-            'Tongji University': ['engineering', 'science'], // Tongji is engineering-focused
-            'Dalian University of Technology': ['engineering', 'science'], // DUT is engineering-focused
-            'South China University of Technology': ['engineering', 'science'], // SCUT is engineering-focused
-            'Beijing University of Chemical Technology': ['engineering', 'science'], // BUCT is chemical engineering focused
-            'China University of Petroleum': ['engineering', 'science'], // CUP is petroleum engineering focused
-            'Beijing University of Posts and Telecommunications': ['engineering', 'science'], // BUPT is telecommunications focused
-            'Southeast University': ['engineering', 'science'], // SEU is engineering-focused
-            'Tianjin University': ['engineering', 'science'], // Tianjin is engineering-focused
-            'Xi\'an Jiaotong University': ['engineering', 'science'], // XJTU is engineering-focused
-            'Tsinghua University': ['engineering', 'science', 'business'], // Tsinghua is comprehensive but strong in STEM
-            'Peking University': ['arts', 'social', 'science', 'business'], // PKU is strong in liberal arts
-            'Fudan University': ['arts', 'social', 'medicine', 'business'], // Fudan is comprehensive
-            'Shanghai Jiao Tong University': ['engineering', 'science', 'medicine', 'business'], // SJTU is comprehensive
-            'Zhejiang University': ['engineering', 'science', 'medicine', 'business'], // ZJU is comprehensive
-            'Nanjing University': ['arts', 'social', 'science'], // Nanjing is strong in humanities
-            'Wuhan University': ['arts', 'social', 'medicine', 'engineering'], // Wuhan is comprehensive
-            'Sun Yat-sen University': ['arts', 'social', 'medicine', 'business'], // SYSU is comprehensive
-            'Beijing Normal University': ['arts', 'social'], // BNU is education/humanities focused
-            'Nankai University': ['arts', 'social', 'business'], // Nankai is strong in humanities
-            'East China Normal University': ['arts', 'social'], // ECNU is education/humanities focused
-            'Jilin University': ['arts', 'social', 'medicine'], // Jilin is comprehensive
-            'Lanzhou University': ['science', 'arts'], // Lanzhou is comprehensive
-            'Northeast Normal University': ['arts', 'social'], // NENU is education focused
-            'Central China Normal University': ['arts', 'social'], // CCNU is education focused
-            'Hunan University': ['engineering', 'arts'], // Hunan is comprehensive
-            'Beijing Language and Culture University': ['arts', 'social'], // BLCU is language/humanities focused
-            'University of International Business and Economics': ['business', 'social'], // UIBE is business focused
-            'Beijing University of Aeronautics and Astronautics': ['engineering', 'science'], // BUAA is aerospace focused
-            'Northwestern Polytechnical University': ['engineering', 'science'], // NPU is engineering focused
-            'Harbin Institute of Technology (Shenzhen)': ['engineering', 'science'], // HIT Shenzhen is engineering focused
-            'Beijing Institute of Technology (Zhuhai)': ['engineering', 'science'] // BIT Zhuhai is engineering focused
-        };
-        
-        // Override with university-specific mappings if available
-        if (universityFieldMappings[uni.name_en]) {
-            fields = universityFieldMappings[uni.name_en];
-        }
-        
-        // Debug logging for field mapping
-        console.log(`Processing ${uni.name_en}:`, {
-            majors: uni.majors,
-            fields: fields
-        });
         
         // Early return if no fields found
         if (fields.length === 0) {
@@ -176,264 +124,114 @@ function transformUniversityData(universitiesData) {
             return null;
         }
         
-        // Create programs structure with accurate tuition data
+        // Get global ranking from new data structure
+        let globalRanking = 1000; // Default fallback
+        if (uni.rankings?.qs_rank_2026) {
+            globalRanking = uni.rankings.qs_rank_2026;
+        } else if (uni.rankings?.the_rank_2025) {
+            globalRanking = uni.rankings.the_rank_2025;
+        }
+        
+        // Determine city size based on city tier
+        let citySize = 'medium';
+        if (uni.city_tier === 'Tier_1') {
+            citySize = 'mega';
+        } else if (uni.city_tier === 'Tier_2') {
+            citySize = 'large';
+        } else if (uni.city_tier === 'Tier_3') {
+            citySize = 'small';
+        }
+        
+        // Calculate total cost
+        let totalCost = 0;
+        if (uni.tuition_fees) {
+            const tuition = uni.tuition_fees.ug_tuition_low || uni.tuition_fees.pg_tuition_low || 30000;
+            const livingCost = uni.city_tier === 'Tier_1' ? 30000 : uni.city_tier === 'Tier_2' ? 20000 : 15000;
+            totalCost = tuition + livingCost;
+        } else {
+            totalCost = 50000; // Default cost
+        }
+        
+        // Create costs structure
+        const costsData = {
+            ug_tuition_liberal_arts: uni.tuition_fees?.ug_tuition_low || 30000,
+            ug_tuition_stem: uni.tuition_fees?.ug_tuition_low || 30000,
+            ug_tuition_medicine: uni.tuition_fees?.ug_tuition_low || 35000,
+            pg_tuition_liberal_arts: uni.tuition_fees?.pg_tuition_low || 35000,
+            pg_tuition_stem: uni.tuition_fees?.pg_tuition_low || 35000,
+            pg_tuition_mba: uni.tuition_fees?.pg_tuition_low || 40000,
+            accommodation_on_campus: uni.city_tier === 'Tier_1' ? 12000 : uni.city_tier === 'Tier_2' ? 8000 : 6000,
+            accommodation_off_campus: uni.city_tier === 'Tier_1' ? 15000 : uni.city_tier === 'Tier_2' ? 10000 : 8000,
+            living_cost_avg: uni.city_tier === 'Tier_1' ? 30000 : uni.city_tier === 'Tier_2' ? 20000 : 15000
+        };
+        
+        // Create admission data structure
+        const admissionData = {
+            ug_min_gpa: uni.admission_requirements?.admission_difficulty === 5 ? 3.5 : 
+                       uni.admission_requirements?.admission_difficulty === 4 ? 3.3 : 3.0,
+            pg_min_gpa: uni.admission_requirements?.admission_difficulty === 5 ? 3.7 : 
+                       uni.admission_requirements?.admission_difficulty === 4 ? 3.5 : 3.3,
+            hsk_requirement: uni.admission_requirements?.hsk_min_level || 4,
+            toefl_requirement: uni.admission_requirements?.english_toefl_min || 80,
+            ielts_requirement: uni.admission_requirements?.english_ielts_min || 6.0,
+            accept_foundation: uni.admission_requirements?.accept_foundation || false
+        };
+        
+        // Create programs structure
         const programs = {
             undergraduate: {},
             graduate: {}
         };
         
-        // Debug logging for all universities
-        console.log(`Processing ${uni.name_en}:`, {
-            fields: fields,
-            key_features: uni.admission?.key_features
-        });
-        
-        // Map tuition costs to programs using actual data
-        if (uni.costs) {
-            // Assume most universities have English programs (default to true)
-            const hasEnglishPrograms = true;
+        // Map programs based on available fields
+        fields.forEach(field => {
+            const hasEnglishPrograms = true; // Most universities have English programs
+            const tuition = uni.tuition_fees?.ug_tuition_low || 30000;
             
-            // Undergraduate programs
-            if (uni.costs.ug_tuition_liberal_arts) {
-                programs.undergraduate.arts = {
-                    tuition: uni.costs.ug_tuition_liberal_arts,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-                programs.undergraduate.social = {
-                    tuition: uni.costs.ug_tuition_liberal_arts,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-            }
-            if (uni.costs.ug_tuition_stem) {
-                programs.undergraduate.engineering = {
-                    tuition: uni.costs.ug_tuition_stem,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-                programs.undergraduate.science = {
-                    tuition: uni.costs.ug_tuition_stem,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-            }
-            if (uni.costs.ug_tuition_medicine) {
-                programs.undergraduate.medicine = {
-                    tuition: uni.costs.ug_tuition_medicine,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-            }
-            
-            // Graduate programs
-            if (uni.costs.pg_tuition_liberal_arts) {
-                programs.graduate.arts = {
-                    tuition: uni.costs.pg_tuition_liberal_arts,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-                programs.graduate.social = {
-                    tuition: uni.costs.pg_tuition_liberal_arts,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-            }
-            if (uni.costs.pg_tuition_stem) {
-                programs.graduate.engineering = {
-                    tuition: uni.costs.pg_tuition_stem,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-                programs.graduate.science = {
-                    tuition: uni.costs.pg_tuition_stem,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-            }
-            if (uni.costs.pg_tuition_mba) {
-                programs.graduate.business = {
-                    tuition: uni.costs.pg_tuition_mba,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-            }
-            // Add graduate medicine programs if available
-            if (uni.costs.pg_tuition_medicine) {
-                programs.graduate.medicine = {
-                    tuition: uni.costs.pg_tuition_medicine,
-                    englishPrograms: hasEnglishPrograms,
-                    chineseRequired: false
-                };
-            }
-        }
-        
-        // Determine city size based on city name and New_Tier_1 status
-        let citySize = 'medium';
-        
-        // New Tier 1 cities (mega cities)
-        const newTier1Cities = ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen', 'Tianjin', 'Chongqing', 'Chengdu', 'Hangzhou', 'Wuhan', 'Xi\'an', 'Nanjing', 'Zhengzhou', 'Changsha', 'Suzhou', 'Dongguan', 'Qingdao', 'Shenyang', 'Ningbo', 'Kunming'];
-        
-        if (newTier1Cities.includes(uni.city)) {
-            // Further categorize New Tier 1 cities
-            if (uni.city === 'Beijing' || uni.city === 'Shanghai' || uni.city === 'Guangzhou' || uni.city === 'Shenzhen') {
-                citySize = 'mega'; // Super mega cities
-            } else {
-                citySize = 'large'; // Other New Tier 1 cities
-            }
-        } else if (uni.city === 'Harbin' || uni.city === 'Dalian' || uni.city === 'Jinan' || uni.city === 'Xiamen' || uni.city === 'Fuzhou' || uni.city === 'Hefei' || uni.city === 'Nanchang' || uni.city === 'Shijiazhuang' || uni.city === 'Taiyuan' || uni.city === 'Guiyang' || uni.city === 'Lanzhou' || uni.city === 'Xining' || uni.city === 'Yinchuan' || uni.city === 'Urumqi' || uni.city === 'Hohhot' || uni.city === 'Nanning' || uni.city === 'Haikou' || uni.city === 'Lhasa') {
-            citySize = 'medium'; // Tier 2 cities
-        } else {
-            citySize = 'small'; // Smaller cities
-        }
-        
-        // Get global ranking - use hardcoded rankings since admission data is missing
-        let globalRanking = 1000; // Default fallback
-        
-        // Use actual ranking data from admission section if available
-        if (uni.admission?.qs_rank_2025) {
-            globalRanking = uni.admission.qs_rank_2025;
-        } else if (uni.admission?.the_rank_2025) {
-            globalRanking = uni.admission.the_rank_2025;
-        } else {
-            // Use hardcoded rankings since admission data is missing
-            const universityRankings = {
-                'Tsinghua University': 15,
-                'Peking University': 18,
-                'Fudan University': 34,
-                'Shanghai Jiao Tong University': 47,
-                'Zhejiang University': 42,
-                'Nanjing University': 123,
-                'University of Science and Technology of China': 138,
-                'Wuhan University': 194,
-                'Sun Yat-sen University': 267,
-                'Tongji University': 211,
-                'Harbin Institute of Technology': 256,
-                'Xi\'an Jiaotong University': 290,
-                'Beijing Normal University': 270,
-                'Nankai University': 358,
-                'Tianjin University': 334,
-                'Southeast University': 465,
-                'Dalian University of Technology': 521,
-                'Beijing Institute of Technology': 436,
-                'Huazhong University of Science and Technology': 396,
-                'East China Normal University': 531,
-                'Jilin University': 601,
-                'Lanzhou University': 751,
-                'Northeast Normal University': 801,
-                'Central China Normal University': 851,
-                'Hunan University': 801,
-                'South China University of Technology': 801,
-                'Beijing University of Chemical Technology': 901,
-                'China University of Petroleum': 901,
-                'Beijing University of Posts and Telecommunications': 901,
-                'Beijing Language and Culture University': 801,
-                'University of International Business and Economics': 801,
-                'Beijing University of Aeronautics and Astronautics': 801,
-                'Northwestern Polytechnical University': 801,
-                'Harbin Institute of Technology (Shenzhen)': 256, // Same as main HIT
-                'Beijing Institute of Technology (Zhuhai)': 436 // Same as main BIT
+            programs.undergraduate[field] = {
+                tuition: tuition,
+                englishPrograms: hasEnglishPrograms,
+                chineseRequired: false
             };
             
-            if (universityRankings[uni.name_en]) {
-                globalRanking = universityRankings[uni.name_en];
+            if (uni.tuition_fees?.pg_tuition_low) {
+                const pgTuition = uni.tuition_fees.pg_tuition_low;
+                programs.graduate[field] = {
+                    tuition: pgTuition,
+                    englishPrograms: hasEnglishPrograms,
+                    chineseRequired: false
+                };
             }
-        }
-        
-        // Calculate acceptance rate based on admission difficulty or ranking
-        let acceptanceRate = 0.3; // Default 30%
-        
-        if (uni.admission?.admission_difficulty_1to5) {
-            const difficulty = uni.admission.admission_difficulty_1to5;
-            if (difficulty === 5) acceptanceRate = 0.05; // 5%
-            else if (difficulty === 4) acceptanceRate = 0.10; // 10%
-            else if (difficulty === 3) acceptanceRate = 0.20; // 20%
-            else if (difficulty === 2) acceptanceRate = 0.35; // 35%
-            else if (difficulty === 1) acceptanceRate = 0.50; // 50%
-        } else {
-            // Fallback to ranking-based calculation
-            if (globalRanking <= 50) acceptanceRate = 0.05; // Top 50: 5%
-            else if (globalRanking <= 100) acceptanceRate = 0.08; // Top 100: 8%
-            else if (globalRanking <= 200) acceptanceRate = 0.12; // Top 200: 12%
-            else if (globalRanking <= 500) acceptanceRate = 0.20; // Top 500: 20%
-            else if (globalRanking <= 1000) acceptanceRate = 0.35; // Top 1000: 35%
-            else acceptanceRate = 0.50; // Others: 50%
-        }
-        
-        // Create unique description based on university data
-        let description = `${uni.name_en} is a prestigious university in ${uni.city}`;
-        
-        // Custom descriptions object for specific universities
-        const customDescriptions = {
-            'Tsinghua University': 'China\'s most prestigious university, renowned for engineering and technology excellence. Consistently ranks among the world\'s top universities.',
-            'Peking University': 'One of China\'s oldest and most prestigious universities, known for its strong liberal arts programs and research excellence.',
-            'Fudan University': 'A comprehensive research university known for its strong programs in medicine, humanities, and social sciences.',
-            'Shanghai Jiao Tong University': 'A leading research university particularly strong in engineering, medicine, and business programs.',
-            'Zhejiang University': 'One of China\'s most comprehensive universities, known for its innovative research and strong international partnerships.',
-            'Nanjing University': 'One of China\'s oldest and most prestigious universities, known for its strong programs in humanities, sciences, and engineering.',
-            'Wuhan University': 'A comprehensive research university known for its beautiful campus and strong programs in medicine, law, and engineering.',
-            'Sun Yat-sen University': 'A leading university known for its strong programs in medicine, business, and international studies.',
-            'Tongji University': 'A prestigious university particularly renowned for its architecture, engineering, and urban planning programs.'
-        };
-        
-        // Use custom description if available
-        if (customDescriptions[uni.name_en]) {
-            description = `${uni.name_en} is ${customDescriptions[uni.name_en]}. Located in ${uni.city}`;
-        } else {
-            // Default descriptions based on features
-            if (uni.admission?.key_features) {
-                const features = uni.admission.key_features.split(',');
-                if (features.includes('Top_Tier')) {
-                    description = `${uni.name_en} is a top-tier university in ${uni.city}, known for academic excellence and research innovation`;
-                } else if (features.includes('STEM_Strong')) {
-                    description = `${uni.name_en} is a leading university in ${uni.city}, particularly strong in STEM fields and technological innovation`;
-                } else if (features.includes('Liberal_Arts')) {
-                    description = `${uni.name_en} is a comprehensive university in ${uni.city}, excelling in liberal arts, humanities, and cultural studies`;
-                }
-            }
-        }
-        
-        // Add ranking information to description
-        if (globalRanking <= 100) {
-            description += ` and ranked among the top 100 universities globally`;
-        } else if (globalRanking <= 500) {
-            description += ` and ranked among the top 500 universities globally`;
-        }
-        
-        // Add special programs info
-        if (uni.admission?.total_international_students > 3000) {
-            description += `. The university has a large international student community`;
-        }
+        });
         
         return {
             id: uni.id,
             name: uni.name_en,
-            abbreviation: uni.name_en.split(' ').map(word => word[0]).join(''),
+            name_cn: uni.name_cn,
             city: uni.city,
-            citySize: citySize,
-            globalRanking: globalRanking,
+            province: uni.province,
+            city_tier: uni.city_tier,
+            university_type: uni.university_type,
+            rankings: uni.rankings,
+            classifications: uni.classifications,
+            admission_requirements: uni.admission_requirements,
+            tuition_fees: uni.tuition_fees,
+            scholarships: uni.scholarships,
+            programs: uni.programs,
             fields: fields,
             programs: programs,
-            description: description,
-            website: uni.admission?.official_website || '',
-            scholarships: ['Chinese Government Scholarship'],
-            applicationDeadline: uni.admission?.application_deadline || 'March 31',
-            applicationStartDate: uni.admission?.application_start_date || 'January 1',
-            acceptanceRate: acceptanceRate,
-            // Add additional data for better matching
-            admissionData: uni.admission,
-            costsData: uni.costs,
-            originalPrograms: [], // Empty array since programs field is missing
-            // Add enhanced data
-            scholarshipData: uni.scholarships,
-            additionalData: uni.additional_info
+            citySize: citySize,
+            globalRanking: globalRanking,
+            costsData: costsData,
+            admissionData: admissionData,
+            totalCost: totalCost,
+            hasEnglishPrograms: true, // Most universities have English programs
+            acceptFoundation: uni.admission_requirements?.accept_foundation || false
         };
-    });
+    }).filter(uni => uni !== null);
     
-    // Filter out null values and return
-    const filtered = transformed.filter(uni => uni !== null);
-    console.log('Transformed universities:', filtered.length);
-    return filtered;
+    console.log('Transformed universities:', transformed.length);
+    return transformed;
 }
 
 // Setup event listeners
@@ -527,17 +325,66 @@ function selectOption(card) {
     const value = card.getAttribute('data-value');
     userAnswers[stepId] = value;
     
+    console.log('Selected option:', stepId, value);
+    console.log('Current user answers:', userAnswers);
+    console.log('Current step:', currentStep);
+    
     // Enable next button
     const nextBtn = document.getElementById('nextBtn');
     if (nextBtn) {
         nextBtn.disabled = false;
+        console.log('Next button enabled');
     }
 }
 
 // Next step
 function nextStep() {
     console.log('Next step called. Current step:', currentStep, 'Total steps:', quizSteps.length);
-    if (currentStep < quizSteps.length - 1) {
+    console.log('Current user answers:', userAnswers);
+    
+    // Handle conditional step navigation
+    if (currentStep === 3 && userAnswers['step3'] === 'chinese') {
+        // If user chose Chinese instruction, go to HSK level step
+        currentStep = 4; // step3a
+        console.log('Moving to HSK level step (step3a)');
+        showStep('step3a');
+        updateNavigation();
+    } else if (currentStep === 3 && (userAnswers['step3'] === 'english' || userAnswers['step3'] === 'both')) {
+        // If user chose English or both, go to English level step
+        currentStep = 5; // step3b
+        console.log('Moving to English level step (step3b)');
+        showStep('step3b');
+        updateNavigation();
+    } else if (currentStep === 4 && userAnswers['step3a']) {
+        // After HSK level, go to budget step
+        currentStep = 6; // step4
+        console.log('Moving to budget step (step4)');
+        showStep('step4');
+        updateNavigation();
+    } else if (currentStep === 5 && userAnswers['step3b']) {
+        // After English level, go to budget step
+        currentStep = 6; // step4
+        console.log('Moving to budget step (step4)');
+        showStep('step4');
+        updateNavigation();
+    } else if (currentStep === 6 && userAnswers['step4']) {
+        // After budget step, go to scholarship step
+        currentStep = 7; // step5
+        console.log('Moving to scholarship step (step5)');
+        showStep('step5');
+        updateNavigation();
+    } else if (currentStep === 7 && userAnswers['step5']) {
+        // After scholarship step, go to academic programs step
+        currentStep = 8; // step6
+        console.log('Moving to academic programs step (step6)');
+        showStep('step6');
+        updateNavigation();
+    } else if (currentStep === 8 && userAnswers['step6']) {
+        // Quiz completed, show results
+        console.log('Quiz completed, showing results');
+        showResults();
+    } else if (currentStep < quizSteps.length - 1) {
+        // Normal step progression
         currentStep++;
         console.log('Moving to step:', currentStep, 'Step ID:', quizSteps[currentStep]);
         showStep(quizSteps[currentStep]);
@@ -552,8 +399,35 @@ function nextStep() {
 // Previous step
 function previousStep() {
     if (currentStep > 1) {
-        currentStep--;
-        showStep(quizSteps[currentStep]);
+        if (currentStep === 7 && (userAnswers['step3'] === 'english' || userAnswers['step3'] === 'both')) {
+            // If we're at scholarship step and user chose English/both, go back to budget step
+            currentStep = 6; // step4
+            showStep('step4');
+        } else if (currentStep === 7 && userAnswers['step3'] === 'chinese') {
+            // If we're at scholarship step and user chose Chinese, go back to budget step
+            currentStep = 6; // step4
+            showStep('step4');
+        } else if (currentStep === 6 && (userAnswers['step3'] === 'english' || userAnswers['step3'] === 'both')) {
+            // If we're at budget step and user chose English/both, go back to English level
+            currentStep = 5; // step3b
+            showStep('step3b');
+        } else if (currentStep === 6 && userAnswers['step3'] === 'chinese') {
+            // If we're at budget step and user chose Chinese, go back to HSK level
+            currentStep = 4; // step3a
+            showStep('step3a');
+        } else if (currentStep === 5 || currentStep === 4) {
+            // If we're at language level steps, go back to language preference
+            currentStep = 3; // step3
+            showStep('step3');
+        } else if (currentStep === 8) {
+            // If we're at academic programs step, go back to scholarship step
+            currentStep = 7; // step5
+            showStep('step5');
+        } else {
+            // Normal step regression
+            currentStep--;
+            showStep(quizSteps[currentStep]);
+        }
         updateNavigation();
     }
 }
@@ -569,7 +443,17 @@ function updateNavigation() {
     
     if (nextBtn) {
         nextBtn.style.display = currentStep > 0 ? 'flex' : 'none';
-        nextBtn.disabled = !userAnswers[quizSteps[currentStep]];
+        
+        // Check if current step has an answer
+        let hasAnswer = false;
+        const currentStepElement = document.querySelector('.quiz-step.active');
+        if (currentStepElement) {
+            const stepId = currentStepElement.id;
+            hasAnswer = !!userAnswers[stepId];
+        }
+        
+        console.log('Current step element:', currentStepElement?.id, 'Has answer:', hasAnswer);
+        nextBtn.disabled = !hasAnswer;
     }
     
     // Update progress bar
@@ -582,13 +466,40 @@ function updateProgressBar() {
     const progressText = document.getElementById('progressText');
     
     if (progressFill && progressText) {
-        // Calculate progress percentage (excluding welcome screen)
-        const totalSteps = quizSteps.length - 1; // Exclude welcome
-        const currentProgress = Math.max(0, currentStep - 1); // Start from step 1
+        // Calculate progress percentage (excluding welcome screen and conditional steps)
+        const totalSteps = 6; // Fixed total steps: step1, step2, step3, step4, step5, step6
+        let currentProgress = 0;
+        let currentStepDisplay = 1;
+        
+        if (currentStep >= 1) {
+            currentProgress = 1; // step1 (degree level) completed
+            currentStepDisplay = 1;
+        }
+        if (currentStep >= 2) {
+            currentProgress = 2; // step2 (university type) completed
+            currentStepDisplay = 2;
+        }
+        if (currentStep >= 3) {
+            currentProgress = 3; // step3 (language preference) completed
+            currentStepDisplay = 3;
+        }
+        if (currentStep >= 5) {
+            currentProgress = 4; // step4 (budget) completed
+            currentStepDisplay = 4;
+        }
+        if (currentStep >= 6) {
+            currentProgress = 5; // step5 (scholarship) completed
+            currentStepDisplay = 5;
+        }
+        if (currentStep >= 7) {
+            currentProgress = 6; // step6 (academic programs) completed
+            currentStepDisplay = 6;
+        }
+        
         const percentage = (currentProgress / totalSteps) * 100;
         
         progressFill.style.width = `${percentage}%`;
-        progressText.textContent = `Step ${currentStep} of ${quizSteps.length - 1}`;
+        progressText.textContent = `Step ${currentStepDisplay} of ${totalSteps}`;
     }
 }
 
@@ -612,6 +523,7 @@ function showResults() {
         // Generate matches
         matchedUniversities = generateMatches();
         console.log('Generated matches:', matchedUniversities.length);
+        console.log('Generated matches array:', matchedUniversities);
         
         // Display results
         displayResults();
@@ -629,7 +541,7 @@ function generateMatches() {
     console.log('User answers object:', JSON.stringify(userAnswers, null, 2));
     
     // Check if all required answers are present
-    const requiredSteps = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6', 'step7', 'step8', 'step9'];
+            const requiredSteps = ['step1', 'step2', 'step3', 'step4', 'step5'];
     const missingSteps = requiredSteps.filter(step => !userAnswers[step]);
     if (missingSteps.length > 0) {
         console.error('Missing answers for steps:', missingSteps);
@@ -652,272 +564,336 @@ function generateMatches() {
         let score = 0;
         const maxScore = 100;
         
-        // Calculate user GPA value once for reuse
-        const userGPA = userAnswers.step8;
-        console.log('User GPA from step8:', userGPA);
-        if (!userGPA) {
-            console.error('GPA not found in userAnswers.step8');
-            continue; // Skip this university if GPA is missing
-        }
-        const gpaRange = userGPA.split('-').map(Number);
-        const userGPAValue = (gpaRange[0] + gpaRange[1]) / 2;
-        console.log('Calculated GPA value:', userGPAValue);
+
         
         // Debug: Log university being processed
         console.log(`Processing university ${i + 1}/${universities.length}: ${university.name}`);
         
-        // Field of study match (20 points)
-        console.log(`Checking field match for ${university.name}: looking for "${userAnswers.step1}" in fields:`, university.fields);
-        if (university.fields.includes(userAnswers.step1)) {
-            let fieldScore = 20;
-            
-            // Penalty for overly comprehensive universities (having too many fields)
-            if (university.fields.length >= 5) {
-                fieldScore = Math.round(fieldScore * 0.8); // 20% penalty for having 5+ fields
-            } else if (university.fields.length >= 4) {
-                fieldScore = Math.round(fieldScore * 0.9); // 10% penalty for having 4 fields
-            }
-            
-            score += fieldScore;
-            console.log(`✓ Field match for ${university.name}: ${userAnswers.step1} found in ${university.fields}, score: ${fieldScore}`);
-        } else {
-            console.log(`✗ No field match for ${university.name}: ${userAnswers.step1} not found in ${university.fields}`);
-        }
+        // 1. University type match (25 points) - 大学类型匹配，最重要的因素
+        console.log(`Checking university type match for ${university.name}: looking for "${userAnswers.step2}" in classifications`);
         
-        // Academic level compatibility (12 points)
-        const academicLevel = userAnswers.step2;
-        const hasPrograms = university.programs[academicLevel] && 
-                          university.programs[academicLevel][userAnswers.step1];
+        // 检查大学类型匹配 - 严格过滤
+        let universityTypeScore = 0;
+        const universityType = userAnswers.step2; // c9, 985, 211, any
         
-        // Check if university has programs for the selected field
-        const hasFieldPrograms = university.fields.includes(userAnswers.step1);
-        if (hasPrograms || hasFieldPrograms) {
-            score += 12;
-        }
-        
-        // Budget compatibility (18 points)
-        const budget = userAnswers.step3;
-        let tuition = 0;
-        
-        // Try to get tuition from specific program first
-        if (hasPrograms && university.programs[academicLevel][userAnswers.step1]) {
-            tuition = university.programs[academicLevel][userAnswers.step1].tuition || 0;
-        } else {
-            // Fallback to general tuition data based on field
-            if (university.costsData) {
-                if (academicLevel === 'undergraduate') {
-                    if (userAnswers.step1 === 'engineering' || userAnswers.step1 === 'science') {
-                        tuition = university.costsData.ug_tuition_stem || 0;
-                    } else if (userAnswers.step1 === 'medicine') {
-                        tuition = university.costsData.ug_tuition_medicine || 0;
-                    } else {
-                        tuition = university.costsData.ug_tuition_liberal_arts || 0;
-                    }
-                } else if (academicLevel === 'graduate') {
-                    if (userAnswers.step1 === 'business') {
-                        tuition = university.costsData.pg_tuition_mba || 0;
-                    } else if (userAnswers.step1 === 'engineering' || userAnswers.step1 === 'science') {
-                        tuition = university.costsData.pg_tuition_stem || 0;
-                    } else {
-                        tuition = university.costsData.pg_tuition_liberal_arts || 0;
-                    }
-                }
-            }
-        }
-        
-        // More realistic budget scoring with penalties for mismatches
-        // Add ranking-based adjustment for top universities
-        let budgetMultiplier = 1.0;
-        if (university.globalRanking <= 50) {
-            budgetMultiplier = 0.7; // Top 50 universities get reduced budget points
-        } else if (university.globalRanking <= 100) {
-            budgetMultiplier = 0.8; // Top 100 universities get reduced budget points
-        }
-        
-        if (budget === 'low') {
-            if (tuition <= 5000) score += Math.round(18 * budgetMultiplier); // Perfect match
-            else if (tuition <= 7000) score += Math.round(9 * budgetMultiplier); // Acceptable
-            else if (tuition <= 10000) score += Math.round(2 * budgetMultiplier); // Poor match
-            else score += 0; // No points for expensive universities
-        } else if (budget === 'medium') {
-            if (tuition <= 10000) score += Math.round(18 * budgetMultiplier); // Perfect match
-            else if (tuition <= 15000) score += Math.round(11 * budgetMultiplier); // Good match
-            else if (tuition <= 20000) score += Math.round(4 * budgetMultiplier); // Acceptable
-            else score += 0; // Too expensive
-        } else if (budget === 'high') {
-            if (tuition > 10000) score += Math.round(18 * budgetMultiplier); // Perfect for high budget
-            else if (tuition > 7000) score += Math.round(13 * budgetMultiplier); // Good value
-            else score += Math.round(8 * budgetMultiplier); // Lower cost but still good
-        }
-        
-        // City size preference (12 points)
-        if (university.citySize === userAnswers.step4) {
-            score += 12;
-        } else if ((userAnswers.step4 === 'mega' && university.citySize === 'large') ||
-                   (userAnswers.step4 === 'large' && university.citySize === 'medium')) {
-            score += 8;
-        }
-        
-        // Ranking importance (12 points) - More realistic scoring
-        const rankingPref = userAnswers.step5;
-        
-        // Only give high ranking points if applicant has realistic qualifications
-        if (rankingPref === 'very') {
-            if (university.globalRanking <= 100) {
-                // For top 100 universities, require high GPA
-                if (userGPAValue >= 3.5) score += 12;
-                else if (userGPAValue >= 3.3) score += 8;
-                else if (userGPAValue >= 3.0) score += 4;
-                else score += 0; // No points for unrealistic matches
-            } else if (university.globalRanking <= 200) {
-                if (userGPAValue >= 3.3) score += 10;
-                else if (userGPAValue >= 3.0) score += 6;
-                else score += 2;
-            } else if (university.globalRanking <= 500) {
-                if (userGPAValue >= 3.0) score += 8;
-                else score += 4;
-            }
-        } else if (rankingPref === 'important') {
-            if (university.globalRanking <= 500) {
-                if (userGPAValue >= 3.0) score += 10;
-                else score += 5;
-            } else if (university.globalRanking <= 1000) {
-                score += 6;
-            }
-        } else if (rankingPref === 'moderate') {
-            // For moderate ranking preference, give balanced scores
-            if (university.globalRanking <= 1000) score += 6;
-            else score += 8; // Higher score for lower-ranked universities
-        }
-        
-        // English programs and proficiency (12 points)
-        const englishPref = userAnswers.step6;
-        const englishLevel = userAnswers.step7;
-        
-        // Check if university has English programs
-        const hasEnglishPrograms = university.originalPrograms ? 
-            university.originalPrograms.some(p => p.toLowerCase().includes('english')) : true; // Default to true if no data
-        
-        // English program availability scoring (8 points)
-        if (hasPrograms) {
-            const program = university.programs[academicLevel][userAnswers.step1];
-            
-            if (englishPref === 'yes' && program.englishPrograms) score += 8;
-            else if (englishPref === 'both') score += 8;
-            else if (englishPref === 'chinese' && !program.englishPrograms) score += 8;
-            else if (englishPref === 'yes' && !program.englishPrograms) score -= 4;
-        } else if (hasFieldPrograms) {
-            // If we have field match but no specific program, use general English program availability
-            if (englishPref === 'yes' && hasEnglishPrograms) score += 8;
-            else if (englishPref === 'both') score += 8;
-            else if (englishPref === 'chinese' && !hasEnglishPrograms) score += 8;
-            else if (englishPref === 'yes' && !hasEnglishPrograms) score -= 4;
-        }
-        
-        // English proficiency scoring (5 points)
-        if (englishPref === 'yes' || englishPref === 'both') {
-            if (englishLevel === 'native') score += 5;
-            else if (englishLevel === 'advanced') score += 4;
-            else if (englishLevel === 'intermediate') score += 3;
-            else if (englishLevel === 'basic') score += 1;
-        }
-        
-        // GPA compatibility (10 points)
-        const requiredGPA = academicLevel === 'undergraduate' ? 
-            university.admissionData?.ug_min_gpa : university.admissionData?.pg_min_gpa;
-        
-        if (requiredGPA) {
-            if (userGPAValue >= requiredGPA) {
-                score += 10; // Perfect match
-            } else if (userGPAValue >= requiredGPA - 0.3) {
-                score += 7; // Close match
-            } else if (userGPAValue >= requiredGPA - 0.5) {
-                score += 4; // Acceptable match
+        if (universityType === 'any') {
+            // 如果选择任何类型，给基础分
+            universityTypeScore = 20;
+        } else if (universityType === 'c9') {
+            // 严格只匹配C9联盟大学
+            if (university.classifications?.c9_league) {
+                universityTypeScore = 25;
             } else {
-                score += 1; // Poor match
+                // 不是C9，跳过这所大学
+                console.log(`Skipping ${university.name}: not a C9 university`);
+                continue;
+            }
+        } else if (universityType === '985') {
+            // 严格只匹配985大学（排除C9）
+            if (university.classifications?.project_985 && !university.classifications?.c9_league) {
+                universityTypeScore = 25;
+            } else {
+                // 不是985或已经是C9，跳过
+                console.log(`Skipping ${university.name}: not a 985 university or is C9`);
+                continue;
+            }
+        } else if (universityType === '211') {
+            // 严格只匹配211大学（排除985和C9）
+            if (university.classifications?.project_211 && !university.classifications?.project_985) {
+                universityTypeScore = 25;
+            } else {
+                // 不是211或已经是985/C9，跳过
+                console.log(`Skipping ${university.name}: not a 211 university or is 985/C9`);
+                continue;
             }
         } else {
-            // Default GPA requirements based on university ranking
-            let defaultGPA = 3.0;
-            if (university.globalRanking <= 100) defaultGPA = 3.5;
-            else if (university.globalRanking <= 500) defaultGPA = 3.3;
-            
-            if (userGPAValue >= defaultGPA) {
-                score += 8; // Good match with default
-            } else if (userGPAValue >= defaultGPA - 0.3) {
-                score += 5; // Acceptable match
-            } else {
-                score += 2; // Poor match
-            }
+            // 不匹配，给基础分
+            universityTypeScore = 10;
         }
         
-        // Chinese language requirement (10 points) - More realistic for international students
-        const chineseLevel = userAnswers.step9;
-        
-        // Check if university has Chinese programs
-        const hasChinesePrograms = university.originalPrograms ? 
-            university.originalPrograms.some(p => p.toLowerCase().includes('chinese')) : false; // Default to false if no data
-        
-        // For English-taught programs, Chinese is usually not required
-        if (englishPref === 'yes') {
-            // If student wants English programs, Chinese is not required
-            score += 10; // Full points for English programs
-        } else if (englishPref === 'both') {
-            // If student is flexible, give points based on Chinese level
-            if (chineseLevel === 'advanced') score += 10;
-            else if (chineseLevel === 'intermediate') score += 8;
-            else if (chineseLevel === 'basic') score += 5;
-            else score += 3; // Even with no Chinese, some flexibility
-        } else if (englishPref === 'chinese') {
-            // If student wants Chinese programs, Chinese level matters
-            if (hasChinesePrograms && chineseLevel !== 'none') {
-                if (chineseLevel === 'advanced') score += 10;
-                else if (chineseLevel === 'intermediate') score += 8;
-                else if (chineseLevel === 'basic') score += 5;
-            } else if (!hasChinesePrograms) {
-                score += 10; // No Chinese required
-            }
-        }
-        
-        // Realistic chance assessment - penalize unrealistic matches
-        let realisticBonus = 0;
-        let unrealisticPenalty = 0;
-        
-        // Check if this is a realistic match based on GPA and university ranking
+        // 大学排名加分 (0-8分)
+        let typeRankingBonus = 0;
         if (university.globalRanking <= 50) {
-            // Top 50 universities require very high qualifications
-            if (userGPAValue < 3.5) {
-                unrealisticPenalty = 25; // Major penalty for low GPA at top universities
-            } else if (userGPAValue < 3.7) {
-                unrealisticPenalty = 15; // Significant penalty for borderline GPA
-            } else if (userGPAValue >= 3.8) {
-                realisticBonus = 5; // Bonus for very well-qualified applicants
-            }
+            typeRankingBonus = 8; // 世界前50
         } else if (university.globalRanking <= 100) {
-            // Top 100 universities require high qualifications
-            if (userGPAValue < 3.3) {
-                unrealisticPenalty = 20; // Significant penalty for low GPA at top universities
-            } else if (userGPAValue < 3.5) {
-                unrealisticPenalty = 10; // Small penalty for borderline GPA
-            } else if (userGPAValue >= 3.7) {
-                realisticBonus = 3; // Bonus for well-qualified applicants
-            }
+            typeRankingBonus = 6; // 世界前100
+        } else if (university.globalRanking <= 200) {
+            typeRankingBonus = 4; // 世界前200
         } else if (university.globalRanking <= 500) {
-            // Top 500 universities require good qualifications
-            if (userGPAValue < 3.0) {
-                unrealisticPenalty = 15;
-            } else if (userGPAValue >= 3.3) {
-                realisticBonus = 2;
+            typeRankingBonus = 2; // 世界前500
+        } else {
+            typeRankingBonus = 1; // 其他大学
+        }
+        
+        universityTypeScore += typeRankingBonus;
+        score += universityTypeScore;
+        console.log(`✓ University type match for ${university.name}: ${userAnswers.step2} matched, score: ${universityTypeScore} (base: ${universityTypeScore - typeRankingBonus}, ranking bonus: ${typeRankingBonus})`);
+        
+        // 2. Budget compatibility (20 points) - 预算匹配，重要因素
+        const budget = userAnswers.step4;
+        const degreeLevel = userAnswers.step1; // undergraduate or postgraduate
+        
+        // Get tuition based on degree level with N/A handling
+        let tuition = 0;
+        if (degreeLevel === 'undergraduate') {
+            tuition = university.tuition_fees?.ug_tuition_low || 30000;
+            // If N/A or null, use average values based on university ranking
+            if (!university.tuition_fees?.ug_tuition_low || university.tuition_fees.ug_tuition_low === null) {
+                if (university.globalRanking <= 100) tuition = 35000;
+                else if (university.globalRanking <= 500) tuition = 30000;
+                else tuition = 25000;
+            }
+        } else if (degreeLevel === 'postgraduate') {
+            tuition = university.tuition_fees?.pg_tuition_low || 40000;
+            // If N/A or null, use average values based on university ranking
+            if (!university.tuition_fees?.pg_tuition_low || university.tuition_fees.pg_tuition_low === null) {
+                if (university.globalRanking <= 100) tuition = 45000;
+                else if (university.globalRanking <= 500) tuition = 40000;
+                else tuition = 35000;
             }
         }
         
-        // Apply realistic assessment
-        score += realisticBonus - unrealisticPenalty;
+        // Calculate total cost (tuition + living costs)
+        const livingCosts = 12000; // Average living costs per year
+        const totalCost = tuition + livingCosts;
         
-        // Normalize score to 0-100
+        // 更严格的预算匹配计算
+        if (budget === 'low') {
+            if (totalCost <= 35000) score += 20; // 完美匹配
+            else if (totalCost <= 45000) score += 12; // 可接受
+            else {
+                // 超出预算太多，跳过这所大学
+                console.log(`Skipping ${university.name}: budget too high (${totalCost}) for low budget`);
+                continue;
+            }
+        } else if (budget === 'medium') {
+            if (totalCost <= 70000) score += 20; // 完美匹配
+            else if (totalCost <= 90000) score += 15; // 可接受
+            else {
+                // 超出预算太多，跳过这所大学
+                console.log(`Skipping ${university.name}: budget too high (${totalCost}) for medium budget`);
+                continue;
+            }
+        } else if (budget === 'high') {
+            if (totalCost >= 60000) score += 20; // 高预算完美匹配
+            else if (totalCost >= 40000) score += 15; // 可接受
+            else score += 10; // 成本较低但仍可接受
+        }
+        
+        // 3. Language requirements (18 points) - 语言匹配很重要
+        const languagePreference = userAnswers.step3;
+        const languageLevel = userAnswers.step3a || userAnswers.step3b;
+        
+        if (languagePreference === 'chinese') {
+            // Chinese instruction - check HSK level
+            const userHSKLevel = parseInt(languageLevel.replace('hsk', ''));
+            const requiredHSKLevel = university.admission_requirements?.hsk_min_level || 3;
+            
+            // Handle N/A values with default requirements based on university ranking
+            let effectiveRequiredHSK = requiredHSKLevel;
+            if (!requiredHSKLevel || requiredHSKLevel === null) {
+                if (university.globalRanking <= 100) effectiveRequiredHSK = 4;
+                else if (university.globalRanking <= 500) effectiveRequiredHSK = 3;
+                else effectiveRequiredHSK = 3;
+            }
+            
+            if (userHSKLevel >= effectiveRequiredHSK) {
+                score += 18; // Perfect match
+            } else if (userHSKLevel >= effectiveRequiredHSK - 1) {
+                score += 15; // Close match (more generous)
+            } else if (userHSKLevel >= effectiveRequiredHSK - 2) {
+                score += 10; // Acceptable match (more generous)
+            } else {
+                score += 5; // Poor match but still some points
+            }
+        } else if (languagePreference === 'english' || languagePreference === 'both') {
+            // English instruction - check TOEFL/IELTS level
+            const userEnglishLevel = languageLevel;
+            const requiredTOEFL = university.admission_requirements?.english_toefl_min || 70;
+            const requiredIELTS = university.admission_requirements?.english_ielts_min || 5.0;
+            
+            // Handle N/A values with default requirements based on university ranking
+            let effectiveRequiredTOEFL = requiredTOEFL;
+            let effectiveRequiredIELTS = requiredIELTS;
+            if (!requiredTOEFL || requiredTOEFL === null) {
+                if (university.globalRanking <= 100) effectiveRequiredTOEFL = 80;
+                else if (university.globalRanking <= 500) effectiveRequiredTOEFL = 70;
+                else effectiveRequiredTOEFL = 65;
+            }
+            if (!requiredIELTS || requiredIELTS === null) {
+                if (university.globalRanking <= 100) effectiveRequiredIELTS = 6.0;
+                else if (university.globalRanking <= 500) effectiveRequiredIELTS = 5.5;
+                else effectiveRequiredIELTS = 5.0;
+            }
+            
+            let userTOEFL = 70;
+            let userIELTS = 5.0;
+            
+            if (userEnglishLevel === 'english_high') {
+                userTOEFL = 85;
+                userIELTS = 6.5;
+            } else if (userEnglishLevel === 'english_medium') {
+                userTOEFL = 77; // Average of 70-85
+                userIELTS = 5.75; // Average of 5.0-6.5
+            } else if (userEnglishLevel === 'english_low') {
+                userTOEFL = 65;
+                userIELTS = 4.5;
+            }
+            
+            // Check if user meets requirements (more generous)
+            if (userTOEFL >= effectiveRequiredTOEFL && userIELTS >= effectiveRequiredIELTS) {
+                score += 18; // Perfect match
+            } else if (userTOEFL >= effectiveRequiredTOEFL - 15 && userIELTS >= effectiveRequiredIELTS - 1.0) {
+                score += 15; // Close match (more generous)
+            } else if (userTOEFL >= effectiveRequiredTOEFL - 25 && userIELTS >= effectiveRequiredIELTS - 1.5) {
+                score += 10; // Acceptable match (more generous)
+            } else {
+                score += 5; // Poor match but still some points
+            }
+        }
+        
+        // 4. Scholarship opportunities (12 points) - 奖学金匹配，重要因素
+        const scholarshipPref = userAnswers.step5;
+        const hasCSCFull = university.scholarships?.csc_coverage === 'Full';
+        const hasCSCPartial = university.scholarships?.csc_type_b;
+        const hasConfucius = university.scholarships?.confucius_institute_scholarship;
+        
+        if (scholarshipPref === 'full_scholarship' && hasCSCFull) {
+            score += 12;
+        } else if (scholarshipPref === 'others' && (hasCSCPartial || hasConfucius)) {
+            score += 12;
+        } else if (scholarshipPref === 'no_scholarship') {
+            score += 8; // 不需要奖学金，但给一些基础分
+        } else if (scholarshipPref === 'full_scholarship' && !hasCSCFull) {
+            score += 0; // 需要全额奖学金但没有
+        } else if (scholarshipPref === 'others' && !hasCSCPartial && !hasConfucius) {
+            score += 4; // 需要其他奖学金但没有
+        }
+        
+        // 5. Academic programs (8 points) - 学术项目匹配
+        const academicProgram = userAnswers.step6;
+        let academicProgramScore = 0;
+        
+        // 检查学术项目匹配
+        if (academicProgram === 'any_program') {
+            // 如果选择任何项目，给基础分
+            academicProgramScore = 6;
+        } else if (academicProgram === 'engineering' && university.programs?.engineering) {
+            academicProgramScore = 8;
+        } else if (academicProgram === 'business' && university.programs?.business_economics) {
+            academicProgramScore = 8;
+        } else if (academicProgram === 'medicine' && university.programs?.medicine_health) {
+            academicProgramScore = 8;
+        } else if (academicProgram === 'sciences' && university.programs?.natural_sciences) {
+            academicProgramScore = 8;
+        } else if (academicProgram === 'social_sciences' && university.programs?.social_sciences) {
+            academicProgramScore = 8;
+        } else if (academicProgram === 'arts_humanities' && university.programs?.arts_humanities) {
+            academicProgramScore = 8;
+        } else if (academicProgram === 'chinese_language' && university.programs?.chinese_programs) {
+            academicProgramScore = 8;
+        } else if (academicProgram === 'foundation_programs' && university.programs?.foundation_program) {
+            academicProgramScore = 8;
+        } else if (academicProgram === 'exchange_programs' && university.programs?.exchange_programs) {
+            academicProgramScore = 8;
+        } else {
+            // 不匹配，给基础分
+            academicProgramScore = 3;
+        }
+        
+        score += academicProgramScore;
+        
+        // 6. Academic level compatibility (10 points) - 学术水平兼容性
+        const academicLevel = userAnswers.step1; // degree level
+        const hasPrograms = university.programs[academicLevel] && 
+                          university.programs[academicLevel][userAnswers.step2];
+        const hasFieldPrograms = university.fields.includes(userAnswers.step2);
+        if (hasPrograms || hasFieldPrograms) {
+            score += 10;
+        }
+        
+
+        
+
+        
+        // 9. 城市规模匹配 (3-7 points) - 城市偏好
+        let cityBonus = 0;
+        // 由于没有城市偏好问题，给所有大学基础分，大城市稍微加分
+        if (university.citySize === 'megacity') {
+            cityBonus = 7; // 超大城市
+        } else if (university.citySize === 'large_city') {
+            cityBonus = 6; // 大城市
+        } else if (university.citySize === 'medium_city') {
+            cityBonus = 5; // 中等城市
+        } else if (university.citySize === 'small_city') {
+            cityBonus = 4; // 小城市
+        } else {
+            cityBonus = 3; // 基础分
+        }
+        score += cityBonus;
+        
+
+        
+        // 11. 特殊加分 - 基于大学特色
+        let specialBonus = 0;
+        
+        // 如果大学在用户选择的大学类型中排名靠前
+        if (university.globalRanking <= 200) {
+            specialBonus += 3; // 排名靠前的奖励
+        }
+        
+        // 如果大学有独特的项目或特色
+        if (university.programs && Object.keys(university.programs).length > 0) {
+            specialBonus += 2; // 项目丰富的奖励
+        }
+        
+        score += specialBonus;
+        
+
+        
+        // 13. 新增：预算严重超支惩罚 (-6到-2分)，更宽松
+        let budgetPenalty = 0;
+        if (budget === 'low' && totalCost > 100000) {
+            budgetPenalty = 6; // 严重超支 (更宽松)
+        } else if (budget === 'low' && totalCost > 80000) {
+            budgetPenalty = 3; // 中度超支 (更宽松)
+        } else if (budget === 'medium' && totalCost > 180000) {
+            budgetPenalty = 4; // 严重超支 (更宽松)
+        } else if (budget === 'medium' && totalCost > 150000) {
+            budgetPenalty = 2; // 中度超支 (更宽松)
+        }
+        
+        // 14. 新增：申请难度匹配 (0-5分)
+        let difficultyBonus = 0;
+        const admissionDifficulty = university.admission_requirements?.admission_difficulty || 3;
+        if (admissionDifficulty >= 4) {
+            difficultyBonus = 5; // 高难度大学
+        } else if (admissionDifficulty >= 3) {
+            difficultyBonus = 3; // 中等难度大学
+        } else {
+            difficultyBonus = 2; // 低难度大学
+        }
+        
+        // 应用所有惩罚和奖励
+        score += specialBonus - budgetPenalty + difficultyBonus;
+        
+        // 标准化分数到0-100
         score = Math.max(0, Math.min(100, score));
         
         console.log(`${university.name} score: ${score}`);
+        console.log(`Score breakdown for ${university.name}:`, {
+            universityType: universityTypeScore,
+            budget: 'calculated above',
+            language: 'calculated above',
+            scholarship: 'calculated above',
+            academicProgram: academicProgramScore,
+            academicLevel: 10,
+            cityBonus,
+            specialBonus,
+            budgetPenalty,
+            difficultyBonus,
+            totalScore: score
+        });
         
         // Special debugging for Shanghai Jiao Tong University
         if (university.name === 'Shanghai Jiao Tong University') {
@@ -931,27 +907,33 @@ function generateMatches() {
                 programs: university.programs
             });
             console.log('Score breakdown:', {
-                fieldMatch: university.fields.includes(userAnswers.step1) ? 20 : 0,
-                academicLevel: 12, // Assuming it has programs
+                fieldMatch: university.fields.includes(userAnswers.step1) ? 25 : 0,
                 budget: 'calculated above',
-                citySize: university.citySize === userAnswers.step4 ? 12 : 8,
-                ranking: 'calculated above',
-                english: 'calculated above',
+                language: 'calculated above',
+                scholarship: 'calculated above',
+                academicProgram: university.fields.includes(userAnswers.step5) ? 10 : 0,
+                academicLevel: 8,
                 gpa: 'calculated above',
-                chinese: 'calculated above',
+                rankingBonus,
+                cityBonus,
                 realisticBonus,
-                unrealisticPenalty
+                unrealisticPenalty,
+                specialBonus
             });
             console.log('Final score:', score);
             console.log('=== END DEBUG ===');
         }
         
-        if (score > 15) { // Higher threshold for better quality matches
-            matches.push({
-                ...university,
-                matchScore: score
-            });
+        // 如果分数太低，跳过这所大学
+        if (score < 40) {
+            console.log(`Skipping ${university.name}: score too low (${score})`);
+            continue;
         }
+        
+        matches.push({
+            ...university,
+            matchScore: score
+        });
     }
     
     // Sort by match score (descending) and return top 10
@@ -965,8 +947,17 @@ function generateMatches() {
 // Display results
 function displayResults() {
     console.log('displayResults called');
+    console.log('matchedUniversities length:', matchedUniversities.length);
+    console.log('matchedUniversities:', matchedUniversities);
+    
     const resultsGrid = document.getElementById('resultsGrid');
     console.log('Results grid element:', resultsGrid);
+    
+    if (!resultsGrid) {
+        console.error('Results grid element not found!');
+        return;
+    }
+    
     resultsGrid.innerHTML = '';
     
     // Check if we have any matches
@@ -1014,93 +1005,64 @@ function createUniversityCard(university, rank) {
     const card = document.createElement('div');
     card.className = 'university-card';
     
-    const academicLevel = userAnswers.step2;
-    const field = userAnswers.step1;
-    const program = university.programs[academicLevel] && university.programs[academicLevel][field];
+    const degreeLevel = userAnswers.step1; // undergraduate or postgraduate
+    const field = userAnswers.step2;
     
-    // Get accurate tuition information
-    let tuition = 'N/A';
-    if (program && program.tuition) {
-        tuition = program.tuition.toLocaleString();
-    } else if (university.costsData) {
-        // Fallback to general tuition data
-        if (academicLevel === 'undergraduate') {
-            if (field === 'engineering' || field === 'science') {
-                tuition = university.costsData.ug_tuition_stem?.toLocaleString() || 'N/A';
-            } else if (field === 'medicine') {
-                tuition = university.costsData.ug_tuition_medicine?.toLocaleString() || 'N/A';
-            } else {
-                tuition = university.costsData.ug_tuition_liberal_arts?.toLocaleString() || 'N/A';
-            }
-        } else if (academicLevel === 'graduate') {
-            if (field === 'business') {
-                tuition = university.costsData.pg_tuition_mba?.toLocaleString() || 'N/A';
-            } else if (field === 'engineering' || field === 'science') {
-                tuition = university.costsData.pg_tuition_stem?.toLocaleString() || 'N/A';
-            } else {
-                tuition = university.costsData.pg_tuition_liberal_arts?.toLocaleString() || 'N/A';
-            }
+    // Get tuition information based on degree level
+    let tuitionInfo = 'N/A';
+    if (university.tuition_fees) {
+        if (degreeLevel === 'undergraduate') {
+            const ugLow = university.tuition_fees.ug_tuition_low || 30000;
+            const ugHigh = university.tuition_fees.ug_tuition_high || ugLow;
+            tuitionInfo = `${ugLow.toLocaleString()} - ${ugHigh.toLocaleString()} RMB/year`;
+        } else if (degreeLevel === 'postgraduate') {
+            const pgLow = university.tuition_fees.pg_tuition_low || 40000;
+            const pgHigh = university.tuition_fees.pg_tuition_high || pgLow;
+            tuitionInfo = `${pgLow.toLocaleString()} - ${pgHigh.toLocaleString()} RMB/year`;
         }
     }
     
-    const englishPrograms = program ? program.englishPrograms : true; // Most programs have English options
-    const chineseRequired = program ? program.chineseRequired : false;
+    // Get GPA requirement
+    const gpaRequirement = degreeLevel === 'undergraduate' ? 
+        university.admission_requirements?.ug_min_gpa : university.admission_requirements?.pg_min_gpa;
     
-         // Get additional details from admission data
-     const gpaRequirement = academicLevel === 'undergraduate' ? 
-         university.admissionData?.ug_min_gpa : university.admissionData?.pg_min_gpa;
-     const hskLevel = university.admissionData?.hsk_min_level;
-     const livingCost = university.costsData?.living_cost_avg?.toLocaleString();
-     
-     // Get application dates
-     const applicationDeadline = university.admissionData?.application_deadline;
-     const applicationStartDate = university.admissionData?.application_start_date;
-     
-     // Format application deadline for better readability
-     const formatDeadline = (deadline) => {
-         if (!deadline || deadline === 'TBD') return 'March 31';
-         
-         // Handle different date formats
-         if (deadline.includes('_')) {
-             // Convert "Mar_31" to "March 31"
-             const monthMap = {
-                 'Jan': 'January', 'Feb': 'February', 'Mar': 'March', 'Apr': 'April',
-                 'May': 'May', 'Jun': 'June', 'Jul': 'July', 'Aug': 'August',
-                 'Sep': 'September', 'Oct': 'October', 'Nov': 'November', 'Dec': 'December'
-             };
-             const parts = deadline.split('_');
-             if (parts.length === 2) {
-                 const month = monthMap[parts[0]] || parts[0];
-                 return `${month} ${parts[1]}`;
-             }
-         }
-         
-         // If it's already in a readable format, return as is
-         if (deadline.includes('March') || deadline.includes('April') || deadline.includes('May')) {
-             return deadline;
-         }
-         
-         return deadline;
-     };
-     
-     // Get English requirements (with defaults based on university type)
-     const englishRequirement = university.admissionData?.english_requirement;
-     const ieltsRequirement = university.admissionData?.ielts_requirement;
-     const toeflRequirement = university.admissionData?.toefl_requirement;
-     
-     // Set default English requirements based on university ranking and type
-     let defaultEnglishReq = '';
-     if (university.globalRanking <= 100) {
-         defaultEnglishReq = 'IELTS 6.5+ / TOEFL 90+';
-     } else if (university.globalRanking <= 500) {
-         defaultEnglishReq = 'IELTS 6.0+ / TOEFL 80+';
-     } else {
-         defaultEnglishReq = 'IELTS 5.5+ / TOEFL 70+';
-     }
+    // Get HSK requirement
+    const hskLevel = university.admission_requirements?.hsk_min_level;
+    
+    // Get living cost
+    const livingCost = university.costsData?.living_cost_avg?.toLocaleString();
+    
+    // Get English requirements
+    let englishReq = '';
+    if (university.admission_requirements?.english_toefl_min && university.admission_requirements?.english_ielts_min) {
+        englishReq = `TOEFL ${university.admission_requirements.english_toefl_min}+ / IELTS ${university.admission_requirements.english_ielts_min}+`;
+    } else if (university.admission_requirements?.english_toefl_min) {
+        englishReq = `TOEFL ${university.admission_requirements.english_toefl_min}+`;
+    } else if (university.admission_requirements?.english_ielts_min) {
+        englishReq = `IELTS ${university.admission_requirements.english_ielts_min}+`;
+    } else {
+        // Default based on ranking
+        if (university.globalRanking <= 100) {
+            englishReq = 'IELTS 6.5+ / TOEFL 90+';
+        } else if (university.globalRanking <= 500) {
+            englishReq = 'IELTS 6.0+ / TOEFL 80+';
+        } else {
+            englishReq = 'IELTS 5.5+ / TOEFL 70+';
+        }
+    }
     
     // Get scholarship information
-    const scholarshipData = university.scholarshipData;
-    const additionalData = university.additionalData;
+    const hasCSCFull = university.scholarships?.csc_coverage === 'Full';
+    const hasCSCPartial = university.scholarships?.csc_type_b;
+    const hasConfucius = university.scholarships?.confucius_institute_scholarship;
+    
+    // Calculate acceptance rate based on ranking
+    let acceptanceRate = 0.3; // Default 30%
+    if (university.globalRanking <= 50) acceptanceRate = 0.1;
+    else if (university.globalRanking <= 100) acceptanceRate = 0.15;
+    else if (university.globalRanking <= 200) acceptanceRate = 0.25;
+    else if (university.globalRanking <= 500) acceptanceRate = 0.4;
+    else acceptanceRate = 0.6;
     
             card.innerHTML = `
         <div class="university-header">
@@ -1113,140 +1075,220 @@ function createUniversityCard(university, rank) {
                 <p class="university-meta">${university.city} • Global Rank #${university.globalRanking}</p>
             </div>
         </div>
-        <div class="university-details">
-            <div class="detail-item">
-                <i class="fas fa-dollar-sign"></i>
-                <span>Tuition: $${tuition}/year</span>
-            </div>
-            <div class="detail-item">
-                <i class="fas fa-language"></i>
-                <span>${englishPrograms ? 'English Programs' : 'Chinese Only'}</span>
-            </div>
-            <div class="detail-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>${university.city}</span>
-            </div>
-            <div class="detail-item">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Acceptance: ${(university.acceptanceRate * 100).toFixed(1)}%</span>
-            </div>
-            ${gpaRequirement ? `
-            <div class="detail-item">
-                <i class="fas fa-chart-line"></i>
-                <span>Min GPA: ${gpaRequirement}</span>
-            </div>
-            ` : ''}
-            ${hskLevel ? `
-            <div class="detail-item">
-                <i class="fas fa-language"></i>
-                <span>HSK Level: ${hskLevel}</span>
-            </div>
-            ` : ''}
-                         ${livingCost ? `
-             <div class="detail-item">
-                 <i class="fas fa-home"></i>
-                 <span>Living Cost: $${livingCost}/year</span>
-             </div>
-             ` : ''}
-             
-             <!-- English Requirements -->
-             <div class="detail-item">
-                 <i class="fas fa-globe"></i>
-                 <span>English: ${englishRequirement || ieltsRequirement || toeflRequirement ? 
-                     `${englishRequirement || ''}${ieltsRequirement ? ` IELTS ${ieltsRequirement}` : ''}${toeflRequirement ? ` TOEFL ${toeflRequirement}` : ''}` : 
-                     defaultEnglishReq}</span>
-             </div>
-             
-             <!-- Application Dates -->
-             <div class="detail-item">
-                 <i class="fas fa-calendar-alt"></i>
-                 <span>Application: ${applicationStartDate && applicationStartDate !== 'January 1' ? `${applicationStartDate} - ` : ''}${formatDeadline(applicationDeadline)}</span>
-             </div>
+        
+        <!-- Match indicators -->
+        <div class="match-indicators">
+            ${getMatchIndicators(university, userAnswers)}
         </div>
-        <p class="university-description">${university.description}</p>
+        
+        <!-- Key metrics -->
+        <div class="key-metrics">
+            <div class="metric">
+                <span class="label">Tuition</span>
+                <span class="value">${tuitionInfo}</span>
+            </div>
+            <div class="metric">
+                <span class="label">Language Requirements</span>
+                <span class="value">${getLanguageRequirement(university, userAnswers)}</span>
+            </div>
+            <div class="metric">
+                <span class="label">Application Difficulty</span>
+                <span class="value">${getDifficultyLevel(university)}</span>
+            </div>
+            <div class="metric">
+                <span class="label">Additional Info</span>
+                <span class="value">${getAdditionalInfo(university)}</span>
+            </div>
+        </div>
         
         <!-- Scholarship Information -->
-        ${scholarshipData ? `
+        ${(hasCSCFull || hasCSCPartial || hasConfucius) ? `
         <div class="scholarship-section">
             <h4><i class="fas fa-gift"></i> Scholarship Opportunities</h4>
             <div class="scholarship-details">
-                ${scholarshipData.csc_scholarship_quota ? `
+                ${hasCSCFull ? `
                 <div class="scholarship-item">
-                    <span class="scholarship-label">CSC Quota:</span>
-                    <span class="scholarship-value">${scholarshipData.csc_scholarship_quota} students</span>
+                    <span class="scholarship-label">CSC Full:</span>
+                    <span class="scholarship-value available">✓ Available</span>
                 </div>
                 ` : ''}
-                ${scholarshipData.csc_coverage ? `
+                ${hasCSCPartial ? `
                 <div class="scholarship-item">
-                    <span class="scholarship-label">CSC Coverage:</span>
-                    <span class="scholarship-value">${scholarshipData.csc_coverage}</span>
+                    <span class="scholarship-label">CSC Partial:</span>
+                    <span class="scholarship-value available">✓ Available</span>
                 </div>
                 ` : ''}
-                ${scholarshipData.university_amount ? `
-                <div class="scholarship-item">
-                    <span class="scholarship-label">University Scholarships:</span>
-                    <span class="scholarship-value">${scholarshipData.university_amount}</span>
-                </div>
-                ` : ''}
-                ${scholarshipData.confucius_institute_scholarship ? `
+                ${hasConfucius ? `
                 <div class="scholarship-item">
                     <span class="scholarship-label">Confucius Institute:</span>
-                    <span class="scholarship-value">Available</span>
+                    <span class="scholarship-value available">✓ Available</span>
                 </div>
                 ` : ''}
             </div>
         </div>
         ` : ''}
         
-        <!-- Additional Information -->
-        ${additionalData ? `
-        <div class="additional-section">
-            <h4><i class="fas fa-info-circle"></i> Campus & Student Life</h4>
-            <div class="additional-details">
-                ${additionalData.total_international_students ? `
-                <div class="additional-item">
-                    <span class="additional-label">International Students:</span>
-                    <span class="additional-value">${additionalData.total_international_students.toLocaleString()}</span>
-                </div>
-                ` : ''}
-                ${additionalData.campus_rating_1to5 ? `
-                <div class="additional-item">
-                    <span class="additional-label">Campus Rating:</span>
-                    <span class="additional-value campus-rating">${'★'.repeat(additionalData.campus_rating_1to5)}${'☆'.repeat(5-additionalData.campus_rating_1to5)}</span>
-                </div>
-                ` : ''}
-                ${additionalData.career_support ? `
-                <div class="additional-item">
-                    <span class="additional-label">Career Support:</span>
-                    <span class="additional-value">${additionalData.career_support}</span>
-                </div>
-                ` : ''}
-                ${additionalData.internship_opportunities ? `
-                <div class="additional-item">
-                    <span class="additional-label">Internships:</span>
-                    <span class="additional-value">${additionalData.internship_opportunities}</span>
-                </div>
-                ` : ''}
+        <div class="university-footer">
+            <div class="match-score">
+                ${university.matchScore}% Match
             </div>
         </div>
-        ` : ''}
-        
-                 <div class="university-footer">
-             ${university.website ? `
-             <div class="website-link">
-                 <a href="https://${university.website}" target="_blank" class="btn btn-outline">
-                     <i class="fas fa-external-link-alt"></i>
-                     Visit Official Website
-                 </a>
-             </div>
-             ` : ''}
-             <div class="match-score">
-                 ${university.matchScore}% Match
-             </div>
-         </div>
      `;
      
      return card;
+}
+
+// 辅助函数：生成匹配状态指示器
+function getMatchIndicators(university, userAnswers) {
+    const indicators = [];
+    
+    // 大学类型匹配
+    const universityType = userAnswers.step2;
+    if (universityType === 'c9' && university.classifications?.c9_league) {
+        indicators.push('<span class="match-good">✓ C9 League Match</span>');
+    } else if (universityType === '985' && university.classifications?.project_985) {
+        indicators.push('<span class="match-good">✓ 985 University Match</span>');
+    } else if (universityType === '211' && university.classifications?.project_211) {
+        indicators.push('<span class="match-good">✓ 211 University Match</span>');
+    } else if (universityType === 'any') {
+        indicators.push('<span class="match-good">✓ University Type Match</span>');
+    } else {
+        indicators.push('<span class="match-warning">⚠ University Type Mismatch</span>');
+    }
+    
+    // 预算匹配
+    const budget = userAnswers.step4;
+    const degreeLevel = userAnswers.step1;
+    let tuition = 0;
+    if (degreeLevel === 'undergraduate') {
+        tuition = university.tuition_fees?.ug_tuition_low || 30000;
+    } else {
+        tuition = university.tuition_fees?.pg_tuition_low || 40000;
+    }
+    const totalCost = tuition + 12000; // 学费 + 生活费
+    
+    if (budget === 'low' && totalCost <= 45000) {
+        indicators.push('<span class="match-good">✓ Budget Suitable</span>');
+    } else if (budget === 'medium' && totalCost <= 90000) {
+        indicators.push('<span class="match-good">✓ Budget Suitable</span>');
+    } else if (budget === 'high') {
+        indicators.push('<span class="match-good">✓ Budget Suitable</span>');
+    } else {
+        indicators.push('<span class="match-warning">⚠ Budget High</span>');
+    }
+    
+    // 语言匹配
+    const languagePreference = userAnswers.step3;
+    if (languagePreference === 'chinese') {
+        const languageLevel = userAnswers.step3a;
+        const userHSKLevel = parseInt(languageLevel.replace('hsk', ''));
+        const requiredHSKLevel = university.admission_requirements?.hsk_min_level || 3;
+        if (userHSKLevel >= requiredHSKLevel) {
+            indicators.push('<span class="match-good">✓ Language Requirements Met</span>');
+        } else {
+            indicators.push('<span class="match-warning">⚠ Language Requirements High</span>');
+        }
+    } else {
+        indicators.push('<span class="match-good">✓ Language Requirements Met</span>');
+    }
+    
+    return indicators.join('');
+}
+
+// 辅助函数：获取语言要求
+function getLanguageRequirement(university, userAnswers) {
+    const languagePreference = userAnswers.step3;
+    if (languagePreference === 'chinese') {
+        const hskLevel = university.admission_requirements?.hsk_min_level || 3;
+        return `HSK ${hskLevel}`;
+    } else {
+        const toefl = university.admission_requirements?.english_toefl_min || 70;
+        const ielts = university.admission_requirements?.english_ielts_min || 5.0;
+        return `TOEFL ${toefl}+ / IELTS ${ielts}+`;
+    }
+}
+
+// 辅助函数：获取申请难度
+function getDifficultyLevel(university) {
+    const ranking = university.globalRanking;
+    if (ranking <= 50) return 'Very High';
+    else if (ranking <= 100) return 'High';
+    else if (ranking <= 200) return 'Moderate';
+    else if (ranking <= 500) return 'Medium';
+    else return 'Low';
+}
+
+
+
+// 辅助函数：获取Additional Information
+function getAdditionalInfo(university) {
+    const info = [];
+    
+    // 1. 特殊项目
+    if (university.programs?.mbbs_program) {
+        info.push('MBBS Program');
+    }
+    if (university.programs?.foundation_program) {
+        info.push('Foundation Program');
+    }
+    if (university.programs?.exchange_programs) {
+        info.push('Exchange Programs');
+    }
+    if (university.programs?.chinese_programs) {
+        info.push('Chinese Programs');
+    }
+    
+    // 2. 大学分类
+    if (university.classifications?.double_first_class) {
+        info.push('Double First-Class');
+    }
+    
+    // 3. 城市等级
+    if (university.city_tier) {
+        const cityTier = university.city_tier.replace('Tier_', 'T');
+        info.push(`${cityTier} City`);
+    }
+    
+    // 4. 大学类型
+    if (university.university_type) {
+        info.push(university.university_type);
+    }
+    
+    // 5. 录取难度
+    if (university.admission_requirements?.admission_difficulty) {
+        const difficulty = university.admission_requirements.admission_difficulty;
+        if (difficulty >= 4) {
+            info.push('Highly Competitive');
+        } else if (difficulty >= 3) {
+            info.push('Competitive');
+        } else {
+            info.push('Moderate');
+        }
+    }
+    
+    // 6. 是否接受预科
+    if (university.admission_requirements?.accept_foundation) {
+        info.push('Foundation Accepted');
+    }
+    
+    // 7. 排名信息
+    if (university.rankings?.qs_rank_2026) {
+        const qsRank = university.rankings.qs_rank_2026;
+        if (qsRank <= 50) {
+            info.push('Top 50 Global');
+        } else if (qsRank <= 100) {
+            info.push('Top 100 Global');
+        } else if (qsRank <= 200) {
+            info.push('Top 200 Global');
+        }
+    }
+    
+    // 如果有信息则返回，否则返回默认值
+    if (info.length > 0) {
+        return info.slice(0, 3).join(', '); // 最多显示3个信息
+    } else {
+        return 'Standard Programs';
+    }
 }
 
 // Buy Me a Coffee integration - static HTML button used instead
@@ -1287,6 +1329,21 @@ function getFieldIcon(field) {
         'social': 'fas fa-users'
     };
     return icons[field] || 'fas fa-graduation-cap';
+}
+
+// Thank you message functions
+function showThankYouMessage() {
+    alert('Thank you for your support!');
+}
+
+function showMainThankYouMessage() {
+    alert('Thank you for using our service!');
+}
+
+// Setup donation button function
+function setupMainDonationButton() {
+    // This function is now handled by static HTML
+    console.log('Donation button setup completed');
 }
 
 // Export functions for global access

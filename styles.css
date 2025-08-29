@@ -567,6 +567,36 @@ body {
 
 .option-card[data-value="arts"].selected {
     background: linear-gradient(135deg, #ec4899, #db2777);
+}
+
+/* Difficulty note styles */
+.difficulty-note {
+    margin-top: 0.75rem;
+}
+
+.difficulty-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.difficulty-badge.difficulty-hard {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.difficulty-badge.difficulty-medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.difficulty-badge.difficulty-easy {
+    background: #dcfce7;
+    color: #166534;
     border-color: #ec4899;
     box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.25), 0 10px 10px -5px rgba(236, 72, 153, 0.1);
 }
@@ -886,7 +916,7 @@ body {
 .university-card {
     background: linear-gradient(135deg, #ffffff 0%, #F9FAFB 100%);
     border-radius: 1rem;
-    padding: 2.5rem;
+    padding: 2rem;
     border: 1px solid rgba(229, 231, 235, 0.8);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -895,8 +925,9 @@ body {
     position: relative;
     overflow: hidden;
     animation: fadeInUp 0.6s ease-out;
-    gap: 1rem;
+    gap: 1.25rem;
     backdrop-filter: blur(10px);
+    min-height: 380px;
 }
 
 @keyframes fadeInUp {
@@ -945,12 +976,14 @@ body {
 .university-header {
     display: flex;
     align-items: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid rgba(241, 245, 249, 0.8);
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(241, 245, 249, 0.8);
     position: relative;
 }
+
+
 
 @media (max-width: 640px) {
     .university-header {
@@ -974,6 +1007,141 @@ body {
 }
 
 
+
+/* 匹配状态指示器 */
+.match-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding: 0.875rem;
+    background: rgba(249, 250, 251, 0.8);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.match-indicators span {
+    padding: 0.375rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.match-good {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.match-warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* 关键数据 */
+.key-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem;
+    margin-bottom: 1.25rem;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.875rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    transition: all 0.2s ease;
+}
+
+.metric:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+.metric .label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.metric .value {
+    font-size: 1rem;
+    color: #111827;
+    font-weight: 600;
+}
+
+
+
+/* 奖学金样式优化 */
+.scholarship-section {
+    background: rgba(34, 197, 94, 0.05);
+    border: 1px solid rgba(34, 197, 94, 0.1);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.scholarship-section h4 {
+    color: #16a34a;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scholarship-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.scholarship-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.scholarship-label {
+    font-size: 0.875rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.scholarship-value.available {
+    color: #16a34a;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 640px) {
+    .key-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    .match-indicators {
+        flex-direction: column;
+    }
+    
+    .match-indicators span {
+        justify-content: center;
+    }
+}
 
 .university-info {
     flex: 1;

@@ -5,37 +5,49 @@
       "name_cn": "清华大学",
       "name_en": "Tsinghua University",
       "city": "Beijing",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Beijing",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 17,
+        "the_rank_2025": 12.0
       },
-      "admission": {
-        "official_website": "www.tsinghua.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 4500,
-        "ug_tuition_stem": 5000.0,
-        "ug_tuition_medicine": 6500.0,
-        "pg_tuition_liberal_arts": 5000,
-        "pg_tuition_stem": 5500.0,
-        "pg_tuition_mba": 15000.0,
-        "living_cost_avg": 8000
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.5,
+        "accept_foundation": false,
+        "admission_difficulty": 5
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 26000,
+        "ug_tuition_high": 40000,
+        "pg_tuition_low": 32000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 200,
         "csc_coverage": "Full",
-        "university_amount": "2000_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 3500,
-        "campus_rating_1to5": 5.0,
-        "career_support": "Excellent",
-        "internship_opportunities": "Abundant"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
       }
     },
     {
@@ -43,37 +55,49 @@
       "name_cn": "北京大学",
       "name_en": "Peking University",
       "city": "Beijing",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Beijing/Jiangsu",
+      "city_tier": "Tier_1/Tier_2",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 14,
+        "the_rank_2025": 13.0
       },
-      "admission": {
-        "official_website": "www.pku.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 4200,
-        "ug_tuition_stem": 4800.0,
-        "ug_tuition_medicine": 6200.0,
-        "pg_tuition_liberal_arts": 4800,
-        "pg_tuition_stem": 5200.0,
-        "pg_tuition_mba": 14000.0,
-        "living_cost_avg": 8000
+      "admission_requirements": {
+        "hsk_min_level": 6,
+        "english_toefl_min": 100.0,
+        "english_ielts_min": null,
+        "accept_foundation": true,
+        "admission_difficulty": 5
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 26000,
+        "ug_tuition_high": 45000,
+        "pg_tuition_low": 58000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 200,
         "csc_coverage": "Full",
-        "university_amount": "2000_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 4000,
-        "campus_rating_1to5": 5.0,
-        "career_support": "Excellent",
-        "internship_opportunities": "Abundant"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -81,37 +105,49 @@
       "name_cn": "复旦大学",
       "name_en": "Fudan University",
       "city": "Shanghai",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Shanghai",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 30,
+        "the_rank_2025": 36.0
       },
-      "admission": {
-        "official_website": "www.fudan.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 4000,
-        "ug_tuition_stem": 4500.0,
-        "ug_tuition_medicine": 6000.0,
-        "pg_tuition_liberal_arts": 4500,
-        "pg_tuition_stem": 5000.0,
-        "pg_tuition_mba": 12000.0,
-        "living_cost_avg": 7000
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 90.0,
+        "english_ielts_min": 6.5,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 23000,
+        "ug_tuition_high": 75000,
+        "pg_tuition_low": 26000,
+        "pg_tuition_high": 54000
       },
       "scholarships": {
-        "csc_scholarship_quota": 150,
         "csc_coverage": "Full",
-        "university_amount": "3000_to_Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 3000,
-        "campus_rating_1to5": 4.5,
-        "career_support": "Good",
-        "internship_opportunities": "Abundant"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -119,37 +155,49 @@
       "name_cn": "上海交通大学",
       "name_en": "Shanghai Jiaotong University",
       "city": "Shanghai",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Shanghai",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 47,
+        "the_rank_2025": 52.0
       },
-      "admission": {
-        "official_website": "www.sjtu.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 4300,
-        "ug_tuition_stem": 4800.0,
-        "ug_tuition_medicine": 6300.0,
-        "pg_tuition_liberal_arts": 4800,
-        "pg_tuition_stem": 5300.0,
-        "pg_tuition_mba": 13000.0,
-        "living_cost_avg": 7500
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 24800,
+        "ug_tuition_high": 29000,
+        "pg_tuition_low": 289000,
+        "pg_tuition_high": 289000
       },
       "scholarships": {
-        "csc_scholarship_quota": 180,
         "csc_coverage": "Full",
-        "university_amount": "2500_to_Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 2800,
-        "campus_rating_1to5": 4.5,
-        "career_support": "Good",
-        "internship_opportunities": "Abundant"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -157,37 +205,49 @@
       "name_cn": "南京大学",
       "name_en": "Nanjing University",
       "city": "Nanjing",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Jiangsu",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 103,
+        "the_rank_2025": 65.0
       },
-      "admission": {
-        "official_website": "www.nju.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3800,
-        "ug_tuition_stem": 4200.0,
-        "ug_tuition_medicine": 5800.0,
-        "pg_tuition_liberal_arts": 4200,
-        "pg_tuition_stem": 4600.0,
-        "pg_tuition_mba": 10000.0,
-        "living_cost_avg": 5500
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 70.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": false,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 21000,
+        "ug_tuition_high": 42000,
+        "pg_tuition_low": 25000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 120,
         "csc_coverage": "Full",
-        "university_amount": "2000_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 2000,
-        "campus_rating_1to5": 4.5,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
       }
     },
     {
@@ -195,37 +255,49 @@
       "name_cn": "浙江大学",
       "name_en": "Zhejiang University",
       "city": "Hangzhou",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Zhejiang",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 49,
+        "the_rank_2025": 47.0
       },
-      "admission": {
-        "official_website": "www.zju.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3900,
-        "ug_tuition_stem": 4400.0,
-        "ug_tuition_medicine": 5900.0,
-        "pg_tuition_liberal_arts": 4400,
-        "pg_tuition_stem": 4800.0,
-        "pg_tuition_mba": 11000.0,
-        "living_cost_avg": 6000
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 90.0,
+        "english_ielts_min": 6.5,
+        "accept_foundation": false,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 19800,
+        "ug_tuition_high": 42800,
+        "pg_tuition_low": 22800,
+        "pg_tuition_high": 32800
       },
       "scholarships": {
-        "csc_scholarship_quota": 160,
         "csc_coverage": "Full",
-        "university_amount": "2500_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 2500,
-        "campus_rating_1to5": 5.0,
-        "career_support": "Excellent",
-        "internship_opportunities": "Abundant"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
       }
     },
     {
@@ -233,73 +305,99 @@
       "name_cn": "中国科学技术大学",
       "name_en": "University of Science and Technology of China",
       "city": "Hefei",
-      "majors": {
-        "engineering": true,
-        "business": false,
-        "medicine": true,
-        "arts": false,
-        "science": true,
-        "social": false
+      "province": "Anhui",
+      "city_tier": "New_Tier_1",
+      "university_type": "Science_Technology",
+      "rankings": {
+        "qs_rank_2026": 132,
+        "the_rank_2025": 53.0
       },
-      "admission": {
-        "official_website": "www.ustc.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3600,
-        "ug_tuition_stem": 4100.0,
-        "pg_tuition_liberal_arts": 4100,
-        "pg_tuition_stem": 4500.0,
-        "living_cost_avg": 4500
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": null,
+        "english_ielts_min": null,
+        "accept_foundation": false,
+        "admission_difficulty": 5
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 26000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 30000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 100,
         "csc_coverage": "Full",
-        "university_amount": "2000_to_Full",
-        "confucius_institute_scholarship": true
+        "csc_type_a": false,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": false
       },
-      "additional_info": {
-        "total_international_students": 500,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": false,
+        "arts_humanities": false,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
       }
     },
     {
       "id": 8,
       "name_cn": "哈尔滨工业大学",
       "name_en": "Harbin Institute of Technology",
-      "city": "Harbin",
-      "majors": {
-        "engineering": true,
-        "business": false,
-        "medicine": true,
-        "arts": false,
-        "science": true,
-        "social": false
+      "city": "Harbin/weihai",
+      "province": "Heilongjiang",
+      "city_tier": "Tier_2",
+      "university_type": "Engineering",
+      "rankings": {
+        "qs_rank_2026": 256,
+        "the_rank_2025": 152.0
       },
-      "admission": {
-        "official_website": "www.hit.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3200,
-        "ug_tuition_stem": 3800.0,
-        "ug_tuition_medicine": 5200.0,
-        "pg_tuition_liberal_arts": 3800,
-        "pg_tuition_stem": 4200.0,
-        "pg_tuition_mba": 9000.0,
-        "living_cost_avg": 4000
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 28000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 150,
         "csc_coverage": "Full",
-        "university_amount": "1500_to_Full",
-        "confucius_institute_scholarship": true
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": false
       },
-      "additional_info": {
-        "total_international_students": 1500,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": false,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -307,37 +405,49 @@
       "name_cn": "西安交通大学",
       "name_en": "Xi'an Jiaotong University",
       "city": "Xi'an",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Shaanxi",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": "1001-1200",
+        "the_rank_2025": 201.0
       },
-      "admission": {
-        "official_website": "www.xjtu.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3000,
-        "ug_tuition_stem": 3500.0,
-        "ug_tuition_medicine": 5000.0,
-        "pg_tuition_liberal_arts": 3500,
-        "pg_tuition_stem": 3900.0,
-        "pg_tuition_mba": 8500.0,
-        "living_cost_avg": 3800
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": 50000,
+        "pg_tuition_low": 30000,
+        "pg_tuition_high": 50000
       },
       "scholarships": {
-        "csc_scholarship_quota": 120,
         "csc_coverage": "Full",
-        "university_amount": "1500_to_Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 1200,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -345,33 +455,49 @@
       "name_cn": "北京语言大学",
       "name_en": "Beijing Language and Culture University",
       "city": "Beijing",
-      "majors": {
-        "engineering": false,
-        "business": true,
-        "medicine": false,
-        "arts": true,
-        "science": false,
-        "social": true
+      "province": "Beijing",
+      "city_tier": "Tier_1",
+      "university_type": "Language",
+      "rankings": {
+        "qs_rank_2026": null,
+        "the_rank_2025": null
       },
-      "admission": {
-        "official_website": "www.blcu.edu.cn"
+      "classifications": {
+        "project_985": false,
+        "project_211": false,
+        "c9_league": false,
+        "double_first_class": false
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3500,
-        "pg_tuition_liberal_arts": 4000,
-        "living_cost_avg": 7000
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": true,
+        "admission_difficulty": 1
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 25800,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 30000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 50,
         "csc_coverage": "Full",
-        "university_amount": "1000_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 5000,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Excellent",
-        "internship_opportunities": "Limited"
+      "programs": {
+        "engineering": false,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": false,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -379,37 +505,49 @@
       "name_cn": "中山大学",
       "name_en": "Sun Yat-sen University",
       "city": "Guangzhou",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Guangdong",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 276,
+        "the_rank_2025": 201.0
       },
-      "admission": {
-        "official_website": "www.sysu.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3700,
-        "ug_tuition_stem": 4200.0,
-        "ug_tuition_medicine": 5700.0,
-        "pg_tuition_liberal_arts": 4200,
-        "pg_tuition_stem": 4600.0,
-        "pg_tuition_mba": 10500.0,
-        "living_cost_avg": 5000
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 79.0,
+        "english_ielts_min": 6.5,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 26000,
+        "ug_tuition_high": 48000,
+        "pg_tuition_low": 30000,
+        "pg_tuition_high": 55000
       },
       "scholarships": {
-        "csc_scholarship_quota": 140,
         "csc_coverage": "Full",
-        "university_amount": "2000_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 2200,
-        "campus_rating_1to5": 4.5,
-        "career_support": "Good",
-        "internship_opportunities": "Abundant"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -417,36 +555,49 @@
       "name_cn": "哈尔滨工业大学（深圳）",
       "name_en": "Harbin Institute of Technology (Shenzhen)",
       "city": "Shenzhen",
-      "majors": {
-        "engineering": true,
-        "business": false,
-        "medicine": true,
-        "arts": false,
-        "science": true,
-        "social": false
+      "province": "Guangdong",
+      "city_tier": "Tier_1",
+      "university_type": "Engineering",
+      "rankings": {
+        "qs_rank_2026": 256,
+        "the_rank_2025": 152.0
       },
-      "admission": {
-        "official_website": "www.hitsz.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": true,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 4000,
-        "ug_tuition_stem": 4500.0,
-        "pg_tuition_liberal_arts": 4500,
-        "pg_tuition_stem": 5000.0,
-        "pg_tuition_mba": 12000.0,
-        "living_cost_avg": 6500
+      "admission_requirements": {
+        "hsk_min_level": 3,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 28000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 80,
         "csc_coverage": "Full",
-        "university_amount": "2500_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": false
       },
-      "additional_info": {
-        "total_international_students": 800,
-        "campus_rating_1to5": 4.5,
-        "career_support": "Good",
-        "internship_opportunities": "Abundant"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": false,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -454,36 +605,49 @@
       "name_cn": "江苏大学",
       "name_en": "Jiangsu University",
       "city": "Zhenjiang",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Jiangsu",
+      "city_tier": "Tier_3",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": null,
+        "the_rank_2025": 501.0
       },
-      "admission": {
-        "official_website": "www.ujs.edu.cn"
+      "classifications": {
+        "project_985": false,
+        "project_211": false,
+        "c9_league": false,
+        "double_first_class": false
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 2500,
-        "ug_tuition_stem": 3000.0,
-        "ug_tuition_medicine": 4500.0,
-        "pg_tuition_liberal_arts": 3000,
-        "pg_tuition_stem": 3400.0,
-        "living_cost_avg": 3200
+      "admission_requirements": {
+        "hsk_min_level": 3,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": true,
+        "admission_difficulty": 2
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 18000,
+        "ug_tuition_high": 34000,
+        "pg_tuition_low": 20000,
+        "pg_tuition_high": 42000
       },
       "scholarships": {
-        "csc_scholarship_quota": 30,
-        "csc_coverage": "Partial",
-        "university_amount": "1000_to_3000",
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 600,
-        "campus_rating_1to5": 3.5,
-        "career_support": "Fair",
-        "internship_opportunities": "Fair"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -491,36 +655,49 @@
       "name_cn": "西北工业大学",
       "name_en": "Northwestern Polytechnical University",
       "city": "Xi'an",
-      "majors": {
-        "engineering": true,
-        "business": false,
-        "medicine": true,
-        "arts": false,
-        "science": true,
-        "social": false
+      "province": "Shaanxi",
+      "city_tier": "New_Tier_1",
+      "university_type": "Engineering",
+      "rankings": {
+        "qs_rank_2026": 499,
+        "the_rank_2025": 251.0
       },
-      "admission": {
-        "official_website": "www.nwpu.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 2800,
-        "ug_tuition_stem": 3300.0,
-        "pg_tuition_liberal_arts": 3300,
-        "pg_tuition_stem": 3700.0,
-        "pg_tuition_mba": 8000.0,
-        "living_cost_avg": 3500
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 30000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 100,
         "csc_coverage": "Full",
-        "university_amount": "1500_to_Full",
-        "confucius_institute_scholarship": true
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": false
       },
-      "additional_info": {
-        "total_international_students": 1000,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -528,37 +705,49 @@
       "name_cn": "中南大学",
       "name_en": "Central South University",
       "city": "Changsha",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Hunan",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 452,
+        "the_rank_2025": null
       },
-      "admission": {
-        "official_website": "www.csu.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 2700,
-        "ug_tuition_stem": 3200.0,
-        "ug_tuition_medicine": 4700.0,
-        "pg_tuition_liberal_arts": 3200,
-        "pg_tuition_stem": 3600.0,
-        "pg_tuition_mba": 8000.0,
-        "living_cost_avg": 3200
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 85.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": false,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": 40000,
+        "pg_tuition_low": 25000,
+        "pg_tuition_high": 55000
       },
       "scholarships": {
-        "csc_scholarship_quota": 110,
         "csc_coverage": "Full",
-        "university_amount": "1500_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 1800,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
       }
     },
     {
@@ -566,37 +755,49 @@
       "name_cn": "武汉大学",
       "name_en": "Wuhan University",
       "city": "Wuhan",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Hubei",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 186,
+        "the_rank_2025": 134.0
       },
-      "admission": {
-        "official_website": "www.whu.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3500,
-        "ug_tuition_stem": 4000.0,
-        "ug_tuition_medicine": 5500.0,
-        "pg_tuition_liberal_arts": 4000,
-        "pg_tuition_stem": 4500.0,
-        "pg_tuition_mba": 9500.0,
-        "living_cost_avg": 4500
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": 40000,
+        "pg_tuition_low": 23000,
+        "pg_tuition_high": 55000
       },
       "scholarships": {
-        "csc_scholarship_quota": 130,
         "csc_coverage": "Full",
-        "university_amount": "2000_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 2400,
-        "campus_rating_1to5": 5.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -604,37 +805,49 @@
       "name_cn": "厦门大学",
       "name_en": "Xiamen University",
       "city": "Xiamen",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Fujian",
+      "city_tier": "Tier_2",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 341,
+        "the_rank_2025": 301.0
       },
-      "admission": {
-        "official_website": "www.xmu.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3600,
-        "ug_tuition_stem": 4100.0,
-        "ug_tuition_medicine": 5600.0,
-        "pg_tuition_liberal_arts": 4100,
-        "pg_tuition_stem": 4600.0,
-        "pg_tuition_mba": 10000.0,
-        "living_cost_avg": 5000
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": false,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 24000,
+        "ug_tuition_high": 38000,
+        "pg_tuition_low": 26000,
+        "pg_tuition_high": 55000
       },
       "scholarships": {
-        "csc_scholarship_quota": 120,
         "csc_coverage": "Full",
-        "university_amount": "2000_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 1800,
-        "campus_rating_1to5": 5.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
       }
     },
     {
@@ -642,37 +855,49 @@
       "name_cn": "同济大学",
       "name_en": "Tongji University",
       "city": "Shanghai",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Shanghai",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 177,
+        "the_rank_2025": 154.0
       },
-      "admission": {
-        "official_website": "www.tongji.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 4100,
-        "ug_tuition_stem": 4600.0,
-        "ug_tuition_medicine": 6100.0,
-        "pg_tuition_liberal_arts": 4600,
-        "pg_tuition_stem": 5100.0,
-        "pg_tuition_mba": 11500.0,
-        "living_cost_avg": 7300
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": 28700,
+        "pg_tuition_low": 22960,
+        "pg_tuition_high": 32800
       },
       "scholarships": {
-        "csc_scholarship_quota": 110,
         "csc_coverage": "Full",
-        "university_amount": "2500_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 2100,
-        "campus_rating_1to5": 4.5,
-        "career_support": "Good",
-        "internship_opportunities": "Abundant"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -680,37 +905,49 @@
       "name_cn": "华中科技大学",
       "name_en": "Huazhong University of Science and Technology",
       "city": "Wuhan",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Hubei",
+      "city_tier": "New_Tier_1",
+      "university_type": "Science_Technology",
+      "rankings": {
+        "qs_rank_2026": 319,
+        "the_rank_2025": 166.0
       },
-      "admission": {
-        "official_website": "www.hust.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3400,
-        "ug_tuition_stem": 3900.0,
-        "ug_tuition_medicine": 5400.0,
-        "pg_tuition_liberal_arts": 3900,
-        "pg_tuition_stem": 4400.0,
-        "pg_tuition_mba": 9000.0,
-        "living_cost_avg": 4400
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 18000,
+        "ug_tuition_high": 40000,
+        "pg_tuition_low": 25000,
+        "pg_tuition_high": 58000
       },
       "scholarships": {
-        "csc_scholarship_quota": 125,
         "csc_coverage": "Full",
-        "university_amount": "1800_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 2000,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": false,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -718,36 +955,49 @@
       "name_cn": "大连理工大学",
       "name_en": "Dalian University of Technology",
       "city": "Dalian",
-      "majors": {
-        "engineering": true,
-        "business": false,
-        "medicine": true,
-        "arts": false,
-        "science": true,
-        "social": false
+      "province": "Liaoning/Panjin",
+      "city_tier": "Tier_2",
+      "university_type": "Engineering",
+      "rankings": {
+        "qs_rank_2026": 482,
+        "the_rank_2025": 401.0
       },
-      "admission": {
-        "official_website": "www.dlut.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3000,
-        "ug_tuition_stem": 3500.0,
-        "pg_tuition_liberal_arts": 3500,
-        "pg_tuition_stem": 4000.0,
-        "pg_tuition_mba": 8500.0,
-        "living_cost_avg": 3900
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 22500,
+        "ug_tuition_high": 20500,
+        "pg_tuition_low": 26500,
+        "pg_tuition_high": 24500
       },
       "scholarships": {
-        "csc_scholarship_quota": 90,
         "csc_coverage": "Full",
-        "university_amount": "1500_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 1300,
-        "campus_rating_1to5": 4.5,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": false,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -755,36 +1005,49 @@
       "name_cn": "北京理工大学",
       "name_en": "Beijing Institute of Technology",
       "city": "Beijing",
-      "majors": {
-        "engineering": true,
-        "business": false,
-        "medicine": true,
-        "arts": false,
-        "science": true,
-        "social": false
+      "province": "Beijing",
+      "city_tier": "Tier_1",
+      "university_type": "Engineering",
+      "rankings": {
+        "qs_rank_2026": 259,
+        "the_rank_2025": 201.0
       },
-      "admission": {
-        "official_website": "www.bit.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3800,
-        "ug_tuition_stem": 4300.0,
-        "pg_tuition_liberal_arts": 4300,
-        "pg_tuition_stem": 4800.0,
-        "pg_tuition_mba": 10000.0,
-        "living_cost_avg": 7500
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 85.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 23000,
+        "ug_tuition_high": 30000,
+        "pg_tuition_low": 32000,
+        "pg_tuition_high": 36000
       },
       "scholarships": {
-        "csc_scholarship_quota": 100,
         "csc_coverage": "Full",
-        "university_amount": "2000_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 1600,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -792,34 +1055,49 @@
       "name_cn": "华东师范大学",
       "name_en": "East China Normal University",
       "city": "Shanghai",
-      "majors": {
-        "engineering": false,
-        "business": true,
-        "medicine": false,
-        "arts": true,
-        "science": false,
-        "social": true
+      "province": "Shanghai",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 433,
+        "the_rank_2025": 251.0
       },
-      "admission": {
-        "official_website": "www.ecnu.edu.cn"
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3600,
-        "pg_tuition_liberal_arts": 4000,
-        "pg_tuition_mba": 9500.0,
-        "living_cost_avg": 7000
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 85.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 22000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 25000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 80,
         "csc_coverage": "Full",
-        "university_amount": "2000_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 1500,
-        "campus_rating_1to5": 4.5,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -827,34 +1105,49 @@
       "name_cn": "对外经济贸易大学",
       "name_en": "University of International Business and Economics",
       "city": "Beijing",
-      "majors": {
-        "engineering": false,
-        "business": true,
-        "medicine": false,
-        "arts": true,
-        "science": false,
-        "social": true
+      "province": "Beijing",
+      "city_tier": "Tier_1",
+      "university_type": "Finance_Economics",
+      "rankings": {
+        "qs_rank_2026": 1201,
+        "the_rank_2025": null
       },
-      "admission": {
-        "official_website": "www.uibe.edu.cn"
+      "classifications": {
+        "project_985": false,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3500,
-        "pg_tuition_liberal_arts": 4000,
-        "pg_tuition_mba": 12000.0,
-        "living_cost_avg": 7300
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 86.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 24800,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 29800,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 60,
         "csc_coverage": "Full",
-        "university_amount": "1500_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 1200,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Good",
-        "internship_opportunities": "Abundant"
+      "programs": {
+        "engineering": false,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": false,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -862,36 +1155,49 @@
       "name_cn": "北京交通大学",
       "name_en": "Beijing Jiaotong University",
       "city": "Beijing",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Beijing",
+      "city_tier": "Tier_1",
+      "university_type": "Engineering",
+      "rankings": {
+        "qs_rank_2026": 851,
+        "the_rank_2025": 501.0
       },
-      "admission": {
-        "official_website": "www.bjtu.edu.cn"
+      "classifications": {
+        "project_985": false,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3300,
-        "ug_tuition_stem": 3800.0,
-        "pg_tuition_liberal_arts": 3800,
-        "pg_tuition_stem": 4300.0,
-        "pg_tuition_mba": 9000.0,
-        "living_cost_avg": 7200
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 61.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 24800,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 29000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 70,
         "csc_coverage": "Full",
-        "university_amount": "1500_to_Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 1000,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Good",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": false,
+        "social_sciences": false,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     },
     {
@@ -899,38 +1205,1053 @@
       "name_cn": "上海大学",
       "name_en": "Shanghai University",
       "city": "Shanghai",
-      "majors": {
-        "engineering": true,
-        "business": true,
-        "medicine": true,
-        "arts": true,
-        "science": true,
-        "social": true
+      "province": "Shanghai",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 465,
+        "the_rank_2025": 401.0
       },
-      "admission": {
-        "official_website": "www.shu.edu.cn"
+      "classifications": {
+        "project_985": false,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
       },
-      "costs": {
-        "ug_tuition_liberal_arts": 3400,
-        "ug_tuition_stem": 3900.0,
-        "ug_tuition_medicine": 5400.0,
-        "pg_tuition_liberal_arts": 3900,
-        "pg_tuition_stem": 4400.0,
-        "pg_tuition_mba": 10000.0,
-        "living_cost_avg": 6900
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 90.0,
+        "english_ielts_min": 6.5,
+        "accept_foundation": true,
+        "admission_difficulty": 2
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 21000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 26000,
+        "pg_tuition_high": null
       },
       "scholarships": {
-        "csc_scholarship_quota": 60,
         "csc_coverage": "Full",
-        "university_amount": "1500_to_3000",
+        "csc_type_a": true,
+        "csc_type_b": true,
         "confucius_institute_scholarship": true
       },
-      "additional_info": {
-        "total_international_students": 900,
-        "campus_rating_1to5": 4.0,
-        "career_support": "Fair",
-        "internship_opportunities": "Good"
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": false,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 26,
+      "name_cn": "天津大学",
+      "name_en": "Tianjin University",
+      "city": "Tianjin",
+      "province": "Tianjin",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 257,
+        "the_rank_2025": 201.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 16600,
+        "ug_tuition_high": 20000,
+        "pg_tuition_low": 24900,
+        "pg_tuition_high": 30000
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": false,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 27,
+      "name_cn": "东南大学",
+      "name_en": "Southeast University",
+      "city": "Nanjing",
+      "province": "Jiangsu",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 392,
+        "the_rank_2025": 301.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 16000,
+        "ug_tuition_high": 32000,
+        "pg_tuition_low": 18000,
+        "pg_tuition_high": 55000
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": false,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 28,
+      "name_cn": "华东理工大学",
+      "name_en": "East China University of Science and Technology",
+      "city": "Shanghai",
+      "province": "Shanghai",
+      "city_tier": "Tier_1",
+      "university_type": "Engineering",
+      "rankings": {
+        "qs_rank_2026": 673,
+        "the_rank_2025": 601.0
+      },
+      "classifications": {
+        "project_985": false,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 22000,
+        "ug_tuition_high": 22000,
+        "pg_tuition_low": 28000,
+        "pg_tuition_high": 65000
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": false
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 29,
+      "name_cn": "苏州大学",
+      "name_en": "Soochow University",
+      "city": "Suzhou",
+      "province": "Jiangsu",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": null,
+        "the_rank_2025": 501.0
+      },
+      "classifications": {
+        "project_985": false,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": false,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 9000,
+        "ug_tuition_high": 16250,
+        "pg_tuition_low": 14000,
+        "pg_tuition_high": 25000
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 30,
+      "name_cn": "四川大学",
+      "name_en": "Sichuan University",
+      "city": "Chengdu",
+      "province": "Sichuan",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 324,
+        "the_rank_2025": 201.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": false,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 17500,
+        "ug_tuition_high": 45000,
+        "pg_tuition_low": 22000,
+        "pg_tuition_high": 50000
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 31,
+      "name_cn": "电子科技大学",
+      "name_en": "University of Electronic Science and Technology of China",
+      "city": "Chengdu",
+      "province": "Sichuan",
+      "city_tier": "New_Tier_1",
+      "university_type": "Science_Technology",
+      "rankings": {
+        "qs_rank_2026": 519,
+        "the_rank_2025": 301.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 15000,
+        "ug_tuition_high": 45000,
+        "pg_tuition_low": 25000,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": false
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": false,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 32,
+      "name_cn": "重庆大学",
+      "name_en": "Chongqing University",
+      "city": "Chongqing",
+      "province": "Chongqing",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 504,
+        "the_rank_2025": 401.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": false,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 14000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 21000,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": false,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 33,
+      "name_cn": "华南理工大学",
+      "name_en": "South China University of Technology",
+      "city": "Guangzhou",
+      "province": "Guangdong",
+      "city_tier": "Tier_1",
+      "university_type": "Engineering",
+      "rankings": {
+        "qs_rank_2026": 377,
+        "the_rank_2025": 251.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 68.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 18200,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 23000,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": false,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": false,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 34,
+      "name_cn": "暨南大学",
+      "name_en": "Jinan University",
+      "city": "Guangzhou",
+      "province": "Guangdong",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 540,
+        "the_rank_2025": 501.0
+      },
+      "classifications": {
+        "project_985": false,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 19000,
+        "ug_tuition_high": 40000,
+        "pg_tuition_low": 22000,
+        "pg_tuition_high": 40000
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 35,
+      "name_cn": "深圳大学",
+      "name_en": "Shenzhen University",
+      "city": "Shenzhen",
+      "province": "Guangdong",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 452,
+        "the_rank_2025": 351.0
+      },
+      "classifications": {
+        "project_985": false,
+        "project_211": false,
+        "c9_league": false,
+        "double_first_class": false
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": false,
+        "admission_difficulty": 2
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 26000,
+        "ug_tuition_high": 40000,
+        "pg_tuition_low": 30000,
+        "pg_tuition_high": 45000
+      },
+      "scholarships": {
+        "csc_coverage": "No",
+        "csc_type_a": false,
+        "csc_type_b": false,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 36,
+      "name_cn": "北京师范大学",
+      "name_en": "Beijing Normal University",
+      "city": "Beijing",
+      "province": "Beijing",
+      "city_tier": "Tier_1",
+      "university_type": "Normal_Education",
+      "rankings": {
+        "qs_rank_2026": 247,
+        "the_rank_2025": 146.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": false,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 24000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 25300,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 37,
+      "name_cn": "中国人民大学",
+      "name_en": "Renmin University of China",
+      "city": "Beijing",
+      "province": "Beijing",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 566,
+        "the_rank_2025": null
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 6,
+        "english_toefl_min": 90.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 24000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 28000,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": false,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": false,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 38,
+      "name_cn": "南开大学",
+      "name_en": "Nankai University",
+      "city": "Tianjin",
+      "province": "Tianjin",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 355,
+        "the_rank_2025": 201.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 85.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": false,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": 25000,
+        "pg_tuition_low": 26000,
+        "pg_tuition_high": 40000
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 39,
+      "name_cn": "湖南大学",
+      "name_en": "Hunan University",
+      "city": "Changsha",
+      "province": "Hunan",
+      "city_tier": "New_Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 504,
+        "the_rank_2025": 301.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": null,
+        "ug_tuition_high": null,
+        "pg_tuition_low": null,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 40,
+      "name_cn": "华中师范大学",
+      "name_en": "Central China Normal University",
+      "city": "Wuhan",
+      "province": "Hubei",
+      "city_tier": "New_Tier_1",
+      "university_type": "Normal_Education",
+      "rankings": {
+        "qs_rank_2026": null,
+        "the_rank_2025": null
+      },
+      "classifications": {
+        "project_985": false,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 85.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": false,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 24000,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 41,
+      "name_cn": "吉林大学",
+      "name_en": "Jilin University",
+      "city": "Changchun",
+      "province": "Jilin",
+      "city_tier": "Tier_2",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 473,
+        "the_rank_2025": null
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 3,
+        "english_toefl_min": 70.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 19000,
+        "ug_tuition_high": 40000,
+        "pg_tuition_low": 21000,
+        "pg_tuition_high": 33000
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": true,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 42,
+      "name_cn": "东北大学",
+      "name_en": "Northeastern University",
+      "city": "Shenyang",
+      "province": "Liaoning",
+      "city_tier": "Tier_2",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 384,
+        "the_rank_2025": 601.0
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 70.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": false,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 18000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 22000,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 43,
+      "name_cn": "兰州大学",
+      "name_en": "Lanzhou University",
+      "city": "Lanzhou",
+      "province": "Gansu",
+      "city_tier": "Tier_2",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 791,
+        "the_rank_2025": null
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 4,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 5.5,
+        "accept_foundation": false,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": 40000,
+        "pg_tuition_low": 25000,
+        "pg_tuition_high": 45000
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": true,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": true,
+        "business_economics": true,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": false,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 44,
+      "name_cn": "中国农业大学",
+      "name_en": "China Agricultural University",
+      "city": "Beijing",
+      "province": "Beijing",
+      "city_tier": "Tier_1",
+      "university_type": "Comprehensive",
+      "rankings": {
+        "qs_rank_2026": 504,
+        "the_rank_2025": null
+      },
+      "classifications": {
+        "project_985": true,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 90.0,
+        "english_ielts_min": 6.0,
+        "accept_foundation": true,
+        "admission_difficulty": 4
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 20000,
+        "ug_tuition_high": 20000,
+        "pg_tuition_low": 26000,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": false
+      },
+      "programs": {
+        "engineering": false,
+        "business_economics": false,
+        "medicine_health": true,
+        "natural_sciences": true,
+        "social_sciences": false,
+        "arts_humanities": false,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
+      }
+    },
+    {
+      "id": 45,
+      "name_cn": "中央财经大学",
+      "name_en": "Central University of Finance and Economics",
+      "city": "Beijing",
+      "province": "Beijing",
+      "city_tier": "Tier_1",
+      "university_type": "Finance_Economics",
+      "rankings": {
+        "qs_rank_2026": null,
+        "the_rank_2025": null
+      },
+      "classifications": {
+        "project_985": false,
+        "project_211": true,
+        "c9_league": false,
+        "double_first_class": true
+      },
+      "admission_requirements": {
+        "hsk_min_level": 5,
+        "english_toefl_min": 80.0,
+        "english_ielts_min": 6.5,
+        "accept_foundation": true,
+        "admission_difficulty": 3
+      },
+      "tuition_fees": {
+        "ug_tuition_low": 25000,
+        "ug_tuition_high": null,
+        "pg_tuition_low": 30000,
+        "pg_tuition_high": null
+      },
+      "scholarships": {
+        "csc_coverage": "Full",
+        "csc_type_a": false,
+        "csc_type_b": true,
+        "confucius_institute_scholarship": true
+      },
+      "programs": {
+        "engineering": false,
+        "business_economics": true,
+        "medicine_health": false,
+        "natural_sciences": false,
+        "social_sciences": true,
+        "arts_humanities": true,
+        "mbbs_program": false,
+        "chinese_programs": true,
+        "foundation_program": true,
+        "exchange_programs": true
       }
     }
-  ]
+  ],
+  "last_updated": "2025-08-29T22:40:15.619895",
+  "data_source": "database04.xlsx",
+  "total_universities": 45
 }

@@ -72,20 +72,7 @@
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="shortcut icon" href="logo.png" type="image/png">
     
-    <!-- Framer Motion - Deferred Loading -->
-    <script>
-        // Defer Framer Motion loading to improve initial page performance
-        window.addEventListener('load', function() {
-            const script = document.createElement('script');
-            script.src = 'https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js';
-            script.async = true;
-            script.onload = function() {
-                // Framer Motion loaded, can enhance animations if needed
-                console.log('Framer Motion loaded successfully');
-            };
-            document.head.appendChild(script);
-        });
-    </script>
+
     
     <style>
         /* Notion-inspired design system */
@@ -502,26 +489,34 @@
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressFill"></div>
                 </div>
-                <div class="progress-text" id="progressText">Step 1 of 9</div>
+                <div class="progress-text" id="progressText">Step 1 of 5</div>
             </div>
 
             <!-- Welcome Screen -->
             <div class="quiz-step active" id="welcome">
                 <div class="step-content">
                     <h2>Welcome to China University Selector</h2>
-                    <p>Take our <span class="accent-text">9-step quiz</span> to discover the perfect Chinese university for international students. Your guide to study abroad in China starts here.</p>
+                    <p>Take our <span class="accent-text">comprehensive quiz</span> to discover the perfect Chinese university for international students. Our advanced matching system considers university rankings, admission requirements, fees, scholarships, and program availability.</p>
                     <div class="features">
                         <div class="feature">
                             <svg class="icon icon-sm"><use href="#icon-check-circle"></use></svg>
-                            <span>Personalized recommendations</span>
+                            <span>University rankings & classifications</span>
                         </div>
                         <div class="feature">
                             <svg class="icon icon-sm"><use href="#icon-check-circle"></use></svg>
-                            <span>Complete university matches</span>
+                            <span>Admission requirements & difficulty</span>
                         </div>
                         <div class="feature">
                             <svg class="icon icon-sm"><use href="#icon-check-circle"></use></svg>
-                            <span>Detailed analysis report</span>
+                            <span>Tuition fees & living costs</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="icon icon-sm"><use href="#icon-check-circle"></use></svg>
+                            <span>Scholarship opportunities</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="icon icon-sm"><use href="#icon-check-circle"></use></svg>
+                            <span>Program availability & language options</span>
                         </div>
                     </div>
                     <button class="btn btn-primary" onclick="startQuiz()">
@@ -534,63 +529,33 @@
             <!-- Quiz Steps -->
             <div class="quiz-step" id="step1">
                 <div class="step-header">
-                    <h3>Step 1 of 9</h3>
-                    <h2>What's your field of study?</h2>
-                    <p class="step-description">Choose the academic field that best matches your interests and career goals.</p>
+                    <h3>Step 1 of 6</h3>
+                    <h2>What degree level are you applying for?</h2>
+                    <p class="step-description">Choose your academic level to get accurate tuition information.</p>
                 </div>
                 <div class="options-grid">
-                    <div class="option-card" data-value="engineering">
+                    <div class="option-card" data-value="undergraduate">
                         <div class="option-icon">
-                            <svg class="icon icon-xl"><use href="#icon-cogs"></use></svg>
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div class="option-content">
-                            <h4>Engineering</h4>
-                            <p>Mechanical, Electrical, Civil, Computer Science</p>
+                            <h4>Undergraduate (Bachelor's)</h4>
+                            <p>4-year bachelor's degree programs</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-medium">UG Tuition: 26,000-80,000 RMB/year</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="option-card" data-value="business">
+                    <div class="option-card" data-value="postgraduate">
                         <div class="option-icon">
-                            <svg class="icon icon-xl"><use href="#icon-business"></use></svg>
+                            <i class="fas fa-user-graduate"></i>
                         </div>
                         <div class="option-content">
-                            <h4>Business & Economics</h4>
-                            <p>Management, Finance, Marketing, International Business</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="medicine">
-                        <div class="option-icon">
-                            <svg class="icon icon-xl"><use href="#icon-medicine"></use></svg>
-                        </div>
-                        <div class="option-content">
-                            <h4>Medicine & Health</h4>
-                            <p>Medicine, Nursing, Public Health, Pharmacy</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="arts">
-                        <div class="option-icon">
-                            <svg class="icon icon-xl"><use href="#icon-palette"></use></svg>
-                        </div>
-                        <div class="option-content">
-                            <h4>Arts & Humanities</h4>
-                            <p>Literature, History, Philosophy, Languages</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="science">
-                        <div class="option-icon">
-                            <svg class="icon icon-xl"><use href="#icon-science"></use></svg>
-                        </div>
-                        <div class="option-content">
-                            <h4>Natural Sciences</h4>
-                            <p>Physics, Chemistry, Biology, Mathematics</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="social">
-                        <div class="option-icon">
-                            <svg class="icon icon-xl"><use href="#icon-social"></use></svg>
-                        </div>
-                        <div class="option-content">
-                            <h4>Social Sciences</h4>
-                            <p>Psychology, Sociology, Political Science, Education</p>
+                            <h4>Postgraduate (Master's + PhD)</h4>
+                            <p>Master's and doctoral degree programs</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-medium">PG Tuition: 32,000-120,000 RMB/year</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -598,27 +563,52 @@
 
             <div class="quiz-step" id="step2">
                 <div class="step-header">
-                    <h3>Step 2 of 9</h3>
-                    <h2>What's your academic level?</h2>
-                    <p class="step-description">Select your current or intended level of study.</p>
+                    <h3>Step 2 of 6</h3>
+                    <h2>What type of university are you looking for?</h2>
+                    <p class="step-description">Choose based on university classification and global rankings.</p>
                 </div>
                 <div class="options-grid">
-                    <div class="option-card" data-value="undergraduate">
+                    <div class="option-card" data-value="c9">
                         <div class="option-icon">
-                            <i class="fas fa-user-graduate"></i>
+                            <svg class="icon icon-xl"><use href="#icon-trophy"></use></svg>
                         </div>
                         <div class="option-content">
-                            <h4>Undergraduate</h4>
-                            <p>Bachelor's degree (4 years)</p>
+                            <h4>C9 League Universities</h4>
+                            <p>Elite institutions (Tsinghua, Peking, Fudan, etc.) - Top 50 global ranking</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-hard">Highly Competitive Application</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="option-card" data-value="graduate">
+                    <div class="option-card" data-value="985">
                         <div class="option-icon">
-                            <i class="fas fa-user-tie"></i>
+                            <svg class="icon icon-xl"><use href="#icon-medal"></use></svg>
                         </div>
                         <div class="option-content">
-                            <h4>Graduate</h4>
-                            <p>Master's or PhD degree</p>
+                            <h4>985 Universities</h4>
+                            <p>39 elite institutions with highest funding - Top 100-500 global ranking</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-medium">Competitive Application</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="211">
+                        <div class="option-icon">
+                            <svg class="icon icon-xl"><use href="#icon-star"></use></svg>
+                        </div>
+                        <div class="option-content">
+                            <h4>211 Universities</h4>
+                            <p>115 quality institutions including all 985 universities</p>
+                        </div>
+                    </div>
+
+                    <div class="option-card" data-value="any">
+                        <div class="option-icon">
+                            <svg class="icon icon-xl"><use href="#icon-search"></use></svg>
+                        </div>
+                        <div class="option-content">
+                            <h4>Any University Type</h4>
+                            <p>Show me all options regardless of classification</p>
                         </div>
                     </div>
                 </div>
@@ -626,129 +616,33 @@
 
             <div class="quiz-step" id="step3">
                 <div class="step-header">
-                    <h3>Step 3 of 9</h3>
-                    <h2>What's your budget range?</h2>
-                    <p class="step-description">Consider tuition fees, living costs, and other expenses.</p>
+                    <h3>Step 3 of 6</h3>
+                    <h2>What language do you prefer for instruction?</h2>
+                    <p class="step-description">Choose your preferred language of instruction for your studies.</p>
                 </div>
                 <div class="options-grid">
-                    <div class="option-card" data-value="low">
+                    <div class="option-card" data-value="chinese">
                         <div class="option-icon">
-                            <i class="fas fa-dollar-sign"></i>
+                            <i class="fas fa-comments"></i>
                         </div>
                         <div class="option-content">
-                            <h4>Low Budget</h4>
-                            <p>$2,000 - $5,000 per year</p>
+                            <h4>Chinese Instruction</h4>
+                            <p>I want to study in Chinese-taught programs</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-medium">Requires HSK certification</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="option-card" data-value="medium">
-                        <div class="option-icon">
-                            <i class="fas fa-dollar-sign"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Medium Budget</h4>
-                            <p>$5,000 - $10,000 per year</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="high">
-                        <div class="option-icon">
-                            <i class="fas fa-dollar-sign"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>High Budget</h4>
-                            <p>$10,000+ per year</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quiz-step" id="step4">
-                <div class="step-header">
-                    <h3>Step 4 of 9</h3>
-                    <h2>Preferred city size?</h2>
-                    <p class="step-description">Choose the type of city environment you prefer.</p>
-                </div>
-                <div class="options-grid">
-                    <div class="option-card" data-value="mega">
-                        <div class="option-icon">
-                            <i class="fas fa-city"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Mega City</h4>
-                            <p>Beijing, Shanghai, Guangzhou</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="large">
-                        <div class="option-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Large City</h4>
-                            <p>Nanjing, Hangzhou, Wuhan</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="medium">
-                        <div class="option-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Medium City</h4>
-                            <p>Xi'an, Chengdu, Qingdao</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quiz-step" id="step5">
-                <div class="step-header">
-                    <h3>Step 5 of 9</h3>
-                    <h2>How important is university ranking?</h2>
-                    <p class="step-description">Consider the importance of global university rankings for your goals.</p>
-                </div>
-                <div class="options-grid">
-                    <div class="option-card" data-value="very">
-                        <div class="option-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Very Important</h4>
-                            <p>Top 100 globally ranked</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="important">
-                        <div class="option-icon">
-                            <i class="fas fa-medal"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Important</h4>
-                            <p>Top 500 globally ranked</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="moderate">
-                        <div class="option-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Moderate</h4>
-                            <p>Good reputation in China</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quiz-step" id="step6">
-                <div class="step-header">
-                    <h3>Step 6 of 9</h3>
-                    <h2>Do you need English-taught programs?</h2>
-                    <p class="step-description">Consider your language preferences for instruction.</p>
-                </div>
-                <div class="options-grid">
-                    <div class="option-card" data-value="yes">
+                    <div class="option-card" data-value="english">
                         <div class="option-icon">
                             <i class="fas fa-language"></i>
                         </div>
                         <div class="option-content">
-                            <h4>Yes, English Only</h4>
-                            <p>I prefer English-taught programs</p>
+                            <h4>English Instruction</h4>
+                            <p>I want to study in English-taught programs</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-medium">Requires TOEFL/IELTS</span>
+                            </div>
                         </div>
                     </div>
                     <div class="option-card" data-value="both">
@@ -757,158 +651,314 @@
                         </div>
                         <div class="option-content">
                             <h4>Both Languages</h4>
-                            <p>English or Chinese programs</p>
+                            <p>I'm open to both Chinese and English programs</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-easy">More options available</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="option-card" data-value="chinese">
+                </div>
+            </div>
+
+            <!-- Step 3a: Chinese HSK Level -->
+            <div class="quiz-step" id="step3a">
+                <div class="step-header">
+                    <h3>Step 3 - Chinese Level</h3>
+                    <h2>What is your HSK level?</h2>
+                    <p class="step-description">Select your Chinese proficiency level based on HSK certification.</p>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="hsk3">
+                        <div class="option-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>HSK Level 3</h4>
+                            <p>Basic Chinese - Can handle daily communication</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-easy">Most universities accept</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="hsk4">
+                        <div class="option-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>HSK Level 4</h4>
+                            <p>Intermediate Chinese - Can discuss academic topics</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-medium">Required by most 985/211</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="hsk5">
+                        <div class="option-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>HSK Level 5</h4>
+                            <p>Advanced Chinese - Can handle complex academic content</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-hard">Required by C9 universities</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="hsk6">
+                        <div class="option-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>HSK Level 6</h4>
+                            <p>Proficient Chinese - Native-like proficiency</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-hard">Highest level required</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3b: English Level -->
+            <div class="quiz-step" id="step3b">
+                <div class="step-header">
+                    <h3>Step 3 - English Level</h3>
+                    <h2>What is your English proficiency level?</h2>
+                    <p class="step-description">Select your English level based on TOEFL or IELTS scores.</p>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="english_high">
+                        <div class="option-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>High Level</h4>
+                            <p>IELTS ≥6.5 / TOEFL ≥85 - Excellent English skills</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-hard">Required by C9 universities</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="english_medium">
+                        <div class="option-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Medium Level</h4>
+                            <p>IELTS 5.0-6.5 / TOEFL 70-85 - Good English skills</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-medium">Most universities accept</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="english_low">
+                        <div class="option-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Basic Level</h4>
+                            <p>IELTS <5.0 / TOEFL <70 - Basic English skills</p>
+                            <div class="difficulty-note">
+                                <span class="difficulty-badge difficulty-easy">Limited program options</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step4">
+                <div class="step-header">
+                    <h3>Step 4 of 6</h3>
+                    <h2>What's your budget for tuition and living costs?</h2>
+                    <p class="step-description">Choose based on your financial capacity for studying in China.</p>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="budget_friendly">
+                        <div class="option-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Budget Friendly</h4>
+                            <p>26,000-35,000 RMB/year tuition + low living costs</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="moderate">
+                        <div class="option-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Moderate Budget</h4>
+                            <p>35,000-45,000 RMB/year tuition + medium living costs</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="premium">
+                        <div class="option-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Premium Budget</h4>
+                            <p>45,000-80,000 RMB/year tuition + high living costs</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="scholarship_focused">
+                        <div class="option-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Scholarship Focused</h4>
+                            <p>Looking for universities with good scholarship options</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="any_budget">
+                        <div class="option-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Any Budget Range</h4>
+                            <p>Show me all options regardless of cost</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step5">
+                <div class="step-header">
+                    <h3>Step 5 of 6</h3>
+                    <h2>What scholarship opportunities are you looking for?</h2>
+                    <p class="step-description">Choose based on your scholarship preferences and eligibility.</p>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="full_scholarship">
+                        <div class="option-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Full Scholarship</h4>
+                            <p>CSC full scholarship or equivalent full coverage</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="others">
+                        <div class="option-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Other Scholarships</h4>
+                            <p>Partial scholarships, university scholarships, or other types</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="no_scholarship">
+                        <div class="option-icon">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>No Scholarship Needed</h4>
+                            <p>I can afford to study without financial assistance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step6">
+                <div class="step-header">
+                    <h3>Step 6 of 6</h3>
+                    <h2>What academic programs are you interested in?</h2>
+                    <p class="step-description">Choose the programs that match your academic and career goals.</p>
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" data-value="engineering">
+                        <div class="option-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Engineering Programs</h4>
+                            <p>Mechanical, Electrical, Civil, Computer Science, etc.</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="business">
+                        <div class="option-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Business & Economics</h4>
+                            <p>Management, Finance, Marketing, International Business</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="medicine">
+                        <div class="option-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Medicine & Health</h4>
+                            <p>MBBS, Nursing, Public Health, Pharmacy</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="sciences">
+                        <div class="option-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Natural Sciences</h4>
+                            <p>Physics, Chemistry, Biology, Mathematics</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="social_sciences">
+                        <div class="option-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Social Sciences</h4>
+                            <p>Psychology, Sociology, Political Science, Education</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="arts_humanities">
+                        <div class="option-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Arts & Humanities</h4>
+                            <p>Literature, History, Philosophy, Languages</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="chinese_language">
                         <div class="option-icon">
                             <i class="fas fa-language"></i>
                         </div>
                         <div class="option-content">
-                            <h4>Chinese Programs</h4>
-                            <p>I can study in Chinese</p>
+                            <h4>Chinese Language Programs</h4>
+                            <p>Chinese language and culture studies</p>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="quiz-step" id="step7">
-                <div class="step-header">
-                    <h3>Step 7 of 9</h3>
-                    <h2>What's your English proficiency level?</h2>
-                    <p class="step-description">This helps us match you with appropriate programs.</p>
-                </div>
-                <div class="options-grid">
-                    <div class="option-card" data-value="native">
-                        <div class="option-icon">
-                            <i class="fas fa-flag"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Native/Fluent</h4>
-                            <p>IELTS 7.5+ / TOEFL 100+</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="advanced">
-                        <div class="option-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Advanced</h4>
-                            <p>IELTS 6.5-7.0 / TOEFL 90-99</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="intermediate">
-                        <div class="option-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Intermediate</h4>
-                            <p>IELTS 6.0-6.5 / TOEFL 80-89</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="basic">
+                    <div class="option-card" data-value="foundation_programs">
                         <div class="option-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div class="option-content">
-                            <h4>Basic</h4>
-                            <p>IELTS 5.5-6.0 / TOEFL 70-79</p>
+                            <h4>Foundation Programs</h4>
+                            <p>Preparatory programs for university admission</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="exchange_programs">
+                        <div class="option-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Exchange Programs</h4>
+                            <p>Short-term study abroad opportunities</p>
+                        </div>
+                    </div>
+                    <div class="option-card" data-value="any_program">
+                        <div class="option-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="option-content">
+                            <h4>Any Program Type</h4>
+                            <p>Show me all available programs</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="quiz-step" id="step8">
-                <div class="step-header">
-                    <h3>Step 8 of 9</h3>
-                    <h2>What's your GPA range?</h2>
-                    <p class="step-description">Your academic performance helps determine suitable universities.</p>
-                </div>
-                <div class="options-grid">
-                    <div class="option-card" data-value="3.8-4.0">
-                        <div class="option-icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>3.8 - 4.0</h4>
-                            <p>Excellent academic record</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="3.5-3.7">
-                        <div class="option-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>3.5 - 3.7</h4>
-                            <p>Very good academic record</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="3.0-3.4">
-                        <div class="option-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>3.0 - 3.4</h4>
-                            <p>Good academic record</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="2.5-2.9">
-                        <div class="option-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>2.5 - 2.9</h4>
-                            <p>Average academic record</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="quiz-step" id="step9">
-                <div class="step-header">
-                    <h3>Step 9 of 9</h3>
-                    <h2>What's your Chinese language level?</h2>
-                    <p class="step-description">Your Chinese proficiency affects program eligibility.</p>
-                </div>
-                <div class="options-grid">
-                    <div class="option-card" data-value="none">
-                        <div class="option-icon">
-                            <i class="fas fa-times-circle"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>No Chinese</h4>
-                            <p>I don't speak Chinese</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="basic">
-                        <div class="option-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Basic Level</h4>
-                            <p>HSK 1-3 level</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="intermediate">
-                        <div class="option-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Intermediate</h4>
-                            <p>HSK 4-5 level</p>
-                        </div>
-                    </div>
-                    <div class="option-card" data-value="advanced">
-                        <div class="option-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <div class="option-content">
-                            <h4>Advanced</h4>
-                            <p>HSK 6+ level</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Navigation -->
             <div class="quiz-navigation">
@@ -983,19 +1033,19 @@
                 <div class="faq-grid">
                     <div class="faq-item">
                         <h3>How does the China University Selector work?</h3>
-                        <p>Our tool uses a 9-step interactive quiz to match international students with the best Chinese universities for university admission in China. The algorithm considers your field of study, budget, academic level, city preferences, and other criteria to provide personalized recommendations.</p>
+                        <p>Our tool uses a comprehensive 5-step interactive quiz based on real university data from China's top institutions. The algorithm considers university classifications (985/211/C9), admission requirements, tuition fees, scholarship opportunities, and program availability to provide personalized recommendations.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What data does the selector use?</h3>
+                        <p>We use comprehensive data from 45 top Chinese universities including university rankings (QS & THE), admission requirements (HSK levels, TOEFL/IELTS scores), tuition fees, scholarship information (CSC, Confucius Institute), and program availability across all major academic fields.</p>
                     </div>
                     <div class="faq-item">
                         <h3>Is the China University Selector free to use?</h3>
-                        <p>Yes, our university matching tool is completely free and always will be. International students in China can get personalized recommendations and detailed analysis at no cost. We believe in making quality education guidance accessible to all students planning to study abroad in China.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>What universities are included in the database?</h3>
-                        <p>We include top Chinese universities like Tsinghua University, Peking University, Fudan University, Shanghai Jiao Tong University, Zhejiang University, and many others with comprehensive program information and rankings.</p>
+                        <p>Yes, our university matching tool is completely free and always will be. International students can get personalized recommendations based on real university data at no cost. We believe in making quality education guidance accessible to all students planning to study abroad in China.</p>
                     </div>
                     <div class="faq-item">
                         <h3>How accurate are the university recommendations?</h3>
-                        <p>Our algorithm considers multiple factors including field compatibility, budget, ranking, city preferences, and language requirements to provide highly accurate matches tailored to your specific needs and preferences.</p>
+                        <p>Our algorithm uses real data from Chinese universities including actual admission requirements, tuition fees, and scholarship availability. This ensures highly accurate matches based on your specific preferences for university type, language requirements, budget, and academic programs.</p>
                     </div>
                 </div>
             </div>
@@ -1099,7 +1149,15 @@
           "name": "How does the China University Selector work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our tool uses a 9-step interactive quiz to match you with the best Chinese universities based on your field of study, budget, academic level, city preferences, and other criteria."
+            "text": "Our tool uses a comprehensive 5-step interactive quiz based on real university data from China's top institutions. The algorithm considers university classifications (985/211/C9), admission requirements, tuition fees, scholarship opportunities, and program availability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What data does the selector use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use comprehensive data from 45 top Chinese universities including university rankings (QS & THE), admission requirements (HSK levels, TOEFL/IELTS scores), tuition fees, scholarship information (CSC, Confucius Institute), and program availability."
           }
         },
         {
@@ -1107,15 +1165,7 @@
           "name": "Is the China University Selector free to use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, our university matching tool is completely free. You get personalized recommendations and detailed analysis at no cost."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What universities are included in the database?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We include top Chinese universities like Tsinghua University, Peking University, Fudan University, Shanghai Jiao Tong University, and many others with comprehensive program information."
+            "text": "Yes, our university matching tool is completely free and always will be. International students can get personalized recommendations based on real university data at no cost."
           }
         },
         {
@@ -1123,11 +1173,13 @@
           "name": "How accurate are the university recommendations?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our algorithm considers multiple factors including field compatibility, budget, ranking, city preferences, and language requirements to provide highly accurate matches."
+            "text": "Our algorithm uses real data from Chinese universities including actual admission requirements, tuition fees, and scholarship availability. This ensures highly accurate matches based on your specific preferences."
           }
         }
       ]
     }
     </script>
 </body>
+</html>
+
 </html>
