@@ -72,6 +72,9 @@
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="shortcut icon" href="logo.png" type="image/png">
     
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
 
     
     <style>
@@ -160,54 +163,7 @@
             transform: translateY(-2px);
         }
         
-        /* Navigation styles */
-        .navigation {
-            background: var(--white);
-            border-bottom: 1px solid var(--gray-200);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
-            margin-bottom: 2rem;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--gray-600);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.2s ease;
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-            background: var(--gray-100);
-        }
-        
-        .nav-links a.active {
-            color: var(--primary);
-            background: var(--gray-100);
-            font-weight: 600;
-        }
+        /* Navigation styles are now in styles.css */
         
         @media (max-width: 768px) {
             .nav-container {
@@ -451,13 +407,14 @@
                 <div class="nav-links">
                     <a href="index.html" class="active">Home</a>
                     <a href="about.html">About</a>
-                    <a href="guide.html">Study Guide</a>
+                    <a href="guide.html">Guide</a>
                     <a href="universities.html">Universities</a>
                     <a href="blog.html">Blog</a>
+                                                <a href="help_us.html" class="donate-link">💝 Help Us</a>
                 </div>
             </div>
         </nav>
-        
+
         <!-- Header -->
         <header class="header">
             <div class="logo">
