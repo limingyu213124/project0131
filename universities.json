@@ -48,6 +48,25 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2600,
+        "official_website": "www.tsinghua.edu.cn",
+        "english_ug_programs": [
+          "International_Economics",
+          "Mechanical_Engineering"
+        ],
+        "english_pg_programs": [
+          "MBA",
+          "Engineering_Management",
+          "Public_Admin"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": [
+          "Type_A_B_C"
+        ],
+        "university_amount": "2000_to_Full"
       }
     },
     {
@@ -98,6 +117,31 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 4369,
+        "official_website": "www.pku.edu.cn",
+        "english_ug_programs": [
+          "International Relations: China and Global Affairs",
+          "Artificial Intelligence",
+          "Computer Technology",
+          "Sociology: Chinese Society in Transition",
+          "Urban-Rural Planning",
+          "Urban-Rural Planning",
+          "Information Resources Management: IM&DA",
+          "IM&DH"
+        ],
+        "english_pg_programs": [
+          "MBA",
+          "Law",
+          "International_Relations"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Tuition_Insurance_Accomodation_Health care_1700/M",
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "5000_2000_1000"
       }
     },
     {
@@ -148,6 +192,24 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2535,
+        "official_website": "www.fudan.edu.cn",
+        "english_ug_programs": [
+          "economics/finance/MBBS"
+        ],
+        "english_pg_programs": [
+          "MBA",
+          "Finance",
+          "Management"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "3000_to_Full"
       }
     },
     {
@@ -198,6 +260,23 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2650,
+        "official_website": "www.sjtu.edu.cn",
+        "english_ug_programs": [
+          "Materials Science and Engineering/Electronic Information and Electrical Engineering/Ocean and Civil Engineering/Mechanical Engineering"
+        ],
+        "english_pg_programs": [
+          "Naval Architecture",
+          "Ocean and Civil Engineering/Mechanical/Life\nSciences and\nBiotechnology/Biomedical\nEngineering/Humanities/Economics and\nManagement/International and\nPublic Affairs/ Foreign\nLanguages/Environmental\nScience and\nEngineering/Law/Media\nand\nCommunication/Finance/Aeronautics and\nAstronautics/ Design/Oceanography/ Smart\nEnergy\nEngineering/Electronic\nInformation and\nElectrical\nEngineering/Materials\nScience and\nEngineering/Physics\nand Astronomy/"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Tuition_Insurance_Accomodation_Health care_1000/M",
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "100%tuition_50%tuition_25%tuition"
       }
     },
     {
@@ -248,6 +327,26 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1415,
+        "official_website": "www.nju.edu.cn",
+        "english_pg_programs": [
+          "International Relations: China and Global Affairs",
+          "Artificial Intelligence",
+          "Computer Technology",
+          "Sociology: Chinese Society in Transition",
+          "Urban-Rural Planning",
+          "Urban-Rural Planning",
+          "Information Resources Management: IM&DA",
+          "IM&DH"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "UG_18000/PG_30000",
+        "university_scholarship_types": [
+          "First"
+        ],
+        "university_amount": "UG_4000/PG_6000/8000"
       }
     },
     {
@@ -298,6 +397,23 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 6360,
+        "official_website": "www.zju.edu.cn",
+        "english_ug_programs": [
+          "MBBS/Global Communication and\nManagement/Electrical Engineering and\nAutomation/Information Science\nand Electronic Engineering /Automation /Optical Information\nScience and Engineering/"
+        ],
+        "english_pg_programs": [
+          "Linguistics and Applied Linguistics in Foreign\nLanguages/Chinese Economy/LL.M. in Chinese Law/Management/Public Affair/Engineering/Ocean/ Optical Science and\nEngineering/Information science/Agriculture",
+          "Life Science and Environment/"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "30000/y",
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "5000-50000"
       }
     },
     {
@@ -348,6 +464,19 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 737,
+        "official_website": "www.ustc.edu.cn",
+        "english_pg_programs": [
+          "Physics/Astrophysics/Atmospheric Science /Software Engineering/Geology/Geophysics/MBA/Optics Engineering"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "20000-50000",
+        "university_scholarship_types": [
+          "Level_A_B"
+        ],
+        "university_amount": "tuition+accommodation+2500/M/tuition"
       }
     },
     {
@@ -398,6 +527,20 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1890,
+        "official_website": "www.hit.edu.cn",
+        "english_ug_programs": [
+          "Information and Communication Engineering/Civil Engineering/Astronautics/ Mechanical and Electrical Engineering/Energy Science and Engineering/ Materials Science and Engineering/Economics and Management/MBA/Chemical Engineering and Chemistry/Computing"
+        ],
+        "english_pg_programs": [
+          "Information and Communication Engineering/Civil Engineering/Astronautics/ Mechanical and Electrical Engineering/Energy Science and Engineering/ Materials Science and Engineering/Economics and Management/MBA/Chemical Engineering and Chemistry/Computing"
+        ],
+        "university_scholarship_types": [
+          "Special_First_Second_Third"
+        ],
+        "university_amount": "100%tuition_50%tuition_30%tuition_20%tuition"
       }
     },
     {
@@ -448,6 +591,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 3929,
+        "official_website": "www.xjtu.edu.cn",
+        "english_ug_programs": [
+          "MBBS/BDS/Industrial design/electrical engineering and the automatization specialty/Intelligent Manufacturing Engineering/energy and power engineering"
+        ],
+        "english_pg_programs": [
+          "MBA/Engineering/energy and power engineering/energy and power engineering/energy and power engineering/Control Science and Engineering/Control Science and Engineering/Control Science and Engineering/Control Science and Engineering、Aeronautical and Astronautical Science and Technology/Chemistry/Chemistry/Marxism/"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "UG_13000/master_20000/dotoral_25000",
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "tuition_sptipend"
       }
     },
     {
@@ -498,6 +657,18 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 3985,
+        "official_website": "www.blcu.edu.cn",
+        "english_ug_programs": [
+          "Special Education (Speech and Hearing Science)/finance/international economics and trade/"
+        ],
+        "english_pg_programs": [
+          "MF/MIB"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Partial_Tuition"
       }
     },
     {
@@ -548,6 +719,19 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 514,
+        "official_website": "www.sysu.edu.cn",
+        "english_pg_programs": [
+          "MBA/EMBA/MPA"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "10000",
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "2000_3000_4000"
       }
     },
     {
@@ -598,6 +782,20 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1114,
+        "official_website": "www.hitsz.edu.cn",
+        "english_ug_programs": [
+          "Computer Science and Technology/Artificial Intelligence/Civil Engineering"
+        ],
+        "english_pg_programs": [
+          "Engineering/Management/Astronautics/Computing /Business and economics"
+        ],
+        "university_scholarship_types": [
+          "Special_First_Second_Third"
+        ],
+        "university_amount": "100%tuition_50%tuition_30%tuition_20%tuition"
       }
     },
     {
@@ -648,6 +846,20 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2200,
+        "official_website": "www.ujs.edu.cn",
+        "english_ug_programs": [
+          "Medicine/Engineering/Management/Computer Science and Technology/Accounting/Business amd Finance/\n/"
+        ],
+        "english_pg_programs": [
+          "Medicine/Engineering/Management/Astronautics/Computing /Mechanics/Computer Science and Technology/Chemistry/Physics/Accounting/Law/IRM/Linguistics"
+        ],
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "UG_10000/master_20000-25000/dotoral_tuition+accomodation+5000-tuition"
       }
     },
     {
@@ -698,6 +910,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1400,
+        "official_website": "www.nwpu.edu.cn",
+        "english_ug_programs": [
+          "Aerospace Engineering/Merchanical Engineering/Civil Engineering/Electronics and infomation Engineering/Computer Science and Techonology/Business Administration/Electronic Engineering/Biotechnology/Material Science"
+        ],
+        "english_pg_programs": [
+          "Aeronautics/Astronautics/Marine Science and Technology/Engineering/Mechanics/ Automation/ Mathematics and Statistics/Management/Foreign Studies/Marxism"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Tuition_Insurance_Accomodation_Stipend",
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "100%tuition+accomdation+stipend/100%tuition/50%tuition"
       }
     },
     {
@@ -748,6 +976,17 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1900,
+        "official_website": "www.csu.edu.cn",
+        "english_pg_programs": [
+          "Mathematics & Statistics/Physics/Metallurgy & Environment/Traffic & Transportation Engineering/Electronic Information/Automation/Computer Science and Engineering /Computer Science and Engineering /Computer Science and Engineering /Computer Science and Engineering /Medicine"
+        ],
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "tuition_accomodation_stipend/tuition"
       }
     },
     {
@@ -798,6 +1037,20 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2800,
+        "official_website": "www.whu.edu.cn",
+        "english_ug_programs": [
+          "Management/Economics/Software Engineering/MBBS/Geoenvironmental informatics"
+        ],
+        "english_pg_programs": [
+          "International Business/International Law /Media and Communications Study/Software Engineering/Clinical Medicine /Master of Geospatial Information Technology/Ethics/Engineering/Nursing /E-Commerce /Geo-environmental Informatics（"
+        ],
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "UG_4000/master_6000/dotoral_8000"
       }
     },
     {
@@ -848,6 +1101,22 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2500,
+        "official_website": "www.xmu.edu.cn",
+        "english_ug_programs": [
+          "MBBS/Visual Communication Design/Environmental Design"
+        ],
+        "english_pg_programs": [
+          "Financial Management and Accounting / Law / Marine and Coastal Zone Development Studies / Chemical Engineering and Biological Engineering / Department of Chemistry / Environment and Ecology / Urban Planning / Statistics / International Relations / Biology / Finance"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "UG_30000/master_40000/dotoral_50000",
+        "university_scholarship_types": [
+          "First_Second"
+        ],
+        "university_amount": "tuition_sptipend/tuition"
       }
     },
     {
@@ -898,6 +1167,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 4239,
+        "official_website": "www.tongji.edu.cn",
+        "english_ug_programs": [
+          "MBBS/ Architecture/ Civil Engineering"
+        ],
+        "english_pg_programs": [
+          "Surveying and Geo-Informatics/Electronic and Information Engineering/Law/Environmental Science and Engineering/Transportation Engineering/Architecture and Urban Planning/School of Economics and Management/Computer Science and Technology/Intellectual Property/Civil Engineering/Design and Innovation/Political Science and International Relations"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "A_tuition+accomdation+stipend/B_tuition+insurance",
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "Full"
       }
     },
     {
@@ -948,6 +1233,18 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 3700,
+        "official_website": "www.hust.edu.cn",
+        "english_ug_programs": [
+          "Mechanical Design",
+          "Manufacturing and Automation/Mechanical Design",
+          "Manufacturing and Automation/Telecommunications Engineering"
+        ],
+        "english_pg_programs": [
+          "Information and Communication Engineering/CIS"
+        ]
       }
     },
     {
@@ -998,6 +1295,19 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1611,
+        "official_website": "www.dlut.edu.cn",
+        "english_ug_programs": [
+          "Mechanical Engineering/Infrastructure Engineering/Chemical Engineering/DUT-BSU Joint Institute"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Tuition_Insurance_Accomodation_3500/M",
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "A_tuition+accomodation+stipend/B_tuition"
       }
     },
     {
@@ -1048,6 +1358,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1649,
+        "official_website": "www.bit.edu.cn",
+        "english_ug_programs": [
+          "Aeronautical and Astronautical Engineering/Automation/Computer Science and Technology /International Economics and Trade/Electronic Science and Technology/Mechanical Engineering"
+        ],
+        "english_pg_programs": [
+          "Aeronautics & Astronautics Science and Technology/Mechanics /rmament Science and Technology/Engineering/nstrument Science and Technology/Electronics Science \nand Technology /Computer Science and Technology/MBA/Chemistry /Biology /Mathematics ..."
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "first_tuition+accomdation+stipend/second/third_tuition+insurance/fourth/fifth_tuition\nmaster_20000/doctor_30000",
+        "university_scholarship_types": [
+          "first_second_third_fourth_fifth"
+        ],
+        "university_amount": "first_tuition+accomdation+stipend/second/third_tuition+insurance/fourth/fifth_tuition\nmaster_20000/doctor_30000"
       }
     },
     {
@@ -1098,6 +1424,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2500,
+        "official_website": "www.ecnu.edu.cn",
+        "english_ug_programs": [
+          "Visual Communication Design/Environmental Design"
+        ],
+        "english_pg_programs": [
+          "Chinese Language and Literature/ Political Science/Design/Marxism/Sociology/MBA/Maths Education"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "A_tuition+accomdation+stipend/B_tuition+insurance",
+        "university_scholarship_types": [
+          "B.A."
+        ],
+        "university_amount": "UG_30000"
       }
     },
     {
@@ -1148,6 +1490,12 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 3300,
+        "official_website": "uibe.edu.cn",
+        "provincial_scholarship": false,
+        "provincial_amount": "10000-40000"
       }
     },
     {
@@ -1198,6 +1546,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1550,
+        "official_website": "www.bjtu.edu.cn",
+        "english_ug_programs": [
+          "IMIS/Communication Engineering/Computer Science and Technology/Environmental Engineering/Digital Media Art/Business Administration/Accounting"
+        ],
+        "english_pg_programs": [
+          "Electrical Engineering/Urban and Rural Planning/Transportation Engineering/Economic Management/Civil and Architectural Engineering/Systems Science/Language and Communication"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Full_tuition",
+        "university_scholarship_types": [
+          "First_Second"
+        ],
+        "university_amount": "First_30000/Second_20000"
       }
     },
     {
@@ -1248,6 +1612,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2837,
+        "official_website": "www.shu.edu.cn",
+        "english_ug_programs": [
+          "International Economics and Trade/Business Administration/Finance"
+        ],
+        "english_pg_programs": [
+          "MBA/Mechatronic Engineering and Automation/Economics/Sociology/Cultural Heritage and Information Management/Journalism and Communication"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "A_tuition+accomdation+stipend/B_tuition+insurance",
+        "university_scholarship_types": [
+          "B.A._M.A._PhD"
+        ],
+        "university_amount": "Tuition"
       }
     },
     {
@@ -1298,6 +1678,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 3126,
+        "official_website": "www.tju.edu.cn",
+        "english_ug_programs": [
+          "Chemical Engineering and Technology/Environmental Engineering/Pharmaceutical Science"
+        ],
+        "english_pg_programs": [
+          "Electrical and Information Engineering/Molecular Aggregation Science/Management and Economics/Engineering/Architecture/Science/Medical"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "B.A._20000/M.A._30000",
+        "university_scholarship_types": [
+          "M.A._PhD"
+        ],
+        "university_amount": "M.A._30000/PhD._38000"
       }
     },
     {
@@ -1348,6 +1744,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2165,
+        "official_website": "www.seu.edu.cn",
+        "english_ug_programs": [
+          "MBBS"
+        ],
+        "english_pg_programs": [
+          "Public Health/Intelligent Transportation and New Transportation Infrastructure/Electronics and Information/Engineering/Mechanics"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Type_A_B",
+        "university_scholarship_types": [
+          "B.A._M.A._PhD"
+        ],
+        "university_amount": "A_Full/B_Partial"
       }
     },
     {
@@ -1398,6 +1810,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2092,
+        "official_website": "www.ecust.edu.cn",
+        "english_ug_programs": [
+          "Chemical Engineering and Technology / Biological Engineering (Biopharmaceutical Orientation) / Intelligent Manufacturing Engineering / Computer Science and Technology / International Economics and Trade / Visual Communication Design"
+        ],
+        "english_pg_programs": [
+          "Chemical engineering/"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "A_tuition+accomdation+stipend/B_tuition+insurance",
+        "university_scholarship_types": [
+          "First_Second"
+        ],
+        "university_amount": "First_5000/Second_3000"
       }
     },
     {
@@ -1448,6 +1876,22 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1055,
+        "official_website": "www.suda.edu.cn",
+        "english_ug_programs": [
+          "MBBS/Pharmacy"
+        ],
+        "english_pg_programs": [
+          "Medicine/"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "30000-60000",
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "A_tuition+accomodation+stipend/B_tuition+accommodation"
       }
     },
     {
@@ -1498,6 +1942,20 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 3000,
+        "official_website": "www.scu.edu.cn",
+        "english_ug_programs": [
+          "MBBS/Stomatology/Clinical Medicine/Civil Engineering/International Tourism and Hotel Management/Software Engineering/Software Engineering/"
+        ],
+        "english_pg_programs": [
+          "Industrial Catalysis/Chemical safety engineering and technology/Chemical process equipment/Chemical engineering/Chemical technology/Chemical Metallurgy and Materials Technology/Biochemical engineering/Applied chemistry/Mechanical Engineering/Archaeology/Business administration/Corporate finance/Accounting/Management/Probability and mathematical statistics/Fundamental mathematics/Computational mathematics/Statistics/Applied mathematics..."
+        ],
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "A_tuition+accomodation+stipend/B_20000"
       }
     },
     {
@@ -1548,6 +2006,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 815,
+        "official_website": "www.uestc.edu.cn",
+        "english_ug_programs": [
+          "Electronic Information Engineering/Computer Science and Technology/Software Engineering/Mechanical Design Manufacture and Automation"
+        ],
+        "english_pg_programs": [
+          "Engineering/Engineering/Management/Foreign Language and Literature"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "B.A._tuition+accomdation+medical insurance/M.A._tuition+accomdation+medical insurance+stipend",
+        "university_scholarship_types": [
+          "B.A._M.A._PhD"
+        ],
+        "university_amount": "A_tuition+accomodation+stipend/B_tuition+accommodation"
       }
     },
     {
@@ -1598,6 +2072,22 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1800,
+        "official_website": "www.cqu.edu.cn",
+        "english_ug_programs": [
+          "Electrical Engineering and Automation (Sino-Foreign Cooperative Education)/\nElectrical Engineering and Automation (Sino-Foreign Cooperative Education)"
+        ],
+        "english_pg_programs": [
+          "Electronic Information/Resources and Environment/Mechanical Engineering/Energy and Power Engineering/Computer Science and Technology/Mechanical Engineering …"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "B.A._30000/M.A._35000",
+        "university_scholarship_types": [
+          "Second_Third"
+        ],
+        "university_amount": "Second_100%tuition/Third_50%tuition"
       }
     },
     {
@@ -1648,6 +2138,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2500,
+        "official_website": "www.scut.edu.cn",
+        "english_ug_programs": [
+          "Biomedical Engineering/Artificial Intelligence/Data Science and Big Data Technology/Intelligent Manufacturing Engineering/Robotics Engineering"
+        ],
+        "english_pg_programs": [
+          "Information and Communication Engineering/Control Science and Engineering/Material Science and Engineering/Food Science and Engineering/MBA/Biomedical Science and Engineering/Naval Architecture and Ocean Engineering"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "10000",
+        "university_scholarship_types": [
+          "B.A._M.A._PhD"
+        ],
+        "university_amount": "B.A._tuition/M.A._tuition/PhD_tuition+stipend"
       }
     },
     {
@@ -1698,6 +2204,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2012,
+        "official_website": "www.jnu.edu.cn",
+        "english_ug_programs": [
+          "international economics and trade/accountancy/finance/pharmacy/computer science and technology/International Journalism and Communication/clinical medicine"
+        ],
+        "english_pg_programs": [
+          "SIMBA/chinese studies/Biology and Medicine"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "10000",
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "1500-30000"
       }
     },
     {
@@ -1748,6 +2270,22 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 582,
+        "official_website": "www.szu.edu.cn",
+        "english_ug_programs": [
+          "Business Administrative/International economics and trade"
+        ],
+        "english_pg_programs": [
+          "Foreign Languages and Literatures/Materials Science and Engineering/civil engineering/MBA"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "UG_10000/PG_20000",
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "tuition_tuition_50%tuition"
       }
     },
     {
@@ -1798,6 +2336,19 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1800,
+        "official_website": "www.bnu.edu.cn",
+        "english_pg_programs": [
+          "Comparative Education/Higher Education/Environmental Science/World Economy/Law/Law/Communication Studies/Business Administration/Public Administration"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": [
+          "B.A._M.A._PhD"
+        ],
+        "university_amount": "tuition+accomodation+stipend"
       }
     },
     {
@@ -1848,6 +2399,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 786,
+        "official_website": "www.ruc.edu.cn",
+        "english_ug_programs": [
+          "Business Administration"
+        ],
+        "english_pg_programs": [
+          "International Relations/Chinese Law/Chinese Philosophy/Development Economics/National Economics/Urban-Rural Development\nand Planning/Chinese Politics/Business Administration/Finance/Public Administration and\nPolicy/Journalism and\nCommunication"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "5000_3000_2000"
       }
     },
     {
@@ -1898,6 +2465,22 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 2000,
+        "official_website": "www.nankai.edu.cn",
+        "english_ug_programs": [
+          "English/Business Administration/Logistics Management/Biological Science/Biotechnology"
+        ],
+        "english_pg_programs": [
+          "Optoelectronic Information Engineering/Optoelectronic Information Engineering/Environmental Science/Foreign Languages/International Affairs and Public Policy"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": [
+          "Special_First_Second_Third"
+        ],
+        "university_amount": "tuition+full stipend/tuition+partial stipend/stipend"
       }
     },
     {
@@ -1948,6 +2531,16 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1000,
+        "official_website": "www.hnu.edu.cn",
+        "provincial_scholarship": false,
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "1500_to_Full"
       }
     },
     {
@@ -1998,6 +2591,16 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 800,
+        "official_website": "www.ccnu.edu.cn",
+        "english_ug_programs": [
+          "special education/supergovernment"
+        ],
+        "english_pg_programs": [
+          "Foreign Languages/Design/Tourism Management/Geography/Inclusive Education/Educational Economics and Management/Information and Communication Engineering/Educational Technology"
+        ]
       }
     },
     {
@@ -2048,6 +2651,22 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 853,
+        "official_website": "www.jlu.edu.cn",
+        "english_ug_programs": [
+          "MBBS/Nursing"
+        ],
+        "english_pg_programs": [
+          "Social Sciences/Engineering/Earth Sciences/Medical Sciences/Physical Electronics"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Tuition_Insurance_Accomodation_Health care_1700/M",
+        "university_scholarship_types": [
+          "First_Second_Third"
+        ],
+        "university_amount": "2000_1500_500"
       }
     },
     {
@@ -2098,6 +2717,16 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 1000,
+        "official_website": "www.neu.edu.cn",
+        "english_ug_programs": [
+          "Software Engineering"
+        ],
+        "english_pg_programs": [
+          "Biomedical Engineering /Biomedical Engineering /Metallurgy Engineering"
+        ]
       }
     },
     {
@@ -2148,6 +2777,14 @@
         "chinese_programs": true,
         "foundation_program": false,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 881,
+        "official_website": "www.lzu.edu.cn",
+        "english_pg_programs": [
+          "Public Health/Ecology/Inter-national Relations",
+          "Inter-national Politics/"
+        ]
       }
     },
     {
@@ -2198,6 +2835,19 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 287,
+        "official_website": "www.cau.edu.cn",
+        "english_ug_programs": [
+          "Veterinary Medicine/Animal Science"
+        ],
+        "english_pg_programs": [
+          "MBA/Resource utilization and plant protection/International development policies and governance/Social management and social policy"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Tuition_Insurance_Accomodation",
+        "university_amount": "Tuition_Insurance_Accomodation_health care"
       }
     },
     {
@@ -2248,6 +2898,19 @@
         "chinese_programs": true,
         "foundation_program": true,
         "exchange_programs": true
+      },
+      "additional_info": {
+        "total_international_students": 459,
+        "official_website": "www.cufe.edu.cn",
+        "english_pg_programs": [
+          "Investment/International Law/Regional Economics(China's Economy)/Regional Economics/Public Finance/Labor Economics/Finance"
+        ],
+        "provincial_scholarship": false,
+        "provincial_amount": "Partial_Tuition",
+        "university_scholarship_types": [
+          "Type_A_B"
+        ],
+        "university_amount": "a_100%tuition/B_50%tuition"
       }
     }
   ],

@@ -226,7 +226,8 @@ function transformUniversityData(universitiesData) {
             admissionData: admissionData,
             totalCost: totalCost,
             hasEnglishPrograms: true, // Most universities have English programs
-            acceptFoundation: uni.admission_requirements?.accept_foundation || false
+            acceptFoundation: uni.admission_requirements?.accept_foundation || false,
+            additional_info: uni.additional_info // 添加这个字段！
         };
     }).filter(uni => uni !== null);
     
@@ -1101,6 +1102,74 @@ function createUniversityCard(university, rank) {
             </div>
         </div>
         
+        <!-- Additional Information Section -->
+        ${university.additional_info ? `
+        <div class="additional-info-section">
+            <h4><i class="fas fa-info-circle"></i> Additional Information</h4>
+            <div class="additional-info-grid">
+                ${university.additional_info.total_international_students ? `
+                <div class="info-item">
+                    <span class="info-label">International Students:</span>
+                    <span class="info-value">${university.additional_info.total_international_students.toLocaleString()}</span>
+                </div>
+                ` : ''}
+                
+                ${university.additional_info.official_website ? `
+                <div class="info-item">
+                    <span class="info-label">Official Website:</span>
+                    <span class="info-value">
+                        <a href="https://${university.additional_info.official_website}" target="_blank" rel="noopener noreferrer">
+                            ${university.additional_info.official_website}
+                        </a>
+                    </span>
+                </div>
+                ` : ''}
+                
+                ${university.additional_info.english_ug_programs && university.additional_info.english_ug_programs.length > 0 ? `
+                <div class="info-item">
+                    <span class="info-label">English UG Programs:</span>
+                    <span class="info-value">${university.additional_info.english_ug_programs.slice(0, 3).join(', ')}${university.additional_info.english_ug_programs.length > 3 ? '...' : ''}</span>
+                </div>
+                ` : ''}
+                
+                ${university.additional_info.english_pg_programs && university.additional_info.english_pg_programs.length > 0 ? `
+                <div class="info-item">
+                    <span class="info-label">English PG Programs:</span>
+                    <span class="info-value">${university.additional_info.english_pg_programs.slice(0, 3).join(', ')}${university.additional_info.english_pg_programs.length > 3 ? '...' : ''}</span>
+                </div>
+                ` : ''}
+                
+                ${university.additional_info.provincial_scholarship ? `
+                <div class="info-item">
+                    <span class="info-label">Provincial Scholarship:</span>
+                    <span class="info-value available">✓ Available</span>
+                </div>
+                ` : ''}
+                
+                ${university.additional_info.provincial_amount ? `
+                <div class="info-item">
+                    <span class="info-label">Provincial Amount:</span>
+                    <span class="info-value">${formatWithLineBreaks(university.additional_info.provincial_amount)}</span>
+                </div>
+                ` : ''}
+                
+                ${university.additional_info.university_scholarship_types && university.additional_info.university_scholarship_types.length > 0 ? `
+                <div class="info-item">
+                    <span class="info-label">University Scholarships:</span>
+                    <span class="info-value">${university.additional_info.university_scholarship_types.slice(0, 2).map(formatWithLineBreaks).join(', ')}${university.additional_info.university_scholarship_types.length > 2 ? '...' : ''}</span>
+                </div>
+                ` : ''}
+                
+                ${university.additional_info.university_amount ? `
+                <div class="info-item">
+                    <span class="info-label">University Amount:</span>
+                    <span class="info-value">${formatWithLineBreaks(university.additional_info.university_amount)}</span>
+                </div>
+                ` : ''}
+            </div>
+        </div>
+        ` : ''}
+        
         <!-- Scholarship Information -->
         ${(hasCSCFull || hasCSCPartial || hasConfucius) ? `
         <div class="scholarship-section">
@@ -1329,6 +1398,33 @@ function getFieldIcon(field) {
         'social': 'fas fa-users'
     };
     return icons[field] || 'fas fa-graduation-cap';
+}
+
+// 美化课程名称的函数
+function formatProgramName(programName) {
+    if (!programName) return '';
+    
+    // 将下划线替换为空格，并首字母大写
+    return programName
+        .split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+}
+
+// 新的格式化函数：处理斜杠分隔符，换行并首字母大写
+function formatWithLineBreaks(text) {
+    if (!text) return '';
+    
+    // 将斜杠替换为换行符，并处理每个部分的首字母大写
+    return text
+        .split('/')
+        .map(part => {
+            // 去除首尾空格
+            const trimmed = part.trim();
+            // 首字母大写
+            return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase();
+        })
+        .join('<br>'); // 使用HTML换行标签
 }
 
 // Thank you message functions
