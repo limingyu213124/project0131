@@ -1,39 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-    <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://findchinaschool.com/</loc>
-        <lastmod>2025-08-18</lastmod>
+        <lastmod>2025-08-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-
-    <!-- About Page -->
     <url>
         <loc>https://findchinaschool.com/about.html</loc>
-        <lastmod>2025-08-18</lastmod>
+        <lastmod>2025-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- Study Guide Page -->
     <url>
         <loc>https://findchinaschool.com/guide.html</loc>
-        <lastmod>2025-08-18</lastmod>
+        <lastmod>2025-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-
-    <!-- Universities Page -->
     <url>
         <loc>https://findchinaschool.com/universities.html</loc>
-        <lastmod>2025-08-18</lastmod>
-        <changefreq>monthly</changefreq>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-
+    <url>
+        <loc>https://findchinaschool.com/blog.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/application_tips.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/2026_application_guide.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/sjtu_2025_application.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/study-guides.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/life-in-china.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/student-stories.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
 </urlset>
