@@ -97,6 +97,88 @@
             padding: 2rem 1.5rem;
         }
 
+        /* Featured Article Styles */
+        .featured-article {
+            margin: 3rem 0;
+        }
+
+        .featured-article h2 {
+            color: var(--gray-800);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .article-card.featured {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-200);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .article-card.featured:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .article-image {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .article-content h3 {
+            color: var(--gray-800);
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .article-content p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .article-meta .category {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .article-meta .reading-time {
+            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .read-more:hover {
+            color: var(--primary-dark);
+        }
+
         /* Breadcrumb Navigation */
         .breadcrumb {
             margin-bottom: 2rem;
@@ -171,8 +253,8 @@
             transform: translateX(-4px);
         }
 
-        /* Coming Soon Section */
-        .coming-soon {
+        /* Available Articles Section */
+        .available-articles {
             background: var(--white);
             border-radius: 1rem;
             padding: 3rem;
@@ -181,19 +263,19 @@
             margin-bottom: 3rem;
         }
 
-        .coming-soon-icon {
+        .available-icon {
             font-size: 4rem;
             margin-bottom: 1.5rem;
         }
 
-        .coming-soon h2 {
+        .available-articles h2 {
             font-size: 2rem;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 1rem;
         }
 
-        .coming-soon p {
+        .available-articles p {
             color: var(--gray-600);
             font-size: 1.125rem;
             margin-bottom: 2rem;
@@ -202,7 +284,7 @@
             margin-right: auto;
         }
 
-        .coming-soon .features {
+        .available-articles .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
@@ -240,7 +322,7 @@
                 font-size: 2rem;
             }
             
-            .coming-soon {
+            .available-articles {
                 padding: 2rem;
             }
             
@@ -252,8 +334,17 @@
                 gap: 1rem;
             }
             
-            .coming-soon .features {
+            .available-articles .features {
                 grid-template-columns: 1fr;
+            }
+
+            .article-card.featured {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .article-image img {
+                height: 150px !important;
             }
         }
     </style>
@@ -298,11 +389,30 @@
             <p>Practical advice about daily life, accommodation, transportation, food, and cultural adaptation in China.</p>
         </div>
 
-        <!-- Coming Soon Section -->
-        <div class="coming-soon">
-            <div class="coming-soon-icon">🚧</div>
-            <h2>Life in China Guides Coming Soon!</h2>
-            <p>We're gathering real experiences from international students to create practical guides about daily life in China. Our team is researching accommodation, transportation, food, and cultural adaptation topics.</p>
+        <!-- Featured Article -->
+        <div class="featured-article">
+            <h2>Featured Article</h2>
+            <div class="article-card featured">
+                <div class="article-image">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #4F46E5, #06B6D4); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">🛂</div>
+                </div>
+                <div class="article-content">
+                    <h3>China Student Visa Guide for International Students (X1 / X2)</h3>
+                    <p>Complete guide to Chinese student visas (X1/X2) for international students. Learn about requirements, application process, documents needed, and timeline for studying in China.</p>
+                    <div class="article-meta">
+                        <span class="category">Life in China</span>
+                        <span class="reading-time">8-10 min read</span>
+                    </div>
+                    <a href="student_visa_guide_china.html" class="read-more">Read Full Article →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Available Articles Section -->
+        <div class="available-articles">
+            <div class="available-icon">✅</div>
+            <h2>Available Life in China Guides</h2>
+            <p>We have practical guides and are continuously adding more content about daily life in China.</p>
             
             <div class="features">
                 <div class="feature-item">

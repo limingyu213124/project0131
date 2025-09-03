@@ -63,8 +63,8 @@
     <url>
         <loc>https://findchinaschool.com/life-in-china.html</loc>
         <lastmod>2025-08-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://findchinaschool.com/student-stories.html</loc>
@@ -74,6 +74,12 @@
     </url>
     <url>
         <loc>https://findchinaschool.com/help_us.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/student_visa_guide_china.html</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
