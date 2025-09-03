@@ -49,6 +49,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://findchinaschool.com/zju_application_guide.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://findchinaschool.com/study-guides.html</loc>
         <lastmod>2025-08-15</lastmod>
         <changefreq>monthly</changefreq>
@@ -65,5 +71,11 @@
         <lastmod>2025-08-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/help_us.html</loc>
+        <lastmod>2025-08-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>
