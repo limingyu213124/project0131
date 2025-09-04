@@ -53,6 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleSEOPanel();
         }
     });
+    
+    // Run API test on page load
+    console.log('🚀 Page loaded, running Google API test...');
+    testGoogleAPI();
 });
 
 // Google Search Console API Functions
@@ -214,6 +218,41 @@ function toggleSEOPanel() {
     if (panel.style.display === 'block') {
         showAPIConfigStatus();
     }
+}
+
+// Test Google API functionality
+function testGoogleAPI() {
+    console.log('🧪 Testing Google API functionality...');
+    console.log('📋 Current configuration:', GOOGLE_API_CONFIG);
+    
+    // Test 1: Check if API is enabled
+    console.log('✅ API Enabled:', GOOGLE_API_CONFIG.enabled);
+    console.log('🔑 API Key:', GOOGLE_API_CONFIG.apiKey ? 'Present' : 'Missing');
+    console.log('🏗️ Project ID:', GOOGLE_API_CONFIG.projectId);
+    
+    // Test 2: Test API endpoint
+    const testUrl = 'https://findchinaschool.com/test-page';
+    console.log('🔗 Test URL:', testUrl);
+    console.log('🌐 API Endpoint:', GOOGLE_API_CONFIG.apiEndpoint);
+    
+    // Test 3: Simulate API call (without actually calling)
+    console.log('📡 Would call API with:');
+    console.log('  - URL:', testUrl);
+    console.log('  - Type: URL_UPDATED');
+    console.log('  - Headers:', {
+        'Content-Type': 'application/json',
+        'X-Goog-User-Project': GOOGLE_API_CONFIG.projectId
+    });
+    
+    // Test 4: Check if auto-submit would work
+    if (GOOGLE_API_CONFIG.enabled && GOOGLE_API_CONFIG.apiKey) {
+        console.log('🎯 Auto-submit should work');
+        console.log('💡 Try refreshing the page to see auto-submit in action');
+    } else {
+        console.log('❌ Auto-submit will not work - check configuration');
+    }
+    
+    console.log('🧪 API test completed!');
 }
 
 // Show API configuration status
