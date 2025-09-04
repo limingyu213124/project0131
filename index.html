@@ -83,6 +83,37 @@
     <link rel="preload" href="script.min.js" as="script">
     <link rel="preload" href="universities.json" as="fetch" crossorigin>
 
+    <!-- Structured Data - Website Information -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "China University Selector",
+        "description": "帮助国际学生申请中国大学的综合平台",
+        "url": "https://findchinaschool.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://findchinaschool.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Structured Data - Organization Information -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "China University Selector",
+        "description": "Free platform helping international students find Chinese universities",
+        "url": "https://findchinaschool.com",
+        "logo": "https://findchinaschool.com/logo.png",
+        "sameAs": [
+            "https://buymeacoffee.com/findchinaschool"
+        ]
+    }
+    </script>
+
     <!-- Favicon -->
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="icon" href="logo.png" type="image/png" sizes="32x32">
