@@ -4,6 +4,15 @@ let userAnswers = {};
 let universities = [];
 let matchedUniversities = [];
 
+// Google Search Console API Configuration
+const GOOGLE_API_CONFIG = {
+    enabled: true, // 设置为false可以禁用API功能
+    apiKey: 'AIzaSyDg_P79Doj9NjKEeQdFH4wydBu8LX6siKY', // 你的API密钥
+    projectId: 'hardy-harbor-160916', // 你的Google Cloud项目ID
+    serviceAccountEmail: 'SimonGuoJNU@gmail.com', // 服务账号邮箱
+    apiEndpoint: 'https://indexing.googleapis.com/v3/urlNotifications:publish'
+};
+
 // User counter functionality
 
 
@@ -31,7 +40,196 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize donation button immediately
     setupMainDonationButton();
+    
+    // Auto-submit new pages to Google Search Console
+    if (GOOGLE_API_CONFIG.enabled) {
+        autoSubmitNewPages();
+    }
+    
+    // Add keyboard shortcut for SEO panel (Ctrl+Shift+S)
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.shiftKey && e.key === 'S') {
+            e.preventDefault();
+            toggleSEOPanel();
+        }
+    });
 });
+
+// Google Search Console API Functions
+async function submitToGoogleIndex(url, type = 'URL_UPDATED') {
+    if (!GOOGLE_API_CONFIG.enabled || !GOOGLE_API_CONFIG.apiKey) {
+        console.log('Google Indexing API not configured');
+        return false;
+    }
+    
+    try {
+        // 使用API密钥的方式调用Google Indexing API
+        const response = await fetch(`${GOOGLE_API_CONFIG.apiEndpoint}?key=${GOOGLE_API_CONFIG.apiKey}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Goog-User-Project': GOOGLE_API_CONFIG.projectId
+            },
+            body: JSON.stringify({
+                url: url,
+                type: type // URL_UPDATED, URL_DELETED
+            })
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            console.log('✅ URL submitted to Google for indexing:', url);
+            console.log('Google response:', result);
+            return true;
+        } else {
+            const error = await response.text();
+            console.error('❌ Error submitting to Google:', error);
+            return false;
+        }
+    } catch (error) {
+        console.error('❌ Network error submitting to Google:', error);
+        return false;
+    }
+}
+
+// Auto-submit new pages to Google
+function autoSubmitNewPages() {
+    const currentUrl = window.location.href;
+    const pageKey = `google_submitted_${currentUrl}`;
+    
+    // 检查是否已经提交过
+    if (!localStorage.getItem(pageKey)) {
+        console.log('🔄 Submitting new page to Google:', currentUrl);
+        
+        // 延迟提交，确保页面完全加载
+        setTimeout(() => {
+            submitToGoogleIndex(currentUrl, 'URL_UPDATED').then(success => {
+                if (success) {
+                    localStorage.setItem(pageKey, Date.now());
+                    console.log('✅ Page successfully submitted to Google');
+                }
+            });
+        }, 2000);
+    } else {
+        console.log('ℹ️ Page already submitted to Google');
+    }
+}
+
+// Submit sitemap to Google
+async function submitSitemapToGoogle() {
+    const sitemapUrl = 'https://findchinaschool.com/sitemap.xml';
+    
+    try {
+        const response = await fetch(`https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`);
+        if (response.ok) {
+            console.log('✅ Sitemap submitted to Google');
+            return true;
+        } else {
+            console.error('❌ Error submitting sitemap to Google');
+            return false;
+        }
+    } catch (error) {
+        console.error('❌ Network error submitting sitemap to Google:', error);
+        return false;
+    }
+}
+
+// Alternative: Submit individual URL to Google (using ping method)
+async function submitUrlToGooglePing(url) {
+    try {
+        // 使用Google的ping方式提交单个URL
+        const pingUrl = `https://www.google.com/ping?sitemap=${encodeURIComponent(url)}`;
+        const response = await fetch(pingUrl);
+        
+        if (response.ok) {
+            console.log('✅ URL submitted to Google via ping:', url);
+            return true;
+        } else {
+            console.error('❌ Error submitting URL to Google via ping');
+            return false;
+        }
+    } catch (error) {
+        console.error('❌ Network error submitting URL to Google via ping:', error);
+        return false;
+    }
+}
+
+// Manual page submission to Google
+async function submitCurrentPageToGoogle() {
+    const currentUrl = window.location.href;
+    const statusDiv = document.getElementById('seoStatus');
+    
+    statusDiv.innerHTML = '<p>🔄 Submitting page to Google...</p>';
+    
+    // 尝试使用Indexing API
+    let success = await submitToGoogleIndex(currentUrl, 'URL_UPDATED');
+    
+    // 如果Indexing API失败，尝试使用ping方式
+    if (!success) {
+        console.log('🔄 Indexing API failed, trying ping method...');
+        success = await submitUrlToGooglePing(currentUrl);
+    }
+    
+    if (success) {
+        statusDiv.innerHTML = '<p>✅ Page successfully submitted to Google!</p>';
+        // 清除本地存储，允许重新提交
+        localStorage.removeItem(`google_submitted_${currentUrl}`);
+    } else {
+        statusDiv.innerHTML = '<p>❌ Failed to submit page to Google. Check console for details.</p>';
+    }
+}
+
+// Check Google index status
+async function checkGoogleIndexStatus() {
+    const currentUrl = window.location.href;
+    const statusDiv = document.getElementById('seoStatus');
+    
+    statusDiv.innerHTML = '<p>🔍 Checking Google index status...</p>';
+    
+    try {
+        // 使用Google搜索检查页面是否被索引
+        const searchQuery = `site:findchinaschool.com ${encodeURIComponent(currentUrl)}`;
+        const searchUrl = `https://www.google.com/search?q=${searchQuery}`;
+        
+        // 注意：由于CORS限制，我们无法直接获取搜索结果
+        // 但可以显示检查方法
+        statusDiv.innerHTML = `
+            <p>🔍 To check if this page is indexed by Google:</p>
+            <p>1. Visit: <a href="${searchUrl}" target="_blank">Google Search Results</a></p>
+            <p>2. Look for your page in the results</p>
+            <p>3. Or check Google Search Console directly</p>
+        `;
+    } catch (error) {
+        statusDiv.innerHTML = '<p>❌ Error checking index status</p>';
+        console.error('Error checking index status:', error);
+    }
+}
+
+// Toggle SEO panel visibility (for admin use)
+function toggleSEOPanel() {
+    const panel = document.getElementById('seoPanel');
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    
+    // 显示当前配置状态
+    if (panel.style.display === 'block') {
+        showAPIConfigStatus();
+    }
+}
+
+// Show API configuration status
+function showAPIConfigStatus() {
+    const statusDiv = document.getElementById('seoStatus');
+    
+    statusDiv.innerHTML = `
+        <h4>🔧 API Configuration Status</h4>
+        <p><strong>Project ID:</strong> ${GOOGLE_API_CONFIG.projectId}</p>
+        <p><strong>API Key:</strong> ${GOOGLE_API_CONFIG.apiKey ? '✅ Configured' : '❌ Missing'}</p>
+        <p><strong>Service Account:</strong> ${GOOGLE_API_CONFIG.serviceAccountEmail}</p>
+        <p><strong>Status:</strong> ${GOOGLE_API_CONFIG.enabled ? '✅ Enabled' : '❌ Disabled'}</p>
+        <hr>
+        <p><em>💡 Use the buttons above to test API functionality</em></p>
+    `;
+}
 
 // Performance optimization functions
 function optimizePerformance() {
