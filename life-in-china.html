@@ -9,17 +9,17 @@
       gtag('js', new Date());
       gtag('config', 'G-5RR52RDYY4');
     </script>
-    
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3584190124972575"
          crossorigin="anonymous"></script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life in China - China University Selector Blog</title>
     <meta name="description" content="Practical advice about daily life, accommodation, transportation, food, and cultural adaptation in China.">
     <meta name="keywords" content="life in China, accommodation China, transportation China, Chinese food, cultural adaptation, daily life China">
-    
+
     <!-- Enhanced Open Graph Meta Tags -->
     <meta property="og:title" content="Life in China - China University Selector Blog">
     <meta property="og:description" content="Practical advice about daily life, accommodation, transportation, food, and cultural adaptation in China.">
@@ -30,324 +30,30 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="China University Selector Logo">
     <meta property="og:site_name" content="China University Selector">
-    
+
     <!-- Enhanced Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Life in China - China University Selector Blog">
     <meta name="twitter:description" content="Practical advice about daily life, accommodation, transportation, food, and cultural adaptation in China.">
     <meta name="twitter:image" content="https://findchinaschool.com/logo.png">
     <meta name="twitter:image:alt" content="China University Selector Logo">
-    
+
     <!-- Font preloading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-    
+
     <!-- Favicon -->
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="icon" href="logo.png" type="image/png" sizes="32x32">
     <link rel="icon" href="logo.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="shortcut icon" href="logo.png" type="image/png">
-    
+
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        /* Notion-inspired design system */
-        :root {
-            --primary: #4F46E5;    /* 靛蓝 - 专业可信 */
-            --secondary: #06B6D4;  /* 青色 - 活力创新 */
-            --accent: #F59E0B;     /* 琥珀 - 点缀强调 */
-            --background: #F9FAFB; /* 浅灰背景 */
-            --text: #111827;       /* 深灰文字 */
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
-            --white: #ffffff;
-        }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Navigation styles are now in styles.css */
-
-        /* Blog container styles */
-        .blog-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-
-        /* Featured Article Styles */
-        .featured-article {
-            margin: 3rem 0;
-        }
-
-        .featured-article h2 {
-            color: var(--gray-800);
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .article-card.featured {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2rem;
-            background: var(--white);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--gray-200);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .article-card.featured:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .article-image {
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .article-content h3 {
-            color: var(--gray-800);
-            font-size: 1.375rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .article-content p {
-            color: var(--gray-600);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.875rem;
-        }
-
-        .article-meta .category {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-
-        .article-meta .reading-time {
-            color: var(--gray-500);
-            display: flex;
-            align-items: center;
-        }
-
-        .read-more {
-            display: inline-block;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s ease;
-        }
-
-        .read-more:hover {
-            color: var(--primary-dark);
-        }
-
-        /* Breadcrumb Navigation */
-        .breadcrumb {
-            margin-bottom: 2rem;
-            padding: 1rem 1.5rem;
-            background: var(--white);
-            border-radius: 0.75rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        }
-
-        .breadcrumb nav {
-            margin-bottom: 0;
-        }
-
-        .breadcrumb ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--gray-600);
-        }
-
-        .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .breadcrumb a:hover {
-            color: var(--secondary);
-        }
-
-        /* Category Header */
-        .category-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .category-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 1rem;
-        }
-
-        .category-header p {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Back to Blog button */
-        .back-to-blog {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(6, 182, 212, 0.1));
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-        }
-
-        .back-to-blog:hover {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(6, 182, 212, 0.15));
-            transform: translateX(-4px);
-        }
-
-        /* Available Articles Section */
-        .available-articles {
-            background: var(--white);
-            border-radius: 1rem;
-            padding: 3rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 3rem;
-        }
-
-        .available-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .available-articles h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 1rem;
-        }
-
-        .available-articles p {
-            color: var(--gray-600);
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .available-articles .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            text-align: left;
-            padding: 1.5rem;
-            background: var(--gray-50);
-            border-radius: 0.75rem;
-            border: 1px solid var(--gray-200);
-        }
-
-        .feature-item h3 {
-            color: var(--primary);
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-item p {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .blog-container {
-                padding: 1rem;
-            }
-            
-            .category-header h1 {
-                font-size: 2rem;
-            }
-            
-            .available-articles {
-                padding: 2rem;
-            }
-            
-            .nav-container {
-                padding: 0 1rem;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-            }
-            
-            .available-articles .features {
-                grid-template-columns: 1fr;
-            }
-
-            .article-card.featured {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .article-image img {
-                height: 150px !important;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -365,18 +71,7 @@
     </nav>
 
     <div class="blog-container">
-        <!-- Breadcrumb Navigation -->
-        <div class="breadcrumb">
-            <nav aria-label="Breadcrumb">
-                <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li style="color: var(--gray-400);">/</li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li style="color: var(--gray-400);">/</li>
-                    <li style="color: var(--text); font-weight: 600;">Life in China</li>
-                </ol>
-            </nav>
-        </div>
+        
 
         <!-- Back to Blog -->
         <a href="blog.html" class="back-to-blog">
@@ -394,7 +89,7 @@
             <h2>Featured Article</h2>
             <div class="article-card featured">
                 <div class="article-image">
-                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #4F46E5, #06B6D4); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">🛂</div>
+                    <div style="display: flex;">🛂</div>
                 </div>
                 <div class="article-content">
                     <h3>China Student Visa Guide for International Students (X1 / X2)</h3>
@@ -413,23 +108,23 @@
             <div class="available-icon">✅</div>
             <h2>Available Life in China Guides</h2>
             <p>We have practical guides and are continuously adding more content about daily life in China.</p>
-            
+
             <div class="features">
                 <div class="feature-item">
                     <h3>🏠 Accommodation</h3>
                     <p>Find and manage housing in China, from university dormitories to private apartments and homestays.</p>
                 </div>
-                
+
                 <div class="feature-item">
                     <h3>🚇 Transportation</h3>
                     <p>Navigate Chinese cities efficiently using public transportation, ride-sharing apps, and bicycles.</p>
                 </div>
-                
+
                 <div class="feature-item">
                     <h3>🍜 Food & Dining</h3>
                     <p>Explore Chinese cuisine, dining culture, and find restaurants that cater to international tastes.</p>
                 </div>
-                
+
                 <div class="feature-item">
                     <h3>🌏 Cultural Adaptation</h3>
                     <p>Understand Chinese customs, social etiquette, and how to adapt to life in a new culture.</p>

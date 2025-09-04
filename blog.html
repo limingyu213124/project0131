@@ -10,17 +10,17 @@
 
       gtag('config', 'G-5RR52RDYY4');
     </script>
-    
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3584190124972575"
          crossorigin="anonymous"></script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - China University Selector | Study in China Tips & Guides</title>
     <meta name="description" content="Expert tips and guides for studying in China. Learn about application processes, student life, and everything you need to know about Chinese universities.">
     <meta name="keywords" content="study in China blog, China university application tips, international student guide, Chinese education blog">
-    
+
     <!-- Enhanced Open Graph Meta Tags -->
     <meta property="og:title" content="Blog - China University Selector | Study in China Tips & Guides">
     <meta property="og:description" content="Expert tips and guides for studying in China. Learn about application processes, student life, and everything you need to know about Chinese universities.">
@@ -31,30 +31,30 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="China University Selector Logo">
     <meta property="og:site_name" content="China University Selector">
-    
+
     <!-- Enhanced Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Blog - China University Selector | Study in China Tips">
     <meta name="twitter:description" content="Expert tips and guides for studying in China. Learn about application processes and student life.">
     <meta name="twitter:image" content="https://findchinaschool.com/logo.png">
     <meta name="twitter:image:alt" content="China University Selector Logo">
-    
+
     <!-- Font preloading - Optimized for speed and SEO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-    
+
     <!-- Favicon -->
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="icon" href="logo.png" type="image/png" sizes="32x32">
     <link rel="icon" href="logo.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="shortcut icon" href="logo.png" type="image/png">
-    
+
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
-    
+
     <!-- Framer Motion - Deferred Loading -->
     <script>
         // Defer Framer Motion loading to improve initial page performance
@@ -69,468 +69,7 @@
             document.head.appendChild(script);
         });
     </script>
-    
-    <style>
-        /* Notion-inspired design system */
-        :root {
-            --primary: #4F46E5;    /* 靛蓝 - 专业可信 */
-            --secondary: #06B6D4;  /* 青色 - 活力创新 */
-            --accent: #F59E0B;     /* 琥珀 - 点缀强调 */
-            --background: #F9FAFB; /* 浅灰背景 */
-            --text: #111827;       /* 深灰文字 */
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
-            --white: #ffffff;
-        }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Navigation styles are now in styles.css */
-
-        /* Blog container styles */
-        .blog-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 1rem;
-        }
-
-        .page-header p {
-            font-size: 1.125rem;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Blog categories */
-        .blog-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .category-card {
-            background: var(--white);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-            cursor: pointer;
-        }
-
-        .category-card:nth-child(1) { animation-delay: 0.1s; }
-        .category-card:nth-child(2) { animation-delay: 0.2s; }
-        .category-card:nth-child(3) { animation-delay: 0.3s; }
-        .category-card:nth-child(4) { animation-delay: 0.4s; }
-
-        .category-card:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .category-card.active {
-            border: 2px solid var(--primary);
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(6, 182, 212, 0.05));
-        }
-
-        /* Articles section */
-        .articles-section {
-            display: none;
-            margin-top: 2rem;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .articles-section.active {
-            display: block;
-        }
-
-        .articles-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--gray-200);
-        }
-
-        .articles-header h2 {
-            color: var(--text);
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .close-articles {
-            background: var(--gray-100);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            color: var(--gray-600);
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .close-articles:hover {
-            background: var(--gray-200);
-            color: var(--gray-700);
-        }
-
-        .category-card h3 {
-            color: var(--text);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        .category-card p {
-            color: var(--gray-600);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .category-card .status {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .status.available {
-            background: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-
-        .status.progress {
-            background: rgba(59, 130, 246, 0.1);
-            color: #2563eb;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        /* Article styles */
-        .article {
-            background: var(--white);
-            border-radius: 0.75rem;
-            padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.5s forwards;
-        }
-
-        .article h2 {
-            color: var(--text);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .article h3 {
-            color: var(--gray-800);
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.75rem 0;
-        }
-
-        .article h4 {
-            color: var(--gray-800);
-            font-size: 1rem;
-            font-weight: 600;
-            margin: 1rem 0 0.5rem 0;
-        }
-
-        .article p {
-            color: var(--gray-600);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .article ul, .article ol {
-            color: var(--gray-600);
-            line-height: 1.6;
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-            list-style: none;
-        }
-
-        .article ol {
-            list-style: decimal;
-            padding-left: 2rem;
-        }
-
-        .article ol li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            font-size: 0.9rem;
-        }
-
-        .article ol li::before {
-            display: none;
-        }
-
-        .article li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            font-size: 0.9rem;
-        }
-
-        .article li::before {
-            content: '•';
-            color: var(--primary);
-            font-weight: bold;
-            position: absolute;
-            left: -1rem;
-        }
-
-
-
-        .article-meta {
-            color: var(--gray-500);
-            font-size: 0.875rem;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .article h3 {
-            color: var(--text);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin: 2rem 0 1rem 0;
-            position: relative;
-        }
-
-        .article h3::before {
-            content: '';
-            position: absolute;
-            left: -1rem;
-            top: 0.25rem;
-            width: 3px;
-            height: 1.25rem;
-            background: var(--gray-300);
-            border-radius: 2px;
-        }
-
-        .article p {
-            color: var(--gray-700);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .article ul {
-            color: var(--gray-700);
-            margin-bottom: 1.5rem;
-            padding-left: 0;
-        }
-
-        .article li {
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
-
-        .article li::before {
-            content: '';
-            position: absolute;
-            left: -1.5rem;
-            top: 0.5rem;
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
-        }
-
-        /* Remove default list markers */
-        .article ul {
-            list-style: none;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(6, 182, 212, 0.05));
-            border: 1px solid rgba(79, 70, 229, 0.1);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            position: relative;
-        }
-
-        .highlight-box::before {
-            content: '💡';
-            position: absolute;
-            top: -0.75rem;
-            left: 1.5rem;
-            background: var(--white);
-            padding: 0 0.5rem;
-            font-size: 1.25rem;
-        }
-
-        .highlight-box h4 {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .highlight-box p {
-            color: var(--gray-700);
-            margin-bottom: 0;
-        }
-
-        /* Back link */
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(6, 182, 212, 0.1));
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
-        }
-
-        .back-link:hover {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(6, 182, 212, 0.15));
-            transform: translateX(-4px);
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            margin-top: 3rem;
-        }
-
-        .faq-item {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            border-color: var(--primary);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .faq-item h4 {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
-        }
-
-        .faq-item p {
-            color: var(--gray-700);
-            margin-bottom: 0;
-            line-height: 1.6;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .back-link {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
-        }
-        
-        .back-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(79, 70, 229, 0.3);
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .blog-container {
-                padding: 2rem 1rem;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            
-            .blog-categories {
-                grid-template-columns: 1fr;
-            }
-            
-            .article {
-                padding: 2rem;
-            }
-            
-            .nav-container {
-                padding: 0 1rem;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -548,16 +87,7 @@
     </nav>
 
     <div class="blog-container">
-        <!-- Breadcrumb Navigation -->
-        <section class="universities-section" style="padding: 1rem 1.5rem; margin-bottom: 1.5rem;">
-            <nav aria-label="Breadcrumb" style="margin-bottom: 0;">
-                <ol style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--gray-600);">
-                    <li><a href="index.html" style="color: var(--primary); text-decoration: none;">Home</a></li>
-                    <li style="color: var(--gray-400);">/</li>
-                    <li style="color: var(--text); font-weight: 600;">Blog</li>
-                </ol>
-            </nav>
-        </section>
+
 
         <!-- Page Header -->
         <div class="page-header">
@@ -572,19 +102,19 @@
                 <p>Essential guides for applying to Chinese universities, including requirements, deadlines, and strategies for success.</p>
                 <span class="status available">Available</span>
             </div>
-            
+
             <div class="category-card" onclick="window.location.href='study-guides.html'">
                 <h3>📚 Study Guides</h3>
                 <p>Comprehensive resources for academic success, including course preparation, study techniques, and academic culture.</p>
                 <span class="status progress">Update in Progress</span>
             </div>
-            
+
             <div class="category-card" onclick="window.location.href='life-in-china.html'">
                 <h3>🏠 Life in China</h3>
                 <p>Practical advice about daily life, accommodation, transportation, food, and cultural adaptation in China.</p>
                 <span class="status available">Available</span>
             </div>
-            
+
             <div class="category-card" onclick="window.location.href='student-stories.html'">
                 <h3>👥 Student Stories</h3>
                 <p>Real experiences and testimonials from international students who have successfully studied in China.</p>
@@ -598,7 +128,7 @@
                 <h2 id="articlesTitle">Articles</h2>
                 <button class="close-articles" onclick="closeArticles()">✕ Close</button>
             </div>
-            
+
             <!-- Application Tips Articles -->
             <div class="articles-content" id="application-tips-content">
                 <div class="article">
@@ -613,7 +143,7 @@
 
                     <h3>Application Timeline</h3>
                     <p>Most students apply for the Fall semester (September start). Here's a simple timeline:</p>
-                    
+
                     <div class="highlight-box">
                         <h4>Fall 2026 Timeline</h4>
                         <p><strong>October 2025 - January 2026:</strong> Research universities<br>
@@ -626,7 +156,7 @@
 
                     <h3>Required Documents</h3>
                     <p>You'll need these basic documents:</p>
-                    
+
                     <ul>
                         <li><strong>Academic Records:</strong> Transcripts and diplomas</li>
                         <li><strong>Language Test:</strong> HSK for Chinese programs, IELTS/TOEFL for English programs</li>
@@ -786,12 +316,12 @@
         </div>
 
         <!-- Contact Information -->
-        <div class="contact-section" style="text-align: center; margin-top: 3rem; padding: 2rem; background: var(--gray-50); border-radius: 1rem; border: 1px solid var(--gray-200);">
-            <h3 style="color: var(--text); margin-bottom: 1rem; font-size: 1.25rem;">Need Help?</h3>
-            <p style="color: var(--gray-600); margin-bottom: 1rem;">Have questions about studying in China or using our platform?</p>
-            <p style="margin-bottom: 0.5rem;"><strong>Email:</strong> <a href="mailto:support@findchinaschool.com" style="color: var(--primary); text-decoration: none; font-weight: 500;">support@findchinaschool.com</a></p>
-            <p style="margin-bottom: 0.5rem;"><strong>Twitter:</strong> <a href="https://x.com/findchinaschool" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 500;">@findchinaschool</a></p>
-            <p style="margin-bottom: 0;"><strong>Reddit:</strong> <a href="https://reddit.com/user/karelia322" style="color: var(--primary); text-decoration: none; font-weight: 500;">u/karelia322</a></p>
+        <div class="contact-section">
+            <h3>Need Help?</h3>
+            <p>Have questions about studying in China or using our platform?</p>
+                            <p><strong>Email:</strong> <a href="mailto:support@findchinaschool.com" class="contact-link">support@findchinaschool.com</a></p>
+                <p><strong>Twitter:</strong> <a href="https://x.com/findchinaschool" target="_blank" class="contact-link">@findchinaschool</a></p>
+                <p><strong>Reddit:</strong> <a href="https://reddit.com/user/karelia322" class="contact-link">u/karelia322</a></p>
         </div>
 
         <!-- Back to Home -->
@@ -904,7 +434,7 @@
         // Add click event listeners to category cards
         document.addEventListener('DOMContentLoaded', function() {
             const categoryCards = document.querySelectorAll('.category-card');
-            
+
             categoryCards.forEach(card => {
                 card.addEventListener('click', function() {
                     const category = this.getAttribute('data-category');
@@ -917,13 +447,13 @@
             // Hide all articles content
             const allContents = document.querySelectorAll('.articles-content');
             allContents.forEach(content => content.style.display = 'none');
-            
+
             // Show the selected category content
             const selectedContent = document.getElementById(category + '-content');
             if (selectedContent) {
                 selectedContent.style.display = 'block';
             }
-            
+
             // Update articles title
             const articlesTitle = document.getElementById('articlesTitle');
             const categoryNames = {
@@ -933,17 +463,17 @@
                 'student-stories': 'Student Stories'
             };
             articlesTitle.textContent = categoryNames[category] || 'Articles';
-            
+
             // Show articles section
             const articlesSection = document.getElementById('articlesSection');
             articlesSection.classList.add('active');
-            
+
             // Update active category card
             document.querySelectorAll('.category-card').forEach(card => {
                 card.classList.remove('active');
             });
             document.querySelector(`[data-category="${category}"]`).classList.add('active');
-            
+
             // Scroll to articles section
             articlesSection.scrollIntoView({ behavior: 'smooth' });
         }
@@ -951,12 +481,12 @@
         function closeArticles() {
             const articlesSection = document.getElementById('articlesSection');
             articlesSection.classList.remove('active');
-            
+
             // Remove active state from all category cards
             document.querySelectorAll('.category-card').forEach(card => {
                 card.classList.remove('active');
             });
-            
+
             // Scroll back to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
