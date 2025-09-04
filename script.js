@@ -27,52 +27,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadUniversities();
     setupEventListeners();
-    optimizeFontLoading();
-    optimizeImageLoading();
+    optimizePerformance();
     
     // Initialize donation button immediately
     setupMainDonationButton();
 });
 
-// Font loading optimization
-function optimizeFontLoading() {
-    // Check if fonts are loaded
-    if ('fonts' in document) {
-        Promise.all([
-            document.fonts.load('400 1em Inter'),
-            document.fonts.load('600 1em Inter'),
-            document.fonts.load('700 1em Inter')
-        ]).then(() => {
-            // Fonts loaded, add class to body
-            document.body.classList.add('fonts-loaded');
-        }).catch(() => {
-            // Fallback to system fonts
-            document.body.classList.add('fonts-fallback');
-        });
+// Performance optimization functions
+function optimizePerformance() {
+    // Add passive event listeners for better scroll performance
+    if ('addEventListener' in window) {
+        const passiveSupported = () => {
+            let passive = false;
+            try {
+                const options = Object.defineProperty({}, 'passive', {
+                    get: function() { passive = true; }
+                });
+                window.addEventListener('test', null, options);
+                window.removeEventListener('test', null, options);
+            } catch(e) {}
+            return passive;
+        };
+        
+        if (passiveSupported()) {
+            // Use passive listeners for scroll events
+            document.addEventListener('scroll', function() {}, { passive: true });
+            window.addEventListener('scroll', function() {}, { passive: true });
+        }
     }
-}
-
-// Image loading optimization
-function optimizeImageLoading() {
-    const logoImage = document.querySelector('.logo-image');
-    if (logoImage) {
-        // Add loading animation
-        logoImage.style.opacity = '0';
-        logoImage.style.transition = 'opacity 0.3s ease';
+    
+    // Optimize image loading with Intersection Observer
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        });
         
-        logoImage.onload = function() {
-            this.style.opacity = '1';
-        };
-        
-        logoImage.onerror = function() {
-            console.warn('Logo failed to load, using fallback');
-            this.style.display = 'none';
-            // Add a fallback icon
-            const fallbackIcon = document.createElement('div');
-            fallbackIcon.className = 'logo-fallback';
-            fallbackIcon.innerHTML = '<i class="fas fa-graduation-cap"></i>';
-            this.parentNode.insertBefore(fallbackIcon, this);
-        };
+        // Observe all lazy images
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
     }
 }
 
