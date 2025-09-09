@@ -292,6 +292,32 @@
                     <div class="read-more">Read More →</div>
                 </div>
             </div>
+
+            <div class="article-card" onclick="window.location.href='scam_guide.html'">
+                <div class="article-image">
+                    <img src="blog_pic/scam.png" alt="Scam prevention guide for international students">
+                </div>
+                <div class="article-content">
+                    <h3>Beware the Scammers: A Practical Guide to Avoiding Fraud When Applying to Chinese Universities</h3>
+                    <p>Practical, actionable checklist for international students to spot and avoid scholarship/university/authority scams targeting applicants to Chinese universities. Includes verification steps and red flags.</p>
+                    <div class="article-meta">
+                        <span>📅 Jan 15, 2025</span>
+                        <span>⏱️ 12 min read</span>
+                    </div>
+                    <div class="read-more">Read More →</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-container">
+            <button class="pagination-button" id="prevBtn" onclick="changePage(-1)">
+                ← Previous
+            </button>
+            <span class="pagination-info" id="pageInfo">Page 1 of 2</span>
+            <button class="pagination-button" id="nextBtn" onclick="changePage(1)">
+                Next →
+            </button>
         </div>
     </div>
 
@@ -325,6 +351,54 @@
         "articleSection": "Application Tips",
         "keywords": "China university application, study in China, international students China, university admission China, CSC scholarship, HSK test, IELTS China, university requirements China, student visa China, Chinese education"
     }
+    </script>
+
+    <!-- Pagination JavaScript -->
+    <script>
+    let currentPage = 1;
+    const articlesPerPage = 4;
+    const totalArticles = document.querySelectorAll('.article-card').length;
+    const totalPages = Math.ceil(totalArticles / articlesPerPage);
+
+    function showPage(page) {
+        const articles = document.querySelectorAll('.article-card');
+        const startIndex = (page - 1) * articlesPerPage;
+        const endIndex = startIndex + articlesPerPage;
+
+        articles.forEach((article, index) => {
+            if (index >= startIndex && index < endIndex) {
+                article.style.display = 'block';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+
+        // Update pagination info
+        document.getElementById('pageInfo').textContent = `Page ${page} of ${totalPages}`;
+        
+        // Update button states
+        document.getElementById('prevBtn').disabled = page === 1;
+        document.getElementById('nextBtn').disabled = page === totalPages;
+        
+        // Update active state
+        document.querySelectorAll('.pagination-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        currentPage = page;
+    }
+
+    function changePage(direction) {
+        const newPage = currentPage + direction;
+        if (newPage >= 1 && newPage <= totalPages) {
+            showPage(newPage);
+        }
+    }
+
+    // Initialize pagination on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        showPage(1);
+    });
     </script>
 </body>
 </html>
