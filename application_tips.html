@@ -53,6 +53,188 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tag Styles -->
+    <style>
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        
+        .tag:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+        
+        .tag.active {
+            background: var(--accent);
+        }
+        
+        .tag-filter-container {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tag-filter-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .tag-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .filter-tag {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 0.5rem 1rem;
+            border-radius: 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        
+        .filter-tag:hover {
+            background: var(--gray-200);
+            transform: translateY(-1px);
+        }
+        
+        .filter-tag.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--gray-500);
+            font-style: italic;
+        }
+        
+        .article-card.hidden {
+            display: none !important;
+        }
+        
+        /* Featured Article Styles */
+        .featured-article {
+            margin: 2rem 0;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            color: #111827;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .featured-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+        }
+        
+        .featured-image {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .featured-text {
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        
+        .featured-text h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            color: #111827;
+        }
+        
+        .featured-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #6b7280;
+        }
+        
+        .featured-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .featured-read-more {
+            display: inline-block;
+            background: #4F46E5;
+            color: white;
+            padding: 0.625rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
+        }
+        
+        .featured-read-more:hover {
+            background: #3730A3;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(79, 70, 229, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .featured-image {
+                max-width: 100%;
+            }
+            
+            .featured-text h2 {
+                font-size: 1.25rem;
+            }
+            
+            .featured-text p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 
     <!-- Structured Data - Organization Information -->
     <script type="application/ld+json">
@@ -186,15 +368,53 @@
             <p>Essential guides for applying to Chinese universities, including requirements, deadlines, and strategies for success.</p>
         </div>
 
+        <!-- Tag Filter -->
+        <div class="tag-filter-container">
+            <div class="tag-filter-title">🔍 Filter by Topic</div>
+            <div class="tag-filters">
+                <span class="filter-tag active" data-filter="all">All Articles</span>
+                <span class="filter-tag" data-filter="general-guide">General Guide</span>
+                <span class="filter-tag" data-filter="university-specific">University Specific</span>
+                <span class="filter-tag" data-filter="scholarship">Scholarship</span>
+                <span class="filter-tag" data-filter="scam-prevention">Safety</span>
+                <span class="filter-tag" data-filter="program-specific">Program Specific</span>
+                <span class="filter-tag" data-filter="budget-education">Budget Education</span>
+            </div>
+        </div>
+
+        <!-- Featured Article -->
+        <div class="featured-article">
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="blog_pic/affordable/1.jpg" alt="Top 10 Affordable Universities in China for International Students">
+                </div>
+                <div class="featured-text">
+                    <h2>Top 10 Affordable Universities in China for International Students 2025</h2>
+                    <p>Discover China's most cost-effective universities for international students. Complete guide to affordable education with tuition fees, living costs, and application requirements for 2025.</p>
+                    <div class="featured-meta">
+                        <span>📅 Sep 14, 2025</span>
+                        <span>⏱️ 12 min read</span>
+                        <span>🏷️ Budget Education</span>
+                    </div>
+                    <a href="affordable_guide.html" class="featured-read-more">Read Full Guide →</a>
+                </div>
+            </div>
+        </div>
+
         <!-- Articles Grid -->
         <div class="articles-grid">
-            <div class="article-card" onclick="window.location.href='2026_application_guide.html'">
+            <div class="article-card" onclick="window.location.href='2026_application_guide.html'" data-tags="general-guide,application-process,requirements">
                 <div class="article-image">
                     <img src="blog_pic/chinauni.jpeg" alt="China Universities Guide">
                 </div>
                 <div class="article-content">
                     <h3>Complete Guide to Applying to Chinese Universities: 2026 Edition</h3>
                     <p>Your comprehensive roadmap to successfully applying to Chinese universities. Covers timeline, documents, requirements, and tips.</p>
+                    <div class="article-tags">
+                        <span class="tag">General Guide</span>
+                        <span class="tag">Application Process</span>
+                        <span class="tag">Requirements</span>
+                    </div>
                     <div class="article-meta">
                         <span>📅 Aug 15, 2025</span>
                         <span>⏱️ 8 min read</span>
@@ -203,13 +423,18 @@
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='sjtu_2025_application.html'">
+            <div class="article-card" onclick="window.location.href='sjtu_2025_application.html'" data-tags="sjtu,university-specific,application-process">
                 <div class="article-image">
                     <img src="blog_pic/shanghaijiaotong.jpg" alt="Shanghai Jiao Tong University Campus">
                 </div>
                 <div class="article-content">
                     <h3>Your Comprehensive Guide to Applying to Shanghai Jiao Tong University as an International Student</h3>
                     <p>Complete guide to applying to SJTU, covering prerequisites, application procedures, tuition, accommodation, and visa requirements for 2025.</p>
+                    <div class="article-tags">
+                        <span class="tag">SJTU</span>
+                        <span class="tag">University Specific</span>
+                        <span class="tag">Application Process</span>
+                    </div>
                     <div class="article-meta">
                         <span>📅 Aug 15, 2025</span>
                         <span>⏱️ 15 min read</span>
@@ -218,13 +443,18 @@
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='zju_application_guide.html'">
+            <div class="article-card" onclick="window.location.href='zju_application_guide.html'" data-tags="zju,university-specific,application-process">
                 <div class="article-image">
                     <img src="blog_pic/zhejianguni.jpg" alt="Zhejiang University Campus">
                 </div>
                 <div class="article-content">
                     <h3>Comprehensive Guide to Applying for Zhejiang University</h3>
                     <p>Complete guide to applying to ZJU, covering undergraduate, master's, and PhD programs with detailed requirements, deadlines, and application procedures for 2025.</p>
+                    <div class="article-tags">
+                        <span class="tag">ZJU</span>
+                        <span class="tag">University Specific</span>
+                        <span class="tag">Application Process</span>
+                    </div>
                     <div class="article-meta">
                         <span>📅 Aug 15, 2025</span>
                         <span>⏱️ 18 min read</span>
@@ -233,13 +463,18 @@
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='szu_application_guide.html'">
+            <div class="article-card" onclick="window.location.href='szu_application_guide.html'" data-tags="szu,university-specific,application-process">
                 <div class="article-image">
                     <img src="blog_pic/shenzhenuni.png" alt="Shenzhen University Campus">
                 </div>
                 <div class="article-content">
                     <h3>Complete Guide to Applying to Shenzhen University (SZU) as an International Student 2025</h3>
                     <p>Comprehensive guide to applying to Shenzhen University (SZU) as an international student. Learn about programs, admission requirements, scholarships, costs, and application procedures for 2025.</p>
+                    <div class="article-tags">
+                        <span class="tag">SZU</span>
+                        <span class="tag">University Specific</span>
+                        <span class="tag">Application Process</span>
+                    </div>
                     <div class="article-meta">
                         <span>📅 Sep 4, 2025</span>
                         <span>⏱️ 12 min read</span>
@@ -248,13 +483,19 @@
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='csc_scholarship_guide.html'">
+            <div class="article-card" onclick="window.location.href='csc_scholarship_guide.html'" data-tags="csc,scholarship,financial-aid,application-process">
                 <div class="article-image">
                     <img src="blog_pic/scholarship.jpg" alt="Chinese Government Scholarship Guide">
                 </div>
                 <div class="article-content">
                     <h3>Complete Guide to Chinese Government Scholarship (CSC) Application</h3>
                     <p>Step-by-step guide to applying for the Chinese Government Scholarship (CSC). Learn about Type A, B, and C scholarships, application procedures, requirements, and tips for success in 2025.</p>
+                    <div class="article-tags">
+                        <span class="tag">CSC</span>
+                        <span class="tag">Scholarship</span>
+                        <span class="tag">Financial Aid</span>
+                        <span class="tag">Application Process</span>
+                    </div>
                     <div class="article-meta">
                         <span>📅 Sep 5, 2025</span>
                         <span>⏱️ 16 min read</span>
@@ -263,13 +504,18 @@
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='tsinghua_application_guide.html'">
+            <div class="article-card" onclick="window.location.href='tsinghua_application_guide.html'" data-tags="tsinghua,university-specific,application-process">
                 <div class="article-image">
                     <img src="blog_pic/tsinghua.png" alt="Tsinghua University Campus">
                 </div>
                 <div class="article-content">
                     <h3>Comprehensive Guide to Applying to Tsinghua University</h3>
                     <p>Complete guide to applying to Tsinghua University as an international student. Covers undergraduate, master's, and PhD programs with detailed requirements, deadlines, and application procedures for 2025.</p>
+                    <div class="article-tags">
+                        <span class="tag">Tsinghua</span>
+                        <span class="tag">University Specific</span>
+                        <span class="tag">Application Process</span>
+                    </div>
                     <div class="article-meta">
                         <span>📅 Sep 5, 2025</span>
                         <span>⏱️ 20 min read</span>
@@ -278,13 +524,18 @@
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='hitsz_application_guide.html'">
+            <div class="article-card" onclick="window.location.href='hitsz_application_guide.html'" data-tags="hitsz,university-specific,application-process">
                 <div class="article-image">
                     <img src="blog_pic/HITSZ.png" alt="Harbin Institute of Technology Shenzhen Campus">
                 </div>
                 <div class="article-content">
                     <h3>Complete Guide to Applying to Harbin Institute of Technology Shenzhen (HITSZ) as an International Student 2025</h3>
                     <p>Comprehensive guide to applying to Harbin Institute of Technology Shenzhen (HITSZ) as an international student. Learn about programs, admission requirements, scholarships, costs, and application procedures for 2025.</p>
+                    <div class="article-tags">
+                        <span class="tag">HITSZ</span>
+                        <span class="tag">University Specific</span>
+                        <span class="tag">Application Process</span>
+                    </div>
                     <div class="article-meta">
                         <span>📅 Sep 4, 2025</span>
                         <span>⏱️ 15 min read</span>
@@ -293,13 +544,19 @@
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='scam_guide.html'">
+            <div class="article-card" onclick="window.location.href='scam_guide.html'" data-tags="scam-prevention,safety,application-process,security">
                 <div class="article-image">
                     <img src="blog_pic/scam.png" alt="Scam prevention guide for international students">
                 </div>
                 <div class="article-content">
                     <h3>Beware the Scammers: A Practical Guide to Avoiding Fraud When Applying to Chinese Universities</h3>
                     <p>Practical, actionable checklist for international students to spot and avoid scholarship/university/authority scams targeting applicants to Chinese universities. Includes verification steps and red flags.</p>
+                    <div class="article-tags">
+                        <span class="tag">Scam Prevention</span>
+                        <span class="tag">Safety</span>
+                        <span class="tag">Application Process</span>
+                        <span class="tag">Security</span>
+                    </div>
                     <div class="article-meta">
                         <span>📅 Jan 15, 2025</span>
                         <span>⏱️ 12 min read</span>
@@ -308,46 +565,82 @@
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='nursing_guide.html'">
+            <div class="article-card" onclick="window.location.href='nursing_guide.html'" data-tags="nursing,healthcare,program-specific,application-process">
                 <div class="article-image">
                     <img src="blog_pic/nursing.jpg" alt="International students studying nursing in Chinese universities">
                 </div>
                 <div class="article-content">
                     <h3>Study Nursing in China: Top Programs, Practical Advice, and How to Apply</h3>
                     <p>Comprehensive guide for international students who want to study nursing in China. Top universities, program types, costs, clinical training, scholarships and application checklist.</p>
+                    <div class="article-tags">
+                        <span class="tag">Nursing</span>
+                        <span class="tag">Healthcare</span>
+                        <span class="tag">Program Specific</span>
+                        <span class="tag">Application Process</span>
+                    </div>
                     <div class="article-meta">
-                        <span>📅 Jan 15, 2025</span>
+                        <span>📅 Sep 11, 2025</span>
                         <span>⏱️ 12 min read</span>
                     </div>
                     <div class="read-more">Read More →</div>
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='changan_university_guide.html'">
+            <div class="article-card" onclick="window.location.href='changan_university_guide.html'" data-tags="changan-university,university-specific,application-process">
                 <div class="article-image">
                     <img src="blog_pic/CHU.jpg" alt="Chang'an University campus and international students">
                 </div>
                 <div class="article-content">
                     <h3>Navigating Your Application to Chang'an University</h3>
                     <p>Complete guide to applying to Chang'an University in China. Learn about programs, Chinese Government Scholarship, application process, requirements and deadlines for international students.</p>
+                    <div class="article-tags">
+                        <span class="tag">Chang'an University</span>
+                        <span class="tag">University Specific</span>
+                        <span class="tag">Application Process</span>
+                    </div>
                     <div class="article-meta">
-                        <span>📅 Jan 15, 2025</span>
+                        <span>📅 Sep 12, 2025</span>
                         <span>⏱️ 10 min read</span>
                     </div>
                     <div class="read-more">Read More →</div>
                 </div>
             </div>
 
-            <div class="article-card" onclick="window.location.href='ncut_application_guide.html'">
+            <div class="article-card" onclick="window.location.href='ncut_application_guide.html'" data-tags="ncut,university-specific,application-process">
                 <div class="article-image">
                     <img src="blog_pic/NCUT.png" alt="North China University of Technology campus and international students">
                 </div>
                 <div class="article-content">
                     <h3>Complete Guide to Applying to North China University of Technology (NCUT)</h3>
                     <p>Comprehensive guide to applying to NCUT as an international student. Learn about programs, admission requirements, scholarships, costs, and application procedures for 2025.</p>
+                    <div class="article-tags">
+                        <span class="tag">NCUT</span>
+                        <span class="tag">University Specific</span>
+                        <span class="tag">Application Process</span>
+                    </div>
                     <div class="article-meta">
                         <span>📅 Sep 13, 2025</span>
                         <span>⏱️ 8 min read</span>
+                    </div>
+                    <div class="read-more">Read More →</div>
+                </div>
+            </div>
+
+            <div class="article-card" onclick="window.location.href='affordable_guide.html'" data-tags="budget-education,general-guide,affordable-universities">
+                <div class="article-image">
+                    <img src="blog_pic/affordable/1.jpg" alt="Top 10 Affordable Universities in China for International Students">
+                </div>
+                <div class="article-content">
+                    <h3>Top 10 Affordable Universities in China for International Students 2025</h3>
+                    <p>Discover China's most cost-effective universities for international students. Complete guide to affordable education with tuition fees, living costs, and application requirements for 2025.</p>
+                    <div class="article-tags">
+                        <span class="tag">Budget Education</span>
+                        <span class="tag">General Guide</span>
+                        <span class="tag">Affordable Universities</span>
+                    </div>
+                    <div class="article-meta">
+                        <span>📅 Sep 14, 2025</span>
+                        <span>⏱️ 12 min read</span>
                     </div>
                     <div class="read-more">Read More →</div>
                 </div>
@@ -398,19 +691,67 @@
     }
     </script>
 
-    <!-- Pagination JavaScript -->
+    <!-- Pagination and Tag Filter JavaScript -->
     <script>
     let currentPage = 1;
     const articlesPerPage = 4;
-    const totalArticles = document.querySelectorAll('.article-card').length;
-    const totalPages = Math.ceil(totalArticles / articlesPerPage);
+    let filteredArticles = [];
+    let currentFilter = 'all';
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeTagFilters();
+        filterArticles('all');
+        showPage(1);
+    });
+
+    // Tag filter functionality
+    function initializeTagFilters() {
+        const filterTags = document.querySelectorAll('.filter-tag');
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                filterArticles(filter);
+                
+                // Update active state
+                filterTags.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                currentFilter = filter;
+                currentPage = 1;
+                showPage(1);
+            });
+        });
+    }
+
+    function filterArticles(filter) {
+        const allArticles = document.querySelectorAll('.article-card');
+        filteredArticles = [];
+
+        allArticles.forEach(article => {
+            const tags = article.getAttribute('data-tags') || '';
+            
+            if (filter === 'all' || tags.includes(filter)) {
+                filteredArticles.push(article);
+                article.classList.remove('hidden');
+            } else {
+                article.classList.add('hidden');
+            }
+        });
+
+        // Update pagination
+        const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+        const pageInfo = document.getElementById('pageInfo');
+        if (pageInfo) {
+            pageInfo.textContent = `Page 1 of ${totalPages}`;
+        }
+    }
 
     function showPage(page) {
-        const articles = document.querySelectorAll('.article-card');
         const startIndex = (page - 1) * articlesPerPage;
         const endIndex = startIndex + articlesPerPage;
 
-        articles.forEach((article, index) => {
+        filteredArticles.forEach((article, index) => {
             if (index >= startIndex && index < endIndex) {
                 article.style.display = 'block';
             } else {
@@ -419,6 +760,7 @@
         });
 
         // Update pagination info
+        const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
         document.getElementById('pageInfo').textContent = `Page ${page} of ${totalPages}`;
         
         // Update button states
@@ -434,15 +776,55 @@
     }
 
     function changePage(direction) {
+        const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
         const newPage = currentPage + direction;
         if (newPage >= 1 && newPage <= totalPages) {
             showPage(newPage);
         }
     }
 
-    // Initialize pagination on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        showPage(1);
+    // Tag click functionality for individual article tags
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('tag')) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const tagText = e.target.textContent.toLowerCase();
+            let filterValue = '';
+            
+            // Map tag text to filter values
+            const tagMap = {
+                'general guide': 'general-guide',
+                'application process': 'application-process',
+                'requirements': 'requirements',
+                'sjtu': 'university-specific',
+                'zju': 'university-specific',
+                'szu': 'university-specific',
+                'csc': 'scholarship',
+                'scholarship': 'scholarship',
+                'financial aid': 'scholarship',
+                'tsinghua': 'university-specific',
+                'hitsz': 'university-specific',
+                'scam prevention': 'scam-prevention',
+                'safety': 'scam-prevention',
+                'security': 'scam-prevention',
+                'nursing': 'program-specific',
+                'healthcare': 'program-specific',
+                'program specific': 'program-specific',
+                'changan university': 'university-specific',
+                'ncut': 'university-specific',
+                'budget education': 'budget-education',
+                'affordable universities': 'budget-education'
+            };
+            
+            filterValue = tagMap[tagText] || tagText.replace(/\s+/g, '-');
+            
+            // Find and click the corresponding filter tag
+            const filterTag = document.querySelector(`[data-filter="${filterValue}"]`);
+            if (filterTag) {
+                filterTag.click();
+            }
+        }
     });
     </script>
 </body>
