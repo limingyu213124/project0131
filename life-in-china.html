@@ -214,7 +214,7 @@
             <p>We have practical guides and are continuously adding more content about daily life in China.</p>
 
             <!-- Payment Guide Article -->
-            <div class="article-card" onclick="window.location.href='payment_guide_china.html'">
+            <div class="article-card" data-tags="payment,finance,life" onclick="window.location.href='payment_guide_china.html'">
                 <div class="article-image">
                     <img src="blog_pic/payment.png" alt="Payment methods in China">
                 </div>
@@ -230,7 +230,7 @@
             </div>
 
             <!-- SZU Dorm Guide Article -->
-            <div class="article-card" onclick="window.location.href='szu_dorm_guide.html'">
+            <div class="article-card" data-tags="accommodation,dormitory,szu" onclick="window.location.href='szu_dorm_guide.html'">
                 <div class="article-image">
                     <img src="blog_pic/SZUdorm.jpg" alt="Shenzhen University dormitory and campus life">
                 </div>
@@ -246,7 +246,7 @@
             </div>
 
             <!-- PKU Dorm Guide Article -->
-            <div class="article-card" onclick="window.location.href='pku_dorm_guide.html'">
+            <div class="article-card" data-tags="accommodation,dormitory,pku" onclick="window.location.href='pku_dorm_guide.html'">
                 <div class="article-image">
                     <img src="blog_pic/pkudorm.jpg" alt="Peking University Global Village accommodation and campus facilities">
                 </div>
@@ -261,6 +261,32 @@
                 </div>
             </div>
 
+            <div class="article-card" data-tags="jobs,career,work" onclick="window.location.href='job_search_china_guide.html'">
+                <div class="article-image">
+                    <img src="blog_pic/work/workchina.jpg" alt="International students working in China office environment">
+                </div>
+                <div class="article-content">
+                    <h3>Finding Your Dream Job in China: Complete Guide for International Students 2025</h3>
+                    <p>Complete guide to finding jobs in China for international students. Learn about work visas, job search platforms, legal requirements, and tips for success in the Chinese job market.</p>
+                    <div class="article-meta">
+                        <span>📅 Sep 15, 2025</span>
+                        <span>⏱️ 15 min read</span>
+                    </div>
+                    <div class="read-more">Read More →</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-container">
+            <button class="pagination-button" id="prevBtn" onclick="changePage(-1)">
+                ← Previous
+            </button>
+            <span class="pagination-info" id="pageInfo">Page 1 of 1</span>
+            <button class="pagination-button" id="nextBtn" onclick="changePage(1)">
+                Next →
+            </button>
         </div>
     </div>
 
@@ -295,5 +321,52 @@
         "keywords": "life in China, accommodation China, transportation China, Chinese food, cultural adaptation, daily life China, Chinese customs, social etiquette"
     }
     </script>
+
+    <script>
+        // Pagination functionality
+        let currentPage = 1;
+        const articlesPerPage = 3; // Show 3 articles per page
+
+        function showPage(page) {
+            // Only select non-featured article cards for pagination
+            const articles = document.querySelectorAll('.article-card:not(.featured)');
+            const startIndex = (page - 1) * articlesPerPage;
+            const endIndex = startIndex + articlesPerPage;
+
+            articles.forEach((article, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+
+            // Update pagination info
+            const totalPages = Math.ceil(articles.length / articlesPerPage);
+            document.getElementById('pageInfo').textContent = `Page ${page} of ${totalPages}`;
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = page === 1;
+            document.getElementById('nextBtn').disabled = page === totalPages;
+        }
+
+        function changePage(direction) {
+            const articles = document.querySelectorAll('.article-card:not(.featured)');
+            const totalPages = Math.ceil(articles.length / articlesPerPage);
+            
+            const newPage = currentPage + direction;
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                showPage(currentPage);
+            }
+        }
+
+        // Initialize pagination on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage(1);
+        });
+    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
