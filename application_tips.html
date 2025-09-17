@@ -127,6 +127,109 @@
             color: white;
             border-color: var(--primary);
         }
+
+        /* University Guide Summary Styles */
+        .university-guide-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: all 0.2s ease;
+        }
+
+        .university-guide-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .university-guide-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+        }
+
+        .university-guide-card h3 a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .university-guide-card h3 a:hover {
+            color: var(--secondary);
+        }
+
+        .guide-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .guide-meta span {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .resource-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .resource-card h3 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+        }
+
+        .resource-card h3 a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .resource-card h3 a:hover {
+            color: var(--secondary);
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text);
+        }
+
+        .step-content p {
+            margin: 0;
+            color: var(--gray-700);
+        }
         
         .no-results {
             text-align: center;
@@ -389,17 +492,17 @@
         <div class="featured-article">
             <div class="featured-content">
                 <div class="featured-image">
-                    <img src="blog_pic/affordable/1.jpg" alt="Top 10 Affordable Universities in China for International Students">
+                    <img src="blog_pic/tsinghua.png" alt="Tsinghua University Campus - Complete University Application Guides for International Students in China">
                 </div>
                 <div class="featured-text">
-                    <h2>Top 10 Affordable Universities in China for International Students 2025</h2>
-                    <p>Discover China's most cost-effective universities for international students. Complete guide to affordable education with tuition fees, living costs, and application requirements for 2025.</p>
+                    <h2>Complete University Application Guides for International Students in China 2025</h2>
+                    <p>Your one-stop resource for all Chinese university application guides. Find comprehensive guides for Tsinghua, Peking, SJTU, ZJU, SZU, and more top universities in China.</p>
                     <div class="featured-meta">
-                        <span>📅 Sep 14, 2025</span>
-                        <span>⏱️ 12 min read</span>
-                        <span>🏷️ Budget Education</span>
+                        <span>📅 Sep 18, 2025</span>
+                        <span>⏱️ 5 min read</span>
+                        <span>🏷️ Application Tips</span>
                     </div>
-                    <a href="affordable_guide.html" class="featured-read-more">Read Full Guide →</a>
+                    <a href="university_application_guides_summary.html" class="featured-read-more">Read Full Guide →</a>
                 </div>
             </div>
         </div>
