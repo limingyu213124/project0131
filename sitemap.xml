@@ -180,4 +180,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://findchinaschool.com/mbbs_china_guide.html</loc>
+        <lastmod>2025-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
