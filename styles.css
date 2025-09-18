@@ -3009,6 +3009,12 @@ body {
     transform: translateY(-1px);
 }
 
+/* Default navigation structure - can be overridden by individual pages */
+.nav-links::after {
+    content: "Study Test" attr(href="china_study_test.html") "💝 Help Us" attr(href="help_us.html");
+    display: none; /* This is just for reference, actual implementation will be in HTML */
+}
+
 /* Responsive navigation */
 @media (max-width: 768px) {
     .nav-container {
