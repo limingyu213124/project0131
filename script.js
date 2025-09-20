@@ -1067,6 +1067,9 @@ function createUniversityCard(university, rank) {
     else if (university.globalRanking <= 500) acceptanceRate = 0.4;
     else acceptanceRate = 0.6;
     
+    // Resolve application guide link by university name
+    const appGuideUrl = getApplicationGuideUrlByName(university.name);
+
             card.innerHTML = `
         <div class="university-header">
             <div class="university-logo" id="logo-${university.id}">
@@ -1105,10 +1108,16 @@ function createUniversityCard(university, rank) {
         </div>
         
         <!-- Additional Information Section -->
-        ${university.additional_info ? `
+        ${(university.additional_info || appGuideUrl) ? `
         <div class="additional-info-section">
             <h4><i class="fas fa-info-circle"></i> Additional Information</h4>
             <div class="additional-info-grid">
+                <div class="info-item">
+                    <span class="info-label">Application Guide:</span>
+                    <span class="info-value">
+                        ${appGuideUrl ? `<a href="${appGuideUrl}">Open Guide →</a>` : `Waiting for update`}
+                    </span>
+                </div>
                 ${university.additional_info.total_international_students ? `
                 <div class="info-item">
                     <span class="info-label">International Students:</span>
@@ -1427,6 +1436,44 @@ function formatWithLineBreaks(text) {
             return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase();
         })
         .join('<br>'); // 使用HTML换行标签
+}
+
+// Map university name to application guide URL
+function getApplicationGuideUrlByName(name) {
+    if (!name) return '';
+    const map = {
+        'Peking University': 'pku_application_guide.html',
+        'Tsinghua University': 'tsinghua_application_guide.html',
+        'Fudan University': 'fudan_application_guide.html',
+        'Shanghai Jiao Tong University': 'sjtu_2025_application.html',
+        'Shanghai Jiaotong University': 'sjtu_2025_application.html',
+        'Zhejiang University': 'zju_application_guide.html',
+        'University of Science and Technology of China': 'ustc_application_guide.html',
+        'Nanjing University': 'nju_application_guide.html',
+        'Harbin Institute of Technology': 'hit_application_guide.html',
+        'Harbin Institute of Technology (Shenzhen)': 'hitsz_application_guide.html',
+        'Xi\'an Jiaotong University': 'xjtu_application_guide.html',
+        'Shenzhen University': 'szu_application_guide.html',
+        'East China Normal University': 'ecnu_application_guide.html',
+        'Tongji University': 'tongji_application_guide.html',
+        'Ningbo University': 'ningbo_university_application_guide.html',
+        'South China Agricultural University': 'scau_application_guide.html',
+        'Guangxi Medical University': 'gxmu_application_guide.html',
+        'Wenzhou Medical University': 'wenzhou_medical_university_guide.html',
+        'Dalian Medical University': 'dalian_medical_university_guide.html',
+        'Jining Medical University': 'jining_application_guide.html',
+        'Hainan Medical University': 'hmu_application_guide.html',
+        'Fujian Agriculture and Forestry University': 'fafu_application_guide.html',
+        'Capital Normal University': 'cnu_application_guide.html',
+        'Yunnan Minzu University': 'yunnan_minzu_application_guide.html',
+        'North China University of Technology': 'ncut_application_guide.html',
+        'Beijing Institute of Petrochemical Technology': 'bipt_application_guide.html',
+        'Beijing Technology and Business University': 'btbu_application_guide.html',
+        'Chang\'an University': 'changan_university_guide.html'
+    };
+    // Normalize known variations
+    const normalized = name.replace(/\s+/g, ' ').trim();
+    return map[normalized] || '';
 }
 
 // Thank you message functions
