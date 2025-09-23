@@ -53,6 +53,83 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Unified Category Styles (match introduction) -->
+    <style>
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        .tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            user-select: none;
+        }
+        .tag-filter-container {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .tag-filter-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .tag-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .filter-tag {
+            background: var(--gray-100);
+            color: var(--gray-600);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            user-select: none;
+        }
+        .filter-tag:hover { background: var(--primary); color: white; transform: translateY(-1px); }
+        .filter-tag.active { background: var(--primary); color: white; border-color: var(--accent); }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .article-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+        .article-image { width: 100%; height: 200px; overflow: hidden; }
+        .article-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .article-card:hover .article-image img { transform: scale(1.05); }
+        .article-content { padding: 1.5rem; }
+        .article-content h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text); line-height: 1.4; }
+        .article-content p { color: var(--gray-600); line-height: 1.6; margin-bottom: 1rem; }
+        .article-meta { display: flex; gap: 1rem; font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem; }
+        .read-more { color: var(--primary); font-weight: 600; font-size: 0.875rem; transition: color 0.2s ease; }
+        .article-card:hover .read-more { color: var(--secondary); }
+        .featured-article { margin: 2rem 0; background: white; border-radius: 16px; padding: 2rem; color: #111827; box-shadow: 0 4px 16px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; }
+        @media (max-width: 768px) { .articles-grid { grid-template-columns: 1fr; } }
+    </style>
 
     <!-- Structured Data - Organization Information -->
     <script type="application/ld+json">
@@ -209,8 +286,22 @@
             </div>
         </div>
 
-        <!-- Available Articles Section -->
-        <div class="available-articles">
+        <!-- Tag Filter -->
+        <div class="tag-filter-container">
+            <div class="tag-filter-title">🔍 Filter by Topic</div>
+            <div class="tag-filters">
+                <span class="filter-tag active" data-filter="all">All</span>
+                <span class="filter-tag" data-filter="life">Life</span>
+                <span class="filter-tag" data-filter="accommodation">Accommodation</span>
+                <span class="filter-tag" data-filter="payment">Payment</span>
+                <span class="filter-tag" data-filter="cities">Cities</span>
+                <span class="filter-tag" data-filter="friends">Friends</span>
+                <span class="filter-tag" data-filter="apps">Apps</span>
+            </div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="articles-grid">
             <!-- Funding & Loans Article -->
             <div class="article-card" data-tags="finance,loans,funding,life" onclick="window.location.href='blog/life-in-china/student-loans-and-funding-in-china.html'">
                 <div class="article-image">
@@ -226,9 +317,7 @@
                     <div class="read-more">Read More →</div>
                 </div>
             </div>
-            <div class="available-icon">✅</div>
-            <h2>Available Life in China Guides</h2>
-            <p>We have practical guides and are continuously adding more content about daily life in China.</p>
+            
 
             <!-- Chinese Phrases Guide Article -->
             <div class="article-card" data-tags="chinese-language,phrases,daily-life" onclick="window.location.href='chinese_phrases_guide.html'">
@@ -265,7 +354,7 @@
             <!-- Cities and Universities Article -->
             <div class="article-card" data-tags="cities,universities,life" onclick="window.location.href='blog/life-in-china/chinese-cities-and-universities.html'">
                 <div class="article-image">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Shanghai_Skyline_2019.jpg" alt="Chinese Cities and Universities">
+                    <img src="https://foreignpolicy.com/wp-content/uploads/2017/05/beijingskyline_afpgetty.jpg?resize=1200,675" alt="Chinese Cities and Universities">
                 </div>
                 <div class="article-content">
                     <h3>Chinese Cities and Their Universities: Where to Study and Live (2025)</h3>
@@ -305,6 +394,22 @@
                     <div class="article-meta">
                         <span>📅 Sep 22, 2025</span>
                         <span>⏱️ 14 min read</span>
+                    </div>
+                    <div class="read-more">Read More →</div>
+                </div>
+            </div>
+
+            <!-- Making Friends Article -->
+            <div class="article-card" data-tags="friends,social,life,wechat" onclick="window.location.href='blog/life-in-china/making-friends-in-china-for-international-students.html'">
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1600&auto=format&fit=crop" alt="How to make friends in China as an international student">
+                </div>
+                <div class="article-content">
+                    <h3>How to Make Friends in China as an International Student (2025)</h3>
+                    <p>WeChat/Xiaohongshu/Weibo, language exchange, campus clubs, hot pot & KTV, payment setup, cultural tips, and long‑term benefits.</p>
+                    <div class="article-meta">
+                        <span>📅 Sep 23, 2025</span>
+                        <span>⏱️ 15 min read</span>
                     </div>
                     <div class="read-more">Read More →</div>
                 </div>
@@ -376,17 +481,6 @@
             </div>
 
         </div>
-
-        <!-- Pagination Controls -->
-        <div class="pagination-container">
-            <button class="pagination-button" id="prevBtn" onclick="changePage(-1)">
-                ← Previous
-            </button>
-            <span class="pagination-info" id="pageInfo">Page 1 of 1</span>
-            <button class="pagination-button" id="nextBtn" onclick="changePage(1)">
-                Next →
-            </button>
-        </div>
     </div>
 
     <!-- Structured Data -->
@@ -422,47 +516,36 @@
     </script>
 
     <script>
-        // Pagination functionality
-        let currentPage = 1;
-        const articlesPerPage = 3; // Show 3 articles per page
+        // Tag filtering (unified behavior with introduction)
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterTags = Array.from(document.querySelectorAll('.filter-tag'));
+            const cards = Array.from(document.querySelectorAll('.article-card'));
 
-        function showPage(page) {
-            // Only select non-featured article cards for pagination
-            const articles = document.querySelectorAll('.article-card:not(.featured)');
-            const startIndex = (page - 1) * articlesPerPage;
-            const endIndex = startIndex + articlesPerPage;
+            function applyFilter(filter){
+                filterTags.forEach(t=>{
+                    const isActive = t.getAttribute('data-filter')===filter || (filter==='all' && t.getAttribute('data-filter')==='all');
+                    t.classList.toggle('active', t.getAttribute('data-filter')===filter);
+                    t.setAttribute('aria-pressed', t.classList.contains('active'));
+                });
+                cards.forEach(card=>{
+                    if(filter==='all'){ card.style.display='block'; return; }
+                    const tags=(card.getAttribute('data-tags')||'');
+                    card.style.display = tags.includes(filter)?'block':'none';
+                });
+            }
 
-            articles.forEach((article, index) => {
-                if (index >= startIndex && index < endIndex) {
-                    article.style.display = 'block';
-                } else {
-                    article.style.display = 'none';
-                }
+            filterTags.forEach(tag=>{
+                tag.setAttribute('role','button');
+                tag.setAttribute('tabindex','0');
+                tag.setAttribute('aria-pressed', tag.classList.contains('active'));
+                tag.addEventListener('click',()=>applyFilter(tag.getAttribute('data-filter')));
+                tag.addEventListener('keydown',e=>{
+                    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); applyFilter(tag.getAttribute('data-filter')); }
+                });
             });
 
-            // Update pagination info
-            const totalPages = Math.ceil(articles.length / articlesPerPage);
-            document.getElementById('pageInfo').textContent = `Page ${page} of ${totalPages}`;
-            
-            // Update button states
-            document.getElementById('prevBtn').disabled = page === 1;
-            document.getElementById('nextBtn').disabled = page === totalPages;
-        }
-
-        function changePage(direction) {
-            const articles = document.querySelectorAll('.article-card:not(.featured)');
-            const totalPages = Math.ceil(articles.length / articlesPerPage);
-            
-            const newPage = currentPage + direction;
-            if (newPage >= 1 && newPage <= totalPages) {
-                currentPage = newPage;
-                showPage(currentPage);
-            }
-        }
-
-        // Initialize pagination on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            showPage(1);
+            const active = filterTags.find(t=>t.classList.contains('active'))?.getAttribute('data-filter')||'all';
+            applyFilter(active);
         });
     </script>
 
