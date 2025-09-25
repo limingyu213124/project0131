@@ -510,4 +510,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://findchinaschool.com/blog/application-tips/one-year-chinese-language-courses-china.html</loc>
+        <lastmod>2025-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
