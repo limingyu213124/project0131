@@ -74,7 +74,7 @@
     </url>
     <url>
         <loc>https://findchinaschool.com/study-guides.html</loc>
-        <lastmod>2025-08-15</lastmod>
+        <lastmod>2025-09-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -525,6 +525,12 @@
     <url>
         <loc>https://findchinaschool.com/blog/university-introduction/degree-competitiveness-china.html</loc>
         <lastmod>2025-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/blog/study-guides/hsk-university-application-guide.html</loc>
+        <lastmod>2025-09-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
