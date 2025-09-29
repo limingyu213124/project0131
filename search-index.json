@@ -62,6 +62,12 @@
     {"title":"Website Updates: FAQ","url":"blog/website-updates/faq.html","description":"Frequently asked questions about FindChinaSchool: independence, data sources, matching method, privacy, and how to contribute.","section":"Website Updates","tags":["changelog","faq","roadmap","sitemap","schema"]},
     {"title":"CSC Scholarship: How to Find and Contact Professors (2025)","url":"blog/scholarships/csc-contact-professors-guide.html","description":"Find Chinese professors and request acceptance letters: university sites, Baidu, databases, networks, email structure, timing and pitfalls.","section":"Scholarships","tags":["csc","professor","acceptance letter","baidu","faculty","email"]},
     {"title":"How Competitive Is a Chinese University Diploma? (Employment Outlook 2025)","url":"blog/university-introduction/degree-competitiveness-china.html","description":"Global recognition, employability, strengths and limitations, and the key factors that shape outcomes.","section":"University Introduction","tags":["employment","ranking","analysis"]}
+    ,
+    {"title":"Study in China Without Chinese: English‑Taught Programs (Complete Guide)",
+     "url":"blog/application-tips/study-in-china-without-chinese-english-taught-programs.html",
+     "description":"Study in China in English: program types, MBBS notes, entry requirements, tuition, living costs, support and outcomes.",
+     "section":"Application Tips",
+     "tags":["english-taught","application","mbbs","requirements","tuition","living costs"]}
   ]
 }
 
