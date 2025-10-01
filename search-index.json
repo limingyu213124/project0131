@@ -104,6 +104,10 @@
      "description":"Urgent CSCA prep: format, difficulty, 6‑week plan, timeline; join Discord for live updates and weekly sets.",
      "section":"Study Guides",
      "tags":["csca","urgent","prep","2026","study guide"]}
+    ,
+    {"title":"CSCA Mock Tests","url":"china_study_test/csca-mock-tests.html","description":"Timed CSCA practice sets with links to strategy guides and resources.","section":"Study Guides","tags":["csca","mock","practice","assessment"]}
+    ,
+    {"title":"Chinese Mock Test (Vocabulary, Reading, Culture)","url":"mock-test/chinese-mock-test.html","description":"Chinese mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["chinese","mock test","vocabulary","reading","culture"]}
   ]
 }
 
