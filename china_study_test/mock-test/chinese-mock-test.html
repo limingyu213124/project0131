@@ -126,6 +126,9 @@
 		.resources { margin-top: 1.5rem; }
 		.resources h2 { font-size:1.1rem; margin: 0 0 .5rem; }
 		.resources a { color: var(--primary); font-weight:600; text-decoration:none; border-bottom: 1px dashed var(--primary); }
+		.feedback { margin-top:.5rem; font-weight:700; }
+		.feedback.correct { color:#16a34a; }
+		.feedback.incorrect { color:#dc2626; }
 		@media (max-width: 768px){ .answer-options{ grid-template-columns: 1fr; } .test-container{ padding: 1.5rem; margin: 1rem; } }
 	</style>
 </head>
@@ -328,17 +331,27 @@
 			radio.addEventListener('change', checkAllAnswered);
 		});
 
-		document.getElementById('chineseMockForm').addEventListener('submit', function(e){
+			document.getElementById('chineseMockForm').addEventListener('submit', function(e){
 			e.preventDefault();
 			let correct = 0;
 			Object.keys(correctAnswers).forEach(key => {
 				const selected = document.querySelector(`input[name="${key}"]:checked`);
 				const selectedVal = selected ? selected.value : '';
-				if (selectedVal === correctAnswers[key]) correct++;
+					const isCorrect = selectedVal === correctAnswers[key];
+					if (isCorrect) correct++;
 				const card = document.querySelector(`.question-card[data-q="${key.replace('q','')}"]`);
 				if (card) {
 					const explain = card.querySelector('.explain');
 					if (explain) explain.style.display = 'block';
+						let fb = card.querySelector('.feedback');
+						if (!fb) {
+							fb = document.createElement('div');
+							fb.className = 'feedback';
+							card.appendChild(fb);
+						}
+						fb.textContent = isCorrect ? 'Correct' : `Incorrect · 正确答案：${correctAnswers[key]}`;
+						fb.className = 'feedback ' + (isCorrect ? 'correct' : 'incorrect');
+						card.querySelectorAll('input[type="radio"]').forEach(el => el.disabled = true);
 				}
 			});
 			const percent = Math.round(correct / 10 * 100);
