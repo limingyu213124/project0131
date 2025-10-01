@@ -571,7 +571,13 @@
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://findchinaschool.com/mock-test/chinese-mock-test.html</loc>
+        <loc>https://findchinaschool.com/china_study_test/mock-test/chinese-mock-test.html</loc>
+        <lastmod>2025-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/china_study_test/mock-test/math-mock-test.html</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
