@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (deferred) -->
+    <script>
+        setTimeout(function(){
+            const s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-5RR52RDYY4';
+            document.head.appendChild(s);
+            s.onload=function(){ window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','G-5RR52RDYY4'); };
+        },2000);
+    </script>
+    <!-- AdSense (deferred) -->
+    <script>
+        setTimeout(function(){
+            const a=document.createElement('script'); a.async=true; a.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3584190124972575'; a.crossOrigin='anonymous'; document.head.appendChild(a);
+        },3000);
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Mock Test - China Scholastic Competency Assessment (CSCA) Practice</title>
+    <meta name="description" content="Practice Chemistry for CSCA with our interactive mock test. Chemical formulas, equations, compounds, and calculations with instant feedback and explanations.">
+    <link rel="canonical" href="https://findchinaschool.com/china_study_test/mock-test/chemistry-mock-test.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chemistry Mock Test - CSCA Practice">
+    <meta property="og:description" content="Practice Chemistry for CSCA with interactive questions and instant feedback.">
+    <meta property="og:url" content="https://findchinaschool.com/china_study_test/mock-test/chemistry-mock-test.html">
+    <meta property="og:image" content="https://chinascholarshipcouncil.com/wp-content/uploads/2021/11/CSC-Scholarships-7-1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chemistry Mock Test - CSCA Practice">
+    <meta name="twitter:description" content="Practice Chemistry for CSCA with interactive questions and instant feedback.">
+    <meta name="twitter:image" content="https://chinascholarshipcouncil.com/wp-content/uploads/2021/11/CSC-Scholarships-7-1.png">
+
+    <link rel="icon" href="../../logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="../../logo.png">
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        :root { --primary:#4F46E5; --secondary:#06B6D4; --accent:#F59E0B; --background:#F9FAFB; --text:#111827; --gray-50:#f9fafb; --gray-100:#f3f4f6; --gray-200:#e5e7eb; --gray-400:#9ca3af; --gray-600:#4b5563; --white:#ffffff; }
+        body { background: var(--background); min-height: 100vh; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif; color: var(--text); line-height: 1.7; }
+        .test-container { max-width: 900px; margin: 0 auto; padding: 2rem; background: var(--white); border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,.1); margin-top: 2rem; margin-bottom: 2rem; }
+        .back-nav { max-width: 900px; margin: 1rem auto 0; padding: 0 2rem; }
+        .back-nav a { text-decoration: none; color: var(--primary); font-weight: 600; }
+        .test-header { text-align: center; margin-bottom: 2rem; padding: 1.5rem 0; }
+        .test-header h1 { background: linear-gradient(135deg,var(--primary),var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.3rem; font-weight: 800; margin: 0 0 .75rem; line-height: 1.2; letter-spacing: -.02em; }
+        .test-header p { color: var(--gray-600); font-size: 1.05rem; margin: 0; }
+        .section-title { font-weight: 800; margin: 1.25rem 0 .75rem; letter-spacing: -.01em; }
+        .passage-box { background:#F9FAFB; border:1px solid var(--gray-200); border-radius:10px; padding:1rem 1.1rem; color:#111827; }
+        .passage-box h3 { margin:.1rem 0 .6rem; font-size:1rem; color:#374151; font-weight:700; }
+        .question-card { background: var(--white); border-radius: 12px; padding: 1.5rem 1.5rem; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,.08); border: 1px solid var(--gray-200); transition: transform .2s, box-shadow .2s, border-color .2s; position: relative; overflow: hidden; }
+        .question-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background: var(--gray-200); }
+        .question-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); border-color: var(--primary); }
+        .question-number { background: linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1rem; margin-bottom: .9rem; box-shadow: 0 4px 15px rgba(79,70,229,.3); }
+        .question-text { font-size: 1.08rem; font-weight: 600; color: var(--text); margin-bottom: 1rem; }
+        .answer-options { display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: .75rem; }
+        .answer-option input[type="radio"] { display:none; }
+        .answer-option label { display:block; padding: .9rem 1rem; border:2px solid var(--gray-200); border-radius: 8px; text-align:left; cursor:pointer; transition: all .2s; font-weight:600; color: var(--gray-600); background: var(--gray-50); position:relative; overflow:hidden; }
+        .answer-option label::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background: linear-gradient(135deg,var(--primary),var(--secondary)); transition:left .2s; z-index:-1; }
+        .answer-option input[type="radio"]:checked + label { border-color: var(--primary); color:#fff; transform: scale(1.01); }
+        .answer-option input[type="radio"]:checked + label::before { left:0; }
+        .answer-option label:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(79,70,229,.18); }
+        .explain { display:none; margin-top:.6rem; color:#374151; background:#F9FAFB; border-left:3px solid var(--primary); padding:.6rem .8rem; border-radius: 6px; }
+        .submit-section { text-align:center; margin-top: 1.25rem; padding: 1rem 0; }
+        .submit-btn { background: linear-gradient(135deg,var(--primary),var(--secondary)); color:#fff; border:none; padding: .9rem 2rem; font-size: 1.05rem; font-weight: 700; border-radius: 8px; cursor:pointer; transition: all .2s; box-shadow: 0 4px 6px rgba(0,0,0,.1); }
+        .submit-btn:disabled { background: var(--gray-400); cursor:not-allowed; }
+        .result { display:none; margin-top: 1rem; text-align:center; }
+        .result-title { font-size: 1.6rem; font-weight: 800; margin-bottom: .4rem; }
+        .result-meta { color: var(--gray-600); }
+        .resources { margin-top: 1.5rem; }
+        .resources h2 { font-size:1.1rem; margin: 0 0 .5rem; }
+        .resources a { color: var(--primary); font-weight:600; text-decoration:none; border-bottom: 1px dashed var(--primary); }
+        .feedback { margin-top:.5rem; font-weight:700; }
+    </style>
+
+    <!-- JSON-LD Quiz + Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Chemistry Mock Test - China Scholastic Competency Assessment (CSCA) Practice",
+      "description": "Practice Chemistry for CSCA with interactive questions covering chemical formulas, equations, compounds, and calculations.",
+      "educationalLevel": "undergraduate",
+      "educationalUse": "assessment",
+      "learningResourceType": "quiz",
+      "author": {"@type": "Organization", "name": "Find China School Team"},
+      "publisher": {"@type":"Organization","name":"Find China School","logo":{"@type":"ImageObject","url":"https://findchinaschool.com/logo.png"}},
+      "datePublished": "2025-01-31",
+      "dateModified": "2025-01-31",
+      "mainEntityOfPage": {"@type":"WebPage","@id":"https://findchinaschool.com/china_study_test/mock-test/chemistry-mock-test.html"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://findchinaschool.com/"},
+        {"@type":"ListItem","position":2,"name":"Study Test","item":"https://findchinaschool.com/china_study_test.html"},
+        {"@type":"ListItem","position":3,"name":"CSCA Mock Tests","item":"https://findchinaschool.com/china_study_test/csca-mock-tests.html"},
+        {"@type":"ListItem","position":4,"name":"Chemistry Mock Test","item":"https://findchinaschool.com/china_study_test/mock-test/chemistry-mock-test.html"}
+      ]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
+                <a href="../../guide.html">Guide</a>
+                <a href="../../universities.html">Universities</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../china_study_test.html" class="active">Study Test</a>
+                <a href="../../help_us.html" class="donate-link">💝 Help Us</a>
+                <a href="../../search.html">Search</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="back-nav">
+        <a href="../csca-mock-tests.html">← Back to CSCA Mock Tests</a>
+    </div>
+
+    <div class="test-container">
+        <div class="test-header">
+            <h1>Chemistry Mock Test</h1>
+            <p>Chemical formulas, equations, compounds, and calculations practice for CSCA</p>
+            <div class="cta-discord" style="background:#ECFEFF;border:1px solid #a5f3fc;padding:10px 12px;border-radius:10px;display:inline-flex;align-items:center;gap:10px;margin-top:10px;">
+                <span style="font-size:.95rem;color:#111827;">More resources available at our free discord group for overseas students</span>
+                <a href="https://discord.gg/tjSEJc3mJ5" target="_blank" rel="noopener" style="background:#0EA5E9;color:#fff;padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:600;">Join Discord →</a>
+            </div>
+        </div>
+
+        <form id="chemistryQuiz">
+            <div class="question-card">
+                <div class="question-number">1</div>
+                <div class="question-text">What is the correct chemical formula for sulfur dioxide?</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q1" value="A" id="q1a">
+                        <label for="q1a">A. SO</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q1" value="B" id="q1b">
+                        <label for="q1b">B. SO₂</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q1" value="C" id="q1c">
+                        <label for="q1c">C. SO₃</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q1" value="D" id="q1d">
+                        <label for="q1d">D. S₂O</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">2</div>
+                <div class="question-text">What is the correct chemical formula for nitric acid?</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q2" value="A" id="q2a">
+                        <label for="q2a">A. HNO₂</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q2" value="B" id="q2b">
+                        <label for="q2b">B. HNO₃</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q2" value="C" id="q2c">
+                        <label for="q2c">C. H₂NO₃</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q2" value="D" id="q2d">
+                        <label for="q2d">D. HN₃</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">3</div>
+                <div class="question-text">What is the correct name for the compound Ca(OH)₂?</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q3" value="A" id="q3a">
+                        <label for="q3a">A. Calcium oxide</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q3" value="B" id="q3b">
+                        <label for="q3b">B. Calcium hydroxide</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q3" value="C" id="q3c">
+                        <label for="q3c">C. Calcium carbonate</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q3" value="D" id="q3d">
+                        <label for="q3d">D. Calcium bicarbonate</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">4</div>
+                <div class="question-text">What is the correct name for the compound H₂CO₃?</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q4" value="A" id="q4a">
+                        <label for="q4a">A. Carbonic acid</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q4" value="B" id="q4b">
+                        <label for="q4b">B. Hydrochloric acid</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q4" value="C" id="q4c">
+                        <label for="q4c">C. Acetic acid</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q4" value="D" id="q4d">
+                        <label for="q4d">D. Formic acid</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">5</div>
+                <div class="question-text">In the balanced equation: 4NH₃ + 5O₂ → 4NO + 6H₂O, what is the coefficient of O₂?</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q5" value="A" id="q5a">
+                        <label for="q5a">A. 3</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q5" value="B" id="q5b">
+                        <label for="q5b">B. 4</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q5" value="C" id="q5c">
+                        <label for="q5c">C. 5</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q5" value="D" id="q5d">
+                        <label for="q5d">D. 6</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">6</div>
+                <div class="question-text">In the balanced equation: 2Na + 2H₂O → 2NaOH + H₂, what is the coefficient of NaOH?</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q6" value="A" id="q6a">
+                        <label for="q6a">A. 1</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q6" value="B" id="q6b">
+                        <label for="q6b">B. 2</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q6" value="C" id="q6c">
+                        <label for="q6c">C. 3</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q6" value="D" id="q6d">
+                        <label for="q6d">D. 4</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">7</div>
+                <div class="question-text">Which of the following is an example of a mixture?</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q7" value="A" id="q7a">
+                        <label for="q7a">A. Pure water (H₂O)</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q7" value="B" id="q7b">
+                        <label for="q7b">B. Table salt (NaCl)</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q7" value="C" id="q7c">
+                        <label for="q7c">C. Air</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q7" value="D" id="q7d">
+                        <label for="q7d">D. Carbon dioxide (CO₂)</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">8</div>
+                <div class="question-text">Which of the following is an example of a compound?</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q8" value="A" id="q8a">
+                        <label for="q8a">A. Oxygen gas (O₂)</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q8" value="B" id="q8b">
+                        <label for="q8b">B. Gold metal (Au)</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q8" value="C" id="q8c">
+                        <label for="q8c">C. Saltwater</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q8" value="D" id="q8d">
+                        <label for="q8d">D. Water (H₂O)</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">9</div>
+                <div class="question-text">In an oxidation-reduction (redox) reaction:</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q9" value="A" id="q9a">
+                        <label for="q9a">A. Only oxidation occurs</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q9" value="B" id="q9b">
+                        <label for="q9b">B. Only reduction occurs</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q9" value="C" id="q9c">
+                        <label for="q9c">C. Both oxidation and reduction occur simultaneously</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q9" value="D" id="q9d">
+                        <label for="q9d">D. Neither oxidation nor reduction occurs</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-number">10</div>
+                <div class="question-text">What is the percent composition of oxygen in NaHCO₃? (Atomic weights: Na=23, H=1, C=12, O=16)</div>
+                <div class="answer-options">
+                    <div class="answer-option">
+                        <input type="radio" name="q10" value="A" id="q10a">
+                        <label for="q10a">A. 19.0%</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q10" value="B" id="q10b">
+                        <label for="q10b">B. 38.1%</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q10" value="C" id="q10c">
+                        <label for="q10c">C. 57.1%</label>
+                    </div>
+                    <div class="answer-option">
+                        <input type="radio" name="q10" value="D" id="q10d">
+                        <label for="q10d">D. 76.2%</label>
+                    </div>
+                </div>
+                <div class="explain"></div>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">Submit Test</button>
+            </div>
+        </form>
+
+        <div id="result" class="result">
+            <div class="result-title">Test Complete!</div>
+            <div class="result-meta" id="score"></div>
+            <div class="feedback" id="feedback"></div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="../csca-mock-tests.html" style="background: #10b981; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-right: 10px;">
+                    Try Another Test
+                </a>
+                <a href="../../china_study_test.html" style="background: #6b7280; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+                    Back to Study Tests
+                </a>
+            </div>
+        </div>
+
+        <div class="resources">
+            <h2>Related Resources</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+                <a href="../csca-mock-tests.html">CSCA Mock Tests</a>
+                <a href="chinese-mock-test.html">Chinese Mock Test</a>
+                <a href="math-mock-test.html">Math Mock Test</a>
+                <a href="english-mock-test.html">English Mock Test</a>
+                <a href="physics-mock-test.html">Physics Mock Test</a>
+                <a href="../../blog/study-guides/csca-university-admissions-guide-2026.html">CSCA Guide 2026</a>
+                <a href="../../application_tips.html">Application Tips</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center;margin:20px 0;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3584190124972575" data-ad-slot="2234567891" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <script>
+        document.getElementById('chemistryQuiz').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const answers = {
+                'q1': 'B',
+                'q2': 'B', 
+                'q3': 'B',
+                'q4': 'A',
+                'q5': 'C',
+                'q6': 'B',
+                'q7': 'C',
+                'q8': 'D',
+                'q9': 'C',
+                'q10': 'C'
+            };
+            
+            const explanations = {
+                'q1': '<strong>Answer: B</strong><br><strong>Explanation:</strong> Sulfur dioxide consists of one sulfur atom bonded to two oxygen atoms, hence SO₂.',
+                'q2': '<strong>Answer: B</strong><br><strong>Explanation:</strong> Nitric acid is a strong acid with the formula HNO₃ (one hydrogen, one nitrogen, and three oxygen atoms).',
+                'q3': '<strong>Answer: B</strong><br><strong>Explanation:</strong> Ca(OH)₂ contains calcium cations (Ca²⁺) and hydroxide anions (OH⁻), so it\'s called calcium hydroxide.',
+                'q4': '<strong>Answer: A</strong><br><strong>Explanation:</strong> H₂CO₃ is carbonic acid, formed when carbon dioxide dissolves in water.',
+                'q5': '<strong>Answer: C</strong><br><strong>Explanation:</strong> When balanced, the equation shows 5 molecules of oxygen are needed to react with 4 molecules of ammonia.',
+                'q6': '<strong>Answer: B</strong><br><strong>Explanation:</strong> Two sodium atoms react with two water molecules to produce two sodium hydroxide molecules and one hydrogen gas molecule.',
+                'q7': '<strong>Answer: C</strong><br><strong>Explanation:</strong> Air is a mixture of various gases (nitrogen, oxygen, argon, CO₂, etc.) that are not chemically bonded. Water, salt, and CO₂ are pure compounds.',
+                'q8': '<strong>Answer: D</strong><br><strong>Explanation:</strong> Water (H₂O) is a compound made of hydrogen and oxygen chemically bonded. O₂ is an element, gold is an element, and saltwater is a mixture.',
+                'q9': '<strong>Answer: C</strong><br><strong>Explanation:</strong> In a redox reaction, one substance loses electrons (oxidation) while another gains electrons (reduction). Both processes must occur together.',
+                'q10': '<strong>Answer: C</strong><br><strong>Explanation:</strong> Molar mass of NaHCO₃ = 23 + 1 + 12 + 3(16) = 84 g/mol. Mass of oxygen = 3 × 16 = 48 g/mol. Percent composition = (48/84) × 100% = 57.14% ≈ 57.1%.'
+            };
+            
+            let score = 0;
+            const totalQuestions = 10;
+            
+            // Check answers and show explanations
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = 'q' + i;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const correctAnswer = answers[questionName];
+                const questionCard = selectedAnswer ? selectedAnswer.closest('.question-card') : document.querySelector(`input[name="${questionName}"]`).closest('.question-card');
+                const explanation = questionCard.querySelector('.explain');
+                
+                if (selectedAnswer && selectedAnswer.value === correctAnswer) {
+                    score++;
+                    explanation.innerHTML = '<div style="color: #059669; font-weight: 600;">✓ Correct!</div>' + explanations[questionName];
+                } else {
+                    const userAnswer = selectedAnswer ? selectedAnswer.value : 'No answer';
+                    explanation.innerHTML = '<div style="color: #dc2626; font-weight: 600;">✗ Incorrect (Your answer: ' + userAnswer + ')</div>' + explanations[questionName];
+                }
+                explanation.style.display = 'block';
+            }
+            
+            // Show results
+            const resultDiv = document.getElementById('result');
+            const scoreDiv = document.getElementById('score');
+            const feedbackDiv = document.getElementById('feedback');
+            
+            scoreDiv.innerHTML = `You scored ${score} out of ${totalQuestions} (${Math.round((score/totalQuestions)*100)}%)`;
+            
+            let feedback = '';
+            if (score === totalQuestions) {
+                feedback = '<div style="color: #059669; font-weight: 600;">Excellent! Perfect score!</div>';
+            } else if (score >= 8) {
+                feedback = '<div style="color: #059669; font-weight: 600;">Great job! You have strong Chemistry knowledge.</div>';
+            } else if (score >= 6) {
+                feedback = '<div style="color: #d97706; font-weight: 600;">Good work! Consider reviewing chemical formulas and equations.</div>';
+            } else {
+                feedback = '<div style="color: #dc2626; font-weight: 600;">Keep practicing! Focus on fundamental chemistry concepts.</div>';
+            }
+            
+            feedbackDiv.innerHTML = feedback;
+            resultDiv.style.display = 'block';
+            
+            // Scroll to results
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
