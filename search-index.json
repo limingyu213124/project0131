@@ -108,7 +108,8 @@
     {"title":"CSCA Mock Tests","url":"china_study_test/csca-mock-tests.html","description":"Timed CSCA practice sets with links to strategy guides and resources.","section":"Study Guides","tags":["csca","mock","practice","assessment"]}
     ,
     {"title":"Chinese Mock Test (Vocabulary, Reading, Culture)","url":"china_study_test/mock-test/chinese-mock-test.html","description":"Chinese mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["chinese","mock test","vocabulary","reading","culture"]},
-    {"title":"Math Mock Test (Algebra, Geometry, Probability)","url":"china_study_test/mock-test/math-mock-test.html","description":"Math mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["math","mock test","algebra","geometry","probability"]}
+    {"title":"Math Mock Test (Algebra, Geometry, Probability)","url":"china_study_test/mock-test/math-mock-test.html","description":"Math mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["math","mock test","algebra","geometry","probability"]},
+    {"title":"English Mock Test (Grammar, Vocabulary, Reading)","url":"china_study_test/mock-test/english-mock-test.html","description":"English mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["english","mock test","grammar","vocabulary","reading"]}
   ]
 }
 
