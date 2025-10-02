@@ -110,7 +110,8 @@
     {"title":"Chinese Mock Test (Vocabulary, Reading, Culture)","url":"china_study_test/mock-test/chinese-mock-test.html","description":"Chinese mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["chinese","mock test","vocabulary","reading","culture"]},
     {"title":"Math Mock Test (Algebra, Geometry, Probability)","url":"china_study_test/mock-test/math-mock-test.html","description":"Math mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["math","mock test","algebra","geometry","probability"]},
     {"title":"English Mock Test (Grammar, Vocabulary, Reading)","url":"china_study_test/mock-test/english-mock-test.html","description":"English mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["english","mock test","grammar","vocabulary","reading"]},
-    {"title":"Physics Mock Test (Mechanics, Atomic Physics, Electromagnetism)","url":"china_study_test/mock-test/physics-mock-test.html","description":"Physics mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["physics","mock test","mechanics","atomic physics","electromagnetism"]}
+    {"title":"Physics Mock Test (Mechanics, Atomic Physics, Electromagnetism)","url":"china_study_test/mock-test/physics-mock-test.html","description":"Physics mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["physics","mock test","mechanics","atomic physics","electromagnetism"]},
+    {"title":"Chemistry Mock Test (Chemical Formulas, Equations, Compounds)","url":"china_study_test/mock-test/chemistry-mock-test.html","description":"Chemistry mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["chemistry","mock test","chemical formulas","equations","compounds"]}
   ]
 }
 
