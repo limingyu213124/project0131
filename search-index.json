@@ -113,8 +113,137 @@
     {"title":"Physics Mock Test (Mechanics, Atomic Physics, Electromagnetism)","url":"china_study_test/mock-test/physics-mock-test.html","description":"Physics mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["physics","mock test","mechanics","atomic physics","electromagnetism"]},
     {"title":"Chemistry Mock Test (Chemical Formulas, Equations, Compounds)","url":"china_study_test/mock-test/chemistry-mock-test.html","description":"Chemistry mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["chemistry","mock test","chemical formulas","equations","compounds"]},
     {"title":"CSCA Section - China Scholastic Competency Assessment Resources","url":"csca-test/index.html","description":"Comprehensive CSCA resources including introduction, mock tests, and training courses for international students applying to Chinese universities.","section":"Study Guides","tags":["csca","china scholastic competency assessment","resources","mock tests","training"]},
+    {"title":"CSCA Training Courses - Expert-Led Online Preparation","url":"csca-test/training-courses.html","description":"Professional CSCA training courses with expert instructors, comprehensive practice materials, and personalized study plans for international students applying to Chinese universities.","section":"Study Guides","tags":["csca","training courses","online preparation","expert instruction","study plans"]},
+    {"title":"CSCA 2026 Syllabus Breakdown – What’s on the Test","url":"csca-test/csca-syllabus-2026.html","description":"CSCA 2026 syllabus breakdown for Math, Physics, Chemistry, and Chinese. Formats, topic weights, and how to prepare effectively.","section":"Study Guides","tags":["csca","syllabus","2026","subjects","format","weights"]}
+  ]
+}
+
+
+
+  "items": [
+    {"title":"A Comprehensive Guide to Applying to Chinese Universities","url":"comprehensive_application_guide.html","description":"Timelines, requirements, scholarships and pro tips for a successful application.","section":"Application Tips","tags":["application","timeline","requirements"]},
+    {"title":"Affordable Chinese STEM Universities for International Students (September 2025)","url":"affordable_chinese_stem_universities.html","description":"Budget-friendly engineering and science options with scholarships and tuition ranges.","section":"Application Tips","tags":["budget","stem","engineering"]},
+    {"title":"Top 10 Most Competitive University Majors in China (September 2025)","url":"top_10_chinese_majors.html","description":"Where Chinese universities lead globally: strengths, leading universities, and how to apply.","section":"Application Tips","tags":["majors","ranking","programs"]},
+    {"title":"What 211, 985 and C9 Mean in China’s University System (2025)","url":"blog/application-tips/what-are-211-985-and-c9-in-china.html","description":"Official‑sourced guide to 211/985/C9 and Double First Class.","section":"Application Tips","tags":["211","985","c9","double first class"]},
+    {"title":"Complete Guide to Applying to Chinese Universities: 2026 Edition","url":"2026_application_guide.html","description":"Roadmap for applying to Chinese universities: timeline, documents, requirements, tips.","section":"Application Tips","tags":["general guide","application process","requirements"]},
+    {"title":"Peking University (PKU) — International Application Guide 2026","url":"pku_application_guide.html","description":"Programs, portal, documents, CSC options, visa and official links for PKU.","section":"Application Tips","tags":["university specific","c9"]},
+    {"title":"Nanjing University (NJU) — International Application Guide 2025","url":"nju_application_guide.html","description":"Eligibility, supervisor strategy, CSC timelines, portal steps and FAQs for NJU.","section":"Application Tips","tags":["university specific","c9"]},
+    {"title":"USTC — Application Guide 2026","url":"ustc_application_guide.html","description":"ISA portal steps, eligibility, docs, fellowships, timelines, visa/arrival for USTC.","section":"Application Tips","tags":["university specific","c9"]},
+    {"title":"Fudan University — Application Guide 2026","url":"fudan_application_guide.html","description":"Programs, online portal, document checklist, scholarships, visa & dorm steps.","section":"Application Tips","tags":["university specific","c9"]},
+    {"title":"Harbin Institute of Technology (HIT, Main Campus) — Application Guide 2026","url":"hit_application_guide.html","description":"Portals, documents, scholarships, visa/arrival and dorm procedures for HIT.","section":"Application Tips","tags":["university specific","c9"]},
+    {"title":"Xi’an Jiaotong University (XJTU) — International Application Guide 2026","url":"xjtu_application_guide.html","description":"SIE flow, required docs, scholarships, visa/arrival and registration steps.","section":"Application Tips","tags":["university specific","c9"]},
+    {"title":"Shanghai Jiao Tong University — Application Guide","url":"sjtu_2025_application.html","description":"Prerequisites, procedures, tuition, accommodation, and visa requirements for SJTU.","section":"Application Tips","tags":["university specific","application process"]},
+    {"title":"Zhejiang University — Application Guide","url":"zju_application_guide.html","description":"Undergraduate, master’s and PhD programs with detailed requirements and deadlines.","section":"Application Tips","tags":["university specific","application process"]},
+    {"title":"Tsinghua University — Application Guide","url":"tsinghua_application_guide.html","description":"Complete guide for international applicants to Tsinghua University.","section":"Application Tips","tags":["university specific","application process"]},
+    {"title":"Shenzhen University (SZU) — Application Guide 2025","url":"szu_application_guide.html","description":"Programs, requirements, scholarships, costs, procedures for SZU.","section":"Application Tips","tags":["university specific","application process"]},
+    {"title":"HIT Shenzhen (HITSZ) — Application Guide 2025","url":"hitsz_application_guide.html","description":"Programs, requirements, scholarships, costs, procedures for HITSZ.","section":"Application Tips","tags":["university specific","application process"]},
+    {"title":"Beware the Scammers: Avoiding Fraud When Applying","url":"scam_guide.html","description":"Checklist to spot and avoid scholarship/university/authority scams.","section":"Application Tips","tags":["scam prevention","safety","security"]},
+    {"title":"Study Nursing in China: Top Programs and How to Apply","url":"nursing_guide.html","description":"Top universities, program types, costs, scholarships and checklist.","section":"Application Tips","tags":["nursing","healthcare","program specific"]},
+    {"title":"Navigating Your Application to Chang'an University","url":"changan_university_guide.html","description":"Programs, CSC, process, requirements and deadlines.","section":"Application Tips","tags":["university specific","application process"]},
+    {"title":"NCUT — Application Guide","url":"ncut_application_guide.html","description":"Programs, requirements, scholarships, costs and procedures for NCUT.","section":"Application Tips","tags":["university specific","application process"]},
+    {"title":"Shanxi University — Application Guide 2025","url":"shanxi_university_guide.html","description":"Programs, requirements, scholarships, costs and procedures for Shanxi University.","section":"Application Tips","tags":["university specific","application process"]},
+    {"title":"Top 10 Affordable Universities in China 2025","url":"affordable_guide.html","description":"Cost‑effective universities with tuition, living costs and requirements.","section":"Application Tips","tags":["budget","affordable universities"]},
+    {"title":"SZU: Innovation‑Minded Students Guide","url":"szu_innovation_guide.html","description":"Industry‑integrated programs, location advantage and entrepreneurial culture.","section":"Application Tips","tags":["innovation","entrepreneurship","tech programs"]},
+    {"title":"BTBU — Application Guide 2025","url":"btbu_application_guide.html","description":"Programs, requirements, scholarships and procedures for BTBU.","section":"Application Tips","tags":["university specific","application process"]},
+    {"title":"BIPT — Application Guide 2025","url":"bipt_application_guide.html","description":"Petrochemical engineering programs, requirements and process.","section":"Application Tips","tags":["university specific","engineering programs"]},
+    {"title":"Yunnan Minzu University — Application Guide 2025","url":"yunnan_minzu_application_guide.html","description":"Undergraduate, postgraduate programs, requirements, scholarships and process.","section":"Application Tips","tags":["university specific","ethnic studies"]},
+    {"title":"Jinan University (JNU) — Application Guide 2025","url":"jnu_application_guide.html","description":"Programs, requirements, scholarships, costs and procedures for JNU.","section":"Application Tips","tags":["university specific","overseas chinese"]},
+    {"title":"FAFU — Application Guide","url":"fafu_application_guide.html","description":"Admission requirements, English‑taught programs, scholarships and campus life.","section":"Application Tips","tags":["university specific","agriculture"]},
+    {"title":"Capital Normal University (CNU) — Guide","url":"cnu_application_guide.html","description":"Admission requirements, language programs, scholarships, campus life in Beijing.","section":"Application Tips","tags":["university specific","chinese language"]},
+    {"title":"Hainan Medical University (HMU) — MBBS 2026","url":"hmu_application_guide.html","description":"Admissions, curriculum, fees, scholarship and how to apply.","section":"Application Tips","tags":["university specific","mbbs"]},
+    {"title":"Jining Medical University (JMU) — MBBS 2026","url":"jining_application_guide.html","description":"Clinical resources, costs, admissions, scholarships and how to apply.","section":"Application Tips","tags":["university specific","mbbs"]},
+    {"title":"Dalian Medical University (DMU) — MBBS 2026","url":"dalian_medical_university_guide.html","description":"Coastal city MBBS with strong affiliated hospitals.","section":"Application Tips","tags":["university specific","mbbs"]},
+    {"title":"Wenzhou Medical University (WMU) — MBBS 2026","url":"wenzhou_medical_university_guide.html","description":"Specialty strengths in ophthalmology/optometry.","section":"Application Tips","tags":["university specific","mbbs"]},
+    {"title":"South China Agricultural University (SCAU) — 211 & DFC 2026","url":"scau_application_guide.html","description":"Admissions, programs, scholarships, and how to apply.","section":"Application Tips","tags":["university specific","211"]},
+    {"title":"Guangxi Medical University (GXMU) — MBBS 2026","url":"gxmu_application_guide.html","description":"Experienced MBBS in an affordable green city.","section":"Application Tips","tags":["university specific","mbbs"]},
+    {"title":"Zhejiang Normal University (ZJNU): Teacher Education & Yiwu Advantage 2026","url":"zjnu_application_guide.html","description":"Teacher education and Chinese language strengths, admissions and scholarships.","section":"Application Tips","tags":["university specific","education"]},
+    {"title":"Unlocking the C9 League: How Hard Is It for International Students?","url":"c9_league_guide.html","description":"C9 admission guide, requirements and application process for international students.","section":"Application Tips","tags":["c9 league","elite universities"]},
+    {"title":"Complete Guide to Chinese Government Scholarship (CSC) Application","url":"csc_scholarship_guide.html","description":"Step-by-step CSC application: types A/B/C, process, and tips.","section":"Scholarships","tags":["csc","scholarship"]},
+    {"title":"Belt & Road Scholarship in China: Bachelor’s & Master’s Guide (2026)","url":"blog/scholarships/belt-and-road-scholarship.html","description":"Coverage, eligibility, documents, timeline and official links.","section":"Scholarships","tags":["belt and road","government","university","provincial"]},
+    {"title":"Beyond CSC: Alternative Scholarships in China (September 2025)","url":"blog/scholarships/non-css-scholarships-china.html","description":"Local government, MOFCOM, Maritime Silk Road and university awards; strategy, eligibility, timeline, sources.","section":"Scholarships","tags":["government","provincial","mofcom","language","university"]},
+    {"title":"International Chinese Language Teachers Scholarship (Confucius): Guide 2025","url":"blog/scholarships/international-chinese-language-teachers-scholarship.html","description":"Coverage, HSK/HSKK, program categories, timeline, documents, success tips, careers, and links.","section":"Scholarships","tags":["confucius","language","teacher","hsk","hskk"]},
+        {"title":"CSC Study Plan Guide (2025–2026): Structure, Word Count, Tips","url":"blog/scholarships/csc-study-plan-guide.html","description":"Write a standout CSC study plan: structure, word count by level, pitfalls, revision checklist, timeline, and official links.","section":"Scholarships","tags":["csc","study plan","scholarship"]},
+    {"title":"Visa Guides for China (X/Z/R/K)","url":"visa.html","description":"Student, Work and Talent visa guides with timelines and documents.","section":"Visa","tags":["student visa","work visa","k visa","r visa"]},
+    {"title":"China Visa System (2026): Types, Fees, Requirements, and Timelines","url":"visa_system.html","description":"All major visa types with fee ranges, processing times and checklists.","section":"Visa","tags":["visa system","fees","requirements"]},
+    {"title":"K Visa for STEM Talent: Post‑Study Pathways in China","url":"k_visa_stem.html","description":"How the K visa helps STEM graduates convert study into work: eligibility, docs and timeline.","section":"Visa","tags":["k visa","stem","work visa"]},
+    {"title":"K Visa in China: What It Means for International Students (2025)",
+     "url":"blog/visa/k-visa-for-students.html",
+     "description":"Student‑focused K visa overview: features, eligibility, X→K path vs H‑1B, tips, and links to X1/X2 and STEM guides.",
+     "section":"Visa",
+     "tags":["k visa","students","stem","post‑study","x visa"]},
+    {"title":"China as a Great H1B Alternative: Visa Paths, Careers, and Life","url":"h1balternativechina.html","description":"Work/Talent visa routes explained with timelines and checklists.","section":"Visa","tags":["h1b","r visa","z visa"]},
+    {"title":"China Student Visa Guide (X1/X2) for International Students","url":"student_visa_guide_china.html","description":"Documents, JW201/JW202, application flow, timelines, after‑arrival steps, FAQs.","section":"Visa","tags":["student visa","x1","x2","jw201","jw202","faq"]},
+    {"title":"How to Pay in China: Complete Guide for International Students and Residents","url":"payment_guide_china.html","description":"Alipay, WeChat Pay, cash, cards, and bank setup in China.","section":"Life in China","tags":["payment","alipay","wechat pay"]},
+    {"title":"Iconic Universities by Major Chinese City 2025: 13 Cities, Diverse Picks","url":"blog/life-in-china/chinese-cities-and-universities.html","description":"One or two signature universities per city with official links.","section":"Life in China","tags":["cities","universities","beijing","shanghai","shenzhen"]},
+    {"title":"Student Loans & Funding Options in China (Sept 2025): Complete Guide","url":"blog/life-in-china/student-loans-and-funding-in-china.html","description":"Loan landscape, Bank of China FX loans, home‑country options, payment plans, work‑study, emergency funds, STEM tips.","section":"Life in China","tags":["loans","funding","finance","payment","stem"]}
+    ,
+    {"title":"How International Students Rent Apartments in China (2025): Complete Guide","url":"blog/life-in-china/renting-apartment-in-china-guide.html","description":"Where to find, agent fees, bilingual contract, 押一付三 deposits, required documents, PSB registration.","section":"Life in China","tags":["renting","apartment","accommodation","psb","contract"]},
+    {"title":"Shenzhen University (SZU) — University Introduction (2025)","url":"blog/university-introduction/shenzhen-university-introduction.html","description":"Quick SZU profile: key facts, strengths, admissions links, campus life, and checklist.","section":"University Introduction","tags":["szu","shenzhen","engineering","comprehensive"]}
+    ,
+    {"title":"University Major Ranking in China (2025/2026)","url":"blog/university-introduction/university-major-ranking.html","description":"Methodology, discipline strengths, top programs by major, choosing strategy, admissions, and FAQs.","section":"University Introduction","tags":["ranking","majors","programs","methodology"]},
+    {"title":"Affordable 211/985 & Value Universities in China (2025)","url":"blog/university-introduction/affordable-211-985-universities.html","description":"Budget‑friendly picks including a 211 example and strong value universities—fees, language, documents, deadlines and tips.","section":"University Introduction","tags":["affordable","211","985","value"]},
+    {"title":"Muslim‑Friendly Universities in China (2025)","url":"blog/university-introduction/muslim-friendly-universities-china.html","description":"Cities and campuses with halal options, prayer facilities, communities, scholarships, costs and tips.","section":"University Introduction","tags":["muslim","halal","prayer","community"]},
+    {"title":"How to Make Friends in China as an International Student (2025)","url":"blog/life-in-china/making-friends-in-china-for-international-students.html","description":"WeChat/Xiaohongshu/Weibo tips, language exchange, campus clubs, hot pot & KTV, payment setup, cultural notes, and long‑term benefits.","section":"Life in China","tags":["friends","wechat","xiaohongshu","language exchange","clubs"]},
+    {"title":"From Fan to Front Row: Attending Concerts in China (2025)","url":"blog/life-in-china/attending-concerts-in-china.html","description":"Real‑name registration, Damai/Maoyan/Showstart apps, payment setup, step‑by‑step purchase, and entry tips.","section":"Life in China","tags":["concerts","tickets","damai","maoyan","showstart"]},
+    {"title":"Website Updates: FAQ","url":"blog/website-updates/faq.html","description":"Frequently asked questions about FindChinaSchool: independence, data sources, matching method, privacy, and how to contribute.","section":"Website Updates","tags":["changelog","faq","roadmap","sitemap","schema"]},
+    {"title":"CSC Scholarship: How to Find and Contact Professors (2025)","url":"blog/scholarships/csc-contact-professors-guide.html","description":"Find Chinese professors and request acceptance letters: university sites, Baidu, databases, networks, email structure, timing and pitfalls.","section":"Scholarships","tags":["csc","professor","acceptance letter","baidu","faculty","email"]},
+    {"title":"How Competitive Is a Chinese University Diploma? (Employment Outlook 2025)","url":"blog/university-introduction/degree-competitiveness-china.html","description":"Global recognition, employability, strengths and limitations, and the key factors that shape outcomes.","section":"University Introduction","tags":["employment","ranking","analysis"]}
+    ,
+    {"title":"Study in China Without Chinese: English‑Taught Programs (Complete Guide)",
+     "url":"blog/application-tips/study-in-china-without-chinese-english-taught-programs.html",
+     "description":"Study in China in English: program types, MBBS notes, entry requirements, tuition, living costs, support and outcomes.",
+     "section":"Application Tips",
+     "tags":["english-taught","application","mbbs","requirements","tuition","living costs"]}
+    ,
+    {"title":"2026 University Application Dates (Rolling Updates)",
+     "url":"blog/application-tips/2026-university-application-dates.html",
+     "description":"Rolling updates for 2026 application dates with official links (e.g., Tsinghua now available).",
+     "section":"Application Tips",
+     "tags":["application dates","deadlines","2026","tsinghua","updates"]}
+    ,
+    {"title":"HSK Guide for Applying to Chinese Universities (2025)",
+     "url":"blog/study-guides/hsk-university-application-guide.html",
+     "description":"Complete HSK guide: levels, HSKK, HSK 3.0, admission requirements for Chinese‑ and English‑taught programs, and preparation tips.",
+     "section":"Study Guides",
+     "tags":["hsk","hskk","language","admission","study in china"]}
+    ,
+    {"title":"CSCA Guide for 2026 University Admissions",
+     "url":"blog/study-guides/csca-university-admissions-guide-2026.html",
+     "description":"CSCA explained for 2026: eligibility, format, scoring, timelines, prep, and how it fits with HSK/IELTS/SAT.",
+     "section":"Study Guides",
+     "tags":["csca","admission","assessment","2026","study guide"]}
+    ,
+    {"title":"China’s K Visa: A Game‑Changer for International Medical Students (2026)",
+     "url":"blog/visa/k-visa-medical-students-game-changer.html",
+     "description":"What K visa means for MBBS/clinical graduates: X→K pathway, internship/residency implications, city programs, and practical portfolio tips.",
+     "section":"Visa",
+     "tags":["k visa","medical","mbbs","post‑study","internship"]}
+    ,
+    {"title":"CSCA 2026: Urgent Prep Guide",
+     "url":"blog/study-guides/csca-urgent-prep-2026.html",
+     "description":"Urgent CSCA prep: format, difficulty, 6‑week plan, timeline; join Discord for live updates and weekly sets.",
+     "section":"Study Guides",
+     "tags":["csca","urgent","prep","2026","study guide"]}
+    ,
+    {"title":"CSCA Mock Tests","url":"china_study_test/csca-mock-tests.html","description":"Timed CSCA practice sets with links to strategy guides and resources.","section":"Study Guides","tags":["csca","mock","practice","assessment"]}
+    ,
+    {"title":"Chinese Mock Test (Vocabulary, Reading, Culture)","url":"china_study_test/mock-test/chinese-mock-test.html","description":"Chinese mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["chinese","mock test","vocabulary","reading","culture"]},
+    {"title":"Math Mock Test (Algebra, Geometry, Probability)","url":"china_study_test/mock-test/math-mock-test.html","description":"Math mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["math","mock test","algebra","geometry","probability"]},
+    {"title":"English Mock Test (Grammar, Vocabulary, Reading)","url":"china_study_test/mock-test/english-mock-test.html","description":"English mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["english","mock test","grammar","vocabulary","reading"]},
+    {"title":"Physics Mock Test (Mechanics, Atomic Physics, Electromagnetism)","url":"china_study_test/mock-test/physics-mock-test.html","description":"Physics mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["physics","mock test","mechanics","atomic physics","electromagnetism"]},
+    {"title":"Chemistry Mock Test (Chemical Formulas, Equations, Compounds)","url":"china_study_test/mock-test/chemistry-mock-test.html","description":"Chemistry mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["chemistry","mock test","chemical formulas","equations","compounds"]},
+    {"title":"CSCA Section - China Scholastic Competency Assessment Resources","url":"csca-test/index.html","description":"Comprehensive CSCA resources including introduction, mock tests, and training courses for international students applying to Chinese universities.","section":"Study Guides","tags":["csca","china scholastic competency assessment","resources","mock tests","training"]},
     {"title":"CSCA Training Courses - Expert-Led Online Preparation","url":"csca-test/training-courses.html","description":"Professional CSCA training courses with expert instructors, comprehensive practice materials, and personalized study plans for international students applying to Chinese universities.","section":"Study Guides","tags":["csca","training courses","online preparation","expert instruction","study plans"]}
   ]
 }
+
+
+
+
+
+
+
+
+
 
 
