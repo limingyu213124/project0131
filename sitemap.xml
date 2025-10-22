@@ -630,6 +630,18 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <url>
+        <loc>https://findchinaschool.com/csca-test/csca-facts-2026.html</loc>
+        <lastmod>2025-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/csca-test/csca-information-session-oct.html</loc>
+        <lastmod>2025-10-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
 
         <lastmod>2025-09-29</lastmod>
