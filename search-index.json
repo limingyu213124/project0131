@@ -93,6 +93,18 @@
      "section":"Study Guides",
      "tags":["csca","admission","assessment","2026","study guide"]}
     ,
+    {"title":"Panduan CSCA 2026 untuk Penerimaan Universitas di Tiongkok",
+     "url":"blog/study-guides/csca-university-admissions-guide-2026-id.html",
+     "description":"Panduan CSCA 2026: kelayakan, format, skor, timeline, strategi persiapan, dan perbandingan dengan HSK/IELTS/SAT.",
+     "section":"Study Guides",
+     "tags":["csca","panduan","penerimaan","2026","bahasa indonesia"]}
+    ,
+    {"title":"Hướng dẫn CSCA 2026 cho tuyển sinh đại học tại Trung Quốc",
+     "url":"blog/study-guides/csca-university-admissions-guide-2026-vi.html",
+     "description":"CSCA 2026: đối tượng, cấu trúc, thang điểm, mốc thời gian, ôn luyện và so sánh với HSK/IELTS/SAT.",
+     "section":"Study Guides",
+     "tags":["csca","hướng dẫn","tuyển sinh","2026","tiếng việt"]}
+    ,
     {"title":"China’s K Visa: A Game‑Changer for International Medical Students (2026)",
      "url":"blog/visa/k-visa-medical-students-game-changer.html",
      "description":"What K visa means for MBBS/clinical graduates: X→K pathway, internship/residency implications, city programs, and practical portfolio tips.",
@@ -121,6 +133,8 @@
     {"title":"CSCA Facts 2026 – What You Need to Know","url":"csca-test/csca-facts-2026.html","description":"CSCA essentials based on pilot tests: who must take it, subjects, difficulty, registration, and score impact.","section":"Study Guides","tags":["csca","facts","pilot test","subjects","difficulty","registration","scores"]}
     ,
     {"title":"CSCA Information Session (Oct 26–27, Online)","url":"csca-test/csca-information-session-oct.html","description":"Online info session covering CSCA basics, subjects, format, difficulty, registration, and Q&A. Register via Discord.","section":"Study Guides","tags":["csca","information session","webinar","online","registration","q&a"]}
+    ,
+    {"title":"CSCA 关键信息（2026）","url":"csca-test/csca-facts-2026-zh.html","description":"2026 CSCA 关键信息：适用对象、科目结构、难度与内容、报名与考试方式、分数影响、备考资源（基于试点考试）。","section":"Study Guides","tags":["csca","关键信息","试点考试","科目","报名","分数","备考"]}
   ]
 }
 
@@ -242,6 +256,12 @@
     {"title":"CSCA Training Courses - Expert-Led Online Preparation","url":"csca-test/training-courses.html","description":"Professional CSCA training courses with expert instructors, comprehensive practice materials, and personalized study plans for international students applying to Chinese universities.","section":"Study Guides","tags":["csca","training courses","online preparation","expert instruction","study plans"]}
   ]
 }
+
+
+
+
+
+
 
 
 
