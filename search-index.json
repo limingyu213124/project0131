@@ -134,7 +134,8 @@
     ,
     {"title":"CSCA Information Session (Oct 26–27, Online)","url":"csca-test/csca-information-session-oct.html","description":"Online info session covering CSCA basics, subjects, format, difficulty, registration, and Q&A. Register via Discord.","section":"Study Guides","tags":["csca","information session","webinar","online","registration","q&a"]}
     ,
-    {"title":"CSCA 关键信息（2026）","url":"csca-test/csca-facts-2026-zh.html","description":"2026 CSCA 关键信息：适用对象、科目结构、难度与内容、报名与考试方式、分数影响、备考资源（基于试点考试）。","section":"Study Guides","tags":["csca","关键信息","试点考试","科目","报名","分数","备考"]}
+    {"title":"CSCA 关键信息（2026）","url":"csca-test/csca-facts-2026-zh.html","description":"2026 CSCA 关键信息：适用对象、科目结构、难度与内容、报名与考试方式、分数影响、备考资源（基于试点考试）。","section":"Study Guides","tags":["csca","关键信息","试点考试","科目","报名","分数","备考"]},
+    {"title":"CSCA Prep Materials 2026 — Hot Sale","url":"csca-test/csca-prep-materials-sale.html","description":"Information, Study & Extra Practice packs with realistic full papers and solutions. Register via Google Form.","section":"Study Guides","tags":["csca","prep materials","study pack","practice","information"]}
   ]
 }
 
@@ -253,9 +254,11 @@
     {"title":"Physics Mock Test (Mechanics, Atomic Physics, Electromagnetism)","url":"china_study_test/mock-test/physics-mock-test.html","description":"Physics mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["physics","mock test","mechanics","atomic physics","electromagnetism"]},
     {"title":"Chemistry Mock Test (Chemical Formulas, Equations, Compounds)","url":"china_study_test/mock-test/chemistry-mock-test.html","description":"Chemistry mock test with interactive questions, explanations, and scoring.","section":"Study Guides","tags":["chemistry","mock test","chemical formulas","equations","compounds"]},
     {"title":"CSCA Section - China Scholastic Competency Assessment Resources","url":"csca-test/index.html","description":"Comprehensive CSCA resources including introduction, mock tests, and training courses for international students applying to Chinese universities.","section":"Study Guides","tags":["csca","china scholastic competency assessment","resources","mock tests","training"]},
-    {"title":"CSCA Training Courses - Expert-Led Online Preparation","url":"csca-test/training-courses.html","description":"Professional CSCA training courses with expert instructors, comprehensive practice materials, and personalized study plans for international students applying to Chinese universities.","section":"Study Guides","tags":["csca","training courses","online preparation","expert instruction","study plans"]}
+    {"title":"CSCA Training Courses - Expert-Led Online Preparation","url":"csca-test/training-courses.html","description":"Professional CSCA training courses with expert instructors, comprehensive practice materials, and personalized study plans for international students applying to Chinese universities.","section":"Study Guides","tags":["csca","training courses","online preparation","expert instruction","study plans"]},
+    {"title":"CSCA Prep Materials 2026 — Hot Sale","url":"csca-test/csca-prep-materials-sale.html","description":"Information, Study & Extra Practice packs with realistic full papers and solutions. Register via Google Form.","section":"Study Guides","tags":["csca","prep materials","study pack","practice","information"]}
   ]
 }
+
 
 
 
