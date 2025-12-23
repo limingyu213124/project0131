@@ -607,49 +607,55 @@
     </url>
     <url>
         <loc>https://findchinaschool.com/csca-test/index.html</loc>
-        <lastmod>2025-01-31</lastmod>
+        <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://findchinaschool.com/csca-test/training-courses.html</loc>
-        <lastmod>2025-01-31</lastmod>
+        <lastmod>2025-12-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://findchinaschool.com/csca-test/schools-requiring-csca.html</loc>
+        <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://findchinaschool.com/csca-test/csca-mock-tests-overview.html</loc>
-        <lastmod>2025-10-08</lastmod>
+        <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://findchinaschool.com/csca-test/csca-math-test-2026.html</loc>
-        <lastmod>2025-10-08</lastmod>
+        <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://findchinaschool.com/csca-test/csca-syllabus-2026.html</loc>
-        <lastmod>2025-10-08</lastmod>
+        <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://findchinaschool.com/csca-test/csca-facts-2026.html</loc>
-        <lastmod>2025-10-20</lastmod>
+        <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://findchinaschool.com/csca-test/csca-facts-2026-zh.html</loc>
-        <lastmod>2025-10-20</lastmod>
+        <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://findchinaschool.com/csca-test/csca-registration-2026.html</loc>
-        <lastmod>2025-11-04</lastmod>
+        <lastmod>2025-12-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

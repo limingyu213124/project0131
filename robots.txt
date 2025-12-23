@@ -1,6 +1,7 @@
 User-agent: *
 # Disallow admin or private areas (if any)
 Disallow: /admin/
+Disallow: /backup/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /logs/
